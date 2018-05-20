@@ -26,7 +26,7 @@ public class Human implements Players {
 		money += 300;
 		reputation += .5;
 	}
-	
+	//delete me
 	public boolean chancetoEmbezzle() {
 		// TODO Auto-generated method stub
 		int chance = (int) Math.random() * 99 + 1;
