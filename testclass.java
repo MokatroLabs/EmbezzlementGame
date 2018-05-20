@@ -13,5 +13,5 @@ public class firstclass {
 	}
 	System.out.print("Hello World");
 	
-	// does this work plz tell me - adiran
+	// im gay for tai- adiran
 }
