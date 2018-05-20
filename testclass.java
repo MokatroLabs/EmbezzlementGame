@@ -9,5 +9,6 @@ public class firstclass {
 			
 		}
 	}
+	System.out.print("Hello World");
 
 }
