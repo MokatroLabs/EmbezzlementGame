@@ -5,7 +5,7 @@ public class firstclass {
 		
 		for(int i = 0; i !=10; i++)
 		{
-			System.out.println("muffin");
+			System.out.println("muffins are gay");
 			System.out.println("gaynald is so gay");
 			
 		}
