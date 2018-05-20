@@ -18,6 +18,7 @@ public class firstclass {
 
 =======
 	
-	// im gay for tai- adiran
+	// im gay for tai- vince
+	// dustin check ur dms lmao
 >>>>>>> ffa100685b8155da2ac31ca67c777c9437a6e87c
 }
