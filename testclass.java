@@ -12,7 +12,12 @@ public class firstclass {
 		
 	}
 	System.out.print("Hello World");
+<<<<<<< HEAD
 	//can u guys tell me if u see this
 	int hnln = 5454547;
 
+=======
+	
+	// im gay for tai- adiran
+>>>>>>> ffa100685b8155da2ac31ca67c777c9437a6e87c
 }
