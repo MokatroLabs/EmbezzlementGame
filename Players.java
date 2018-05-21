@@ -20,5 +20,5 @@ public interface Players {
 	
 	void upgrade();
 	
-	void embezlle();
+	void embezzle();
 }
