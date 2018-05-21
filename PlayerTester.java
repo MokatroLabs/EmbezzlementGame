@@ -5,7 +5,7 @@ public class PlayerTester {
 		// TODO Auto-generated method stub
 		
 		HQueen queen = new HQueen();
-		System.out.println(queen.getFaction());
+		System.out.println(queen.getChar());
 		System.out.println(queen.getMoney());
 		System.out.println(queen.getReputation());
 		queen.fundRaise();
