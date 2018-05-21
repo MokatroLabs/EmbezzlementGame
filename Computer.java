@@ -2,6 +2,7 @@
 public class Computer implements Players {
 
 	@Override
+	static bankAccount = 100;
 	public double getReputation() {
 		// TODO Auto-generated method stub
 		return 0;
@@ -23,18 +24,23 @@ public class Computer implements Players {
 	{
 		
 	}
-	public void doThings()
+	public void fundraise()
 	{
-		if(Computer.getReputation < 50)
-		{
-			Computer.fundraise();
-		}
-		else
-		{
-			Computer.embezzle();
-		}
+		bandFund += 50;
+		reputation += 3;
 	}
-	//test to see if i workjhj
+	public void embezzle()
+	{
+		int stealcash = (int) math.random() * 50;
+		band Fund -= stealCash;
+		bankAccount += stealCash;
+		
+	}
+	public void audit()
+	{
+		
+	}
+	
 	
 
 }
