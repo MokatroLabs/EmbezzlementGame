@@ -31,9 +31,13 @@ public class Computer implements Players {
 	public void embezzle()
 	{   
 		
+	}
+	public void upgrade()
+	{
 		
-				
-		
+	}
+	pubic void toggleView()
+	{
 		
 	}
 	
