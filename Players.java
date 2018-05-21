@@ -4,9 +4,21 @@ public interface Players {
 	
 	int getMoney();
 	
-	String getFaction();
+	String getChar();
+	
+	void setRep();
+	
+	void setMoney();
+	
+	void setChar();
 	
 	void activeAbility();
 	
-	//boolean chancetoEmbezzle();
+	void interact();
+	
+	void fundRaise();
+	
+	void upgrade();
+	
+	void embezlle();
 }
