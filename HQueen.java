@@ -4,7 +4,7 @@ public class HQueen extends Human {
 	public HQueen()
 	{
 		super();
-		super.faction = "Queen";
+		super.character = "Queen";
 	}
 	
 	public void fundRaise()
