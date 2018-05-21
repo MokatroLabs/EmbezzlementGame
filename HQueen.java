@@ -7,7 +7,7 @@ public class HQueen extends Human {
 		super.faction = "Queen";
 	}
 	
-	public void raiseFunds()
+	public void fundRaise()
 	{
 		money += 500;
 		reputation += .5;
