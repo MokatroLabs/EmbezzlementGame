@@ -23,6 +23,17 @@ public class Computer implements Players {
 	{
 		
 	}
+	public void doThings()
+	{
+		if(Computer.getReputation < 50)
+		{
+			Computer.fundraise();
+		}
+		else
+		{
+			Computer.embezzle();
+		}
+	}
 	//test to see if i workjhj
 	
 
