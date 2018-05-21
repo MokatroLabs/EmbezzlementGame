@@ -30,16 +30,17 @@ public class Computer implements Players {
 		reputation += 3;
 	}
 	public void embezzle()
-	{
+	{   //takes money from abnd fund and puts it in bank account
 		int stealcash = (int) math.random() * 50;
 		band Fund -= stealCash;
 		bankAccount += stealCash;
 		
-	}
-	public void audit()
-	{
+		
+				
+		
 		
 	}
+	
 	
 	
 
