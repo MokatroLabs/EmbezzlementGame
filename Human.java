@@ -1,5 +1,4 @@
 
-
 public abstract class Human implements Players {
 
 	//Instance Variables
@@ -104,7 +103,7 @@ public abstract class Human implements Players {
 	
 	public String toString()
 	{
-		return "This player is part of the " + chara + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
+		return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
 	}
 
 	
