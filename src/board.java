@@ -14,7 +14,6 @@ public class board implements ActionListener {
 	private JButton skillTreeAction;
 	private JButton activeAction;
 	private JButton toggleAction;
-	private JButton concedeBut;
 	private Image testImage;
 	
 	public board() 
@@ -36,26 +35,7 @@ public class board implements ActionListener {
         cons.weightx = 1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
-        cons.anchor = GridBagConstraints.NORTHWEST;
         master.getContentPane().add(turnCount, cons);
-        
-        JLabel moneyCount = new JLabel("This is the money count");
-        cons.gridx = 1;
-        cons.gridy = 1;
-        cons.weightx = 1;
-        cons.weighty = 1;
-        cons.fill = GridBagConstraints.NONE;
-        cons.anchor = GridBagConstraints.SOUTHEAST;
-        master.getContentPane().add(moneyCount, cons);
-        
-        JButton  concedeBut = new JButton("Concede");
-        cons.gridx = 1;
-        cons.gridy = 0;
-        cons.weightx = 1;
-        cons.weighty = 1;
-        cons.fill = GridBagConstraints.NONE;
-        cons.anchor = GridBagConstraints.NORTHEAST;
-        master.getContentPane().add(concedeBut, cons);
         
         //JLabel repCount = new JLabel("This is the rep count");
         
