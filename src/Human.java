@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Human.java
 
 public abstract class Human implements Players {
 
@@ -105,7 +106,21 @@ public abstract class Human implements Players {
 	{
 		return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
 	}
-
+	//toggles show action
+	public void toggleView()
+	{
+		
+	}
+	//to be called in interact
+	public void embezzle()
+	{
+		
+	}
+	//upgrades skill tree
+	public void upgrade()
+	{
+		
+	}
 	
 
 	
@@ -116,3 +131,5 @@ public abstract class Human implements Players {
 	
 
 }
+
+>>>>>>> dc317492b790d83630a068cc209a8013e65e91e0:src/Human.java
