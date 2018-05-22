@@ -37,7 +37,7 @@ public class Computer implements Players {
 		
 	}
 	//toggles show action feture
-	pubic void toggleView()
+	public void toggleView()
 	{
 		
 	}
