@@ -1,47 +1,53 @@
 
-public class Human implements Players {
+public abstract class Human implements Players {
 
 	//Instance Variables
 	protected double reputation;
 	protected int money;
-	protected String faction;
+	protected String character;
 	
 	public Human()
 	{
 		reputation =  25.0;
 		money = 2000;
-		faction = "";
+		character = "";
 	}
 	
 	public Human(double newReputation,int newMoney,String newFaction) {
 		super();
 		this.reputation = newReputation;
 		this.money = newMoney;
-		this.faction = newFaction;
+		this.character = newFaction;
 	}
 	
 	// Actions
-	public void raiseFunds()
-	{
+	
+	@Override
+	public void interact() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fundRaise() {
+		// TODO Auto-generated method stub
 		money += 300;
 		reputation += .5;
 	}
-	//delete me
-	public boolean chancetoEmbezzle() {
+
+	@Override
+	public void upgrade() {
 		// TODO Auto-generated method stub
-		int chance = (int) Math.random() * 99 + 1;
-		if(chance <= 25) {
-			return false; // Nothing happens
-		} else if(chance > 25 && chance <= 50 ) {
-			money += 500;
-			//Opponent.setMoney(money - 500); // Embezzle Succeeds
-			return true;
-		} else {
-			reputation -= 5;
-			money -= 500;
-			return false; // Embezzle fails
-		}
+		
 	}
+
+	@Override
+	public void embezzle() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 	
 	public void activeAbility()
 	{
@@ -55,14 +61,16 @@ public class Human implements Players {
 		return reputation;
 	}
 
+	@Override
+	public String getChar() {
+		// TODO Auto-generated method stub
+		return character;
+	}
+	
 	public int getMoney() {
 		return money;
 	}
 	
-	public String getFaction()
-	{
-		return faction;
-	}
 	
 	//Setters
 	public void setReputation(double newReputation)
@@ -75,15 +83,34 @@ public class Human implements Players {
 		money = newMoney;
 	}
 	
-	public void setFaction(String newFaction)
-	{
-		faction = newFaction;
+	@Override
+	public void setRep() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setMoney() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setChar() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	public String toString()
 	{
-		return "This player is part of the " + faction + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
+		return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
 	}
+
+	
+
+	
+
+	
 
 	
 	

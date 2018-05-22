@@ -4,10 +4,10 @@ public class HQueen extends Human {
 	public HQueen()
 	{
 		super();
-		super.faction = "Queen";
+		super.character = "Queen";
 	}
 	
-	public void raiseFunds()
+	public void fundRaise()
 	{
 		money += 500;
 		reputation += .5;

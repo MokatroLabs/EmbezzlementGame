@@ -1,17 +1,7 @@
 
 public interface Players {
-	double getReputation();
 	
-	int getMoney();
-	
-	String getChar();
-	
-	void setRep();
-	
-	void setMoney();
-	
-	void setChar();
-	
+	//Actions
 	void activeAbility();
 	
 	void interact();
@@ -21,4 +11,19 @@ public interface Players {
 	void upgrade();
 	
 	void embezzle();
+	
+	//Getters
+	double getReputation();
+	
+	int getMoney();
+	
+	String getChar();
+	
+	//Setters
+	void setReputation();
+	
+	void setMoney();
+	
+	void setChar();
+
 }
