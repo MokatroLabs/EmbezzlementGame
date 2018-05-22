@@ -105,7 +105,21 @@ public abstract class Human implements Players {
 	{
 		return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
 	}
-
+	//toggles show action
+	public void toggleView()
+	{
+		
+	}
+	//to be called in interact
+	public void embezzle()
+	{
+		
+	}
+	//upgrades skill tree
+	public void upgrade()
+	{
+		
+	}
 	
 
 	
