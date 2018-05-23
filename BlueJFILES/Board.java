@@ -35,6 +35,7 @@ public class Board implements ActionListener {
         GridBagConstraints cons = new GridBagConstraints();
         Font newFont = new Font("Serif", Font.PLAIN, 20); //makes a new font Object.setFont(Font);
         Insets spacing = new Insets(20,20,20,20); //part of constraits, makes an inserts object to space out the boxes :  Insets(int top, int left, int bottom, int right)
+        Insets buttonSpacing = new Insets(0,20,0,20);
         
         JLabel turnCount = new JLabel("This is the turn count"); //makes a new label, with the words on it
         cons.gridx = 0; // point 0,0 on the grid, which in on the top left corner
@@ -137,15 +138,17 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
         embezzleAction.setPreferredSize(buttonSize);
+        cons.insets = buttonSpacing;
         master.getContentPane().add(embezzleAction, cons);
         
-        raiseFundsAction = new JButton("Raise Funds");
-        raiseFundsAction.setActionCommand("Raise Funds");
+        raiseFundsAction = new JButton("Fundraise");
+        raiseFundsAction.setActionCommand("Fundraise");
         raiseFundsAction.addActionListener(this);
         cons.gridx = 3;
         cons.gridy = 3;
         cons.weightx = 1;
         cons.weighty = 1;
+        cons.insets = buttonSpacing;
         cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
         raiseFundsAction.setPreferredSize(buttonSize);
@@ -158,6 +161,7 @@ public class Board implements ActionListener {
         cons.gridy = 3;
         cons.weightx = 1;
         cons.weighty = 1;
+        cons.insets = buttonSpacing;
         cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
         interactAction.setPreferredSize(buttonSize);
@@ -170,6 +174,7 @@ public class Board implements ActionListener {
         cons.gridy = 3;
         cons.weightx = 1;
         cons.weighty = 1;
+        cons.insets = buttonSpacing;
         cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
         skillTreeAction.setPreferredSize(buttonSize);
@@ -182,6 +187,7 @@ public class Board implements ActionListener {
         cons.gridy = 3;
         cons.weightx = 1;
         cons.weighty = 1;
+        cons.insets = buttonSpacing;
         cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
         activeAction.setPreferredSize(buttonSize);
