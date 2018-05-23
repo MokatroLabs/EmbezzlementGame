@@ -3,32 +3,33 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class Board implements ActionListener { 
-	//This is just going to make the game screen for right now
-	private JFrame master; //the window
-	private JLabel turnCount;
-	private JLabel repCount;
-	private JLabel moneyCount;
-	private JButton embezzleAction;
-	private JButton raiseFundsAction;
-	private JButton interactAction;
-	private JButton skillTreeAction;
-	private JButton activeAction;
-	private JButton toggleAction;
-	private JButton concedeBut;
-	private JLabel imageLabel1;
-	private JLabel imageLabel2;
-	private JLabel imageLabel3;
-	private JLabel imageLabel4;
-	private JScrollPane display;
-	private JTextArea displayWords;
-	
-	public Board() 
-	{
+    //This is just going to make the game screen for right now
+    private JFrame master; //the window
+    private JLabel turnCount;
+    private JLabel repCount;
+    private JLabel moneyCount;
+    private JButton embezzleAction;
+    private JButton raiseFundsAction;
+    private JButton interactAction;
+    private JButton skillTreeAction;
+    private JButton activeAction;
+    private JButton toggleAction;
+    private JButton concedeBut;
+    private JLabel imageLabel1;
+    private JLabel imageLabel2;
+    private JLabel imageLabel3;
+    private JLabel imageLabel4;
+    private JScrollPane display;
+    private JTextArea displayWords;
+    private Dimension buttonSize;
+    
+    public Board() 
+    {
         master = new JFrame("Dont Assume");          //  title of the window
         master.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         Toolkit theKit = master.getToolkit();//This gets the tool kit from the frame
         Dimension wndSize  = theKit.getScreenSize();//gets the screen size
-        master.setPreferredSize(new Dimension(wndSize.width/2, wndSize.height/2)); //half the screen, gotta change
+        master.setPreferredSize(new Dimension(3*wndSize.width/5, 3*wndSize.height/5)); //half the screen, gotta change
         master.setLocation(wndSize.width/8, wndSize.height/8);
         master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style
         GridBagConstraints cons = new GridBagConstraints();
@@ -77,7 +78,7 @@ public class Board implements ActionListener {
         imageLabel1.setIcon(new ImageIcon("./pictures/test.jpg")); //references the picture
         cons.gridx = 2;
         cons.gridy = 0;
-        cons.weightx = 2;
+        cons.weightx = 1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
@@ -124,6 +125,8 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         master.getContentPane().add(imageLabel4, cons);
         
+        buttonSize = new Dimension(120, 40);
+        
         embezzleAction = new JButton("Embezzle");
         embezzleAction.setActionCommand("Embezzle");
         embezzleAction.addActionListener(this);
@@ -131,8 +134,9 @@ public class Board implements ActionListener {
         cons.gridy = 3;
         cons.weightx = 1;
         cons.weighty = 1;
-        cons.fill = GridBagConstraints.NONE;
+        cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
+        embezzleAction.setPreferredSize(buttonSize);
         master.getContentPane().add(embezzleAction, cons);
         
         raiseFundsAction = new JButton("Raise Funds");
@@ -142,13 +146,51 @@ public class Board implements ActionListener {
         cons.gridy = 3;
         cons.weightx = 1;
         cons.weighty = 1;
-        cons.fill = GridBagConstraints.NONE;
+        cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
+        raiseFundsAction.setPreferredSize(buttonSize);
         master.getContentPane().add(raiseFundsAction, cons);
+        
+        interactAction = new JButton("Interact");
+        interactAction.setActionCommand("Interact");
+        interactAction.addActionListener(this);
+        cons.gridx = 1;
+        cons.gridy = 3;
+        cons.weightx = 1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.BOTH;
+        cons.anchor = GridBagConstraints.CENTER;
+        interactAction.setPreferredSize(buttonSize);
+        master.getContentPane().add(interactAction, cons);
+        
+        skillTreeAction = new JButton("Skill Tree");
+        skillTreeAction.setActionCommand("Skill Tree");
+        skillTreeAction.addActionListener(this);
+        cons.gridx = 4;
+        cons.gridy = 3;
+        cons.weightx = 1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.BOTH;
+        cons.anchor = GridBagConstraints.CENTER;
+        skillTreeAction.setPreferredSize(buttonSize);
+        master.getContentPane().add(skillTreeAction, cons);
+        
+        activeAction = new JButton("Active");
+        skillTreeAction.setActionCommand("Active");
+        skillTreeAction.addActionListener(this);
+        cons.gridx = 0;
+        cons.gridy = 3;
+        cons.weightx = 1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.BOTH;
+        cons.anchor = GridBagConstraints.CENTER;
+        activeAction.setPreferredSize(buttonSize);
+        master.getContentPane().add(activeAction, cons);
+        
         
        
         
-        //Testing, get classpath from recycle bin
+        
         
         
         
@@ -159,14 +201,14 @@ public class Board implements ActionListener {
         master.pack();//have these at the bottom, to pack everything together and show it
         master.setVisible(true);
         
-		
-	}
+        
+    }
 
-	public void actionPerformed(ActionEvent theEvent) {
-		
-		
-	}
-	
-	
+    public void actionPerformed(ActionEvent theEvent) {
+        
+        
+    }
+    
+    
 
 }
