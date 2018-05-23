@@ -96,7 +96,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         master.getContentPane().add(imageLabel2, cons);
         
-        displayWords = new JTextArea(124,230); //made it smaller than intended , 20 by 20
+        displayWords = new JTextArea("Gaynald is gay",124,230); //made it smaller than intended , 20 by 20
         display = new JScrollPane(displayWords);
         cons.gridx = 2;
         cons.gridy =1;
@@ -104,7 +104,7 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
-        master.getContentPane().add(display, cons); //It dont work, and I dont wanna do it rn, ill fix it later
+        master.getContentPane().add(displayWords, cons); //It dont work, and I dont wanna do it rn, ill fix it later
         
         imageLabel3 = new JLabel("");
         imageLabel3.setIcon(new ImageIcon("./pictures/test3.png"));
