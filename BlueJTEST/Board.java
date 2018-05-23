@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-public class board implements ActionListener { 
+public class Board implements ActionListener { 
 	//This is just going to make the game screen for right now
 	private JFrame master; //the window
 	private JLabel turnCount;
@@ -22,7 +22,7 @@ public class board implements ActionListener {
 	private JScrollPane display;
 	private JTextArea displayWords;
 	
-	public board() 
+	public Board() 
 	{
         master = new JFrame("Dont Assume");          //  title of the window
         master.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
