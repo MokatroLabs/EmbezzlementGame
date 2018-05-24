@@ -1,17 +1,18 @@
-<<<<<<< HEAD:Human.java
 
-public abstract class Human implements Players {
+public abstract class Human implements Player {
 
 	//Instance Variables
 	protected double reputation;
 	protected int money;
 	protected String character;
+	protected int coolDown;
 	
 	public Human()
 	{
 		reputation =  25.0;
 		money = 2000;
 		character = "";
+		coolDown = 0;
 	}
 	
 	public Human(double newReputation,int newMoney,String newFaction) {
@@ -24,31 +25,40 @@ public abstract class Human implements Players {
 	// Actions
 	
 	@Override
-	public void interact() {
+	public void embezzle() {
 		// TODO Auto-generated method stub
-		
+		int chance =  Mechanics.randomNumber() + (int) reputation/10 ;
+		if(chance <= 50) {
+			money -= 750;
+			reputation -= 3;
+		} else if(chance > 50 &&  chance <= 75) {
+			
+		} else {
+			money += 500;
+			Mechanics.setMoney(Mechanics.getMoney() - 500);
+		}
 	}
-
+	
 	@Override
 	public void fundRaise() {
 		// TODO Auto-generated method stub
 		money += 300;
-		reputation += .5;
+		reputation += .25;
+		Mechanics.setMoney(Mechanics.getMoney() + 300);
 	}
+	
+	@Override
+	public void interact() {
+		// TODO Auto-generated method stub
+	}
+
+	
 
 	@Override
 	public void upgrade() {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void embezzle() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
 	
 	public void activeAbility()
 	{
@@ -72,6 +82,11 @@ public abstract class Human implements Players {
 		return money;
 	}
 	
+	public int getCoolDown()
+	{
+		return coolDown;
+	}
+	
 	
 	//Setters
 	public void setReputation(double newReputation)
@@ -84,43 +99,19 @@ public abstract class Human implements Players {
 		money = newMoney;
 	}
 	
-	@Override
-	public void setRep() {
-		// TODO Auto-generated method stub
-		
+	public void setChar(String newChar) {
+		character = newChar;
 	}
-
-	@Override
-	public void setMoney() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setChar() {
-		// TODO Auto-generated method stub
-		
+	
+	public void setCoolDown(int newCoolDown) {
+		coolDown = newCoolDown;
 	}
 	
 	public String toString()
 	{
 		return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
 	}
-	//toggles show action
-	public void toggleView()
-	{
-		
-	}
-	//to be called in interact
-	public void embezzle()
-	{
-		
-	}
-	//upgrades skill tree
-	public void upgrade()
-	{
-		
-	}
+
 	
 
 	
@@ -131,5 +122,3 @@ public abstract class Human implements Players {
 	
 
 }
-
->>>>>>> dc317492b790d83630a068cc209a8013e65e91e0:src/Human.java
