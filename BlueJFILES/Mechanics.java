@@ -1,3 +1,5 @@
+package BlueJFILES;
+
 
 public class Mechanics {
 	private int moneyPot = 0;

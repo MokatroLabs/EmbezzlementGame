@@ -1,3 +1,5 @@
+package BlueJFILES;
+
 
 public class HQueen extends Human {
 	
