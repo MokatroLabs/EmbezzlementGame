@@ -25,26 +25,26 @@ public abstract class Human implements Player {
 	
 	// Actions
 	
-	@Override
+	
 	public void interact() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+	
 	public void fundRaise() {
 		// TODO Auto-generated method stub
 		money += 300;
 		reputation += .5;
 	}
 
-	@Override
+	
 	public void upgrade() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+	
 	public void embezzle() {
 		// TODO Auto-generated method stub
 		
@@ -64,7 +64,7 @@ public abstract class Human implements Player {
 		return reputation;
 	}
 
-	@Override
+	
 	public String getChar() {
 		// TODO Auto-generated method stub
 		return character;
@@ -86,13 +86,13 @@ public abstract class Human implements Player {
 		money = newMoney;
 	}
 	
-	@Override
+
 	public void setReputation() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+
 	public void setMoney() {
 		// TODO Auto-generated method stub
 		
