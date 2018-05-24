@@ -24,8 +24,6 @@ public class Board implements ActionListener {
     private JScrollPane display;
     private JTextArea displayWords;
     private Dimension buttonSize;
-    private JPanel titleScreen;
-    private JButton playButton;
     
     public Board() 
     {
@@ -222,22 +220,10 @@ public class Board implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent theEvent) {
-        if(theEvent.getActionCommand().equals("Skill Tree"))
-        {
-            makeTitle();
-            master.setContentPane(titleScreen);
-            master.setVisible(true);
-            
-        }
-    }
-    
-    public void makeTitle()
-    {
-        titleScreen = new JPanel();
-        playButton = new JButton("Play");
-        titleScreen.add(playButton);
+        
         
     }
+    
     
 
 }

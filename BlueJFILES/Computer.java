@@ -9,7 +9,7 @@ public abstract class Computer implements Player {
     
     public double getReputation() {
         // TODO Auto-generated method stub
-        return 0;
+        return reputation;
     }
     @Override
     public void setReputation (double ammount)
@@ -33,27 +33,16 @@ public abstract class Computer implements Player {
         return character;
     }
     
-    public void activeAbility()
-    {
-        
-    }
-    public void fundraise()
-    {
-        
-    }
-    public void embezzle()
-    {   
-        
-    }
-    public void upgrade()
-    {
-        
-    }
-    //toggles show action feture
-    public void toggleView()
-    {
-        
-    }
+    public abstract void activeAbility();
+    public abstract void fundRaise();
+    
+    public abstract void embezzle();
+    
+    public abstract void upgrade();
+    
+   
+    public abstract void toggleView();
+ 
     
     
 

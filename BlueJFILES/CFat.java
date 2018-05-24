@@ -9,5 +9,29 @@
  */
 public class CFat extends Computer
 {
-    
+    public void activeAbility()
+    {
+        
+    }
+    public void fundRaise()
+    {
+        setMoney(300);
+        setReputation(.5);
+    }
+    public void embezzle()
+    {
+        
+    }
+    public void upgrade()
+    {
+        
+    }
+    public void toggleView()
+    {
+        
+    }
+    public void interact()
+    {
+        
+    }
 }

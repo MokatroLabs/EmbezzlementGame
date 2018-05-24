@@ -25,26 +25,26 @@ public abstract class Human implements Player {
 	
 	// Actions
 	
-	
+	@Override
 	public void interact() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	
+	@Override
 	public void fundRaise() {
 		// TODO Auto-generated method stub
 		money += 300;
 		reputation += .5;
 	}
 
-	
+	@Override
 	public void upgrade() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	
+	@Override
 	public void embezzle() {
 		// TODO Auto-generated method stub
 		
@@ -52,10 +52,7 @@ public abstract class Human implements Player {
 	
 	
 	
-	public void activeAbility()
-	{
-		
-	}
+	public abstract void activeAbility();
 	
 	//Getters
 	public double getReputation() 
@@ -64,7 +61,7 @@ public abstract class Human implements Player {
 		return reputation;
 	}
 
-	
+	@Override
 	public String getChar() {
 		// TODO Auto-generated method stub
 		return character;
@@ -87,26 +84,13 @@ public abstract class Human implements Player {
 	}
 	
 
-	public void setReputation() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public void setMoney() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	public String toString()
 	{
 		return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
 	}
 	//toggles show action
-	public void toggleView()
-	{
-		
-	}
+	public abstract void toggleView();
 	
 	
 

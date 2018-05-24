@@ -2,12 +2,12 @@
 
 
 /**
- * Write a description of class CCap here.
+ * Write a description of class CSpy here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class CCap extends Computer
+public class CSpy extends Computer
 {
     public void activeAbility()
     {
@@ -17,6 +17,7 @@ public class CCap extends Computer
     {
         setMoney(300);
         setReputation(.5);
+        
     }
     public void embezzle()
     {
@@ -34,5 +35,4 @@ public class CCap extends Computer
     {
         
     }
-   
 }

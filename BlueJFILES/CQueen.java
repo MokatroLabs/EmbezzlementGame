@@ -10,7 +10,7 @@
 public class CQueen extends Computer
 {
    
-    public void activateAbility()
+    public void activeAbility()
    {
        setMoney(5000);
    }
