@@ -30,7 +30,7 @@ public class CSpy extends Computer
 	}
 	public void activeAbility(PLayer target)
 	{
-		target.setReputation(player.getReputation - Math.random() * 20 )
+		target.setReputation(target.getReputation - Math.random() * 20 )
 	}
 			
 	
