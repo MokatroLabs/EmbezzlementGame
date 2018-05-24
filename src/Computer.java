@@ -1,48 +1,118 @@
 
-public class Computer implements Players {
+public class Computer implements Player {
 
-	@Override
+	//Instance Variables
+	protected double reputation;
+	protected int money;
+	protected String character;
+	protected int coolDown;
 	
-	public double getReputation() {
+	public Computer()
+	{
+		reputation =  25.0;
+		money = 2000;
+		character = "";
+		coolDown = 5;
+	}
+	
+	public Computer(double newReputation,int newMoney,String newFaction) {
+		super();
+		this.reputation = newReputation;
+		this.money = newMoney;
+		this.character = newFaction;
+	}
+	
+	// Actions
+	
+	@Override
+	public void embezzle() {
 		// TODO Auto-generated method stub
-		return 0;
+		int chance =  Mechanics.randomNumber() + (int) reputation/10 ;
+		if(chance <= 50) {
+			money -= 750;
+			reputation -= 3;
+		} else if(chance > 50 &&  chance <= 75) {
+			
+		} else {
+			money += 500;
+			Mechanics.setMoney(Mechanics.getMoney() - 500);
+		}
+	}
+	
+	@Override
+	public void fundRaise() {
+		// TODO Auto-generated method stub
+		money += 300;
+		reputation += .25;
+	}
+	
+	@Override
+	public void interact() {
+		// TODO Auto-generated method stub
 	}
 
-	@Override
-	public int getMoney() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	@Override
-	public String getFaction() {
+	public void upgrade() {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
+
+	
+	
+	
 	
 	public void activeAbility()
 	{
 		
 	}
-	public void fundraise()
+	
+	//Getters
+	public double getReputation() 
 	{
 		
+		return reputation;
 	}
-	public void embezzle()
-	{   
-		
-	}
-	public void upgrade()
-	{
-		
-	}
-	//toggles show action feture
-	public void toggleView()
-	{
-		
-	}
-	
-	
-	
 
-}
+	@Override
+	public String getChar() {
+		// TODO Auto-generated method stub
+		return character;
+	}
+	
+	public int getMoney() {
+		return money;
+	}
+	
+	
+	//Setters
+	public void setReputation(double newReputation)
+	{
+		reputation = newReputation;
+	}
+	
+	public void setMoney(int newMoney)
+	{
+		money = newMoney;
+	}
+
+	@Override
+	public void setReputation() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setMoney() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setChar() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
