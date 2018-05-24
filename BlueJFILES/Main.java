@@ -9,14 +9,15 @@
  */
 import java.util.ArrayList;
 public class Main {
-
+    static Board board;
+    Mechanics economy;
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         Board board = new Board();
         Mechanics economy = new Mechanics();
-        HQueen human = new HQueen();
-        CSpy  comp = new CSpy();
+        CQueen comp = new CQueen();
+        HSpy  human = new HSpy();
         ArrayList<Player> players = new ArrayList<Player>();
         int currentPlayer = 0;
         while(economy.getTurns() <= maxTurns) {
@@ -24,15 +25,26 @@ public class Main {
                 currentPlayer++;
             else
                 currentPlayer = 1;
-            
+            takeTurn(players.get(currentPlayer));
             
             economy.setTurns(economy.getTurns() + 1);
         }
-=======
-        Mechanics mechanics = new Mechanics(400);
-        board2 board2 = new board2();
->>>>>>> a66adb51297a38abe1af9c2e9409700840e126d3
+
         
     }
-
+    public static void takeTurn(Player current)
+    {
+        int action=0;
+        if(current.isHuman())
+            action = board.promptAction();
+        else
+        {
+            //implement findMove() function 
+        }
+        if (action == 1)
+            current.embezzle();
+        else if (action == 2)
+            current.fundraise();
+        
+    }
 }

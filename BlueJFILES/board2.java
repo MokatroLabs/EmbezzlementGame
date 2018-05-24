@@ -56,7 +56,7 @@ public class board2 {
         }
             
     }  
-    
+    // This makes a stackOverflow error - Logan
     public static Container getContentPane()
     {
         return board2.getContentPane();

@@ -8,7 +8,7 @@ public interface Player {
 	
 	void interact();
 	
-	void fundRaise();
+	void fundraise();
 	
 	void upgrade();
 	
@@ -26,6 +26,7 @@ public interface Player {
 	
 	void setMoney(int ammount);
 	
+	boolean isHuman();
 	
 
 }

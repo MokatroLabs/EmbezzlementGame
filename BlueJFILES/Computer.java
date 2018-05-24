@@ -5,6 +5,7 @@ public abstract class Computer implements Player {
     protected double reputation;
     protected int money;
     protected String character ;
+    
     @Override
     
     public double getReputation() {
@@ -54,7 +55,13 @@ public abstract class Computer implements Player {
     {
         
     }
+    public boolean isHuman()
+    {
+        return false;
+    }
     
-    
-
+    public int findMove()
+    {
+        return 1;
+    }
 }
