@@ -18,8 +18,9 @@ public class CSpy extends Computer
 	public void embezzle()
 	{
 		
-		setMoney(money += 300);
-		setReputation(reputation -= 0.7);
+		int moneySteal = (int)math.random() * 300;
+		money += moneySteal;
+		
 		
 	}
 	public void getMoney()
