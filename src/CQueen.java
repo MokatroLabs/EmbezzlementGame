@@ -1,10 +1,16 @@
 
-public class HQueen extends Human {
+public class CQueen extends Computer {
 	
-	public HQueen()
+	public CQueen()
 	{
 		super();
 		super.character = "Queen";
+	}
+	
+	public void findMove() {
+		if(getReputation() <= 30) {
+			interact();
+		} else if(Computer.getCo)
 	}
 	
 	public void fundRaise()
@@ -17,12 +23,11 @@ public class HQueen extends Human {
 	{
 		reputation -=  2.5;
 		money += 5000;  // Amount of Increase TBD
-		coolDown = 5;
 	}
 
-	
-	
-	
-	
-	
+	@Override
+	public void setReputation() {
+		// TODO Auto-generated method stub
+		
+	}
 }
