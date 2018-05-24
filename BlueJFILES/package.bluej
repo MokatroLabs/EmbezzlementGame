@@ -8,6 +8,27 @@ dependency2.type=UsesDependency
 dependency3.from=Board
 dependency3.to=board2
 dependency3.type=UsesDependency
+<<<<<<< HEAD
+dependency4.from=Deck
+dependency4.to=Card
+dependency4.type=UsesDependency
+dependency5.from=Main
+dependency5.to=Player
+dependency5.type=UsesDependency
+dependency6.from=Main
+dependency6.to=Mechanics
+dependency6.type=UsesDependency
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+objectbench.height=221
+objectbench.width=906
+package.divider.horizontal=0.6
+package.divider.vertical=0.6262295081967213
+package.editor.height=375
+package.editor.width=803
+=======
 editor.fx.0.height=747
 editor.fx.0.width=818
 editor.fx.0.x=551
@@ -18,11 +39,16 @@ package.divider.horizontal=0.6
 package.divider.vertical=0.626057529610829
 package.editor.height=363
 package.editor.width=781
+>>>>>>> b2452461aa8366aed3326d5c976e2cba367f1f10
 package.editor.x=223
 package.editor.y=115
 package.frame.height=710
 package.frame.width=946
+<<<<<<< HEAD
+package.numDependencies=6
+=======
 package.numDependencies=3
+>>>>>>> b2452461aa8366aed3326d5c976e2cba367f1f10
 package.numTargets=17
 package.showExtends=true
 package.showUses=true
@@ -62,8 +88,13 @@ target12.showInterface=false
 target12.type=ClassTarget
 target12.typeParameters=
 target12.width=80
+<<<<<<< HEAD
+target12.x=620
+target12.y=300
+=======
 target12.x=610
 target12.y=340
+>>>>>>> b2452461aa8366aed3326d5c976e2cba367f1f10
 target13.height=50
 target13.name=Board
 target13.showInterface=false
@@ -158,8 +189,13 @@ target8.showInterface=false
 target8.type=ClassTarget
 target8.typeParameters=
 target8.width=80
+<<<<<<< HEAD
+target8.x=620
+target8.y=260
+=======
 target8.x=630
 target8.y=290
+>>>>>>> b2452461aa8366aed3326d5c976e2cba367f1f10
 target9.height=50
 target9.name=HQueen
 target9.showInterface=false
