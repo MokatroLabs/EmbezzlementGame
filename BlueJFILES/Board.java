@@ -49,7 +49,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.NORTHWEST; //makes it "stick" to the northwest corner of its space
         master.getContentPane().add(turnCount, cons);
         
-        JLabel moneyCount = new JLabel("This is your money");
+        JLabel moneyCount = new JLabel("This is the money count");
         cons.gridx = 4;
         cons.gridy = 4;
         cons.weightx = 1;
@@ -98,7 +98,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         master.getContentPane().add(imageLabel2, cons);
         
-        displayWords = new JTextArea("Gaynald is gay \n next line \n next line \n next line \n next line"); //to combat issue, we print things using ln, have a array of past actions that will get printed and added
+        displayWords = new JTextArea("Gaynald is gay \n next line"); //to combat issue, we print things using ln, have a array of past actions that will get printed and added
         //that way, I dont need to bother with this anymore, we can set the fint and stuff as well.
         //WE have an array os strings(statments), that this will print to the sdcreen using ln and for each loop. we when update that array for new statements, it will cycle
         display = new JScrollPane(displayWords);// think i am scraping this
@@ -218,24 +218,10 @@ public class Board implements ActionListener {
         
         
     }
-    
-    public Container getPane()
-    {
-        return master.getContentPane();
-    }
 
     public void actionPerformed(ActionEvent theEvent) {
-        if(theEvent.getActionCommand().equals("Skill Tree"))
-        {
-            master.setContentPane(board2.getContentPane());
-            master.setVisible(true);
-        }
         
-    }
-    
-    public void updateBoard()
-    {
-        turnCount.setText("Turn: " + economy.getTurns());
+        
     }
     
     

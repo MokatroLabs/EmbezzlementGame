@@ -14,8 +14,7 @@ public class Main
     public static void main (String[] args)
     {
         Board board = new Board();
-        //Mechanics mechanics = new Mechanics(400);
-        board2 board2 = new board2();
+        Mechanics mechanics = new Mechanics(400);
         
     }
 }

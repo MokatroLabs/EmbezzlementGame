@@ -11,17 +11,26 @@ public abstract class Computer implements Player {
         // TODO Auto-generated method stub
         return 0;
     }
-
+    @Override
+    public void setReputation (double ammount)
+    {
+        reputation += ammount;
+    }
+    @Override
+    public void setMoney(int ammount)
+    {
+        money += ammount;
+    }
     
     public int getMoney() {
         // TODO Auto-generated method stub
         return 0;
     }
 
-    
-    public String getFaction() {
+    @Override
+    public String getChar() {
         // TODO Auto-generated method stub
-        return "";
+        return character;
     }
     
     public void activeAbility()
@@ -46,6 +55,6 @@ public abstract class Computer implements Player {
         
     }
     
-	
+    
 
 }

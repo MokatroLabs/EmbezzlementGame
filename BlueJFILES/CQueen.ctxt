@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=CQueen
+comment0.text=\n\ Write\ a\ description\ of\ class\ CQueen\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ activateAbility()
+comment2.params=
+comment2.target=void\ fundRaise()
+comment3.params=
+comment3.target=void\ embezzle()
+comment4.params=
+comment4.target=void\ upgrade()
+comment5.params=
+comment5.target=void\ toggleView()
+comment6.params=
+comment6.target=void\ interact()
+numComments=7

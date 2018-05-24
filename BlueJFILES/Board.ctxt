@@ -2,10 +2,6 @@
 comment0.target=Board
 comment1.params=
 comment1.target=Board()
-comment2.params=
-comment2.target=java.awt.Container\ getPane()
-comment3.params=theEvent
-comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
-comment4.params=
-comment4.target=void\ updateBoard()
-numComments=5
+comment2.params=theEvent
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=3
