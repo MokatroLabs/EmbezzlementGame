@@ -45,5 +45,10 @@ public class CSpy extends Computer
 	{
 		System.out.print("can't do that");
 	}
+	public String getFaction()
+	{
+		
+		return("Spy");
 	}
+	
 }
