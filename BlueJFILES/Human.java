@@ -4,6 +4,7 @@
 
 public abstract class Human implements Player {
 
+
     //Instance Variables
     protected double reputation;
     protected int money;
@@ -111,6 +112,7 @@ public abstract class Human implements Player {
         return true;
     }
     
+
 
     
 

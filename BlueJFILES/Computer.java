@@ -10,7 +10,7 @@ public abstract class Computer implements Player {
     
     public double getReputation() {
         // TODO Auto-generated method stub
-        return 0;
+        return reputation;
     }
     @Override
     public void setReputation (double ammount)
@@ -34,6 +34,7 @@ public abstract class Computer implements Player {
         return character;
     }
     
+
     public void activeAbility()
     {
         
@@ -59,6 +60,7 @@ public abstract class Computer implements Player {
     {
         return false;
     }
+
     
     public int findMove()
     {

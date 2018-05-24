@@ -45,6 +45,7 @@ public class Main {
             current.embezzle();
         else if (action == 2)
             current.fundraise();
+
         
     }
 }
