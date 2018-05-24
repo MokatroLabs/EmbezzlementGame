@@ -21,7 +21,7 @@ public abstract class Computer implements Player {
     
     public String getFaction() {
         // TODO Auto-generated method stub
-        
+        return "";
     }
     
     public void activeAbility()
