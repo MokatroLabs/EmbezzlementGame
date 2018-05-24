@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Computer
+comment1.params=
+comment1.target=double\ getReputation()
+comment2.params=
+comment2.target=int\ getMoney()
+comment3.params=
+comment3.target=java.lang.String\ getFaction()
+comment4.params=
+comment4.target=void\ activeAbility()
+comment5.params=
+comment5.target=void\ fundraise()
+comment6.params=
+comment6.target=void\ embezzle()
+comment7.params=
+comment7.target=void\ upgrade()
+comment8.params=
+comment8.target=void\ toggleView()
+numComments=9

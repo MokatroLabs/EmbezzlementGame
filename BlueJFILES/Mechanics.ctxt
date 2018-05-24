@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Mechanics
+comment1.params=ammount
+comment1.target=void\ setMoney(int)
+comment2.params=
+comment2.target=int\ getMoney()
+comment3.params=turnSet
+comment3.target=void\ setTurns(int)
+comment4.params=
+comment4.target=int\ getTurns()
+numComments=5
