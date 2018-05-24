@@ -28,6 +28,10 @@ public class Main {
             
             economy.setTurns(economy.getTurns() + 1);
         }
+=======
+        Mechanics mechanics = new Mechanics(400);
+        board2 board2 = new board2();
+>>>>>>> a66adb51297a38abe1af9c2e9409700840e126d3
         
     }
 

@@ -1,15 +1,22 @@
 
 public class Mechanics {
-	private int moneyPot = 0;
-	private int turnCount = 0;
+	private static int moneyPot ;
+	private int turnCount;
 	final int maxTurns = 150;
+	
+	public Mechanics()
+	{
+		moneyPot = 400;
+		turnCount = 0;
+	}
+	
 	// setter for moneyPot
-	public void setMoney(int ammount)
+	public static void setMoney(int ammount)
 	{
 		moneyPot = ammount;
 	}
 	//getter for moneyPot
-	public int getMoney()
+	public static int getMoney()
 	{
 		return moneyPot;
 	}
@@ -22,6 +29,11 @@ public class Mechanics {
 	public int getTurns()
 	{
 		return turnCount;
+	}
+	
+	public static int randomNumber()
+	{
+		return (int) Math.random() * 99 + 1;
 	}
 	
 }

@@ -1,5 +1,3 @@
- 
-
 
 public interface Player {
 	
@@ -20,12 +18,16 @@ public interface Player {
 	int getMoney();
 	
 	String getChar();
+
+	int getCoolDown();
 	
 	//Setters
-	void setReputation(double rep);
+	void setReputation();
 	
-	void setMoney(int ammount);
+	void setMoney();
 	
+	void setChar();
 	
+	void setCoolDown();
 
 }
