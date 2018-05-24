@@ -1,8 +1,9 @@
 #BlueJ package file
 dependency1.from=Main
-dependency1.to=Board
+dependency1.to=Player
 dependency1.type=UsesDependency
 dependency2.from=Main
+<<<<<<< HEAD
 dependency2.to=Player
 dependency2.type=UsesDependency
 dependency3.from=Main
@@ -27,6 +28,32 @@ package.frame.height=744
 package.frame.width=1382
 package.numDependencies=4
 package.numTargets=16
+=======
+dependency2.to=Board
+dependency2.type=UsesDependency
+dependency3.from=Main
+dependency3.to=board2
+dependency3.type=UsesDependency
+dependency4.from=Board
+dependency4.to=board2
+dependency4.type=UsesDependency
+editor.fx.0.height=1098
+editor.fx.0.width=1938
+editor.fx.0.x=-456
+editor.fx.0.y=469
+objectbench.height=88
+objectbench.width=904
+package.divider.horizontal=0.6
+package.divider.vertical=0.8392554991539763
+package.editor.height=489
+package.editor.width=798
+package.editor.x=575
+package.editor.y=422
+package.frame.height=710
+package.frame.width=946
+package.numDependencies=4
+package.numTargets=17
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -44,51 +71,92 @@ target1.width=80
 target1.x=440
 target1.y=160
 target10.height=50
+<<<<<<< HEAD
 target10.name=CCap
+=======
+target10.name=Card
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target10.showInterface=false
 target10.type=ClassTarget
 target10.typeParameters=
 target10.width=80
+<<<<<<< HEAD
 target10.x=260
 target10.y=290
 target11.height=50
 target11.name=HFat
+=======
+target10.x=50
+target10.y=320
+target11.height=50
+target11.name=CCap
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target11.showInterface=false
 target11.type=ClassTarget
 target11.typeParameters=
 target11.width=80
+<<<<<<< HEAD
 target11.x=620
 target11.y=300
 target12.height=50
 target12.name=Board
+=======
+target11.x=260
+target11.y=290
+target12.height=50
+target12.name=HFat
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target12.showInterface=false
 target12.type=ClassTarget
 target12.typeParameters=
 target12.width=80
+<<<<<<< HEAD
 target12.x=540
 target12.y=20
 target13.height=50
 target13.name=HSpy
+=======
+target12.x=620
+target12.y=300
+target13.height=50
+target13.name=Board
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target13.showInterface=false
 target13.type=ClassTarget
 target13.typeParameters=
 target13.width=80
+<<<<<<< HEAD
 target13.x=620
 target13.y=330
 target14.height=50
 target14.name=Computer
+=======
+target13.x=540
+target13.y=20
+target14.height=50
+target14.name=HSpy
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target14.showInterface=false
 target14.type=AbstractTarget
 target14.typeParameters=
+<<<<<<< HEAD
 target14.width=90
 target14.x=130
 target14.y=200
 target15.height=50
 target15.name=Mechanics
+=======
+target14.width=80
+target14.x=620
+target14.y=330
+target15.height=50
+target15.name=Computer
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target15.showInterface=false
-target15.type=ClassTarget
+target15.type=AbstractTarget
 target15.typeParameters=
 target15.width=90
+<<<<<<< HEAD
 target15.x=50
 target15.y=80
 target16.height=50
@@ -99,6 +167,26 @@ target16.typeParameters=
 target16.width=80
 target16.x=240
 target16.y=0
+=======
+target15.x=130
+target15.y=200
+target16.height=50
+target16.name=Mechanics
+target16.showInterface=false
+target16.type=ClassTarget
+target16.typeParameters=
+target16.width=90
+target16.x=0
+target16.y=90
+target17.height=50
+target17.name=Main
+target17.showInterface=false
+target17.type=ClassTarget
+target17.typeParameters=
+target17.width=80
+target17.x=280
+target17.y=10
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target2.height=50
 target2.name=Player
 target2.showInterface=false
@@ -113,8 +201,13 @@ target3.showInterface=false
 target3.type=ClassTarget
 target3.typeParameters=
 target3.width=80
+<<<<<<< HEAD
 target3.x=300
 target3.y=190
+=======
+target3.x=260
+target3.y=400
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target4.height=50
 target4.name=CQueen
 target4.showInterface=false
@@ -124,42 +217,78 @@ target4.width=80
 target4.x=260
 target4.y=240
 target5.height=50
+<<<<<<< HEAD
 target5.name=CFat
+=======
+target5.name=board2
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target5.showInterface=false
 target5.type=ClassTarget
 target5.typeParameters=
 target5.width=80
+<<<<<<< HEAD
 target5.x=260
 target5.y=330
 target6.height=50
 target6.name=Deck
+=======
+target5.x=674
+target5.y=117
+target6.height=50
+target6.name=CFat
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target6.showInterface=false
 target6.type=ClassTarget
 target6.typeParameters=
 target6.width=80
+<<<<<<< HEAD
 target6.x=20
 target6.y=180
 target7.height=50
 target7.name=HCap
+=======
+target6.x=260
+target6.y=350
+target7.height=50
+target7.name=Deck
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target7.showInterface=false
 target7.type=ClassTarget
 target7.typeParameters=
 target7.width=80
+<<<<<<< HEAD
 target7.x=620
 target7.y=260
 target8.height=50
 target8.name=HQueen
+=======
+target7.x=20
+target7.y=180
+target8.height=50
+target8.name=HCap
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target8.showInterface=false
 target8.type=ClassTarget
 target8.typeParameters=
 target8.width=80
 target8.x=620
+<<<<<<< HEAD
 target8.y=230
 target9.height=50
 target9.name=Card
+=======
+target8.y=260
+target9.height=50
+target9.name=HQueen
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
 target9.showInterface=false
 target9.type=ClassTarget
 target9.typeParameters=
 target9.width=80
+<<<<<<< HEAD
 target9.x=50
 target9.y=320
+=======
+target9.x=620
+target9.y=230
+>>>>>>> c9b9c9e4eb9b089907177dabf0b9b15ea7a8fe89
