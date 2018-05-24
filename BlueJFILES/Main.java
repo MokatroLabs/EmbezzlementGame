@@ -15,6 +15,7 @@ public class Main
     {
         Board board = new Board();
         Mechanics mechanics = new Mechanics(400);
+        board2 board2 = new board2();
         
     }
 }
