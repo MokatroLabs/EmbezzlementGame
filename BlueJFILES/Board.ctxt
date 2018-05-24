@@ -4,4 +4,6 @@ comment1.params=
 comment1.target=Board()
 comment2.params=theEvent
 comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
-numComments=3
+comment3.params=
+comment3.target=void\ makeTitle()
+numComments=4

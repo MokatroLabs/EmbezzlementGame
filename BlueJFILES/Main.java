@@ -30,7 +30,7 @@ public class Main {
         }
 
         Mechanics mechanics = new Mechanics(400);
-        board2 board2 = new board2();
+        
 
         
     }
