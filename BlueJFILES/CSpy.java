@@ -20,6 +20,7 @@ public class CSpy extends Computer
 		
 		int moneySteal = (int)math.random() * 300;
 		money += moneySteal;
+		reputation -= 1.7;
 		
 		
 	}
@@ -42,5 +43,10 @@ public class CSpy extends Computer
 		
 		return("Spy");
 	}
+	public void setReputation(double newRep)
+	{
+		Reputation = newRep;
+	}
+	
 	
 }
