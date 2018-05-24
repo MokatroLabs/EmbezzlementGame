@@ -1,8 +1,8 @@
-package BlueJFILES;
+ 
 
 
 
-public abstract class Human implements Players {
+public abstract class Human implements Player {
 
 	//Instance Variables
 	protected double reputation;
@@ -87,19 +87,13 @@ public abstract class Human implements Players {
 	}
 	
 	@Override
-	public void setRep() {
+	public void setReputation() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void setMoney() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setChar() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -113,18 +107,7 @@ public abstract class Human implements Players {
 	{
 		
 	}
-	//to be called in interact
-	public void embezzle()
-	{
-		
-	}
-	//upgrades skill tree
-	public void upgrade()
-	{
-		
-	}
 	
-
 	
 
 	

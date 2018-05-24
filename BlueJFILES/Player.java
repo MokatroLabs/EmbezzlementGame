@@ -1,7 +1,7 @@
-package BlueJFILES;
+ 
 
 
-public interface Players {
+public interface Player {
 	
 	//Actions
 	void activeAbility();
@@ -26,6 +26,6 @@ public interface Players {
 	
 	void setMoney();
 	
-	void setChar();
+	
 
 }
