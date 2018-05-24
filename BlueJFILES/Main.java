@@ -7,10 +7,14 @@
  * @author (your name)
  * @version (a version number or a date)
  */
+import java.util.ArrayList;
 public class Main
 {
+    ArrayList<Player> players = new ArrayList<Player>();
     public static void main (String[] args)
     {
-        Board test = new Board();
+        Board board = new Board();
+        Mechanics mechanics = new Mechanics(400);
+        
     }
 }
