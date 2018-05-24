@@ -1,12 +1,8 @@
 /bin/
-/.classpath
-/.gitignore
-/.project
 /Computer.class
 /HQueen.class
 /Human.class
 /MainClass.class
 /PlayerTester.class
 /Players.class
-/README.md
 /board.class
