@@ -16,7 +16,7 @@ public class Main {
         Board board = new Board();
         Mechanics economy = new Mechanics();
         HQueen human = new HQueen();
-        CSpy  comp = new CSpy();
+        //CSpy  comp = new CSpy();
         ArrayList<Player> players = new ArrayList<Player>();
         int currentPlayer = 0;
         while(economy.getTurns() <= maxTurns) {
@@ -28,10 +28,10 @@ public class Main {
             
             economy.setTurns(economy.getTurns() + 1);
         }
-=======
+
         Mechanics mechanics = new Mechanics(400);
         board2 board2 = new board2();
->>>>>>> a66adb51297a38abe1af9c2e9409700840e126d3
+
         
     }
 
