@@ -9,8 +9,15 @@
  */
 public class CSpy extends Computer
 {
+	public CSpy
+	{
+		super();
+		this.character = "Spy"
+		
+	}
 	public void embezzle()
 	{
+		
 		setMoney(money += 300);
 		setReputation(reputation -= 0.7);
 		
@@ -19,28 +26,12 @@ public class CSpy extends Computer
 	{
 		return money;
 	}
-	public void activeAbility(int player)
+	public void activeAbility(PLayer target)
 	{
-		if (player < 2 || player > 4)
-		{
-			activeAbility(int player);
-		}
-		else if(player == 2)
-		{
-			
-			
-		}
-		else if(player == 3)
-		{
-			
-			
-		}
-		else
-		{
-			
-			
-		}
+		target.setReputation(player.getReputation - Math.random() * 20 )
 	}
+			
+	
 	public void fundraise()
 	{
 		System.out.print("can't do that");
