@@ -10,6 +10,10 @@ public class Main {
 			if(play.getChar().equals("Business Man")) {
 				play.setMoney(play.getMoney() + 150);
 			}
+			if(play.getChar().equals("Queen"))
+			{
+				
+			}
 			
 			
 			economy.setTurns(economy.getTurns() + 1);
