@@ -1,4 +1,4 @@
-package BlueJFILES;
+ 
 
 
 public abstract class Computer implements Players {

@@ -1,4 +1,4 @@
-package BlueJFILES;
+ 
 
 import javax.swing.*;
 import java.awt.*;
@@ -98,14 +98,21 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         master.getContentPane().add(imageLabel2, cons);
         
-        displayWords = new JTextArea("Gaynald is gay",124,230); //made it smaller than intended , 20 by 20
-        display = new JScrollPane(displayWords);
+        displayWords = new JTextArea("Gaynald is gay \n next line"); //to combat issue, we print things using ln, have a array of past actions that will get printed and added
+        //that way, I dont need to bother with this anymore, we can set the fint and stuff as well.
+        //WE have an array os strings(statments), that this will print to the sdcreen using ln and for each loop. we when update that array for new statements, it will cycle
+        display = new JScrollPane(displayWords);// think i am scraping this
+        displayWords.setFont(displayWords.getFont().deriveFont(18f)); 
         cons.gridx = 2;
         cons.gridy =1;
         cons.weightx = 1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
+        displayWords.setEditable(false); //cant edit it
+        displayWords.setLineWrap(true); // so it will wrap around when it gets too big
+        displayWords.setColumns(28);
+        //displayWords.setRows(20);
         master.getContentPane().add(displayWords, cons); //It dont work, and I dont wanna do it rn, ill fix it later
         
         imageLabel3 = new JLabel("");

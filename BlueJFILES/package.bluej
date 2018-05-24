@@ -2,10 +2,10 @@
 dependency1.from=Main
 dependency1.to=Board
 dependency1.type=UsesDependency
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
+editor.fx.0.height=747
+editor.fx.0.width=818
+editor.fx.0.x=551
+editor.fx.0.y=111
 objectbench.height=83
 objectbench.width=904
 package.divider.horizontal=0.6
