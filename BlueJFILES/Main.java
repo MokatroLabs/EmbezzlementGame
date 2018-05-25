@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Main {
     static Board board;
     static Mechanics economy;
+    static Deck deck;
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
