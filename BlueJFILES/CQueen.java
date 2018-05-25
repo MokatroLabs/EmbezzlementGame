@@ -9,6 +9,30 @@
  */
 public class CQueen extends Computer
 {
-    // instance variables - replace the example below with your own
+   
+    public void activeAbility()
+   {
+       setMoney(5000);
+   }
+   public void fundraise()
+   {
+       setMoney(money+500);
+       setReputation(reputation+.5);
+   }
+   public void embezzle()
+   {
     
+   }
+   public void upgrade()
+   {
+       
+   }
+   public void toggleView()
+   {
+       
+   }
+   public void interact()
+   {
+       
+   }
 }

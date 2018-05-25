@@ -9,7 +9,7 @@ public class HQueen extends Human {
 		super.character = "Queen";
 	}
 	
-	public void fundRaise()
+	public void fundraise()
 	{
 		money += 500;
 		reputation += .5;

@@ -17,7 +17,10 @@ public class HQueen extends Human {
 	{
 		reputation -=  2.5;
 		money += 5000;  // Amount of Increase TBD
+		coolDown = 5;
 	}
+
+	
 	
 	
 	

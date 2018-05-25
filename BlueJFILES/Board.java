@@ -223,7 +223,9 @@ public class Board implements ActionListener {
         
         
     }
-    
-    
+    public int promptAction()
+    {
+        return 1; 
+    }
 
 }

@@ -5,6 +5,13 @@ public class Mechanics {
     private int moneyPot = 0;
     private int turnCount = 0;
     final int maxTurns = 150;
+
+    public Mechanics()
+    {
+        
+    }
+    // setter for moneyPot
+
    
     public Mechanics( int moneyPot)
     {

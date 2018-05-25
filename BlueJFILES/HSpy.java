@@ -9,5 +9,14 @@
  */
 public class HSpy extends Human
 {
+    public HSpy()
+    {
+        super();
+        super.character = "Spy";
+    }
     
+    public void interact() 
+    {
+        
+    }
 }

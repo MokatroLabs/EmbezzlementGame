@@ -8,7 +8,7 @@ public interface Player {
 	
 	void interact();
 	
-	void fundRaise();
+	void fundraise();
 	
 	void upgrade();
 	
@@ -22,10 +22,11 @@ public interface Player {
 	String getChar();
 	
 	//Setters
-	void setReputation();
+	void setReputation(double rep);
 	
-	void setMoney();
+	void setMoney(int ammount);
 	
+	boolean isHuman();
 	
 
 }
