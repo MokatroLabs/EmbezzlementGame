@@ -33,7 +33,17 @@ public class CQueen extends Computer
    public void interact()
    {
     }
-   
+   public int findMove(Player choice)
+    {
+        if(coolDown == 0)
+        {
+            choice.activeAbility();
+
+        }
+        
+        
+        return 1;
+    }
    
    
 }

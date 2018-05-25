@@ -26,6 +26,11 @@ public class CFat extends Computer
     {
     }
     
-    
+    public int findMove()
+    {
+        
+        
+        return 1;
+    }
     
 }
