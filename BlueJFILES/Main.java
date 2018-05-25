@@ -15,6 +15,10 @@ public class Main {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         Board board = new Board();
+
+        board.makeTitleScreen();
+        board.showTitleScreen();
+
         Mechanics economy = new Mechanics();
         CQueen comp = new CQueen();
         HSpy  human = new HSpy();
@@ -34,18 +38,6 @@ public class Main {
     }
     public static void takeTurn(Player current)
     {
-        int action=0;
-        if(current.isHuman())
-            action = board.promptAction();
-        else
-        {
-            //implement findMove() function 
-        }
-        if (action == 1)
-            current.embezzle();
-        else if (action == 2)
-            current.fundraise();
 
-        
     }
 }
