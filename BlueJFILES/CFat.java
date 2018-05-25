@@ -26,6 +26,7 @@ public class CFat extends Computer
     {
     }
     
+
     public int findMove(Player choice)
     {
         if(coolDown == 0)

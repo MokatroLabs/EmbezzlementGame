@@ -9,26 +9,23 @@ public class HQueen extends Human {
         super.character = "Queen";
     }
     
-    public void fundraise()
-    {
-        money += 300;
-        reputation += .5;
-        
-    }
-    
-    public void activeAbility() // Special Active Ability: Royal Wealth
-    {
-        coolDown = 5;
-        reputation -=  2.5;
-        money += 5000;  // Amount of Increase TBD
-    } 
+
+    public void activeAbility()
+   {
+       money += 1000;
+       reputation -= 2.5;
+       coolDown = 5;
+   }
+   
+   public void fundraise()
+   {
+       money += 300;
+       reputation += .5;
+   }
     
     public void interact()
     {
     
     }
-    
-    
-    
-    
+
 }
