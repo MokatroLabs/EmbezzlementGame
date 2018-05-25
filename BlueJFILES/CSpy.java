@@ -30,13 +30,13 @@ public class CSpy extends Computer
     {
         if(coolDown == 0)
         {
-            choice.activeAbility();
+            return 5;
         }else
         {
-            choice.embezzle();
+            return 2;
         }
         
-        return 1;
+        
     }
     
         
