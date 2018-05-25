@@ -19,4 +19,13 @@ public class HBus extends Human
     {
         coolDown = 5;
     }
+    
+    public void interact()
+    {
+        
+    }
+    public void paycheck()
+    {
+        money += 150 + (reputation-50)*150;
+    }
 }

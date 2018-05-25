@@ -1,4 +1,5 @@
 #BlueJ class context
+<<<<<<< HEAD
 comment0.target=Board
 comment1.params=
 comment1.target=Board()
@@ -25,3 +26,12 @@ comment8.target=void\ makeCharScreen()
 comment9.params=
 comment9.target=void\ hideCharScreen()
 numComments=13
+=======
+comment0.params=
+comment0.target=Board()
+comment1.params=theEvent
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.params=
+comment2.target=int\ promptAction()
+numComments=3
+>>>>>>> d83b0d4e436f42ba677a984cc827cee68ac1b315
