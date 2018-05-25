@@ -26,7 +26,7 @@ public class HFat extends Human
     }
     public void fundraise()
     {
-        setMoney(getMoney() + 200);
+        
         reputation += 0.5;
     }
     public void embezzle()

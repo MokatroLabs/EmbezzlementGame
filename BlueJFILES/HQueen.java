@@ -11,8 +11,9 @@ public class HQueen extends Human {
     
     public void fundraise()
     {
-        money += 500;
+        money += 75;
         reputation += .5;
+        
     }
     
     public void activeAbility() // Special Active Ability: Royal Wealth

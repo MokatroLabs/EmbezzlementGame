@@ -27,7 +27,7 @@ public class CFat extends Computer
     }
     public void fundraise()
     {
-        setMoney(getMoney() + 200);
+        
         reputation += 0.5;
     }
     public void embezzle()
