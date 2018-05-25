@@ -17,6 +17,7 @@ public class CSpy extends Computer
     public void activeAbility()
     {
         coolDown = 5;
+        
     }
     
     public void embezzle()
