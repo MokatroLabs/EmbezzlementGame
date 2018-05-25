@@ -9,31 +9,20 @@
  */
 public class CSpy extends Computer
 {
+    public CSpy(){
+        super();
+        this.character = "Spy";
+    }
+    
     public void activeAbility()
     {
-        
+        coolDown = 5;
     }
-    public void fundRaise()
-    {
-        setMoney(300);
-        setReputation(.5);
-        
-    }
+    
     public void embezzle()
     {
-        money += 500;
-        reputation -= 0.7;
+        money += 750;
+        reputation -= 0.25;
     }
-    public void upgrade()
-    {
-        
-    }
-    public void toggleView()
-    {
-        
-    }
-    public void interact()
-    {
-        
-    }
+    
 }

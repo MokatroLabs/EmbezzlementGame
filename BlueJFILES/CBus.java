@@ -2,16 +2,17 @@
 
 
 /**
- * Write a description of class CFat here.
+ * Write a description of class CCap here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class CFat extends Computer
+public class CBus extends Computer
 {
-    public CFat(){
+    public CBus(){
         super();
-        this.character = "Father";
+        this.character = "Business Man";
+        this.reputation = 25;
     }
     
     public void activeAbility()
@@ -19,8 +20,7 @@ public class CFat extends Computer
         coolDown = 5;
     }
     
-    public void interact(){
-    }
     
     
+   
 }

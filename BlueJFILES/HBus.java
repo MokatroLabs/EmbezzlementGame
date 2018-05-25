@@ -9,5 +9,14 @@
  */
 public class HBus extends Human
 {
+    public HBus(){
+        super();
+        this.character = "Business Man";
+        this.reputation = 25;
+    }
     
+    public void activeAbility()
+    {
+        coolDown = 5;
+    }
 }
