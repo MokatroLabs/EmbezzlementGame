@@ -24,17 +24,12 @@ public class CQueen extends Computer
    
    public void fundraise()
    {
-<<<<<<< HEAD
        money += 300;
        reputation += .5;
    }
+ 
+
     
-=======
-
-       money += 300;
-       reputation += .5;
-
-    }
    
    public void interact()
    {
@@ -62,7 +57,4 @@ public class CQueen extends Computer
         
         
     }
-   
-   
->>>>>>> ce8e48d271be84933c5ba94a7cf9f0cfe2b4677c
 }

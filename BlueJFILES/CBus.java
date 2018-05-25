@@ -19,15 +19,9 @@ public class CBus extends Computer
     {
         coolDown = 5;
     }
-    
-<<<<<<< HEAD
-    public void embezzle()
-=======
-    public void interact()
-    {
-    }
+   
     public void paycheck()
->>>>>>> ce8e48d271be84933c5ba94a7cf9f0cfe2b4677c
+
     {
         money += 150 + (reputation-50)*150;
     }
