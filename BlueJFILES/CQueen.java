@@ -37,12 +37,24 @@ public class CQueen extends Computer
     {
         if(coolDown == 0)
         {
-            choice.activeAbility();
+            return 5;
 
+        }
+        else if (choice.getReputation() < 30)
+        {
+            return 1;
+        }
+        /*else if(choice.getReputation() < 40)
+        {
+            return 3;
+        }*/
+        else 
+        {
+            return 2;
         }
         
         
-        return 1;
+        
     }
    
    
