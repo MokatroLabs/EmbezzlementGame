@@ -19,7 +19,18 @@ public class CFat extends Computer
         coolDown = 5;
     }
     
-    public void interact(){
+    public void interact()
+    {
+    }
+    public void fundraise()
+    {
+        setMoney(getMoney() + 200);
+        reputation += 0.5;
+    }
+    public void embezzle()
+    {
+        money += 200;
+        reputation -= 0.7;
     }
     
     

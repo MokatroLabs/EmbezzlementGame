@@ -24,7 +24,7 @@ public class CQueen extends Computer
    
    public void fundraise()
    {
-       money +=  500;
+       setMoney(getMoney() + 500);
        reputation += .5;
    }
    
