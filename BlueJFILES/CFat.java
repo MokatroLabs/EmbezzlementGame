@@ -25,16 +25,7 @@ public class CFat extends Computer
     public void interact()
     {
     }
-    public void fundraise()
-    {
-        
-        reputation += 0.5;
-    }
-    public void embezzle()
-    {
-        money += 200;
-        reputation -= 0.7;
-    }
+    
     
     
 }
