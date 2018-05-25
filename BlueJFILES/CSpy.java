@@ -21,7 +21,8 @@ public class CSpy extends Computer
     }
     public void embezzle()
     {
-        
+        money += 500;
+        reputation -= 0.7;
     }
     public void upgrade()
     {
