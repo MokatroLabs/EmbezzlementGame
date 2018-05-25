@@ -10,7 +10,7 @@
 import java.util.ArrayList;
 public class Main {
     static Board board;
-    Mechanics economy;
+    static Mechanics economy;
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -41,9 +41,15 @@ public class Main {
         {
             //implement findMove() function 
         }
-        if (action == 1)
+        if (action == 1) {
             current.embezzle();
-        else if (action == 2)
+            if((current.getChar()).equals("Spy")){
+                economy.setMoney(economy.getMoney() - 750);
+            
+            }else {
+                economy.setMoney(economy.getMoney() - 500);
+            }
+        }else if (action == 2)
             current.fundraise();
 
         
