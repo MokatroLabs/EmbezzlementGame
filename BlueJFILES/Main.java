@@ -20,6 +20,7 @@ public class Main {
         HSpy  human = new HSpy();
         ArrayList<Player> players = new ArrayList<Player>();
         int currentPlayer = 0;
+        int round = 0;
         for (int play = 0; play< 2; play++)
         {
             if(play == 0)
@@ -27,12 +28,18 @@ public class Main {
             players.set(play,comp);
         }
         while(economy.getTurns() <= maxTurns) {
+            if(round >= 4)
+                round = 0;
             if (currentPlayer  < players.size() )
                 currentPlayer++;
             else
                 currentPlayer = 1;
+            if(economy.getTurns() %5 == 0)
+                players.get(currentPlayer).paycheck();
             takeTurn(players.get(currentPlayer));
             
+            
+            if(round == 4)
             economy.setTurns(economy.getTurns() + 1);
         }
 
@@ -58,10 +65,7 @@ public class Main {
         }else if (action == 2)
             {   current.fundraise();
                 if(current.getChar().equals("Queen"))
-                    economy.setMoney(economy.getMoney() + 400);
+                    economy.setMoney(economy.getMoney() + 200);
             }
-
-        
-
     }
 }
