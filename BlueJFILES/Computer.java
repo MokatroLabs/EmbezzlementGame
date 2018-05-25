@@ -23,28 +23,28 @@ public abstract class Computer implements Player {
     }
     
     // Actions
-    public void fundraise()
+    public void fundraise() //Action 1
     {
         money += 300;
         reputation += .25;
     }
     
-    public void embezzle()
+    public void embezzle() //Action 2
     {   
         money += 500;
         reputation -= .25;
     }
     
-    public void interact(){
+    public void interact(){ //Action 3
         reputation += .5;
     }
     
-    public void upgrade()
+    public void upgrade() // Action 4
     {
         
     }
     
-    public void activeAbility()
+    public void activeAbility() //Action 5
     {
         
     }
@@ -100,7 +100,11 @@ public abstract class Computer implements Player {
     {
         return 1;
     }
-    
+    //Gives paycheck
+    public void paycheck()
+    {
+        money += 100 + (reputation-50)*100;
+    }
     public String toString()
     {
           return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";

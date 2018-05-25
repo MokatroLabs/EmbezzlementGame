@@ -24,7 +24,7 @@ public class CSpy extends Computer
     public void embezzle()
     {
         money += 750;
-        reputation -= 0.25;
+        reputation -= 0.3;
     }
     public int findMove(Player choice)
     {
@@ -40,6 +40,8 @@ public class CSpy extends Computer
     }
     
         
+    
+    
     
     
 }

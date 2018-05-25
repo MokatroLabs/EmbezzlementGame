@@ -1,10 +1,14 @@
 #BlueJ class context
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8697be096f0d40e4aae21272f655fc658fd40403
 comment0.target=Main
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment2.params=current
 comment2.target=void\ takeTurn(Player)
+<<<<<<< HEAD
 comment3.params=Sound
 comment3.target=void\ PlaySound(java.io.File)
 numComments=4
@@ -15,3 +19,6 @@ comment1.params=current
 comment1.target=void\ takeTurn(Player)
 numComments=2
 >>>>>>> b054fdcfb1e69a953b312009d4998325b733e98f
+=======
+numComments=3
+>>>>>>> 8697be096f0d40e4aae21272f655fc658fd40403

@@ -9,6 +9,21 @@ public class HQueen extends Human {
         super.character = "Queen";
     }
     
+<<<<<<< HEAD
+    public void activeAbility()
+   {
+       money += 1000;
+       reputation -= 2.5;
+       coolDown = 5;
+   }
+   
+   public void fundraise()
+   {
+       money += 300;
+       reputation += .5;
+   }
+    
+=======
     public void fundraise()
     {
         money += 300;
@@ -27,6 +42,7 @@ public class HQueen extends Human {
     {
     
     }
+>>>>>>> ce8e48d271be84933c5ba94a7cf9f0cfe2b4677c
     
     
     

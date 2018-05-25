@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class Main {
     static Board board;
     static Mechanics economy;
+    static Deck deck;
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -23,8 +24,8 @@ public class Main {
         PlaySound(OST);
         Board board = new Board();
         Mechanics economy = new Mechanics();
-        CQueen comp = new CQueen();
-        HSpy  human = new HSpy();
+        CBus comp = new CBus();
+        HQueen  human = new HQueen();
         ArrayList<Player> players = new ArrayList<Player>();
         int currentPlayer = 0;
         int round = 0;

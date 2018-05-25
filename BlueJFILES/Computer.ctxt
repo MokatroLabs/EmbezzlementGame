@@ -19,7 +19,13 @@ comment16.target=boolean\ isHuman()
 comment17.params=
 comment17.target=int\ findMove()
 comment18.params=
+<<<<<<< HEAD
 comment18.target=java.lang.String\ toString()
+=======
+comment18.target=void\ paycheck()
+comment19.params=
+comment19.target=java.lang.String\ toString()
+>>>>>>> ce8e48d271be84933c5ba94a7cf9f0cfe2b4677c
 comment2.params=newReputation\ newMoney\ Char
 comment2.target=Computer(double,\ int,\ java.lang.String)
 comment3.params=
@@ -36,4 +42,8 @@ comment8.params=
 comment8.target=double\ getReputation()
 comment9.params=
 comment9.target=int\ getMoney()
+<<<<<<< HEAD
 numComments=19
+=======
+numComments=20
+>>>>>>> ce8e48d271be84933c5ba94a7cf9f0cfe2b4677c

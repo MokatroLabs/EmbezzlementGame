@@ -17,13 +17,19 @@ public class CQueen extends Computer
     
     public void activeAbility()
    {
-       money += 5000;
+       money += 1000;
        reputation -= 2.5;
        coolDown = 5;
    }
    
    public void fundraise()
    {
+<<<<<<< HEAD
+       money += 300;
+       reputation += .5;
+   }
+    
+=======
 
        money += 300;
        reputation += .5;
@@ -44,10 +50,10 @@ public class CQueen extends Computer
         {
             return 1;
         }
-        else if(choice.getReputation() < 40)
+        /*else if(choice.getReputation() < 40)
         {
             return 3;
-        }
+        }*/
         else 
         {
             return 2;
@@ -58,4 +64,5 @@ public class CQueen extends Computer
     }
    
    
+>>>>>>> ce8e48d271be84933c5ba94a7cf9f0cfe2b4677c
 }
