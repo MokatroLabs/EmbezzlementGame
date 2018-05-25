@@ -16,8 +16,8 @@ public class Main {
         // TODO Auto-generated method stub
         Board board = new Board();
         Mechanics economy = new Mechanics();
-        CQueen comp = new CQueen();
-        HSpy  human = new HSpy();
+        CBus comp = new CBus();
+        HQueen  human = new HQueen();
         ArrayList<Player> players = new ArrayList<Player>();
         int currentPlayer = 0;
         for (int play = 0; play< 2; play++)

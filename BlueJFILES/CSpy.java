@@ -27,4 +27,6 @@ public class CSpy extends Computer
         reputation -= 0.25;
     }
     
+    
+    
 }
