@@ -1,9 +1,8 @@
 #BlueJ class context
-comment0.target=Board
-comment1.params=
-comment1.target=Board()
-comment2.params=theEvent
-comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
-comment3.params=
-comment3.target=int\ promptAction()
-numComments=4
+comment0.params=
+comment0.target=Board()
+comment1.params=theEvent
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.params=
+comment2.target=int\ promptAction()
+numComments=3

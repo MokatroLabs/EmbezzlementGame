@@ -14,9 +14,11 @@ public class HFat extends Human
         this.character = "Father";
     }
     
-    public void activeAbility()
+    public void activeAbility(Player choice, Player father)
     {
         coolDown = 5;
+        choice.setMoney(choice.getMoney() - 300);
+        father.setMoney(father.getMoney() + 300);
     }
     
     public void interact()
@@ -24,7 +26,7 @@ public class HFat extends Human
     }
     public void fundraise()
     {
-        setMoney(getMoney() + 200);
+        
         reputation += 0.5;
     }
     public void embezzle()

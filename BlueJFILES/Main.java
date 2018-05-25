@@ -64,8 +64,13 @@ public class Main {
             }
         }else if (action == 2)
             {   current.fundraise();
-                if(current.getChar().equals("Queen"))
-                    economy.setMoney(economy.getMoney() + 200);
+
+                if(current.getChar().equals("Queen")){
+                    economy.setMoney(economy.getMoney() + 300);
+                }else {
+                    economy.setMoney(economy.getMoney() + 400);
+                }
+
             }
     }
 }
