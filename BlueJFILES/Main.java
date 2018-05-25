@@ -92,7 +92,7 @@ public class Main {
             Clip clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(Sound));
             clip.start();
-                           BGM = new AudioStream(new FileInputStream("OST1.WAV"));
+                           BGM = new AudioStream(new FileInputStream("OST.WAV"));
                MD = BGM.getData();
                loop = new ContinuousAudioDataStream(MD);
         }catch(Exception e){}
