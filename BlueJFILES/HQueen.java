@@ -11,7 +11,7 @@ public class HQueen extends Human {
     
     public void fundraise()
     {
-        money += 75;
+        money += 300;
         reputation += .5;
         
     }

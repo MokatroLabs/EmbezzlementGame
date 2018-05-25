@@ -31,7 +31,7 @@ public abstract class Human implements Player {
     // Actions
     public void fundraise() {
         // TODO Auto-generated method stub
-        money += 300;
+        money += 200;
         reputation += .25;
     }
     

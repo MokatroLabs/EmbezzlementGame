@@ -24,8 +24,10 @@ public class CQueen extends Computer
    
    public void fundraise()
    {
-       money += 75;
-       reputation += 0.5;
+
+       money += 300;
+       reputation += .5;
+
     }
    
    public void interact()
