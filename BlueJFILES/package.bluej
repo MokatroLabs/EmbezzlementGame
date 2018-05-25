@@ -1,14 +1,19 @@
 #BlueJ package file
-dependency1.from=Main
-dependency1.to=Board
+dependency1.from=Deck
+dependency1.to=Card
 dependency1.type=UsesDependency
 dependency2.from=Main
+<<<<<<< HEAD
 dependency2.to=Mechanics
+=======
+dependency2.to=Board
+>>>>>>> fff39d38f5da4df26912b27cfc8bdb2ab2edc77e
 dependency2.type=UsesDependency
 dependency3.from=Main
 dependency3.to=CQueen
 dependency3.type=UsesDependency
 dependency4.from=Main
+<<<<<<< HEAD
 dependency4.to=HSpy
 dependency4.type=UsesDependency
 dependency5.from=Main
@@ -29,6 +34,31 @@ package.editor.y=-6
 package.frame.height=836
 package.frame.width=1548
 package.numDependencies=5
+=======
+dependency4.to=CQueen
+dependency4.type=UsesDependency
+dependency5.from=Main
+dependency5.to=HSpy
+dependency5.type=UsesDependency
+dependency6.from=Main
+dependency6.to=Player
+dependency6.type=UsesDependency
+editor.fx.0.height=1098
+editor.fx.0.width=1938
+editor.fx.0.x=-31
+editor.fx.0.y=184
+objectbench.height=165
+objectbench.width=904
+package.divider.horizontal=0.6
+package.divider.vertical=0.7089678510998308
+package.editor.height=395
+package.editor.width=798
+package.editor.x=392
+package.editor.y=277
+package.frame.height=710
+package.frame.width=946
+package.numDependencies=6
+>>>>>>> fff39d38f5da4df26912b27cfc8bdb2ab2edc77e
 package.numTargets=17
 package.showExtends=true
 package.showUses=true
@@ -50,8 +80,13 @@ target10.name=CCap
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=80
+<<<<<<< HEAD
 target10.x=200
 target10.y=370
+=======
+target10.x=400
+target10.y=290
+>>>>>>> fff39d38f5da4df26912b27cfc8bdb2ab2edc77e
 target11.height=50
 target11.name=HFat
 target11.showInterface=false
@@ -78,8 +113,13 @@ target14.name=Computer
 target14.showInterface=false
 target14.type=AbstractTarget
 target14.width=90
+<<<<<<< HEAD
 target14.x=310
 target14.y=190
+=======
+target14.x=150
+target14.y=250
+>>>>>>> fff39d38f5da4df26912b27cfc8bdb2ab2edc77e
 target15.height=50
 target15.name=Mechanics
 target15.showInterface=false
@@ -98,6 +138,10 @@ target17.height=50
 target17.name=Main
 target17.showInterface=false
 target17.type=ClassTarget
+<<<<<<< HEAD
+=======
+target17.typeParameters=
+>>>>>>> fff39d38f5da4df26912b27cfc8bdb2ab2edc77e
 target17.width=80
 target17.x=240
 target17.y=0
@@ -113,15 +157,25 @@ target3.name=CSpy
 target3.showInterface=false
 target3.type=ClassTarget
 target3.width=80
+<<<<<<< HEAD
 target3.x=420
 target3.y=280
+=======
+target3.x=90
+target3.y=10
+>>>>>>> fff39d38f5da4df26912b27cfc8bdb2ab2edc77e
 target4.height=50
 target4.name=CQueen
 target4.showInterface=false
 target4.type=ClassTarget
 target4.width=80
+<<<<<<< HEAD
 target4.x=220
 target4.y=300
+=======
+target4.x=310
+target4.y=290
+>>>>>>> fff39d38f5da4df26912b27cfc8bdb2ab2edc77e
 target5.height=50
 target5.name=board2
 target5.showInterface=false
