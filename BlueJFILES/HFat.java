@@ -9,5 +9,16 @@
  */
 public class HFat extends Human
 {
+    public HFat(){
+        super();
+        this.character = "Father";
+    }
     
+    public void activeAbility()
+    {
+        coolDown = 5;
+    }
+    
+    public void interact(){
+    }
 }

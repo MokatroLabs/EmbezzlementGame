@@ -15,8 +15,14 @@ public class HSpy extends Human
         super.character = "Spy";
     }
     
-    public void interact() 
+    public void activeAbility()
     {
-        
+        coolDown = 5;
+    }
+    
+    public void embezzle()
+    {
+        money += 750;
+        reputation -= 0.25;
     }
 }
