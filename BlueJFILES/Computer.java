@@ -56,7 +56,7 @@ public abstract class Computer implements Player {
     
     public int getMoney() {
         // TODO Auto-generated method stub
-        return 0;
+        return money;
     }
     
     public String getChar() {
@@ -75,7 +75,7 @@ public abstract class Computer implements Player {
     
     public void setMoney(int ammount)
     {
-        money += ammount;
+        money = ammount;
     }
     
     public void setCoolDown(int newCoolDown){

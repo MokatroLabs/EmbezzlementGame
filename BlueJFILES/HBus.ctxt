@@ -1,8 +1,17 @@
 #BlueJ class context
-comment0.target=HBus
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ HCap\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.params=
+comment0.target=HBus()
 comment1.params=
+<<<<<<< HEAD
 comment1.target=HBus()
 comment2.params=
 comment2.target=void\ activeAbility()
-numComments=3
+comment3.params=
+comment3.target=void\ fundraise()
+comment4.params=
+comment4.target=void\ embezzle()
+numComments=5
+=======
+comment1.target=void\ activeAbility()
+numComments=2
+>>>>>>> 99080b92e39ea1807724955f655294f2126d2d7a

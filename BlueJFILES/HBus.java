@@ -19,4 +19,10 @@ public class HBus extends Human
     {
         coolDown = 5;
     }
+    
+    public void interact()
+    {
+        
+    }
+    
 }

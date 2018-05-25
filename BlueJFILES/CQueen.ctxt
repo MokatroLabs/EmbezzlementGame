@@ -7,4 +7,12 @@ comment2.params=
 comment2.target=void\ activeAbility()
 comment3.params=
 comment3.target=void\ fundraise()
-numComments=4
+comment4.params=
+comment4.target=void\ interact()
+<<<<<<< HEAD
+numComments=5
+=======
+comment5.params=choice
+comment5.target=int\ findMove(Player)
+numComments=6
+>>>>>>> e5e43527c5a4926632e2844d34824f862ee932a4

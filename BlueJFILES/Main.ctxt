@@ -1,4 +1,5 @@
 #BlueJ class context
+<<<<<<< HEAD
 comment0.target=Main
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
@@ -7,3 +8,10 @@ comment2.target=void\ takeTurn(Player)
 comment3.params=Sound
 comment3.target=void\ PlaySound(java.io.File)
 numComments=4
+=======
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=current
+comment1.target=void\ takeTurn(Player)
+numComments=2
+>>>>>>> b054fdcfb1e69a953b312009d4998325b733e98f
