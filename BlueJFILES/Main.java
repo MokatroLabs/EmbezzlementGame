@@ -1,7 +1,10 @@
- import java.io.File;
- import javax.sound.sampled.AudioSystem;
- import javax.sound.sampled.Clip;
-
+import java.io.File;
+import java.awt.event.*;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.swing.*;
+import sun.audio.*;
+import java.io.*;
 
 /**
  * Write a description of class Main here.
@@ -39,7 +42,8 @@ public class Main {
             else
                 currentPlayer = 1;
             if(economy.getTurns() %5 == 0)
-                players.get(currentPlayer).paycheck();
+                players.get(currentPlayer)
+                .paycheck();
             takeTurn(players.get(currentPlayer));
             
             
@@ -79,11 +83,18 @@ public class Main {
     }
     static void PlaySound(File Sound)
     {
+        ContinuousAudioDataStream loop = null;
+        AudioPlayer MGP = AudioPlayer.player;
+        AudioStream BGM;
+        AudioData MD;        
         try{
             Clip clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(Sound));
             clip.start();
-            
+                           BGM = new AudioStream(new FileInputStream("OST1.WAV"));
+               MD = BGM.getData();
+               loop = new ContinuousAudioDataStream(MD);
         }catch(Exception e){}
+        MGP.start(loop);
     }
 }

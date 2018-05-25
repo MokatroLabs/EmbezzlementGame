@@ -1,10 +1,24 @@
 #BlueJ class context
+<<<<<<< HEAD
 comment0.target=CFat
+<<<<<<< HEAD
 comment0.text=\n\ Write\ a\ description\ of\ class\ CFat\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+=======
+>>>>>>> b054fdcfb1e69a953b312009d4998325b733e98f
 comment1.params=
 comment1.target=CFat()
+comment2.params=choice\ father
+comment2.target=void\ activeAbility(Player,\ Player)
+=======
+comment0.params=
+comment0.target=CFat()
+comment1.params=choice\ father
+comment1.target=void\ activeAbility(Player,\ Player)
 comment2.params=
-comment2.target=void\ activeAbility()
+comment2.target=void\ interact()
+>>>>>>> 99080b92e39ea1807724955f655294f2126d2d7a
 comment3.params=
-comment3.target=void\ interact()
-numComments=4
+comment3.target=void\ fundraise()
+comment4.params=
+comment4.target=void\ embezzle()
+numComments=5
