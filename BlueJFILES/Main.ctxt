@@ -1,7 +1,6 @@
 #BlueJ class context
-comment0.target=Main
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-comment2.params=current
-comment2.target=void\ takeTurn(Player)
-numComments=3
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=current
+comment1.target=void\ takeTurn(Player)
+numComments=2

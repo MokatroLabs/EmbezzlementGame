@@ -1,10 +1,8 @@
 #BlueJ class context
-comment0.target=HSpy
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ HSpy\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=HSpy()
-comment2.params=choice
-comment2.target=void\ activeAbility(Player)
-comment3.params=
-comment3.target=void\ embezzle()
-numComments=4
+comment0.params=
+comment0.target=HSpy()
+comment1.params=choice
+comment1.target=void\ activeAbility(Player)
+comment2.params=
+comment2.target=void\ embezzle()
+numComments=3
