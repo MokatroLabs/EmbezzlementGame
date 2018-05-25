@@ -7,6 +7,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
+import java.util.ArrayList;
 public class CFat extends Computer
 {
     public CFat(){
@@ -14,9 +15,11 @@ public class CFat extends Computer
         this.character = "Father";
     }
     
-    public void activeAbility()
+    public void activeAbility(Player choice, Player father )
     {
         coolDown = 5;
+        choice.setMoney(choice.getMoney() - 300);
+        father.setMoney(father.getMoney() + 300);
     }
     
     public void interact()
