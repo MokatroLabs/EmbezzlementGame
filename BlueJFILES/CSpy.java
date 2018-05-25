@@ -26,5 +26,20 @@ public class CSpy extends Computer
         money += 750;
         reputation -= 0.25;
     }
+    public int findMove(Player choice)
+    {
+        if(coolDown == 0)
+        {
+            choice.activeAbility();
+        }else
+        {
+            choice.embezzle();
+        }
+        
+        return 1;
+    }
+    
+        
+    
     
 }

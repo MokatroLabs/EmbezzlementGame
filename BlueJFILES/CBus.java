@@ -23,7 +23,12 @@ public class CBus extends Computer
     public void interact()
     {
     }
-    
+    public int findMove()
+    {
+        
+        
+        return 1;
+    }
     
    
 }
