@@ -2,14 +2,14 @@
 
 
 /**
- * Write a description of class HCap here.
+ * Write a description of class CCap here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class HBus extends Human
+public class CBus extends Computer
 {
-    public HBus(){
+    public CBus(){
         super();
         this.character = "Business Man";
         this.reputation = 25;
@@ -19,4 +19,8 @@ public class HBus extends Human
     {
         coolDown = 5;
     }
+    
+    
+    
+   
 }

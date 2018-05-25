@@ -9,29 +9,29 @@
  */
 public class CFat extends Computer
 {
+    public CFat(){
+        super();
+        this.character = "Father";
+    }
+    
     public void activeAbility()
     {
-        
+        coolDown = 5;
     }
-    public void fundRaise()
+    
+    public void interact()
     {
-        setMoney(300);
-        setReputation(.5);
+    }
+    public void fundraise()
+    {
+        setMoney(getMoney() + 200);
+        reputation += 0.5;
     }
     public void embezzle()
     {
-        
+        money += 200;
+        reputation -= 0.7;
     }
-    public void upgrade()
-    {
-        
-    }
-    public void toggleView()
-    {
-        
-    }
-    public void interact()
-    {
-        
-    }
+    
+    
 }

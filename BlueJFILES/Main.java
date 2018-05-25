@@ -47,12 +47,21 @@ public class Main {
         {
             //implement findMove() function 
         }
-        if (action == 1)
+        if (action == 1) {
             current.embezzle();
-        else if (action == 2)
+            if((current.getChar()).equals("Spy")){
+                economy.setMoney(economy.getMoney() - 750);
+            
+            }else {
+                economy.setMoney(economy.getMoney() - 500);
+            }
+        }else if (action == 2)
             {   current.fundraise();
                 if(current.getChar().equals("Queen"))
                     economy.setMoney(economy.getMoney() + 400);
             }
+
+        
+
     }
 }
