@@ -7,6 +7,4 @@ comment2.params=choice
 comment2.target=void\ activeAbility(Player)
 comment3.params=
 comment3.target=void\ embezzle()
-comment4.params=choice
-comment4.target=int\ findMove(Player)
-numComments=5
+numComments=4

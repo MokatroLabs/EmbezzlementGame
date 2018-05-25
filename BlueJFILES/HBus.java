@@ -24,5 +24,8 @@ public class HBus extends Human
     {
         
     }
-    
+    public void paycheck()
+    {
+        money += 150 + (reputation-50)*150;
+    }
 }
