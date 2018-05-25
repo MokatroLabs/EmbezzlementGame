@@ -103,6 +103,6 @@ public abstract class Computer implements Player {
     
     public String toString()
     {
-                    return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
+          return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
     }
 }

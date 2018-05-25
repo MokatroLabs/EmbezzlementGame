@@ -1,4 +1,6 @@
- 
+ import java.io.File;
+ import javax.sound.sampled.AudioSystem;
+ import javax.sound.sampled.Clip;
 
 
 /**
@@ -14,6 +16,8 @@ public class Main {
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
+        File OST = new File("OST.WAV");
+        PlaySound(OST);
         Board board = new Board();
         Mechanics economy = new Mechanics();
         CQueen comp = new CQueen();
@@ -47,5 +51,14 @@ public class Main {
             current.fundraise();
 
         
+    }
+    static void PlaySound(File Sound)
+    {
+        try{
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(Sound));
+            clip.start();
+            
+        }catch(Exception e){}
     }
 }
