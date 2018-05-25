@@ -10,7 +10,7 @@
 import java.util.ArrayList;
 public class Main {
     static Board board;
-    Mechanics economy;
+    static Mechanics economy;
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -20,6 +20,12 @@ public class Main {
         HSpy  human = new HSpy();
         ArrayList<Player> players = new ArrayList<Player>();
         int currentPlayer = 0;
+        for (int play = 0; play< 2; play++)
+        {
+            if(play == 0)
+                players.set(play,human);
+            players.set(play,comp);
+        }
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  < players.size() )
                 currentPlayer++;
@@ -41,11 +47,21 @@ public class Main {
         {
             //implement findMove() function 
         }
-        if (action == 1)
+        if (action == 1) {
             current.embezzle();
-        else if (action == 2)
-            current.fundraise();
+            if((current.getChar()).equals("Spy")){
+                economy.setMoney(economy.getMoney() - 750);
+            
+            }else {
+                economy.setMoney(economy.getMoney() - 500);
+            }
+        }else if (action == 2)
+            {   current.fundraise();
+                if(current.getChar().equals("Queen"))
+                    economy.setMoney(economy.getMoney() + 400);
+            }
 
         
+
     }
 }
