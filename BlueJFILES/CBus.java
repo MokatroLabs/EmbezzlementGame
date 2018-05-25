@@ -30,14 +30,15 @@ public class CBus extends Computer
             return 5;
 
         }
-        else if (choice.getReputation() < 30)
+        else if (choice.getReputation() < 40)
         {
             return 1;
         }
-        else if(choice.getReputation() < 40)
+        /*else if(choice.getReputation() < 40)
         {
-            return 3;
+            //return 3;
         }
+        */
         else 
         {
             return 2;
