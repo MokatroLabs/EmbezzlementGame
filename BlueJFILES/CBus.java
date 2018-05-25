@@ -19,15 +19,9 @@ public class CBus extends Computer
     {
         coolDown = 5;
     }
-    public void fundraise()
+    
+    public void interact()
     {
-        
-        reputation += 0.5;
-    }
-    public void embezzle()
-    {
-        money += 200;
-        reputation -= 0.7;
     }
     
     

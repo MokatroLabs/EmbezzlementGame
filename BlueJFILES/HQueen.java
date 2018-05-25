@@ -21,10 +21,10 @@ public class HQueen extends Human {
         reputation -=  2.5;
         money += 5000;  // Amount of Increase TBD
     } 
-    public void embezzle()
+    
+    public void interact()
     {
-        money += 200;
-        reputation -= 0.7;
+    
     }
     
     
