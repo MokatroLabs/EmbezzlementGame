@@ -31,7 +31,7 @@ public abstract class Human implements Player {
     // Actions
     public void fundraise() {
         // TODO Auto-generated method stub
-        money += 300;
+        money += 200;
         reputation += .25;
     }
     
@@ -101,7 +101,11 @@ public abstract class Human implements Player {
     {
         
     }
-    
+    //gives paycheck
+    public void paycheck()
+    {
+        money += 100 + (reputation-50)*100;
+    }
     public String toString()
     {
                     return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";

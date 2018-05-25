@@ -27,6 +27,6 @@ public interface Player {
 	void setMoney(int ammount);
 	
 	boolean isHuman();
-	
+	void paycheck();
 
 }

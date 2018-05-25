@@ -1,6 +1,6 @@
  
 
-
+import java.util.ArrayList;
 /**
  * Write a description of class Deck here.
  *
@@ -9,5 +9,5 @@
  */
 public class Deck
 {
-    Card[] chance = new Card[56];
+    ArrayList<Card> deck = new ArrayList<Card>();
 }
