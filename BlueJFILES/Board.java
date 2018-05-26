@@ -167,6 +167,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         embezzleAction.setPreferredSize(buttonSize);
         cons.insets = buttonSpacing;
+        embezzleAction.setFont(newFont);
         master.getContentPane().add(embezzleAction, cons);
         
         raiseFundsAction = new JButton("Fundraise");
@@ -180,6 +181,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
         raiseFundsAction.setPreferredSize(buttonSize);
+        raiseFundsAction.setFont(newFont);
         master.getContentPane().add(raiseFundsAction, cons);
         
         interactAction = new JButton("Interact");
@@ -193,6 +195,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
         interactAction.setPreferredSize(buttonSize);
+        interactAction.setFont(newFont);
         master.getContentPane().add(interactAction, cons);
         
         skillTreeAction = new JButton("Skill Tree");
@@ -206,11 +209,12 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
         skillTreeAction.setPreferredSize(buttonSize);
+        skillTreeAction.setFont(newFont);
         master.getContentPane().add(skillTreeAction, cons);
         
         activeAction = new JButton("Active");
-        skillTreeAction.setActionCommand("Active");
-        skillTreeAction.addActionListener(this);
+        activeAction.setActionCommand("Active");
+        activeAction.addActionListener(this);
         cons.gridx = 0;
         cons.gridy = 3;
         cons.weightx = 1;
@@ -219,6 +223,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
         activeAction.setPreferredSize(buttonSize);
+        activeAction.setFont(newFont);
         master.getContentPane().add(activeAction, cons);
         
         master.pack();
@@ -293,6 +298,7 @@ public class Board implements ActionListener {
         master.getContentPane().add(titleScreen,  gbc_panelTitleScreen);
         titleScreen.setVisible(true);
         */
+       Font newFont = new Font("Serif", Font.PLAIN, 20);
        titleScreen = new JPanel();
        btnPlay = new JButton("Play");
        GridBagLayout gridBagLayout = new GridBagLayout();
@@ -307,6 +313,7 @@ public class Board implements ActionListener {
        gbc_btnPlay.fill = GridBagConstraints.NONE;
        btnPlay.setActionCommand("Play");
        btnPlay.addActionListener(this);
+       btnPlay.setFont(newFont);
        titleScreen.add(btnPlay, gbc_btnPlay);
        GridBagConstraints gbc_panelTitleScreen = new GridBagConstraints();
        gbc_panelTitleScreen.gridheight = 8;
@@ -343,17 +350,17 @@ public class Board implements ActionListener {
        
         /*lockInButton = new JButton("Lock in Champion");
         panelChampSelect = new JPanel();
-    GridBagConstrtitleScreen.setVisible(true);   aints gbc_panelChampSelect = new GridBagConstraints();
-    gbc_panelChampSelect.gridheight = 8;
-    gbc_panelChampSelect.gridwidth = 8;
-    gbc_panelChampSelect.insets = new Insets(0, 0, 5, 5);
-    gbc_panelChampSelect.fill = GridBagConstraints.BOTH;
-    gbc_panelChampSelect.gridx = 0;
-    gbc_panelChampSelect.gridy = 0;
-    panelChampSelect.setLayout(new GridBagLayout());
-    master.getContentPane().add(panelChampSelect,gbc_panelChampSelect);
-    panelChampSelect.setVisible(false);
-    */
+        GridBagConstrtitleScreen.setVisible(true);   aints gbc_panelChampSelect = new GridBagConstraints();
+        gbc_panelChampSelect.gridheight = 8;
+        gbc_panelChampSelect.gridwidth = 8;
+        gbc_panelChampSelect.insets = new Insets(0, 0, 5, 5);
+        gbc_panelChampSelect.fill = GridBagConstraints.BOTH;
+        gbc_panelChampSelect.gridx = 0;
+        gbc_panelChampSelect.gridy = 0;
+        panelChampSelect.setLayout(new GridBagLayout());
+        master.getContentPane().add(panelChampSelect,gbc_panelChampSelect);
+        panelChampSelect.setVisible(false);
+        */
 
         panelChampSelect = new JPanel();
         GridBagConstraints gbc_panelChampSelect = new GridBagConstraints();
@@ -386,6 +393,11 @@ public class Board implements ActionListener {
     
     }
     
+    public void updateBoard()
+    {
+    
+    }
+    
 
     public int promptAction()
     {
@@ -398,9 +410,28 @@ public class Board implements ActionListener {
             makeGameScreen();
             hideTitleScreen();
             showGameScreen();
-        
+            updateBoard();
         }
-        
+        if(theEvent.getActionCommand().equals("Embezzle"))
+        {
+            System.out.println("Embezzle");
+        }
+        if(theEvent.getActionCommand().equals("Skill Tree"))
+        {
+            System.out.println("Skill Tree");
+        }
+        if(theEvent.getActionCommand().equals("Interact"))
+        {
+            System.out.println("Interact");
+        }
+        if(theEvent.getActionCommand().equals("Active"))
+        {
+            System.out.println("Active");
+        }
+        if(theEvent.getActionCommand().equals("Fundraise"))
+        {
+            System.out.println("Fundraise");
+        }
     }
 
 
