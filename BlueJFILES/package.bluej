@@ -3,44 +3,28 @@ dependency1.from=CSpy
 dependency1.to=Player
 dependency1.type=UsesDependency
 dependency10.from=Main
-dependency10.to=Deck
+dependency10.to=Mechanics
 dependency10.type=UsesDependency
-<<<<<<< HEAD
-dependency11.from=CQueen
-dependency11.to=Player
-dependency11.type=UsesDependency
-dependency12.from=CBus
-dependency12.to=Player
-dependency12.type=UsesDependency
-dependency13.from=CFat
-dependency13.to=Player
-dependency13.type=UsesDependency
-dependency2.from=Main
-dependency2.to=Board
-=======
 dependency11.from=Main
-dependency11.to=CBus
+dependency11.to=Deck
 dependency11.type=UsesDependency
 dependency12.from=Main
-dependency12.to=HQueen
+dependency12.to=CBus
 dependency12.type=UsesDependency
 dependency13.from=Main
-dependency13.to=Player
+dependency13.to=HQueen
 dependency13.type=UsesDependency
+dependency14.from=Main
+dependency14.to=Player
+dependency14.type=UsesDependency
 dependency2.from=CFat
 dependency2.to=Player
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
 dependency2.type=UsesDependency
 dependency3.from=CBus
 dependency3.to=Player
 dependency3.type=UsesDependency
-<<<<<<< HEAD
-dependency4.from=Main
-dependency4.to=CBus
-=======
 dependency4.from=CQueen
 dependency4.to=Player
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
 dependency4.type=UsesDependency
 dependency5.from=Deck
 dependency5.to=Card
@@ -48,41 +32,14 @@ dependency5.type=UsesDependency
 dependency6.from=HFat
 dependency6.to=Player
 dependency6.type=UsesDependency
-<<<<<<< HEAD
-dependency7.from=Deck
-dependency7.to=Card
-dependency7.type=UsesDependency
-dependency8.from=HFat
-dependency8.to=Player
-dependency8.type=UsesDependency
-dependency9.from=HSpy
-dependency9.to=Player
-dependency9.type=UsesDependency
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=-32000
-editor.fx.0.y=-32000
-objectbench.height=102
-objectbench.width=906
-package.divider.horizontal=0.6
-package.divider.vertical=0.8213114754098361
-package.editor.height=494
-package.editor.width=816
-package.editor.x=391
-package.editor.y=90
-package.frame.height=710
-package.frame.width=946
-package.numDependencies=13
-package.numTargets=17
-=======
 dependency7.from=HSpy
 dependency7.to=Player
 dependency7.type=UsesDependency
-dependency8.from=Main
-dependency8.to=Board
+dependency8.from=Board
+dependency8.to=Mechanics
 dependency8.type=UsesDependency
 dependency9.from=Main
-dependency9.to=Mechanics
+dependency9.to=Board
 dependency9.type=UsesDependency
 editor.fx.0.height=1098
 editor.fx.0.width=1938
@@ -94,13 +51,12 @@ package.divider.horizontal=0.6
 package.divider.vertical=0.8876404494382022
 package.editor.height=862
 package.editor.width=1790
-package.editor.x=-14
-package.editor.y=22
+package.editor.x=-652
+package.editor.y=152
 package.frame.height=1098
 package.frame.width=1938
-package.numDependencies=13
+package.numDependencies=14
 package.numTargets=16
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -131,13 +87,8 @@ target11.showInterface=false
 target11.type=ClassTarget
 target11.typeParameters=
 target11.width=80
-<<<<<<< HEAD
-target11.x=620
-target11.y=300
-=======
 target11.x=430
 target11.y=580
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
 target12.height=50
 target12.name=HSpy
 target12.showInterface=false
@@ -149,41 +100,20 @@ target12.y=330
 target13.height=50
 target13.name=Computer
 target13.showInterface=false
-<<<<<<< HEAD
-target13.type=ClassTarget
-target13.typeParameters=
-target13.width=80
-target13.x=620
-target13.y=370
-=======
 target13.type=AbstractTarget
 target13.typeParameters=
 target13.width=90
-target13.x=50
-target13.y=80
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
+target13.x=130
+target13.y=200
 target14.height=50
-target14.name=Computer
+target14.name=Mechanics
 target14.showInterface=false
-<<<<<<< HEAD
-target14.type=AbstractTarget
-=======
 target14.type=ClassTarget
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
 target14.typeParameters=
 target14.width=90
-target14.x=130
-target14.y=200
+target14.x=10
+target14.y=80
 target15.height=50
-<<<<<<< HEAD
-target15.name=Mechanics
-target15.showInterface=false
-target15.type=ClassTarget
-target15.typeParameters=
-target15.width=90
-target15.x=50
-target15.y=80
-=======
 target15.name=HBus
 target15.showInterface=false
 target15.type=ClassTarget
@@ -191,28 +121,14 @@ target15.typeParameters=
 target15.width=80
 target15.x=150
 target15.y=120
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
 target16.height=50
 target16.name=Main
 target16.showInterface=false
 target16.type=ClassTarget
 target16.typeParameters=
 target16.width=80
-<<<<<<< HEAD
-target16.x=620
-target16.y=160
-target17.height=50
-target17.name=Main
-target17.showInterface=false
-target17.type=ClassTarget
-target17.typeParameters=
-target17.width=80
-target17.x=240
-target17.y=0
-=======
 target16.x=240
 target16.y=0
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
 target2.height=50
 target2.name=CBus
 target2.showInterface=false
@@ -251,53 +167,29 @@ target6.showInterface=false
 target6.type=ClassTarget
 target6.typeParameters=
 target6.width=80
-<<<<<<< HEAD
-target6.x=160
-target6.y=60
-target7.height=50
-target7.name=CFat
-=======
 target6.x=270
 target6.y=310
 target7.height=50
 target7.name=Deck
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
 target7.showInterface=false
 target7.type=ClassTarget
 target7.typeParameters=
 target7.width=80
-<<<<<<< HEAD
-target7.x=270
-target7.y=310
-target8.height=50
-target8.name=Deck
-=======
 target7.x=20
 target7.y=180
 target8.height=50
 target8.name=HQueen
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
 target8.showInterface=false
 target8.type=ClassTarget
 target8.typeParameters=
 target8.width=80
-<<<<<<< HEAD
-target8.x=20
-target8.y=180
-=======
 target8.x=620
 target8.y=230
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
 target9.height=50
 target9.name=Card
 target9.showInterface=false
 target9.type=ClassTarget
 target9.typeParameters=
 target9.width=80
-<<<<<<< HEAD
-target9.x=620
-target9.y=230
-=======
 target9.x=50
 target9.y=320
->>>>>>> 0d1d146cc3854223a190247255aa7c2d02697703
