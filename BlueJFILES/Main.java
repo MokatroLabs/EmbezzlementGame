@@ -23,6 +23,10 @@ public class Main {
         File OST = new File("OST.WAV");
         PlaySound(OST);
         Board board = new Board();
+
+        board.makeTitleScreen();
+        board.showTitleScreen();
+
         Mechanics economy = new Mechanics();
         CBus comp = new CBus();
         HQueen  human = new HQueen();
@@ -32,8 +36,8 @@ public class Main {
         for (int play = 0; play< 2; play++)
         {
             if(play == 0)
-                players.set(play,human);
-            players.set(play,comp);
+                players.add(human);
+            players.add(comp);
         }
         while(economy.getTurns() <= maxTurns) {
             if(round >= 4)
@@ -97,5 +101,6 @@ public class Main {
                loop = new ContinuousAudioDataStream(MD);
         }catch(Exception e){}
         MGP.start(loop);
+
     }
 }
