@@ -18,6 +18,9 @@ public class Board implements ActionListener {
     
     
     //GameBoard Variables
+    private JPanel gameScreen;
+    private GridBagConstraints cons; // for adding objects to pannel
+    private GridBagConstraints cons2; // for adding panel to board
     private JLabel turnCount;
     private JLabel repCount;
     private JLabel moneyCount;
@@ -57,8 +60,12 @@ public class Board implements ActionListener {
     {
         Font newFont = new Font("Serif", Font.PLAIN, 20); //makes a new font Object.setFont(Font);
         Insets spacing = new Insets(20,20,20,20); //part of constraits, makes an inserts object to space out the boxes :  Insets(int top, int left, int bottom, int right)
-        Insets buttonSpacing = new Insets(0,20,0,20);GridBagConstraints cons = new GridBagConstraints();
-        JLabel turnCount = new JLabel("This is the turn count"); //makes a new label, with the words on it
+        Insets buttonSpacing = new Insets(0,20,0,20);
+        cons = new GridBagConstraints();
+        gameScreen = new JPanel();
+        gameScreen.setLayout(new GridBagLayout());
+        
+        JLabel turnCount = new JLabel("Turn 1"); //makes a new label, with the words on it
         cons.gridx = 0; // point 0,0 on the grid, which in on the top left corner
         cons.gridy = 0;
         cons.weightx = 1; //gives weights
@@ -66,9 +73,9 @@ public class Board implements ActionListener {
         cons.gridwidth = 1;
         cons.fill = GridBagConstraints.NONE; //it doesn't blow up to fill the sapce
         cons.anchor = GridBagConstraints.NORTHWEST; //makes it "stick" to the northwest corner of its space
-        master.getContentPane().add(turnCount, cons);
+        gameScreen.add(turnCount, cons);
         
-        JLabel moneyCount = new JLabel("This is the money count");
+        JLabel moneyCount = new JLabel("Money: 100");
         cons.gridx = 4;
         cons.gridy = 4;
         cons.weightx = 1;
@@ -76,7 +83,7 @@ public class Board implements ActionListener {
        
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.SOUTHEAST;
-        master.getContentPane().add(moneyCount, cons);
+        gameScreen.add(moneyCount, cons);
         
         JButton  concedeBut = new JButton("Concede");
         cons.gridx = 4;
@@ -85,16 +92,16 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.NORTHEAST;
-        master.getContentPane().add(concedeBut, cons);
+        gameScreen.add(concedeBut, cons);
         
-        JLabel repCount = new JLabel("This is the rep count");
+        JLabel repCount = new JLabel("Rep: 50");
         cons.gridx = 0;
         cons.gridy = 4;
         cons.weightx = 1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.SOUTHWEST;
-        master.getContentPane().add(repCount, cons);
+        gameScreen.add(repCount, cons);
         
         imageLabel1= new JLabel("");//makes it blank
         imageLabel1.setIcon(new ImageIcon("./pictures/test.jpg")); //references the picture
@@ -105,7 +112,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
         cons.insets = new Insets(20,0,0,0);
-        master.getContentPane().add(imageLabel1, cons);
+        gameScreen.add(imageLabel1, cons);
         
         imageLabel2 = new JLabel("");
         imageLabel2.setIcon(new ImageIcon("./pictures/test2.png"));
@@ -115,7 +122,7 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
-        master.getContentPane().add(imageLabel2, cons);
+        gameScreen.add(imageLabel2, cons);
         
         displayWords = new JTextArea("Gaynald is gay \n next line"); //to combat issue, we print things using ln, have a array of past actions that will get printed and added
         //that way, I dont need to bother with this anymore, we can set the fint and stuff as well.
@@ -126,13 +133,15 @@ public class Board implements ActionListener {
         cons.gridy =1;
         cons.weightx = 1;
         cons.weighty = 1;
+        
+        
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
         displayWords.setEditable(false); //cant edit it
         displayWords.setLineWrap(true); // so it will wrap around when it gets too big
         displayWords.setColumns(28);
         //displayWords.setRows(20);
-        master.getContentPane().add(displayWords, cons); //It dont work, and I dont wanna do it rn, ill fix it later
+        gameScreen.add(displayWords, cons); //It dont work, and I dont wanna do it rn, ill fix it later
         
         imageLabel3 = new JLabel("");
         imageLabel3.setIcon(new ImageIcon("./pictures/test3.png"));
@@ -142,7 +151,7 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
-        master.getContentPane().add(imageLabel3, cons);
+        gameScreen.add(imageLabel3, cons);
         
         imageLabel4 = new JLabel("");
         imageLabel4.setIcon(new ImageIcon("./pictures/test4.png"));
@@ -152,7 +161,7 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
-        master.getContentPane().add(imageLabel4, cons);
+        gameScreen.add(imageLabel4, cons);
         
         buttonSize = new Dimension(120, 40);
         
@@ -168,7 +177,7 @@ public class Board implements ActionListener {
         embezzleAction.setPreferredSize(buttonSize);
         cons.insets = buttonSpacing;
         embezzleAction.setFont(newFont);
-        master.getContentPane().add(embezzleAction, cons);
+        gameScreen.add(embezzleAction, cons);
         
         raiseFundsAction = new JButton("Fundraise");
         raiseFundsAction.setActionCommand("Fundraise");
@@ -182,7 +191,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         raiseFundsAction.setPreferredSize(buttonSize);
         raiseFundsAction.setFont(newFont);
-        master.getContentPane().add(raiseFundsAction, cons);
+        gameScreen.add(raiseFundsAction, cons);
         
         interactAction = new JButton("Interact");
         interactAction.setActionCommand("Interact");
@@ -196,7 +205,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         interactAction.setPreferredSize(buttonSize);
         interactAction.setFont(newFont);
-        master.getContentPane().add(interactAction, cons);
+        gameScreen.add(interactAction, cons);
         
         skillTreeAction = new JButton("Skill Tree");
         skillTreeAction.setActionCommand("Skill Tree");
@@ -210,7 +219,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         skillTreeAction.setPreferredSize(buttonSize);
         skillTreeAction.setFont(newFont);
-        master.getContentPane().add(skillTreeAction, cons);
+        gameScreen.add(skillTreeAction, cons);
         
         activeAction = new JButton("Active");
         activeAction.setActionCommand("Active");
@@ -224,15 +233,28 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         activeAction.setPreferredSize(buttonSize);
         activeAction.setFont(newFont);
-        master.getContentPane().add(activeAction, cons);
+        gameScreen.add(activeAction, cons);
+        
+        cons2 = new GridBagConstraints();
+        cons2.gridx = 0;
+        cons2.gridy = 0;
+        cons2.weightx = 1;
+        cons2.weighty = 1;
+        
+        cons2.fill = GridBagConstraints.BOTH; //how to make it take up the entire screen! 
+        
+        
+        master.getContentPane().add(gameScreen,cons2);
+        
         
         master.pack();
+        //master.setVisible(true);
     
     }
     
     public void hideGameScreen()
     {
-        master.getContentPane().setVisible(false);
+        gameScreen.setVisible(false);
         embezzleAction.setVisible(false);
         raiseFundsAction.setVisible(false);
         interactAction.setVisible(false);
@@ -242,7 +264,7 @@ public class Board implements ActionListener {
     
     public void showGameScreen()
     {
-        master.getContentPane().setVisible(true);
+        gameScreen.setVisible(true);
         embezzleAction.setVisible(true);
         raiseFundsAction.setVisible(true);
         interactAction.setVisible(true);
@@ -252,52 +274,6 @@ public class Board implements ActionListener {
     
     public void makeTitleScreen()
     {       
-        /*btnPlay = new JButton("Play");
-        titleScreen = new JPanel();
-        GridBagLayout gridBagLayout = new GridBagLayout();
-        gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-        gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
-        gridBagLayout.columnWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-        gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-        titleScreen.setLayout(gridBagLayout);
-        GridBagConstraints gbc_panelTitleScreen = new GridBagConstraints();
-        gbc_panelTitleScreen.gridheight = 8;
-        gbc_panelTitleScreen.gridwidth = 8;
-        gbc_panelTitleScreen.insets = new Insets(0, 0, 5, 5);
-        gbc_panelTitleScreen.fill = GridBagConstraints.BOTH;
-        gbc_panelTitleScreen.gridx = 0;
-        gbc_panelTitleScreen.gridy = 0;
-        GridBagConstraints gbc_btnPlay = new GridBagConstraints();
-        gbc_btnPlay.gridx = 6;
-        gbc_btnPlay.gridy = 7;
-        titleScreen.setLayout(new GridBagLayout());
-        gbc_btnPlay = new GridBagConstraints();
-        titleScreen.add(btnPlay, gbc_btnPlay);
-        master.getContentPane().add(titleScreen, gbc_panelTitleScreen);
-        titleScreen.setVisible(true);
-        */
-            /*GridBagConstraints gbc_panelTitleScreen = new GridBagConstraints();
-        gbc_panelTitleScreen.gridheight = 8;
-        gbc_panelTitleScreen.gridwidth = 8;
-        gbc_panelTitleScreen.insets = new Insets(0, 0, 5, 5);
-        gbc_panelTitleScreen.fill = GridBagConstraints.BOTH;
-        gbc_panelTitleScreen.gridx = 0;
-        gbc_panelTitleScreen.gridy = 0;
-            titleScreen = new JPanel();
-        GridBagLayout gridBagLayout = new GridBagLayout();
-        gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-        gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
-        gridBagLayout.columnWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-        gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-        titleScreen.setLayout(gridBagLayout);
-        btnPlay = new JButton("Play");
-        GridBagConstraints gbc_btnPlay = new GridBagConstraints();
-        gbc_btnPlay.gridx = 6;
-        gbc_btnPlay.gridy = 7;
-        titleScreen.add(btnPlay, gbc_btnPlay);
-        master.getContentPane().add(titleScreen,  gbc_panelTitleScreen);
-        titleScreen.setVisible(true);
-        */
        Font newFont = new Font("Serif", Font.PLAIN, 20);
        titleScreen = new JPanel();
        btnPlay = new JButton("Play");
@@ -325,12 +301,6 @@ public class Board implements ActionListener {
        master.getContentPane().add(titleScreen, gbc_panelTitleScreen);
        master.pack(); //need to pack the screen
        titleScreen.setVisible(false);
-       
-    
-
-    
-    
-        
     }
     
     public void hideTitleScreen()
@@ -347,20 +317,6 @@ public class Board implements ActionListener {
     
     public void makeCharScreen()
     {
-       
-        /*lockInButton = new JButton("Lock in Champion");
-        panelChampSelect = new JPanel();
-        GridBagConstrtitleScreen.setVisible(true);   aints gbc_panelChampSelect = new GridBagConstraints();
-        gbc_panelChampSelect.gridheight = 8;
-        gbc_panelChampSelect.gridwidth = 8;
-        gbc_panelChampSelect.insets = new Insets(0, 0, 5, 5);
-        gbc_panelChampSelect.fill = GridBagConstraints.BOTH;
-        gbc_panelChampSelect.gridx = 0;
-        gbc_panelChampSelect.gridy = 0;
-        panelChampSelect.setLayout(new GridBagLayout());
-        master.getContentPane().add(panelChampSelect,gbc_panelChampSelect);
-        panelChampSelect.setVisible(false);
-        */
 
         panelChampSelect = new JPanel();
         GridBagConstraints gbc_panelChampSelect = new GridBagConstraints();
@@ -376,9 +332,6 @@ public class Board implements ActionListener {
         gbc_btnPlay.gridy = 7;
         master.getContentPane().add(btnPlay, gbc_btnPlay);
         panelChampSelect.setVisible(false);
-    
-
-    
     }
     
     public void hideCharScreen()
@@ -392,17 +345,25 @@ public class Board implements ActionListener {
         panelChampSelect.setVisible(true);
     
     }
-    
-    public void updateBoard()
-    {
-    
-    }
-    
-
+ 
     public int promptAction()
     {
         return 1; 
     }
+    
+    //getters;
+    public JLabel getTurnLabel()
+    {
+        return turnCount;
+    }
+    
+    //setters
+    public void setTurnCount(String words)
+    {
+        turnCount.setText(words);
+    }
+    
+    
     public void actionPerformed(ActionEvent theEvent) 
     {
         if(theEvent.getActionCommand().equals("Play"))
@@ -410,11 +371,12 @@ public class Board implements ActionListener {
             makeGameScreen();
             hideTitleScreen();
             showGameScreen();
-            updateBoard();
+            
         }
         if(theEvent.getActionCommand().equals("Embezzle"))
         {
             System.out.println("Embezzle");
+            
         }
         if(theEvent.getActionCommand().equals("Skill Tree"))
         {

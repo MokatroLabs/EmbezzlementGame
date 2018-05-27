@@ -14,8 +14,8 @@ import java.io.*;
  */
 import java.util.ArrayList;
 public class Main {
-    static Board board;
-    static Mechanics economy;
+    public static Board board;
+    public static Mechanics economy;
     static Deck deck;
     final static int maxTurns = 150;
     public static void main(String[] args) {
@@ -23,16 +23,15 @@ public class Main {
         File OST = new File("OST.WAV");
         PlaySound(OST);
         Board board = new Board();
-
-        board.makeTitleScreen();
-        board.showTitleScreen();
-
         Mechanics economy = new Mechanics();
         CBus comp = new CBus();
         HQueen  human = new HQueen();
         ArrayList<Player> players = new ArrayList<Player>();
         int currentPlayer = 0;
         int round = 0;
+        board.makeTitleScreen();
+        board.showTitleScreen();
+
         for (int play = 0; play< 2; play++)
         {
             if(play == 0)
