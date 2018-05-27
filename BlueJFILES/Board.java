@@ -62,10 +62,10 @@ public class Board implements ActionListener {
         Insets spacing = new Insets(20,20,20,20); //part of constraits, makes an inserts object to space out the boxes :  Insets(int top, int left, int bottom, int right)
         Insets buttonSpacing = new Insets(0,20,0,20);
         cons = new GridBagConstraints();
-        JLabel turnCount = new JLabel("This is the turn count"); //makes a new label, with the words on it
         gameScreen = new JPanel();
         gameScreen.setLayout(new GridBagLayout());
         
+        JLabel turnCount = new JLabel("Turn 1"); //makes a new label, with the words on it
         cons.gridx = 0; // point 0,0 on the grid, which in on the top left corner
         cons.gridy = 0;
         cons.weightx = 1; //gives weights
@@ -75,7 +75,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.NORTHWEST; //makes it "stick" to the northwest corner of its space
         gameScreen.add(turnCount, cons);
         
-        JLabel moneyCount = new JLabel("This is the money count");
+        JLabel moneyCount = new JLabel("Money: 100");
         cons.gridx = 4;
         cons.gridy = 4;
         cons.weightx = 1;
@@ -94,7 +94,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.NORTHEAST;
         gameScreen.add(concedeBut, cons);
         
-        JLabel repCount = new JLabel("This is the rep count");
+        JLabel repCount = new JLabel("Rep: 50");
         cons.gridx = 0;
         cons.gridy = 4;
         cons.weightx = 1;
@@ -345,14 +345,7 @@ public class Board implements ActionListener {
         panelChampSelect.setVisible(true);
     
     }
-    
-    public void updateBoard(Mechanics economy)
-    {   
-        turnCount.setText("Turn:" + economy.getTurns());
-    
-    }
-    
-
+ 
     public int promptAction()
     {
         return 1; 
@@ -363,6 +356,13 @@ public class Board implements ActionListener {
     {
         return turnCount;
     }
+    
+    //setters
+    public void setTurnCount(String words)
+    {
+        turnCount.setText(words);
+    }
+    
     
     public void actionPerformed(ActionEvent theEvent) 
     {
@@ -376,6 +376,7 @@ public class Board implements ActionListener {
         if(theEvent.getActionCommand().equals("Embezzle"))
         {
             System.out.println("Embezzle");
+            
         }
         if(theEvent.getActionCommand().equals("Skill Tree"))
         {

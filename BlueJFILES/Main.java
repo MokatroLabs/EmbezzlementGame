@@ -31,8 +31,7 @@ public class Main {
         int round = 0;
         board.makeTitleScreen();
         board.showTitleScreen();
-        
-        board.getTurnLabel().setText("Turn: " + economy.getTurns());
+
         for (int play = 0; play< 2; play++)
         {
             if(play == 0)
