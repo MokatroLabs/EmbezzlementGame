@@ -42,7 +42,7 @@ public class Main {
             if (currentPlayer  <= players.size() )
                 currentPlayer++;
             
-            System.out.print("test");
+            
             if(round == 4)
             economy.setTurns(economy.getTurns() + 1);
         }
