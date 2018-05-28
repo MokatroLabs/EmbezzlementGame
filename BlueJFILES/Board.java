@@ -374,9 +374,41 @@ public class Board implements ActionListener {
  
     public int promptAction()
     {
-        return 1; 
-    }
-    
+        boolean actionPick = false;
+        while(!actionPick){
+            if(getEmbezzleClick() == true)
+            {
+                setEmbezzleClick(false);
+                actionPick = true;
+                return 1;
+            }
+            if(getFundraiseClick() == true)
+            {
+                setFundraiseClick(false);
+                actionPick = true;
+                return 2;
+            }
+            if(getInteractClick() == true)
+            {
+                setInteractClick(false);
+                actionPick = true;
+                return 3;
+            }
+            if(getSkillTreeClick() == true)
+            {
+                setSkillTreeClick(false);
+                actionPick = true;
+                return 4;
+            }
+            if(getActiveClick() == true)
+            {
+                setActiveClick(false);
+                actionPick = true;
+                return 5;
+            }
+        }    
+        return 0;        
+    }  
     //getters;
     public JLabel getTurnLabel()
     {

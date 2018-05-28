@@ -41,44 +41,18 @@ public class Main {
             
             if (currentPlayer  <= players.size() )
                 currentPlayer =0;
-            if(round >= 4)
+            if(round > 4)
                 round = 0;
             if(economy.getTurns() %5 == 0)
                 players.get(currentPlayer).paycheck();
             takeTurn(players.get(currentPlayer));
+            updateBoard(human,textArea);
             if (currentPlayer  <= players.size() )
                 currentPlayer++;
             if(round == 4)
-            economy.setTurns(economy.getTurns() + 1);
-            if(board.getActiveClick() == true)
-            {
-                resolveAction(human, textArea, "Active");
-                board.setActiveClick(false);
-            }
+                economy.setTurns(economy.getTurns() + 1);
             
-            if(board.getInteractClick() == true)
-            {
-                resolveAction(human, textArea, "Interact");
-                board.setInteractClick(false);
-            }
-            
-            if(board.getEmbezzleClick() == true)
-            {
-                resolveAction(human, textArea, "Embezzle");
-                board.setEmbezzleClick(false);
-            }
-            
-            if(board.getFundraiseClick() == true)
-            {
-                resolveAction(human, textArea, "Fundraise");
-                board.setFundraiseClick(false);
-            }
-            
-            if(board.getSkillTreeClick() == true)
-            {
-                resolveAction(human, textArea, "Skill Tree");
-                board.setSkillTreeClick(false);
-            }
+            round++;
         }
 
         
@@ -119,13 +93,6 @@ public class Main {
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
        
     }
-    public static void resolveAction(Human human, String[] textArea , String Action)
-    {
-        //someone else fill this out
-        
-        System.out.println("resolved Action");
-    }
-    
     static void PlaySound(File Sound)
     {
         ContinuousAudioDataStream loop = null;
