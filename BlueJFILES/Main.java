@@ -5,17 +5,10 @@ import javax.sound.sampled.Clip;
 import javax.swing.*;
 import sun.audio.*;
 import java.io.*;
-
-/**
- * Write a description of class Main here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 import java.util.ArrayList;
 public class Main {
-    public static Board board = new Board();;
-    public static Mechanics economy = new Mechanics();;
+    public static Board board = new Board();
+    public static Mechanics economy = new Mechanics();
     static Deck deck;
     final static int maxTurns = 150;
     public static void main(String[] args) {
@@ -29,6 +22,8 @@ public class Main {
         int round = 0;
         board.makeTitleScreen();
         board.showTitleScreen();
+        board.makeGameScreen();
+        board.hideGameScreen();
         players.add(human);
         players.add(comp);
         while(economy.getTurns() <= maxTurns) {
@@ -42,7 +37,7 @@ public class Main {
             if (currentPlayer  <= players.size() )
                 currentPlayer++;
             
-            System.out.print("test");
+            //System.out.print("test");
             if(round == 4)
             economy.setTurns(economy.getTurns() + 1);
         }
@@ -77,6 +72,7 @@ public class Main {
 
             }
     }
+    
     static void PlaySound(File Sound)
     {
         ContinuousAudioDataStream loop = null;

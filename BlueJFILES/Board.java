@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class Board implements ActionListener { 
-    //This is just going to make the game screen for right now
+    private boolean gameScreenClicked = false; //not used currently
     private JFrame master; //the window
     
     //title screen
@@ -45,9 +45,12 @@ public class Board implements ActionListener {
         master.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         Toolkit theKit = master.getToolkit();//This gets the tool kit from the frame
         Dimension wndSize  = theKit.getScreenSize();//gets the screen size
-        master.setPreferredSize(new Dimension(3*wndSize.width/5, 3*wndSize.height/5)); //half the screen, gotta change
+        master.setPreferredSize(new Dimension(7*wndSize.width/10, 7*wndSize.height/10)); //half the screen, gotta change
         master.setLocation(wndSize.width/8, wndSize.height/8);
         master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style
+        
+        
+        
 
         
         master.pack();//have these at the bottom, to pack everything together and show it
@@ -61,11 +64,12 @@ public class Board implements ActionListener {
         Font newFont = new Font("Serif", Font.PLAIN, 20); //makes a new font Object.setFont(Font);
         Insets spacing = new Insets(20,20,20,20); //part of constraits, makes an inserts object to space out the boxes :  Insets(int top, int left, int bottom, int right)
         Insets buttonSpacing = new Insets(0,20,0,20);
+        
         cons = new GridBagConstraints();
         gameScreen = new JPanel();
         gameScreen.setLayout(new GridBagLayout());
         
-        JLabel turnCount = new JLabel("Turn 1"); //makes a new label, with the words on it
+        turnCount = new JLabel("Turn 1"); //makes a new label, with the words on it
         cons.gridx = 0; // point 0,0 on the grid, which in on the top left corner
         cons.gridy = 0;
         cons.weightx = 1; //gives weights
@@ -75,7 +79,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.NORTHWEST; //makes it "stick" to the northwest corner of its space
         gameScreen.add(turnCount, cons);
         
-        JLabel moneyCount = new JLabel("Money: 100");
+        moneyCount = new JLabel("Money: 100");
         cons.gridx = 4;
         cons.gridy = 4;
         cons.weightx = 1;
@@ -85,7 +89,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.SOUTHEAST;
         gameScreen.add(moneyCount, cons);
         
-        JButton  concedeBut = new JButton("Concede");
+        concedeBut = new JButton("Concede");
         cons.gridx = 4;
         cons.gridy = 0;
         cons.weightx = 1;
@@ -94,7 +98,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.NORTHEAST;
         gameScreen.add(concedeBut, cons);
         
-        JLabel repCount = new JLabel("Rep: 50");
+        repCount = new JLabel("Rep: 50");
         cons.gridx = 0;
         cons.gridy = 4;
         cons.weightx = 1;
@@ -104,7 +108,7 @@ public class Board implements ActionListener {
         gameScreen.add(repCount, cons);
         
         imageLabel1= new JLabel("");//makes it blank
-        imageLabel1.setIcon(new ImageIcon("./pictures/test.jpg")); //references the picture
+        imageLabel1.setIcon(new ImageIcon("./pictures/test.png")); //references the picture
         cons.gridx = 2;
         cons.gridy = 0;
         cons.weightx = 1;
@@ -317,7 +321,6 @@ public class Board implements ActionListener {
     
     public void makeCharScreen()
     {
-
         panelChampSelect = new JPanel();
         GridBagConstraints gbc_panelChampSelect = new GridBagConstraints();
         gbc_panelChampSelect.gridheight = 8;
@@ -368,10 +371,9 @@ public class Board implements ActionListener {
     {
         if(theEvent.getActionCommand().equals("Play"))
         {
-            makeGameScreen();
+           
             hideTitleScreen();
             showGameScreen();
-            
         }
         if(theEvent.getActionCommand().equals("Embezzle"))
         {
