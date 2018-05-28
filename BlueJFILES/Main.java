@@ -50,6 +50,7 @@ public class Main {
                 currentPlayer++;
             if(round == 4)
             economy.setTurns(economy.getTurns() + 1);
+            
             if(board.getActiveClick() == true)
             {
                 resolveAction(human, textArea, "Active");
@@ -117,7 +118,6 @@ public class Main {
        board.setRepCount("Rep: " + human.getReputation() );
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
-       
     }
     public static void resolveAction(Human human, String[] textArea , String Action)
     {
