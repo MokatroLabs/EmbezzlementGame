@@ -53,8 +53,8 @@ public class Board implements ActionListener {
         master.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         Toolkit theKit = master.getToolkit();//This gets the tool kit from the frame
         Dimension wndSize  = theKit.getScreenSize();//gets the screen size
-        master.setPreferredSize(new Dimension(7*wndSize.width/10, 7*wndSize.height/10)); //half the screen, gotta change
-        master.setLocation(wndSize.width/8, wndSize.height/8);
+        master.setPreferredSize(new Dimension(9*wndSize.width/10, 9*wndSize.height/10)); //half the screen, gotta change
+        master.setLocation(wndSize.width/16, wndSize.height/16);
         master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style
         activeClick = false;
         interactClick = false;
