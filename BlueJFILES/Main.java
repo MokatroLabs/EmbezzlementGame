@@ -27,6 +27,7 @@ public class Main {
         players.add(human);
         players.add(comp);
         while(economy.getTurns() <= maxTurns) {
+            updateBoard();
             if (currentPlayer  <= players.size() )
                 currentPlayer =0;
             if(round >= 4)
@@ -36,8 +37,6 @@ public class Main {
             takeTurn(players.get(currentPlayer));
             if (currentPlayer  <= players.size() )
                 currentPlayer++;
-            
-            //System.out.print("test");
             if(round == 4)
             economy.setTurns(economy.getTurns() + 1);
         }
@@ -71,6 +70,10 @@ public class Main {
                 }
 
             }
+    }
+    public static void updateBoard()
+    { 
+       board.setTurnCount("Turn: " + economy.getTurns());
     }
     
     static void PlaySound(File Sound)
