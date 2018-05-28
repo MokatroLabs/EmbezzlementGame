@@ -11,13 +11,23 @@ public class Main {
     public static Mechanics economy = new Mechanics();
     static Deck deck;
     final static int maxTurns = 150;
+    
+    
+    
+
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
-        PlaySound(OST);
+        ArrayList<Player> players = new ArrayList<Player>();
         CBus comp = new CBus();
         HQueen  human = new HQueen();
-        ArrayList<Player> players = new ArrayList<Player>();
+        String[] textArea = new String[5];
+        textArea[0] = "Gaynald is gay";
+        textArea[1] = "Next Line";
+        textArea[2] = "Next Line";
+        textArea[3] = "Next Line";
+        textArea[4] = "Next Line";
+        PlaySound(OST);
         int currentPlayer = 0;
         int round = 0;
         board.makeTitleScreen();
@@ -26,8 +36,9 @@ public class Main {
         board.hideGameScreen();
         players.add(human);
         players.add(comp);
+        updateBoard(human, textArea);
         while(economy.getTurns() <= maxTurns) {
-            updateBoard();
+            
             if (currentPlayer  <= players.size() )
                 currentPlayer =0;
             if(round >= 4)
@@ -71,9 +82,13 @@ public class Main {
 
             }
     }
-    public static void updateBoard()
+    public static void updateBoard(Human human, String[] textArea)
     { 
        board.setTurnCount("Turn: " + economy.getTurns());
+       board.setRepCount("Rep: " + human.getReputation() );
+       board.setMoneyCount("Money: " + human.getMoney() );
+       board.setTextArea(textArea[0] + "\n" +  textArea[1] + "\n" +  textArea[2] + "\n"+ textArea[3] + "\n" + textArea[4] );
+       
     }
     
     static void PlaySound(File Sound)
