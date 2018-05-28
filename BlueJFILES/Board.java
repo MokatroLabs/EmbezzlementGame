@@ -41,6 +41,11 @@ public class Board implements ActionListener {
     private JTextArea displayWords;
     private Dimension buttonSize;
     private Border picBorder;
+    private boolean activeClick; 
+    private boolean interactClick;
+    private boolean embezzleClick;
+    private boolean fundraiseClick;
+    private boolean skillTreeClick;
     
     public Board() 
     {
@@ -51,7 +56,11 @@ public class Board implements ActionListener {
         master.setPreferredSize(new Dimension(7*wndSize.width/10, 7*wndSize.height/10)); //half the screen, gotta change
         master.setLocation(wndSize.width/8, wndSize.height/8);
         master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style
-        
+        activeClick = false;
+        interactClick = false;
+        embezzleClick = false;
+        fundraiseClick = false;
+        skillTreeClick = false;
         
         
 
@@ -373,17 +382,45 @@ public class Board implements ActionListener {
     {
         return turnCount;
     }
+    
     public JLabel getRepCount()
     {
         return repCount;
     }
+    
     public JLabel getMoneyCount()
     {
         return moneyCount;
     }
+    
     public JTextArea getTextArea()
     {
         return displayWords;
+    }
+    
+    public boolean getActiveClick()
+    {
+        return activeClick;
+    }
+    
+    public boolean getInteractClick()
+    {
+        return interactClick;
+    }
+    
+    public boolean getEmbezzleClick()
+    {
+        return embezzleClick;
+    }
+    
+    public boolean getFundraiseClick()
+    {
+        return fundraiseClick;
+    }
+    
+    public boolean getSkillTreeClick()
+    {
+        return skillTreeClick;
     }
     
     //setters
@@ -391,48 +428,81 @@ public class Board implements ActionListener {
     {
         turnCount.setText(words);
     }
+    
     public void setRepCount(String words)
     {
         repCount.setText(words);
     }
+    
     public void setMoneyCount(String words)
     {
         moneyCount.setText(words);
     }
+    
     public void setTextArea(String words)
     {
         displayWords.setText(words);
     }
+
+    public void setActiveClick(boolean bol)
+    {
+        activeClick = bol;
+    }
+    
+    public void setInteractClick(boolean bol)
+    {
+        interactClick = bol;
+    }
+    
+    public void setEmbezzleClick(boolean bol)
+    {
+        embezzleClick = bol;
+    }
+    
+    public void setFundraiseClick(boolean bol)
+    {
+        fundraiseClick = bol;
+    }
+    
+    public void setSkillTreeClick(boolean bol)
+    {
+        skillTreeClick = bol;
+    }
+    
     
     
     public void actionPerformed(ActionEvent theEvent) 
     {
         if(theEvent.getActionCommand().equals("Play"))
         {
-           
             hideTitleScreen();
             showGameScreen();
         }
         if(theEvent.getActionCommand().equals("Embezzle"))
         {
             System.out.println("Embezzle");
+            embezzleClick = true;
             
         }
         if(theEvent.getActionCommand().equals("Skill Tree"))
         {
             System.out.println("Skill Tree");
+            skillTreeClick = true;
         }
         if(theEvent.getActionCommand().equals("Interact"))
         {
             System.out.println("Interact");
+            interactClick = true;
         }
         if(theEvent.getActionCommand().equals("Active"))
         {
             System.out.println("Active");
+            activeClick = true;
         }
         if(theEvent.getActionCommand().equals("Fundraise"))
         {
             System.out.println("Fundraise");
+            fundraiseClick = true;
         }
     }
 

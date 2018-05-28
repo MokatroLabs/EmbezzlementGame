@@ -50,6 +50,35 @@ public class Main {
                 currentPlayer++;
             if(round == 4)
             economy.setTurns(economy.getTurns() + 1);
+            if(board.getActiveClick() == true)
+            {
+                resolveAction(human, textArea, "Active");
+                board.setActiveClick(false);
+            }
+            
+            if(board.getInteractClick() == true)
+            {
+                resolveAction(human, textArea, "Interact");
+                board.setInteractClick(false);
+            }
+            
+            if(board.getEmbezzleClick() == true)
+            {
+                resolveAction(human, textArea, "Embezzle");
+                board.setEmbezzleClick(false);
+            }
+            
+            if(board.getFundraiseClick() == true)
+            {
+                resolveAction(human, textArea, "Fundraise");
+                board.setFundraiseClick(false);
+            }
+            
+            if(board.getSkillTreeClick() == true)
+            {
+                resolveAction(human, textArea, "Skill Tree");
+                board.setSkillTreeClick(false);
+            }
         }
 
         
@@ -87,8 +116,14 @@ public class Main {
        board.setTurnCount("Turn: " + economy.getTurns());
        board.setRepCount("Rep: " + human.getReputation() );
        board.setMoneyCount("Money: " + human.getMoney() );
-       board.setTextArea(textArea[0] + "\n" +  textArea[1] + "\n" +  textArea[2] + "\n"+ textArea[3] + "\n" + textArea[4] );
+       board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
        
+    }
+    public static void resolveAction(Human human, String[] textArea , String Action)
+    {
+        //someone else fill this out
+        
+        System.out.println("resolved Action");
     }
     
     static void PlaySound(File Sound)
@@ -101,11 +136,13 @@ public class Main {
             Clip clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(Sound));
             clip.start();
-                           BGM = new AudioStream(new FileInputStream("OST.WAV"));
-               MD = BGM.getData();
-               loop = new ContinuousAudioDataStream(MD);
+            BGM = new AudioStream(new FileInputStream("OST.WAV"));
+            MD = BGM.getData();
+            loop = new ContinuousAudioDataStream(MD);
         }catch(Exception e){}
         MGP.start(loop);
 
     }
+    
+    
 }
