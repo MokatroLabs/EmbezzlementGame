@@ -90,7 +90,7 @@ public class Main {
     public static void updateBoard(Human human, String[] textArea)
     { 
        board.setTurnCount("Turn: " + economy.getTurns());
-       board.setRepCount("Rep: " + human.getReputation() );
+       board.setRepCount("Rep: " + ((int)human.getReputation()) + "%" );
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
     }
