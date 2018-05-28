@@ -50,7 +50,9 @@ public class Main {
             if (currentPlayer  <= players.size() )
                 currentPlayer++;
             if(round == 4)
+
                 economy.setTurns(economy.getTurns() + 1);
+
             
             round++;
         }
@@ -91,7 +93,6 @@ public class Main {
        board.setRepCount("Rep: " + human.getReputation() );
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
-       
     }
     static void PlaySound(File Sound)
     {
