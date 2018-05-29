@@ -41,6 +41,7 @@ dependency8.type=UsesDependency
 dependency9.from=Main
 dependency9.to=Mechanics
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
@@ -55,6 +56,22 @@ package.editor.x=306
 package.editor.y=250
 package.frame.height=659
 package.frame.width=929
+=======
+editor.fx.0.height=1098
+editor.fx.0.width=1938
+editor.fx.0.x=-9
+editor.fx.0.y=-9
+objectbench.height=136
+objectbench.width=901
+package.divider.horizontal=0.6
+package.divider.vertical=0.8539325842696629
+package.editor.height=829
+package.editor.width=795
+package.editor.x=536
+package.editor.y=216
+package.frame.height=1098
+package.frame.width=943
+>>>>>>> 072a60c0b7154d9299f862f2596e878910dfef84
 package.numDependencies=14
 package.numTargets=16
 package.showExtends=true
