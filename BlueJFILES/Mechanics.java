@@ -1,18 +1,20 @@
 
 public class Mechanics {
-    private int moneyPot = 0;
-    private int turnCount = 0;
+    private int moneyPot;
+    private int turnCount;
     final int maxTurns = 150;
 
     public Mechanics()
     {
-        
+        moneyPot = 400;
+        turnCount = 0;
     }
     // setter for moneyPot
 
    
     public Mechanics( int moneyPot)
     {
+        super();
         this.moneyPot = moneyPot;
     }
     //setter for moneypot

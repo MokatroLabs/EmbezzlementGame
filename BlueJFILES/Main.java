@@ -32,7 +32,7 @@ public class Main {
         board.makeTitleScreen();
         board.showTitleScreen();
 
-        for (int play = 0; play< 2; play++)
+        for (int play = 0; play< players.size(); play++)
         {
             if(play == 0)
                 players.add(human);
@@ -85,6 +85,7 @@ public class Main {
 
             }
     }
+    
     static void PlaySound(File Sound)
     {
         ContinuousAudioDataStream loop = null;
@@ -102,4 +103,6 @@ public class Main {
         MGP.start(loop);
 
     }
+    
+  
 }
