@@ -3,42 +3,19 @@ dependency1.from=CSpy
 dependency1.to=Player
 dependency1.type=UsesDependency
 dependency10.from=Main
-dependency10.to=Deck
+dependency10.to=Player
 dependency10.type=UsesDependency
 dependency11.from=Main
-<<<<<<< HEAD
 dependency11.to=CBus
 dependency11.type=UsesDependency
 dependency12.from=Main
 dependency12.to=HQueen
 dependency12.type=UsesDependency
 dependency13.from=Main
-dependency13.to=Player
+dependency13.to=Human
 dependency13.type=UsesDependency
-dependency2.from=HFat
-dependency2.to=Player
-dependency2.type=UsesDependency
-dependency3.from=HSpy
-dependency3.to=Player
-dependency3.type=UsesDependency
-dependency4.from=CQueen
-dependency4.to=Player
-dependency4.type=UsesDependency
-dependency5.from=CBus
-dependency5.to=Player
-dependency5.type=UsesDependency
-dependency6.from=CFat
-=======
-dependency11.to=Player
-dependency11.type=UsesDependency
-dependency12.from=Main
-dependency12.to=CBus
-dependency12.type=UsesDependency
-dependency13.from=Main
-dependency13.to=HQueen
-dependency13.type=UsesDependency
-dependency14.from=Main
-dependency14.to=Human
+dependency14.from=CQueen
+dependency14.to=Player
 dependency14.type=UsesDependency
 dependency2.from=CFat
 dependency2.to=Player
@@ -53,85 +30,32 @@ dependency5.from=HFat
 dependency5.to=Player
 dependency5.type=UsesDependency
 dependency6.from=HSpy
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
 dependency6.to=Player
 dependency6.type=UsesDependency
-dependency7.from=CQueen
-dependency7.to=Player
+dependency7.from=Main
+dependency7.to=Board
 dependency7.type=UsesDependency
 dependency8.from=Main
-dependency8.to=Board
+dependency8.to=Mechanics
 dependency8.type=UsesDependency
 dependency9.from=Main
-dependency9.to=Mechanics
+dependency9.to=Deck
 dependency9.type=UsesDependency
-<<<<<<< HEAD
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=275
-editor.fx.0.y=10
-objectbench.height=102
-objectbench.width=906
-package.divider.horizontal=0.6
-package.divider.vertical=0.8213114754098361
-package.editor.height=494
-package.editor.width=816
-package.editor.x=100
-package.editor.y=100
-package.frame.height=710
-package.frame.width=946
-package.numDependencies=13
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 20d99b78a75896d3a3889bbfbe6d755500f12e87
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
-<<<<<<< HEAD
-objectbench.height=109
-objectbench.width=922
+objectbench.height=88
+objectbench.width=919
 package.divider.horizontal=0.6
-package.divider.vertical=0.8218125960061444
-package.editor.height=528
-package.editor.width=820
-package.editor.x=100
+package.divider.vertical=0.8540706605222734
+package.editor.height=549
+package.editor.width=817
+package.editor.x=234
 package.editor.y=23
 package.frame.height=709
-package.frame.width=946
-package.numDependencies=13
-=======
-objectbench.height=77
-objectbench.width=889
-package.divider.horizontal=0.6
-package.divider.vertical=0.8497316636851521
-package.editor.height=468
-package.editor.width=799
-package.editor.x=306
-package.editor.y=250
-package.frame.height=659
-package.frame.width=929
-=======
-editor.fx.0.height=1098
-editor.fx.0.width=1938
-editor.fx.0.x=-9
-editor.fx.0.y=-9
-objectbench.height=136
-objectbench.width=901
-package.divider.horizontal=0.6
-package.divider.vertical=0.8539325842696629
-package.editor.height=829
-package.editor.width=795
-package.editor.x=536
-package.editor.y=216
-package.frame.height=1098
 package.frame.width=943
->>>>>>> 072a60c0b7154d9299f862f2596e878910dfef84
 package.numDependencies=14
->>>>>>> 20d99b78a75896d3a3889bbfbe6d755500f12e87
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
 package.numTargets=16
 package.showExtends=true
 package.showUses=true
@@ -153,126 +77,50 @@ target10.name=HFat
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=80
-<<<<<<< HEAD
-target10.x=620
-target10.y=300
-=======
-<<<<<<< HEAD
-target10.x=620
-target10.y=300
-=======
 target10.x=160
 target10.y=60
->>>>>>> 20d99b78a75896d3a3889bbfbe6d755500f12e87
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
 target11.height=50
 target11.name=Board
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=80
-<<<<<<< HEAD
-target11.x=540
-=======
-<<<<<<< HEAD
-target11.x=540
-=======
 target11.x=490
->>>>>>> 20d99b78a75896d3a3889bbfbe6d755500f12e87
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
 target11.y=20
 target12.height=50
 target12.name=HSpy
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=80
-<<<<<<< HEAD
-target12.x=620
-target12.y=370
-target13.height=50
-target13.name=Computer
-target13.showInterface=false
-target13.type=AbstractTarget
-target13.typeParameters=
-target13.width=90
-target13.x=130
-target13.y=200
-target14.height=50
-target14.name=Mechanics
-target14.showInterface=false
-target14.type=ClassTarget
-target14.typeParameters=
-target14.width=90
-target14.x=50
-=======
-<<<<<<< HEAD
-target12.x=620
-target12.y=370
+target12.x=430
+target12.y=260
 target13.height=50
 target13.name=Mechanics
 target13.showInterface=false
 target13.type=ClassTarget
 target13.width=90
-target13.x=50
+target13.x=10
 target13.y=80
-=======
-target12.x=430
-target12.y=260
-target13.height=50
-target13.name=Computer
-target13.showInterface=false
-target13.type=AbstractTarget
-target13.width=90
-target13.x=130
-target13.y=200
->>>>>>> 20d99b78a75896d3a3889bbfbe6d755500f12e87
 target14.height=50
-target14.name=Mechanics
+target14.name=Computer
 target14.showInterface=false
-<<<<<<< HEAD
 target14.type=AbstractTarget
-=======
-target14.type=ClassTarget
->>>>>>> 20d99b78a75896d3a3889bbfbe6d755500f12e87
 target14.width=90
-target14.x=10
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
-target14.y=80
+target14.x=130
+target14.y=200
 target15.height=50
 target15.name=HBus
 target15.showInterface=false
 target15.type=ClassTarget
-<<<<<<< HEAD
-target15.typeParameters=
 target15.width=80
-target15.x=620
-target15.y=160
-target16.height=50
-=======
-target15.width=80
-<<<<<<< HEAD
-target15.x=620
-target15.y=160
-target16.height=40
-=======
 target15.x=150
 target15.y=120
 target16.height=50
->>>>>>> 20d99b78a75896d3a3889bbfbe6d755500f12e87
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
 target16.name=Main
 target16.showInterface=false
 target16.type=ClassTarget
 target16.width=80
 target16.x=240
-<<<<<<< HEAD
 target16.y=0
-=======
-<<<<<<< HEAD
-target16.y=20
-=======
-target16.y=0
->>>>>>> 20d99b78a75896d3a3889bbfbe6d755500f12e87
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
 target2.height=50
 target2.name=CBus
 target2.showInterface=false
@@ -285,7 +133,7 @@ target3.name=Player
 target3.showInterface=false
 target3.type=InterfaceTarget
 target3.width=80
-target3.x=90
+target3.x=70
 target3.y=10
 target4.height=50
 target4.name=CSpy
@@ -302,56 +150,26 @@ target5.width=80
 target5.x=270
 target5.y=190
 target6.height=50
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 target6.name=Deck
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=80
-target6.x=20
-target6.y=180
-=======
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
-target6.name=CFat
-target6.showInterface=false
-target6.type=ClassTarget
-target6.width=80
-target6.x=270
-target6.y=310
-<<<<<<< HEAD
-=======
->>>>>>> 20d99b78a75896d3a3889bbfbe6d755500f12e87
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
+target6.x=10
+target6.y=200
 target7.height=50
-target7.name=Deck
+target7.name=CFat
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=80
-<<<<<<< HEAD
-target7.x=160
-target7.y=410
-=======
-target7.x=10
-target7.y=200
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
+target7.x=270
+target7.y=310
 target8.height=50
 target8.name=HQueen
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=80
-<<<<<<< HEAD
-target8.x=620
-target8.y=230
-=======
-<<<<<<< HEAD
-target8.x=620
-target8.y=230
-=======
 target8.x=430
 target8.y=170
->>>>>>> 20d99b78a75896d3a3889bbfbe6d755500f12e87
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
 target9.height=50
 target9.name=Card
 target9.showInterface=false
