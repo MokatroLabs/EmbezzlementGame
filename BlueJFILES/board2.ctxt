@@ -1,21 +1,10 @@
 #BlueJ class context
-<<<<<<< HEAD
 comment0.target=board2
 comment1.params=
 comment1.target=board2()
-comment1.text=\n\ Create\ the\ application.\n
+comment1.text=\r\n\ Create\ the\ application.\r\n
 comment2.params=theEvent
 comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment3.params=
 comment3.target=java.awt.Container\ getContentPane()
 numComments=4
-=======
-comment0.params=
-comment0.target=board2()
-comment0.text=\r\n\ Create\ the\ application.\r\n
-comment1.params=theEvent
-comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
-comment2.params=
-comment2.target=java.awt.Container\ getContentPane()
-numComments=3
->>>>>>> b054fdcfb1e69a953b312009d4998325b733e98f
