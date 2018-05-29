@@ -3,8 +3,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.border.Border;
+import javax.swing.BorderFactory; //need for borders
 public class Board implements ActionListener { 
-    //This is just going to make the game screen for right now
+    private boolean gameScreenClicked = false; //not used currently
     private JFrame master; //the window
     
     //title screen
@@ -38,6 +40,12 @@ public class Board implements ActionListener {
     private JScrollPane display;
     private JTextArea displayWords;
     private Dimension buttonSize;
+    private Border picBorder;
+    private boolean activeClick; 
+    private boolean interactClick;
+    private boolean embezzleClick;
+    private boolean fundraiseClick;
+    private boolean skillTreeClick;
     
     public Board() 
     {
@@ -45,9 +53,16 @@ public class Board implements ActionListener {
         master.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         Toolkit theKit = master.getToolkit();//This gets the tool kit from the frame
         Dimension wndSize  = theKit.getScreenSize();//gets the screen size
-        master.setPreferredSize(new Dimension(3*wndSize.width/5, 3*wndSize.height/5)); //half the screen, gotta change
-        master.setLocation(wndSize.width/8, wndSize.height/8);
+        master.setPreferredSize(new Dimension(9*wndSize.width/10, 9*wndSize.height/10)); //half the screen, gotta change
+        master.setLocation(wndSize.width/16, wndSize.height/16);
         master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style
+        activeClick = false;
+        interactClick = false;
+        embezzleClick = false;
+        fundraiseClick = false;
+        skillTreeClick = false;
+        
+        
 
         
         master.pack();//have these at the bottom, to pack everything together and show it
@@ -59,13 +74,16 @@ public class Board implements ActionListener {
     public void makeGameScreen() //this makes it on contentPane
     {
         Font newFont = new Font("Serif", Font.PLAIN, 20); //makes a new font Object.setFont(Font);
+        Font wordsFont = new Font("serif", Font.BOLD, 20); //these font are for the displays on the side, turn, money, rep
         Insets spacing = new Insets(20,20,20,20); //part of constraits, makes an inserts object to space out the boxes :  Insets(int top, int left, int bottom, int right)
         Insets buttonSpacing = new Insets(0,20,0,20);
+        picBorder = BorderFactory.createLineBorder(Color.gray, 2); //creates a border object whth the color and pixel width
+        
         cons = new GridBagConstraints();
         gameScreen = new JPanel();
         gameScreen.setLayout(new GridBagLayout());
         
-        JLabel turnCount = new JLabel("Turn 1"); //makes a new label, with the words on it
+        turnCount = new JLabel("gay"); //makes a new label, with the words on it
         cons.gridx = 0; // point 0,0 on the grid, which in on the top left corner
         cons.gridy = 0;
         cons.weightx = 1; //gives weights
@@ -74,18 +92,20 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE; //it doesn't blow up to fill the sapce
         cons.anchor = GridBagConstraints.NORTHWEST; //makes it "stick" to the northwest corner of its space
         gameScreen.add(turnCount, cons);
+        turnCount.setFont(wordsFont);
         
-        JLabel moneyCount = new JLabel("Money: 100");
+        moneyCount = new JLabel("Money: 100");
         cons.gridx = 4;
         cons.gridy = 4;
         cons.weightx = 1;
         cons.weighty = 1;
+        moneyCount.setFont(wordsFont);
        
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.SOUTHEAST;
         gameScreen.add(moneyCount, cons);
         
-        JButton  concedeBut = new JButton("Concede");
+        concedeBut = new JButton("Concede");
         cons.gridx = 4;
         cons.gridy = 0;
         cons.weightx = 1;
@@ -94,7 +114,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.NORTHEAST;
         gameScreen.add(concedeBut, cons);
         
-        JLabel repCount = new JLabel("Rep: 50");
+        repCount = new JLabel("Rep: 50");
         cons.gridx = 0;
         cons.gridy = 4;
         cons.weightx = 1;
@@ -102,9 +122,10 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.SOUTHWEST;
         gameScreen.add(repCount, cons);
+        repCount.setFont(wordsFont);
         
         imageLabel1= new JLabel("");//makes it blank
-        imageLabel1.setIcon(new ImageIcon("./pictures/test.jpg")); //references the picture
+        imageLabel1.setIcon(new ImageIcon("./pictures/test.png")); //references the picture
         cons.gridx = 2;
         cons.gridy = 0;
         cons.weightx = 1;
@@ -113,6 +134,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         cons.insets = new Insets(20,0,0,0);
         gameScreen.add(imageLabel1, cons);
+        imageLabel1.setBorder(picBorder);
         
         imageLabel2 = new JLabel("");
         imageLabel2.setIcon(new ImageIcon("./pictures/test2.png"));
@@ -123,6 +145,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
         gameScreen.add(imageLabel2, cons);
+        imageLabel2.setBorder(picBorder);
         
         displayWords = new JTextArea("Gaynald is gay \n next line"); //to combat issue, we print things using ln, have a array of past actions that will get printed and added
         //that way, I dont need to bother with this anymore, we can set the fint and stuff as well.
@@ -133,6 +156,7 @@ public class Board implements ActionListener {
         cons.gridy =1;
         cons.weightx = 1;
         cons.weighty = 1;
+        displayWords.setBorder(picBorder);
         
         
         cons.fill = GridBagConstraints.NONE;
@@ -152,6 +176,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
         gameScreen.add(imageLabel3, cons);
+        imageLabel3.setBorder(picBorder);
         
         imageLabel4 = new JLabel("");
         imageLabel4.setIcon(new ImageIcon("./pictures/test4.png"));
@@ -162,6 +187,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
         gameScreen.add(imageLabel4, cons);
+        imageLabel4.setBorder(picBorder);
         
         buttonSize = new Dimension(120, 40);
         
@@ -178,6 +204,7 @@ public class Board implements ActionListener {
         cons.insets = buttonSpacing;
         embezzleAction.setFont(newFont);
         gameScreen.add(embezzleAction, cons);
+        
         
         raiseFundsAction = new JButton("Fundraise");
         raiseFundsAction.setActionCommand("Fundraise");
@@ -317,7 +344,6 @@ public class Board implements ActionListener {
     
     public void makeCharScreen()
     {
-
         panelChampSelect = new JPanel();
         GridBagConstraints gbc_panelChampSelect = new GridBagConstraints();
         gbc_panelChampSelect.gridheight = 8;
@@ -348,13 +374,85 @@ public class Board implements ActionListener {
  
     public int promptAction()
     {
-        return 1; 
-    }
-    
+        boolean actionPick = false;
+        while(!actionPick){
+            if(getEmbezzleClick() == true)
+            {
+                setEmbezzleClick(false);
+                actionPick = true;
+                return 1;
+            }
+            if(getFundraiseClick() == true)
+            {
+                setFundraiseClick(false);
+                actionPick = true;
+                return 2;
+            }
+            if(getInteractClick() == true)
+            {
+                setInteractClick(false);
+                actionPick = true;
+                return 3;
+            }
+            if(getSkillTreeClick() == true)
+            {
+                setSkillTreeClick(false);
+                actionPick = true;
+                return 4;
+            }
+            if(getActiveClick() == true)
+            {
+                setActiveClick(false);
+                actionPick = true;
+                return 5;
+            }
+        }    
+        return 0;        
+    }  
     //getters;
     public JLabel getTurnLabel()
     {
         return turnCount;
+    }
+    
+    public JLabel getRepCount()
+    {
+        return repCount;
+    }
+    
+    public JLabel getMoneyCount()
+    {
+        return moneyCount;
+    }
+    
+    public JTextArea getTextArea()
+    {
+        return displayWords;
+    }
+    
+    public boolean getActiveClick()
+    {
+        return activeClick;
+    }
+    
+    public boolean getInteractClick()
+    {
+        return interactClick;
+    }
+    
+    public boolean getEmbezzleClick()
+    {
+        return embezzleClick;
+    }
+    
+    public boolean getFundraiseClick()
+    {
+        return fundraiseClick;
+    }
+    
+    public boolean getSkillTreeClick()
+    {
+        return skillTreeClick;
     }
     
     //setters
@@ -363,36 +461,80 @@ public class Board implements ActionListener {
         turnCount.setText(words);
     }
     
+    public void setRepCount(String words)
+    {
+        repCount.setText(words);
+    }
+    
+    public void setMoneyCount(String words)
+    {
+        moneyCount.setText(words);
+    }
+    
+    public void setTextArea(String words)
+    {
+        displayWords.setText(words);
+    }
+
+    public void setActiveClick(boolean bol)
+    {
+        activeClick = bol;
+    }
+    
+    public void setInteractClick(boolean bol)
+    {
+        interactClick = bol;
+    }
+    
+    public void setEmbezzleClick(boolean bol)
+    {
+        embezzleClick = bol;
+    }
+    
+    public void setFundraiseClick(boolean bol)
+    {
+        fundraiseClick = bol;
+    }
+    
+    public void setSkillTreeClick(boolean bol)
+    {
+        skillTreeClick = bol;
+    }
+    
+    
     
     public void actionPerformed(ActionEvent theEvent) 
     {
         if(theEvent.getActionCommand().equals("Play"))
         {
-            makeGameScreen();
             hideTitleScreen();
             showGameScreen();
-            
         }
         if(theEvent.getActionCommand().equals("Embezzle"))
         {
             System.out.println("Embezzle");
+            embezzleClick = true;
             
         }
         if(theEvent.getActionCommand().equals("Skill Tree"))
         {
             System.out.println("Skill Tree");
+            skillTreeClick = true;
         }
         if(theEvent.getActionCommand().equals("Interact"))
         {
             System.out.println("Interact");
+            interactClick = true;
         }
         if(theEvent.getActionCommand().equals("Active"))
         {
             System.out.println("Active");
+            activeClick = true;
         }
         if(theEvent.getActionCommand().equals("Fundraise"))
         {
             System.out.println("Fundraise");
+            fundraiseClick = true;
         }
     }
 

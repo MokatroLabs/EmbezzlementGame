@@ -104,7 +104,7 @@ public abstract class Human implements Player {
     //gives paycheck
     public void paycheck()
     {
-        money += 100 + (reputation-50)*100;
+        money += 100 + (reputation*.01)*100;
     }
     public String toString()
     {

@@ -23,7 +23,7 @@ public class CBus extends Computer
     public void paycheck()
 
     {
-        money += 150 + (reputation-50)*150;
+        money += 150 + (reputation*.01)*150;
     }
     
     public int findMove(Player choice)

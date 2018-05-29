@@ -5,32 +5,31 @@ import javax.sound.sampled.Clip;
 import javax.swing.*;
 import sun.audio.*;
 import java.io.*;
-
-/**
- * Write a description of class Main here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 import java.util.ArrayList;
 public class Main {
-    public static Board board;
-    public static Mechanics economy;
+    public static Board board = new Board();
+    public static Mechanics economy = new Mechanics();
     static Deck deck;
     final static int maxTurns = 150;
+
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
-        PlaySound(OST);
-        Board board = new Board();
-        Mechanics economy = new Mechanics();
+        ArrayList<Player> players = new ArrayList<Player>();
         CBus comp = new CBus();
         HQueen  human = new HQueen();
-        ArrayList<Player> players = new ArrayList<Player>();
+        String[] textArea = new String[5];
+        textArea[0] = "Gaynald is gay";
+        textArea[1] = "Next Line";
+        textArea[2] = "Next Line";
+        textArea[3] = "Next Line";
+        textArea[4] = "Next Line";
+        PlaySound(OST);
         int currentPlayer = 0;
         int round = 0;
         board.makeTitleScreen();
         board.showTitleScreen();
+<<<<<<< HEAD
 
         for (int play = 0; play< players.size(); play++)
         {
@@ -38,21 +37,31 @@ public class Main {
                 players.add(human);
             players.add(comp);
         }
+=======
+        board.makeGameScreen();
+        board.hideGameScreen();
+        players.add(human);
+        players.add(comp);
+        updateBoard(human, textArea);
+>>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
         while(economy.getTurns() <= maxTurns) {
-            if(round >= 4)
+            
+            if (currentPlayer  <= players.size() )
+                currentPlayer =0;
+            if(round > 4)
                 round = 0;
-            if (currentPlayer  < players.size() )
-                currentPlayer++;
-            else
-                currentPlayer = 1;
             if(economy.getTurns() %5 == 0)
-                players.get(currentPlayer)
-                .paycheck();
+                players.get(currentPlayer).paycheck();
             takeTurn(players.get(currentPlayer));
-            
-            
+            updateBoard(human,textArea);
+            if (currentPlayer  <= players.size() )
+                currentPlayer++;
             if(round == 4)
-            economy.setTurns(economy.getTurns() + 1);
+
+                economy.setTurns(economy.getTurns() + 1);
+
+            
+            round++;
         }
 
         
@@ -70,7 +79,7 @@ public class Main {
             current.embezzle();
             if((current.getChar()).equals("Spy")){
                 economy.setMoney(economy.getMoney() - 750);
-            
+                
             }else {
                 economy.setMoney(economy.getMoney() - 500);
             }
@@ -85,7 +94,17 @@ public class Main {
 
             }
     }
+<<<<<<< HEAD
     
+=======
+    public static void updateBoard(Human human, String[] textArea)
+    { 
+       board.setTurnCount("Turn: " + economy.getTurns());
+       board.setRepCount("Rep: " + ((int)human.getReputation()) + "%" );
+       board.setMoneyCount("Money: " + human.getMoney() );
+       board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
+    }
+>>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
     static void PlaySound(File Sound)
     {
         ContinuousAudioDataStream loop = null;
@@ -96,13 +115,17 @@ public class Main {
             Clip clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(Sound));
             clip.start();
-                           BGM = new AudioStream(new FileInputStream("OST.WAV"));
-               MD = BGM.getData();
-               loop = new ContinuousAudioDataStream(MD);
+            BGM = new AudioStream(new FileInputStream("OST.WAV"));
+            MD = BGM.getData();
+            loop = new ContinuousAudioDataStream(MD);
         }catch(Exception e){}
         MGP.start(loop);
 
     }
     
+<<<<<<< HEAD
   
+=======
+    
+>>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
 }
