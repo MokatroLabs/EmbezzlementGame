@@ -29,7 +29,7 @@ public class Main {
         int round = 0;
         board.makeTitleScreen();
         board.showTitleScreen();
-<<<<<<< HEAD
+
 
         for (int play = 0; play< players.size(); play++)
         {
@@ -37,13 +37,13 @@ public class Main {
                 players.add(human);
             players.add(comp);
         }
-=======
+
         board.makeGameScreen();
         board.hideGameScreen();
         players.add(human);
         players.add(comp);
         updateBoard(human, textArea);
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
+
         while(economy.getTurns() <= maxTurns) {
             
             if (currentPlayer  <= players.size() )
@@ -94,9 +94,7 @@ public class Main {
 
             }
     }
-<<<<<<< HEAD
     
-=======
     public static void updateBoard(Human human, String[] textArea)
     { 
        board.setTurnCount("Turn: " + economy.getTurns());
@@ -104,7 +102,7 @@ public class Main {
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
     }
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
+
     static void PlaySound(File Sound)
     {
         ContinuousAudioDataStream loop = null;
@@ -123,9 +121,5 @@ public class Main {
 
     }
     
-<<<<<<< HEAD
-  
-=======
-    
->>>>>>> 95b555e454fcc2a724e37e3affd3a5a25d81384d
+
 }
