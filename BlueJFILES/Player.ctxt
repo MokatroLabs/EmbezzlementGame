@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Player
+comment1.params=
+comment1.target=void\ activeAbility()
+comment10.params=ammount
+comment10.target=void\ setMoney(int)
+comment11.params=
+comment11.target=boolean\ isHuman()
+comment12.params=
+comment12.target=void\ paycheck()
+comment2.params=
+comment2.target=void\ interact()
+comment3.params=
+comment3.target=void\ fundraise()
+comment4.params=
+comment4.target=void\ upgrade()
+comment5.params=
+comment5.target=void\ embezzle()
+comment6.params=
+comment6.target=double\ getReputation()
+comment7.params=
+comment7.target=int\ getMoney()
+comment8.params=
+comment8.target=java.lang.String\ getChar()
+comment9.params=rep
+comment9.target=void\ setReputation(double)
+numComments=13
