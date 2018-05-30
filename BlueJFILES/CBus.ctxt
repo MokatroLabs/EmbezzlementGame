@@ -6,16 +6,9 @@ comment1.target=CBus()
 comment2.params=
 comment2.target=int\ getTWE()
 comment3.params=
-<<<<<<< HEAD
-comment3.target=void\ paycheck()
-comment4.params=
-comment4.target=int\ findMove()
-numComments=5
-=======
 comment3.target=void\ activeAbility()
 comment4.params=
 comment4.target=void\ paycheck()
 comment5.params=
 comment5.target=int\ findMove()
 numComments=6
->>>>>>> a284bb96fa38f722274b2e952a95075802907d59

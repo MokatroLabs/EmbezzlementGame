@@ -18,6 +18,7 @@ public interface Player {
 	void paycheck();
 	
 	int findMove();
+	
 	//Getters
 	double getReputation();
 	
@@ -32,11 +33,10 @@ public interface Player {
 	int getTWE();
 	
 	boolean isHuman();
-<<<<<<< HEAD
-	void paycheck();
-	int findMove();
-=======
 	
+	boolean getLost();
+	
+	boolean getToggled();
 	//Setters
 	void setReputation(double newReputation);
 	
@@ -48,7 +48,9 @@ public interface Player {
 	
 	void setTWE(int newTWE);
 	
+	void setLost();
 	
->>>>>>> a284bb96fa38f722274b2e952a95075802907d59
+	
+
 
 }
