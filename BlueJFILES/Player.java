@@ -28,5 +28,6 @@ public interface Player {
 	
 	boolean isHuman();
 	void paycheck();
+	int findMove();
 
 }

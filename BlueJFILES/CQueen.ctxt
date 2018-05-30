@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=CQueen
-comment0.text=\n\ Write\ a\ description\ of\ class\ CQueen\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ CQueen\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=CQueen()
 comment2.params=
@@ -9,6 +9,6 @@ comment3.params=
 comment3.target=void\ fundraise()
 comment4.params=
 comment4.target=void\ interact()
-comment5.params=choice
-comment5.target=int\ findMove(Player)
+comment5.params=
+comment5.target=int\ findMove()
 numComments=6

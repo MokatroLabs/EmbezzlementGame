@@ -34,14 +34,14 @@ public class CQueen extends Computer
    public void interact()
    {
     }
-   public int findMove(Player choice)
+   public int findMove()
     {
         if(coolDown == 0)
         {
             return 5;
 
         }
-        else if (choice.getReputation() < 30)
+        else if (getReputation() < 30)
         {
             return 1;
         }
