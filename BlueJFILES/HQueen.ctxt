@@ -7,5 +7,5 @@ comment2.target=void\ activeAbility()
 comment3.params=
 comment3.target=void\ fundraise()
 comment4.params=
-comment4.target=void\ interact()
+comment4.target=void\ toggleAction()
 numComments=5

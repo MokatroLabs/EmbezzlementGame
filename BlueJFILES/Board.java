@@ -234,8 +234,11 @@ public class Board implements ActionListener {
         interactAction.setFont(newFont);
         gameScreen.add(interactAction, cons);
         
-        skillTreeAction = new JButton("Skill Tree");
-        skillTreeAction.setActionCommand("Skill Tree");
+        skillTreeAction = new JButton("Upgrade");
+        skillTreeAction.setActionCommand("Upgrade");
+        /*
+         * Sorry, Dust. I wanted to label it as an action. 
+         */
         skillTreeAction.addActionListener(this);
         cons.gridx = 4;
         cons.gridy = 3;

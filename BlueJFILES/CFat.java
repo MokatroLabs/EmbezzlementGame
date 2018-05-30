@@ -15,11 +15,9 @@ public class CFat extends Computer
         this.character = "Father";
     }
     
-    public void activeAbility(Player choice, Player father )
+    public void activeAbility()
     {
         coolDown = 5;
-        choice.setMoney(choice.getMoney() - 300);
-        father.setMoney(father.getMoney() + 300);
     }
     
     public void interact()

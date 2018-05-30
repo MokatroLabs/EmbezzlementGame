@@ -21,12 +21,25 @@ public interface Player {
 	
 	String getChar();
 	
-	//Setters
-	void setReputation(double rep);
+	int getCoolDown();
 	
-	void setMoney(int ammount);
+	boolean getEmbezzle();
+	
+	int getTWE();
+	//Setters
+	void setReputation(double newReputation);
+	
+	void setMoney(int newMoney);
+	
+	void setCoolDown(int newCoolDown);
+
+	void setEmbezzle();
+	
+	void setTWE(int newTWE);
 	
 	boolean isHuman();
 	void paycheck();
+	
+	int findMove();
 
 }

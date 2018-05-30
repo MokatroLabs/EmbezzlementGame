@@ -25,8 +25,10 @@ public class CSpy extends Computer
     {
         money += 750;
         reputation -= 0.3;
+        hasEmbezzled = true;
     }
-    public int findMove(Player choice)
+    
+    public int findMove()
     {
         if(coolDown == 0)
         {

@@ -23,9 +23,8 @@ public class HQueen extends Human {
        reputation += .5;
    }
     
-    public void interact()
-    {
-    
+   public void toggleAction(){ //The queen cannot toggle her actions off
+       
     }
 
 }
