@@ -2,8 +2,6 @@
 
 
 public interface Player {
-
-	
 	//Actions
 	void activeAbility();
 	
