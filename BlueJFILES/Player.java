@@ -32,10 +32,8 @@ public interface Player {
 	int getTWE();
 	
 	boolean isHuman();
-<<<<<<< HEAD
-	void paycheck();
-	int findMove();
-=======
+
+	
 	
 	//Setters
 	void setReputation(double newReputation);
@@ -49,6 +47,6 @@ public interface Player {
 	void setTWE(int newTWE);
 	
 	
->>>>>>> a284bb96fa38f722274b2e952a95075802907d59
+
 
 }

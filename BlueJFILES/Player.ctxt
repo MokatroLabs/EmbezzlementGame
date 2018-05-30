@@ -7,11 +7,6 @@ comment10.target=java.lang.String\ getChar()
 comment11.params=
 comment11.target=int\ getCooldown()
 comment12.params=
-<<<<<<< HEAD
-comment12.target=void\ paycheck()
-comment13.params=
-comment13.target=int\ findMove()
-=======
 comment12.target=boolean\ getEmbezzle()
 comment13.params=
 comment13.target=int\ getTWE()
@@ -27,7 +22,6 @@ comment18.params=
 comment18.target=void\ setEmbezzle()
 comment19.params=newTWE
 comment19.target=void\ setTWE(int)
->>>>>>> a284bb96fa38f722274b2e952a95075802907d59
 comment2.params=
 comment2.target=void\ interact()
 comment3.params=
@@ -41,14 +35,7 @@ comment6.target=void\ paycheck()
 comment7.params=
 comment7.target=int\ findMove()
 comment8.params=
-<<<<<<< HEAD
-comment8.target=java.lang.String\ getChar()
-comment9.params=rep
-comment9.target=void\ setReputation(double)
-numComments=14
-=======
 comment8.target=double\ getReputation()
 comment9.params=
 comment9.target=int\ getMoney()
 numComments=20
->>>>>>> a284bb96fa38f722274b2e952a95075802907d59

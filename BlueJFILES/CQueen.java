@@ -26,27 +26,22 @@ public class CQueen extends Computer
     {
         
     }
-<<<<<<< HEAD
-   public int findMove()
-=======
+
     public int findMove()
->>>>>>> a284bb96fa38f722274b2e952a95075802907d59
+
     {
         if(cooldown == 0) {
             return 5;
-<<<<<<< HEAD
+
 
         }
         else if (getReputation() < 30)
         {
             return 1;
-=======
->>>>>>> a284bb96fa38f722274b2e952a95075802907d59
         }
-        else if (reputation < 30)
-            return 3;
         else 
             return 2;
     }
-    
 }
+    
+

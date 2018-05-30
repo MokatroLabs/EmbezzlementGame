@@ -24,10 +24,8 @@ public class CSpy extends Computer
         money += 750;
         reputation -= 0.3;
     }
-<<<<<<< HEAD
-=======
-    
->>>>>>> a284bb96fa38f722274b2e952a95075802907d59
+
+
     public int findMove()
     {
         if(cooldown == 0)
