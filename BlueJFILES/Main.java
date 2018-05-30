@@ -14,6 +14,8 @@ public class Main {
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
+ 
+        
         File OST = new File("OST.WAV");
         boolean playPressed = false;
         PlaySound(OST);
@@ -148,7 +150,7 @@ public class Main {
         try{
             Clip clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(Sound));
-            clip.start();
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
             BGM = new AudioStream(new FileInputStream("OST.WAV"));
             MD = BGM.getData();
             loop = new ContinuousAudioDataStream(MD);
