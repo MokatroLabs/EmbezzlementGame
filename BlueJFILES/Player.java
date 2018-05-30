@@ -33,6 +33,11 @@ public interface Player {
 	int getTWE();
 	
 	boolean isHuman();
+<<<<<<< HEAD
+=======
+
+	
+>>>>>>> dff112c5cb64dacb291e931940b7cf1e42da02f9
 	
 	boolean getLost();
 	

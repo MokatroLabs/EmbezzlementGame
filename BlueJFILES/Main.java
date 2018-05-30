@@ -14,6 +14,8 @@ public class Main {
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
+ 
+        
         File OST = new File("OST.WAV");
         boolean playPressed = false;
         PlaySound(OST);
@@ -39,10 +41,15 @@ public class Main {
         players = new ArrayList<Player>();
         int currentPlayer = 0;
         int round = 0;
+<<<<<<< HEAD
 
         board.makeTitleScreen();
         board.showTitleScreen();
 
+=======
+
+
+>>>>>>> dff112c5cb64dacb291e931940b7cf1e42da02f9
         CBus comp = new CBus();
         HQueen  human = new HQueen();
         board.hideTitleScreen();
@@ -66,14 +73,22 @@ public class Main {
             }
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
+<<<<<<< HEAD
+=======
+
+>>>>>>> dff112c5cb64dacb291e931940b7cf1e42da02f9
             if (currentPlayer  <= players.size() ){
                 players.get(currentPlayer).setCooldown((players.get(currentPlayer)).getCooldown() -1);
                 if(players.get(currentPlayer).getEmbezzle() == false){
                     players.get(currentPlayer).setTWE(players.get(currentPlayer).getTWE() -1);
                 }
+<<<<<<< HEAD
                 if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                     players.get(currentPlayer).setLost();
                 }
+=======
+
+>>>>>>> dff112c5cb64dacb291e931940b7cf1e42da02f9
                 currentPlayer++;
                 if(round == 2)
                     economy.setTurns(economy.getTurns() + 1);
@@ -90,7 +105,13 @@ public class Main {
             action = board.promptAction();
         else
         {
+<<<<<<< HEAD
           action = current.findMove();
+=======
+
+          action = current.findMove();
+
+>>>>>>> dff112c5cb64dacb291e931940b7cf1e42da02f9
         }
         if (action == 1) {
             current.embezzle();
@@ -143,7 +164,10 @@ public class Main {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dff112c5cb64dacb291e931940b7cf1e42da02f9
 
     public static void updateBoard(Human human, String[] textArea)
     { 
@@ -162,7 +186,7 @@ public class Main {
         try{
             Clip clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(Sound));
-            clip.start();
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
             BGM = new AudioStream(new FileInputStream("OST.WAV"));
             MD = BGM.getData();
             loop = new ContinuousAudioDataStream(MD);

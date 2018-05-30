@@ -12,6 +12,7 @@ comment13.params=
 comment13.target=int\ getTWE()
 comment14.params=
 comment14.target=boolean\ isHuman()
+<<<<<<< HEAD
 comment15.params=
 comment15.target=boolean\ getLost()
 comment16.params=
@@ -22,6 +23,18 @@ comment18.params=newMoney
 comment18.target=void\ setMoney(int)
 comment19.params=newCooldown
 comment19.target=void\ setCooldown(int)
+=======
+comment15.params=newReputation
+comment15.target=void\ setReputation(double)
+comment16.params=newMoney
+comment16.target=void\ setMoney(int)
+comment17.params=newCooldown
+comment17.target=void\ setCooldown(int)
+comment18.params=
+comment18.target=void\ setEmbezzle()
+comment19.params=newTWE
+comment19.target=void\ setTWE(int)
+>>>>>>> dff112c5cb64dacb291e931940b7cf1e42da02f9
 comment2.params=
 comment2.target=void\ interact()
 comment20.params=
@@ -44,4 +57,8 @@ comment8.params=
 comment8.target=double\ getReputation()
 comment9.params=
 comment9.target=int\ getMoney()
+<<<<<<< HEAD
 numComments=23
+=======
+numComments=20
+>>>>>>> dff112c5cb64dacb291e931940b7cf1e42da02f9

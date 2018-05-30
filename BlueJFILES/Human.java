@@ -65,11 +65,14 @@ public abstract class Human implements Player {
         cooldown = 5;
     }
     
+<<<<<<< HEAD
     public int findMove()
     {    
         return 0;
     }  
     
+=======
+>>>>>>> dff112c5cb64dacb291e931940b7cf1e42da02f9
     //Getters
     public double getReputation() 
     {

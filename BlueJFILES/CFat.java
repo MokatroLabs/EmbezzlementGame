@@ -36,10 +36,10 @@ public class CFat extends Computer
         {
             return 1;
         }
-        /*else if(choice.getReputation() < 40)
+        else if(getReputation() < 40)
         {
             return 3;
-        }*/
+        }
         else 
         {
             return 2;
