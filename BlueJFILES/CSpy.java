@@ -14,18 +14,15 @@ public class CSpy extends Computer
         this.character = "Spy";
     }
     
-    public void activeAbility(Player choice)
+    public void activeAbility()
     {
         coolDown = 5;
-        choice.setReputation(choice.getReputation() - 5);
-        choice.setMoney(choice.getMoney() - 500);
     }
     
     public void embezzle()
     {
         money += 750;
         reputation -= 0.3;
-        hasEmbezzled = true;
     }
     
     public int findMove()
@@ -35,10 +32,8 @@ public class CSpy extends Computer
             return 5;
         }else
         {
-            return 2;
+            return 1;
         }
-        
-        
     }
     
         

@@ -15,6 +15,9 @@ public interface Player {
 	
 	void embezzle();
 	
+	void paycheck();
+	
+	int findMove();
 	//Getters
 	double getReputation();
 	
@@ -27,6 +30,9 @@ public interface Player {
 	boolean getEmbezzle();
 	
 	int getTWE();
+	
+	boolean isHuman();
+	
 	//Setters
 	void setReputation(double newReputation);
 	
@@ -38,9 +44,6 @@ public interface Player {
 	
 	void setTWE(int newTWE);
 	
-	boolean isHuman();
-	void paycheck();
 	
-	int findMove();
 
 }

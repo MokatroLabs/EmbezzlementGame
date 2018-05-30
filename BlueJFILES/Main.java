@@ -12,14 +12,11 @@ public class Main {
     private static ArrayList<Player> players;
     static Deck deck;
     final static int maxTurns = 150;
-
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
         boolean playPressed = false;
-        
         PlaySound(OST);
-        
         board.makeTitleScreen();
         board.showTitleScreen();
         board.makeGameScreen();
@@ -34,7 +31,7 @@ public class Main {
     public static void runGame()
     {
         String[] textArea = new String[5];
-        textArea[0] = "Gaynald is gay";
+        textArea[0] = "Gaynald is Gay";
         textArea[1] = "Next Line";
         textArea[2] = "Next Line";
         textArea[3] = "Next Line";
@@ -48,7 +45,6 @@ public class Main {
         players.add(human);
         players.add(comp);
         updateBoard(human, textArea);
-
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
@@ -158,7 +154,6 @@ public class Main {
             loop = new ContinuousAudioDataStream(MD);
         }catch(Exception e){}
         MGP.start(loop);
-
     }
     
 

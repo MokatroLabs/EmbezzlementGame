@@ -125,7 +125,7 @@ public abstract class Computer implements Player {
     //This is the AI function
     public int findMove()
     {
-        return -1;
+        return 0;
     }
     //Gives paycheck
     public void paycheck()

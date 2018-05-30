@@ -9,12 +9,13 @@
  */
 public class Card extends Deck
 {
-    protected String name;
+    String name;
     //protected int choice;
     //protected int random;
     public Card()
     {
         name  = "";
+        
     }
     
     
