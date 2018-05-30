@@ -10,7 +10,7 @@ public class HQueen extends Human {
     }
     
 
-    public void activeAbility()
+    public void activeAbility() //Royal Wealth
    {
        money += 1000;
        reputation -= 2.5;
