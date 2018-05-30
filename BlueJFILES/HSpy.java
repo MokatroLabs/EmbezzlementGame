@@ -26,5 +26,6 @@ public class HSpy extends Human
     {
         money += 750;
         reputation -= 0.25;
+        hasEmbezzled = true;
     }
 }

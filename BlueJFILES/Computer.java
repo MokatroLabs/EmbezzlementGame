@@ -7,12 +7,18 @@ public abstract class Computer implements Player {
     protected String character ; //refers to the identification of each class by String
     protected int coolDown; //refers to active ability cooldown times
     protected boolean isHuman; //refers to the identification of each class by whether they are human or not
+    protected boolean isToggled; //refers to the toggling of actions 
+    protected boolean hasEmbezzled; //refers to audits
+    protected int twe; //refers to turns without embezzle
     
     public Computer(){
         reputation = 50;
         money = 100;
         character = "";
         coolDown = 5;
+        isToggled = true;
+        hasEmbezzled = false;
+        twe = 0;
     }
     
     public Computer(double newReputation,int newMoney,String Char) {
@@ -33,6 +39,7 @@ public abstract class Computer implements Player {
     {   
         money += 500;
         reputation -= .25;
+        hasEmbezzled = true;
     }
     
     public void interact(){ //Action 3
@@ -67,6 +74,14 @@ public abstract class Computer implements Player {
     public int getCoolDown(){
         return coolDown;
     }
+    
+    public boolean getEmbezzle(){
+        return hasEmbezzled;
+    }
+    public int getTWE()
+    {
+        return twe;
+    }
     //Setters
     public void setReputation (double ammount)
     {
@@ -82,11 +97,23 @@ public abstract class Computer implements Player {
         coolDown = newCoolDown;
     }
     
+    public void setEmbezzle(){
+        hasEmbezzled = false;
+    }
+    
+    public void setTWE(int newTWE){
+        twe = newTWE;
+    }
+    
     //Miscellaneous
     //toggles show action feture
     public void toggleView()
     {
-        
+        if(isToggled){
+            isToggled = false;
+        } else {
+            isToggled = true;
+        }
     }
     
     //Differentiates between Humans and Computers
@@ -98,13 +125,14 @@ public abstract class Computer implements Player {
     //This is the AI function
     public int findMove()
     {
-        return 1;
+        return -1;
     }
     //Gives paycheck
     public void paycheck()
     {
         money += 100 + (reputation-50)*100;
     }
+    
     public String toString()
     {
           return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";

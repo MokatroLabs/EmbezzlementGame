@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Main {
     public static Board board = new Board();
     public static Mechanics economy = new Mechanics();
+    private static ArrayList<Player> players;
     static Deck deck;
     final static int maxTurns = 150;
 
@@ -38,34 +39,41 @@ public class Main {
         textArea[2] = "Next Line";
         textArea[3] = "Next Line";
         textArea[4] = "Next Line";
+        players = new ArrayList<Player>();
         int currentPlayer = 0;
         int round = 0;
-        ArrayList<Player> players = new ArrayList<Player>();
         CBus comp = new CBus();
         HQueen  human = new HQueen();
         board.hideTitleScreen();
-        
         players.add(human);
         players.add(comp);
         updateBoard(human, textArea);
 
         while(economy.getTurns() <= maxTurns) {
-            
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
             if(round > 2)
                 round = 0;
             if(economy.getTurns() %5 == 0)
                 players.get(currentPlayer).paycheck();
+            if(Math.random() * 100 < (10 - ((players.get(currentPlayer)).getReputation()) / 10)){
+                audit(players.get(currentPlayer));
+            }
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
-            if (currentPlayer  <= players.size() )
+            if (currentPlayer  <= players.size() ){
+                players.get(currentPlayer).setCoolDown((players.get(currentPlayer)).getCoolDown() -1);
+                if(players.get(currentPlayer).getEmbezzle() == false){
+                    players.get(currentPlayer).setTWE(players.get(currentPlayer).getTWE() -1);
+                }
                 currentPlayer++;
-            if(round == 2)
-                economy.setTurns(economy.getTurns() + 1);
-            round++;
+                if(round == 2)
+                    economy.setTurns(economy.getTurns() + 1);
+                round++;
+            }         
         }
     }
+    
     public static void takeTurn(Player current)
     {
         System.out.println("turn");
@@ -80,21 +88,52 @@ public class Main {
             current.embezzle();
             if((current.getChar()).equals("Spy")){
                 economy.setMoney(economy.getMoney() - 750);
-                
             }else {
                 economy.setMoney(economy.getMoney() - 500);
             }
-        }else if (action == 2)
-            {   current.fundraise();
-
-                if(current.getChar().equals("Queen")){
-                    economy.setMoney(economy.getMoney() + 300);
-                }else {
-                    economy.setMoney(economy.getMoney() + 400);
-                }
-
+        } 
+        if (action == 2)
+        {   current.fundraise();
+            if(current.getChar().equals("Queen")){
+                economy.setMoney(economy.getMoney() + 300);
+            }else {
+                economy.setMoney(economy.getMoney() + 400);
             }
+        }
+        if(action == 5){
+            if(current.getChar().equals("Businessman")){
+                for(int i = 0; i < players.size(); i++){
+                    (players.get(i)).setCoolDown((players.get(i).getCoolDown() + 2));
+                }
+                current.activeAbility();
+            } else if(current.getChar().equals("Father")){
+                for(int i = 0; i < players.size(); i++){
+                    (players.get(i)).setMoney((players.get(i).getMoney() - 300));
+                    current.setMoney(current.getMoney() + 300);
+                }
+                current.activeAbility();
+            } else if(current.getChar().equals("Spy")) {
+                //current.activeAbility(players.get(0));
+            } else {
+                current .activeAbility();
+            }
+        }
     }
+
+    
+    public static void audit(Player target){
+        if(economy.getTurns() >= 10){
+            if(target.getReputation() <= 15 && target.getTWE() <= 5){
+                //Lose the Game
+            } else if(target.getReputation() < 40 && target.getTWE() <= 5) {
+                target.setMoney(target.getMoney() - 500);
+                target.setReputation(target.getReputation() - 2.5);
+            } else if(target.getTWE() > 5){
+                target.setReputation(target.getReputation() + 1);
+            }
+        }
+    }
+
 
     public static void updateBoard(Human human, String[] textArea)
     { 

@@ -11,8 +11,12 @@ public class CBus extends Computer
 {
     public CBus(){
         super();
-        this.character = "Business Man";
+        this.character = "Businessman";
         this.reputation = 25;
+    }
+    
+    public int getTWE(){
+        return twe;
     }
     
     public void activeAbility()
@@ -23,7 +27,7 @@ public class CBus extends Computer
     public void paycheck()
 
     {
-        money += 150 + (reputation-50)*150;
+        money += 250 + (reputation * .01) * 10;
     }
     
     public int findMove()
@@ -32,13 +36,12 @@ public class CBus extends Computer
         if(coolDown == 0)
         {
             return 5;
-
         }
-        else if (getReputation() < 40)
+        else if (reputation < 40)
         {
             return 1;
         }
-        /*else if(choice.getReputation() < 40)
+        /*else if(reputation < 40)
         {
             //return 3;
         }
@@ -47,8 +50,6 @@ public class CBus extends Computer
         {
             return 2;
         }
-        
-        
     }
     
    
