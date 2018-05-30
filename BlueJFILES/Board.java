@@ -46,7 +46,7 @@ public class Board implements ActionListener {
     private boolean embezzleClick;
     private boolean fundraiseClick;
     private boolean skillTreeClick;
-    
+    private boolean playClick;
     public Board() 
     {
         master = new JFrame("Dont Assume");          //  title of the window
@@ -61,7 +61,7 @@ public class Board implements ActionListener {
         embezzleClick = false;
         fundraiseClick = false;
         skillTreeClick = false;
-        
+        playClick = false;
         
 
         
@@ -234,8 +234,11 @@ public class Board implements ActionListener {
         interactAction.setFont(newFont);
         gameScreen.add(interactAction, cons);
         
-        skillTreeAction = new JButton("Skill Tree");
-        skillTreeAction.setActionCommand("Skill Tree");
+        skillTreeAction = new JButton("Upgrade");
+        skillTreeAction.setActionCommand("Upgrade");
+        /*
+         * Sorry, Dust. I wanted to label it as an action. 
+         */
         skillTreeAction.addActionListener(this);
         cons.gridx = 4;
         cons.gridy = 3;
@@ -430,6 +433,11 @@ public class Board implements ActionListener {
         return displayWords;
     }
     
+    public boolean getPlayClick()
+    {
+        return playClick;
+    }
+    
     public boolean getActiveClick()
     {
         return activeClick;
@@ -501,6 +509,10 @@ public class Board implements ActionListener {
         skillTreeClick = bol;
     }
     
+    public void setPlayClick(boolean bol)
+    {
+        playClick = bol;
+    }
     
     
     public void actionPerformed(ActionEvent theEvent) 
@@ -508,6 +520,7 @@ public class Board implements ActionListener {
         if(theEvent.getActionCommand().equals("Play"))
         {
             hideTitleScreen();
+            setPlayClick(true);
             showGameScreen();
         }
         if(theEvent.getActionCommand().equals("Embezzle"))

@@ -7,7 +7,7 @@ public class Mechanics {
     public Mechanics()
     {
         moneyPot = 400;
-        turnCount = 0;
+        turnCount = 1;
     }
     // setter for moneyPot
 
@@ -18,9 +18,9 @@ public class Mechanics {
         this.moneyPot = moneyPot;
     }
     //setter for moneypot
-    public void setMoney(int ammount)
+    public void setMoney(int amount)
     {
-        moneyPot = ammount;
+        moneyPot = amount;
     }
     //getter for moneyPot
     public int getMoney()

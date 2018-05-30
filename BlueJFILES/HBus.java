@@ -17,7 +17,7 @@ public class HBus extends Human
     
     public void activeAbility()
     {
-        coolDown = 5;
+        cooldown = 5;
     }
     
     public void interact()

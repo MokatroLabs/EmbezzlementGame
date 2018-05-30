@@ -10,11 +10,11 @@ public class HQueen extends Human {
     }
     
 
-    public void activeAbility()
+    public void activeAbility() //Royal Wealth
    {
        money += 1000;
        reputation -= 2.5;
-       coolDown = 5;
+       cooldown = 5;
    }
    
    public void fundraise()
@@ -23,9 +23,8 @@ public class HQueen extends Human {
        reputation += .5;
    }
     
-    public void interact()
-    {
-    
+   public void toggleAction(){ //The queen cannot toggle her actions off
+       
     }
 
 }

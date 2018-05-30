@@ -16,7 +16,7 @@ public class HFat extends Human
     
     public void activeAbility(Player choice, Player father)
     {
-        coolDown = 5;
+        cooldown = 5;
         choice.setMoney(choice.getMoney() - 300);
         father.setMoney(father.getMoney() + 300);
     }

@@ -2,8 +2,8 @@
 comment0.target=CFat
 comment1.params=
 comment1.target=CFat()
-comment2.params=choice\ father
-comment2.target=void\ activeAbility(Player,\ Player)
+comment2.params=
+comment2.target=void\ activeAbility()
 comment3.params=
 comment3.target=void\ interact()
 comment4.params=

@@ -9,16 +9,22 @@ public abstract class Human implements Player {
     protected double reputation;
     protected int money;
     protected String character;//refers to the identification of each class by String
-    protected int coolDown; //refers to active ability cooldown times
-    boolean isHuman; //refers to the identification of each class by whether they are human or not
+    protected int cooldown; //refers to active ability cooldown times
+    protected boolean isHuman; //refers to the identification of each class by whether they are human or not
+    protected boolean isToggled; //refers to the toggling of actions
+    protected boolean hasEmbezzled; //refers to audits
+    protected int twe; //refers to turns without embezzle
     
     public Human()
     {
         reputation =  50;
         money = 2000;
         character = "";
-        coolDown = 5;
+        cooldown = 5;
         isHuman = true;
+        isToggled = true;
+        hasEmbezzled = false;
+        twe = 0;
     }
     
     public Human(double newReputation,int newMoney,String Char) { //meant just in case we want difficulties or multiplayer
@@ -39,6 +45,7 @@ public abstract class Human implements Player {
         // TODO Auto-generated method stub
         money += 500;
         reputation -= .25;
+        hasEmbezzled = true;
     }
     
     public void interact() {
@@ -53,9 +60,12 @@ public abstract class Human implements Player {
     
     public void activeAbility()
     {
-        
+        cooldown = 5;
     }
-    
+    public int findMove()
+    {    
+        return 0;
+    }    
     //Getters
     public double getReputation() 
     {
@@ -71,13 +81,21 @@ public abstract class Human implements Player {
         return money;
     }
     
-    public int getCoolDown(){
-        return coolDown;
+    public int getCooldown(){
+        return cooldown;
     }
     
     public boolean isHuman()
     {
         return isHuman;
+    }
+    
+    public boolean getEmbezzle(){
+        return hasEmbezzled;
+    }
+    
+    public int getTWE(){
+        return twe;
     }
     
     //Setters
@@ -91,20 +109,32 @@ public abstract class Human implements Player {
         money = newMoney;
     }
     
-    public void setCoolDown(int newCoolDown){
-        coolDown = newCoolDown;
+    public void setCooldown(int newCooldown){
+        cooldown = newCooldown;
+    }
+    
+    public void setEmbezzle(){
+        hasEmbezzled = false;
+    }
+    
+    public void setTWE(int newTWE){
+        twe = newTWE;
     }
     
     //Miscellaneous
     //toggles show action
     public void toggleView()
     {
-        
+        if(isToggled){
+            isToggled = false;
+        } else {
+            isToggled = true;
+        }
     }
     //gives paycheck
     public void paycheck()
     {
-        money += 100 + (reputation*.01)*100;
+        money += 100 + (reputation-50)* 10;
     }
     
     public int findMove(){
@@ -113,7 +143,7 @@ public abstract class Human implements Player {
     
     public String toString()
     {
-                    return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
+       return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";
     }
 
 

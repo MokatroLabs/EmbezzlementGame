@@ -2,6 +2,7 @@
 
 
 public interface Player {
+
 	
 	//Actions
 	void activeAbility();
@@ -14,6 +15,9 @@ public interface Player {
 	
 	void embezzle();
 	
+	void paycheck();
+	
+	int findMove();
 	//Getters
 	double getReputation();
 	
@@ -21,13 +25,30 @@ public interface Player {
 	
 	String getChar();
 	
-	//Setters
-	void setReputation(double rep);
+	int getCooldown();
 	
-	void setMoney(int ammount);
+	boolean getEmbezzle();
+	
+	int getTWE();
 	
 	boolean isHuman();
+<<<<<<< HEAD
 	void paycheck();
 	int findMove();
+=======
+	
+	//Setters
+	void setReputation(double newReputation);
+	
+	void setMoney(int newMoney);
+	
+	void setCooldown(int newCooldown);
+
+	void setEmbezzle();
+	
+	void setTWE(int newTWE);
+	
+	
+>>>>>>> a284bb96fa38f722274b2e952a95075802907d59
 
 }

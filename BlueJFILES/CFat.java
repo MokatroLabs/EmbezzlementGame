@@ -15,11 +15,9 @@ public class CFat extends Computer
         this.character = "Father";
     }
     
-    public void activeAbility(Player choice, Player father )
+    public void activeAbility()
     {
-        coolDown = 5;
-        choice.setMoney(choice.getMoney() - 300);
-        father.setMoney(father.getMoney() + 300);
+        cooldown = 5;
     }
     
     public void interact()
@@ -29,7 +27,7 @@ public class CFat extends Computer
 
     public int findMove()
     {
-        if(coolDown == 0)
+        if(cooldown == 0)
         {
             return 5;
 
