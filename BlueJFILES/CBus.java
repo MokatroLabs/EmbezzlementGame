@@ -26,7 +26,7 @@ public class CBus extends Computer
         money += 150 + (reputation-50)*150;
     }
     
-    public int findMove(Player choice)
+    public int findMove()
 
     {
         if(coolDown == 0)
@@ -34,7 +34,7 @@ public class CBus extends Computer
             return 5;
 
         }
-        else if (choice.getReputation() < 40)
+        else if (getReputation() < 40)
         {
             return 1;
         }

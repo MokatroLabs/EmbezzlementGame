@@ -55,7 +55,10 @@ public abstract class Human implements Player {
     {
         
     }
-    
+    public int findMove()
+    {    
+        return 0;
+    }    
     //Getters
     public double getReputation() 
     {

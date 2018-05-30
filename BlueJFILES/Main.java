@@ -15,23 +15,36 @@ public class Main {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
-        ArrayList<Player> players = new ArrayList<Player>();
-        CBus comp = new CBus();
-        HQueen  human = new HQueen();
+        boolean playPressed = false;
+        
+        PlaySound(OST);
+        
+        board.makeTitleScreen();
+        board.showTitleScreen();
+        board.makeGameScreen();
+        board.hideGameScreen();
+        while(!(playPressed))
+        {
+            if(board.getPlayClick())
+                playPressed = true;
+        }
+        runGame();
+    }
+    public static void runGame()
+    {
         String[] textArea = new String[5];
         textArea[0] = "Gaynald is gay";
         textArea[1] = "Next Line";
         textArea[2] = "Next Line";
         textArea[3] = "Next Line";
         textArea[4] = "Next Line";
-        PlaySound(OST);
         int currentPlayer = 0;
         int round = 0;
-        board.makeTitleScreen();
-        board.showTitleScreen();
-
-        board.makeGameScreen();
-        board.hideGameScreen();
+        ArrayList<Player> players = new ArrayList<Player>();
+        CBus comp = new CBus();
+        HQueen  human = new HQueen();
+        board.hideTitleScreen();
+        
         players.add(human);
         players.add(comp);
         updateBoard(human, textArea);
@@ -40,7 +53,7 @@ public class Main {
             
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
-            if(round > 4)
+            if(round > 2)
                 round = 0;
             if(economy.getTurns() %5 == 0)
                 players.get(currentPlayer).paycheck();
@@ -48,15 +61,10 @@ public class Main {
             updateBoard(human,textArea);
             if (currentPlayer  <= players.size() )
                 currentPlayer++;
-            if(round == 4)
-
+            if(round == 2)
                 economy.setTurns(economy.getTurns() + 1);
-
-            
             round++;
         }
-
-        
     }
     public static void takeTurn(Player current)
     {
@@ -66,7 +74,7 @@ public class Main {
             action = board.promptAction();
         else
         {
-            //implement findMove() function 
+            action = current.findMove();
         }
         if (action == 1) {
             current.embezzle();

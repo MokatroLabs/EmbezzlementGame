@@ -46,7 +46,7 @@ public class Board implements ActionListener {
     private boolean embezzleClick;
     private boolean fundraiseClick;
     private boolean skillTreeClick;
-    
+    private boolean playClick;
     public Board() 
     {
         master = new JFrame("Dont Assume");          //  title of the window
@@ -61,7 +61,7 @@ public class Board implements ActionListener {
         embezzleClick = false;
         fundraiseClick = false;
         skillTreeClick = false;
-        
+        playClick = false;
         
 
         
@@ -430,6 +430,11 @@ public class Board implements ActionListener {
         return displayWords;
     }
     
+    public boolean getPlayClick()
+    {
+        return playClick;
+    }
+    
     public boolean getActiveClick()
     {
         return activeClick;
@@ -501,6 +506,10 @@ public class Board implements ActionListener {
         skillTreeClick = bol;
     }
     
+    public void setPlayClick(boolean bol)
+    {
+        playClick = bol;
+    }
     
     
     public void actionPerformed(ActionEvent theEvent) 
@@ -508,6 +517,7 @@ public class Board implements ActionListener {
         if(theEvent.getActionCommand().equals("Play"))
         {
             hideTitleScreen();
+            setPlayClick(true);
             showGameScreen();
         }
         if(theEvent.getActionCommand().equals("Embezzle"))
