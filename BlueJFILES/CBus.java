@@ -37,7 +37,8 @@ public class CBus extends Computer
         {
             return 5;
         }
-        else if (reputation < 40)
+
+        else if (getReputation() < 40)
         {
             return 1;
         }

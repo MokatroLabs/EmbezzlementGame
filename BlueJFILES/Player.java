@@ -32,6 +32,8 @@ public interface Player {
 	int getTWE();
 	
 	boolean isHuman();
+
+	
 	
 	//Setters
 	void setReputation(double newReputation);
@@ -45,5 +47,6 @@ public interface Player {
 	void setTWE(int newTWE);
 	
 	
+
 
 }

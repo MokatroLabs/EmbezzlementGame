@@ -41,12 +41,15 @@ public class Main {
         players = new ArrayList<Player>();
         int currentPlayer = 0;
         int round = 0;
+
+
         CBus comp = new CBus();
         HQueen  human = new HQueen();
         board.hideTitleScreen();
         players.add(human);
         players.add(comp);
         updateBoard(human, textArea);
+
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
@@ -59,11 +62,13 @@ public class Main {
             }
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
+
             if (currentPlayer  <= players.size() ){
                 players.get(currentPlayer).setCooldown((players.get(currentPlayer)).getCooldown() -1);
                 if(players.get(currentPlayer).getEmbezzle() == false){
                     players.get(currentPlayer).setTWE(players.get(currentPlayer).getTWE() -1);
                 }
+
                 currentPlayer++;
                 if(round == 2)
                     economy.setTurns(economy.getTurns() + 1);
@@ -80,7 +85,9 @@ public class Main {
             action = board.promptAction();
         else
         {
-            action = current.findMove();
+
+          action = current.findMove();
+
         }
         if (action == 1) {
             current.embezzle();
@@ -119,6 +126,7 @@ public class Main {
     }
 
     
+
     public static void audit(Player target){
         if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
