@@ -31,6 +31,7 @@ public class Main {
         board.makeTitleScreen();
         board.showTitleScreen();
 
+<<<<<<< HEAD
 
         for (int play = 0; play< players.size(); play++)
         {
@@ -40,6 +41,8 @@ public class Main {
         }
 
 
+=======
+>>>>>>> 3794544e27e4e34034d237c0b7d73ec9c1eaa166
         board.makeGameScreen();
         board.hideGameScreen();
         players.add(human);
@@ -48,7 +51,7 @@ public class Main {
 
         while(economy.getTurns() <= maxTurns) {
             
-            if (currentPlayer  <= players.size() )
+            if (currentPlayer  >= players.size() )
                 currentPlayer =0;
             if(round > 4)
                 round = 0;
@@ -79,6 +82,7 @@ public class Main {
     
     public static void takeTurn(Player current)
     {
+        System.out.println("turn");
         int action=0;
         if(current.isHuman())
             action = board.promptAction();
@@ -121,6 +125,7 @@ public class Main {
                 }
             }
     }
+<<<<<<< HEAD
     
     public static void audit(Player target){
         if(economy.getTurns() >= 10){
@@ -136,6 +141,8 @@ public class Main {
         }
         }
     }
+=======
+>>>>>>> 3794544e27e4e34034d237c0b7d73ec9c1eaa166
 
     public static void updateBoard(Human human, String[] textArea)
     { 
