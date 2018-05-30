@@ -21,7 +21,7 @@ public class CBus extends Computer
     
     public void activeAbility()
     {
-        coolDown = 5;
+        cooldown = 5;
     }
    
     public void paycheck()
@@ -33,7 +33,7 @@ public class CBus extends Computer
     public int findMove()
 
     {
-        if(coolDown == 0)
+        if(cooldown == 0)
         {
             return 5;
         }

@@ -5,7 +5,7 @@ public abstract class Computer implements Player {
     protected double reputation;
     protected int money;
     protected String character ; //refers to the identification of each class by String
-    protected int coolDown; //refers to active ability cooldown times
+    protected int cooldown; //refers to active ability cooldown times
     protected boolean isHuman; //refers to the identification of each class by whether they are human or not
     protected boolean isToggled; //refers to the toggling of actions 
     protected boolean hasEmbezzled; //refers to audits
@@ -15,7 +15,7 @@ public abstract class Computer implements Player {
         reputation = 50;
         money = 100;
         character = "";
-        coolDown = 5;
+        cooldown = 5;
         isToggled = true;
         hasEmbezzled = false;
         twe = 0;
@@ -71,8 +71,8 @@ public abstract class Computer implements Player {
         return character;
     }
     
-    public int getCoolDown(){
-        return coolDown;
+    public int getCooldown(){
+        return cooldown;
     }
     
     public boolean getEmbezzle(){
@@ -93,8 +93,8 @@ public abstract class Computer implements Player {
         money = ammount;
     }
     
-    public void setCoolDown(int newCoolDown){
-        coolDown = newCoolDown;
+    public void setCooldown(int newCooldown){
+        cooldown = newCooldown;
     }
     
     public void setEmbezzle(){

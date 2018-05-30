@@ -25,7 +25,7 @@ public interface Player {
 	
 	String getChar();
 	
-	int getCoolDown();
+	int getCooldown();
 	
 	boolean getEmbezzle();
 	
@@ -38,7 +38,7 @@ public interface Player {
 	
 	void setMoney(int newMoney);
 	
-	void setCoolDown(int newCoolDown);
+	void setCooldown(int newCooldown);
 
 	void setEmbezzle();
 	

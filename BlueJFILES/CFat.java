@@ -17,7 +17,7 @@ public class CFat extends Computer
     
     public void activeAbility()
     {
-        coolDown = 5;
+        cooldown = 5;
     }
     
     public void interact()
@@ -27,7 +27,7 @@ public class CFat extends Computer
 
     public int findMove(Player choice)
     {
-        if(coolDown == 0)
+        if(cooldown == 0)
         {
             return 5;
 

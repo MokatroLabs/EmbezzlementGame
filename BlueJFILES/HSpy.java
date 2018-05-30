@@ -15,11 +15,9 @@ public class HSpy extends Human
         super.character = "Spy";
     }
     
-    public void activeAbility(Player choice)
+    public void activeAbility()
     {
-        coolDown = 5;
-        choice.setReputation(choice.getReputation() - 5);
-        choice.setMoney(choice.getMoney() - 500);
+        cooldown = 5;
     }
     
     public void embezzle()

@@ -58,7 +58,7 @@ public class Main {
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
             if (currentPlayer  <= players.size() ){
-                players.get(currentPlayer).setCoolDown((players.get(currentPlayer)).getCoolDown() -1);
+                players.get(currentPlayer).setCooldown((players.get(currentPlayer)).getCooldown() -1);
                 if(players.get(currentPlayer).getEmbezzle() == false){
                     players.get(currentPlayer).setTWE(players.get(currentPlayer).getTWE() -1);
                 }
@@ -99,7 +99,7 @@ public class Main {
         if(action == 5){
             if(current.getChar().equals("Businessman")){
                 for(int i = 0; i < players.size(); i++){
-                    (players.get(i)).setCoolDown((players.get(i).getCoolDown() + 2));
+                    (players.get(i)).setCooldown((players.get(i).getCooldown() + 2));
                 }
                 current.activeAbility();
             } else if(current.getChar().equals("Father")){
