@@ -7,11 +7,7 @@ public abstract class Computer implements Player {
     protected String character ; //refers to the identification of each class by String
     protected int coolDown; //refers to active ability cooldown times
     protected boolean isHuman; //refers to the identification of each class by whether they are human or not
-    double embezzleW= .5; //weights for how much the comp wants to do each thing
-    double fundraiseW= .5;
-    double interactW;
-    double upgradeW;
-    double activeW;
+    
     public Computer(){
         reputation = 50;
         money = 100;
@@ -102,25 +98,12 @@ public abstract class Computer implements Player {
     //This is the AI function
     public int findMove()
     {
-        double action = Math.random();
-        if(reputation <= 50)
-        {
-            if(reputation <=25)
-            {
-                
-            }
-        }
-        if (action < embezzleW)
-            return 1;
-        
-        if (action < embezzleW + fundraiseW)
-            return 2; 
-        return 0;
+        return 1;
     }
     //Gives paycheck
     public void paycheck()
     {
-        money += 100 + (reputation*.01)*100;
+        money += 100 + (reputation-50)*100;
     }
     public String toString()
     {
