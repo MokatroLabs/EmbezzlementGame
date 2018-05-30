@@ -136,6 +136,11 @@ public abstract class Human implements Player {
     {
         money += 100 + (reputation-50)* 10;
     }
+    
+    public int findMove(){
+        return 0;
+    }
+    
     public String toString()
     {
        return "This player is part of the " + character + " class . Also, this player has " + reputation + " reputation and " + money + " dollars.";

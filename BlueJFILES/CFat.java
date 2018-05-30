@@ -25,14 +25,14 @@ public class CFat extends Computer
     }
     
 
-    public int findMove(Player choice)
+    public int findMove()
     {
         if(cooldown == 0)
         {
             return 5;
 
         }
-        else if (choice.getReputation() < 30)
+        else if (getReputation() < 30)
         {
             return 1;
         }

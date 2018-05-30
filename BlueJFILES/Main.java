@@ -39,12 +39,24 @@ public class Main {
         players = new ArrayList<Player>();
         int currentPlayer = 0;
         int round = 0;
+<<<<<<< HEAD
+        board.makeTitleScreen();
+        board.showTitleScreen();
+
+        board.makeGameScreen();
+        board.hideGameScreen();
+        players.add(human);
+        players.add(comp);
+        updateBoard(human, textArea);
+
+=======
         CBus comp = new CBus();
         HQueen  human = new HQueen();
         board.hideTitleScreen();
         players.add(human);
         players.add(comp);
         updateBoard(human, textArea);
+>>>>>>> a284bb96fa38f722274b2e952a95075802907d59
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
@@ -57,11 +69,16 @@ public class Main {
             }
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
+<<<<<<< HEAD
+            if (currentPlayer  <= players.size() )
+                //currentPlayer.setCoolDown(currentPlayer.getCoolDown() -1);
+=======
             if (currentPlayer  <= players.size() ){
                 players.get(currentPlayer).setCooldown((players.get(currentPlayer)).getCooldown() -1);
                 if(players.get(currentPlayer).getEmbezzle() == false){
                     players.get(currentPlayer).setTWE(players.get(currentPlayer).getTWE() -1);
                 }
+>>>>>>> a284bb96fa38f722274b2e952a95075802907d59
                 currentPlayer++;
                 if(round == 2)
                     economy.setTurns(economy.getTurns() + 1);
@@ -78,7 +95,11 @@ public class Main {
             action = board.promptAction();
         else
         {
+<<<<<<< HEAD
+          action = current.findMove();
+=======
             action = current.findMove();
+>>>>>>> a284bb96fa38f722274b2e952a95075802907d59
         }
         if (action == 1) {
             current.embezzle();
@@ -117,6 +138,8 @@ public class Main {
     }
 
     
+<<<<<<< HEAD
+=======
     public static void audit(Player target){
         if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
@@ -130,6 +153,7 @@ public class Main {
         }
     }
 
+>>>>>>> a284bb96fa38f722274b2e952a95075802907d59
 
     public static void updateBoard(Human human, String[] textArea)
     { 
