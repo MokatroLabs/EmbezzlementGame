@@ -44,9 +44,12 @@ public class Main {
         int round = 0;
         board.makeTitleScreen();
         board.showTitleScreen();
+
         CBus comp1 = new CBus();
         CBus comp2 = new CBus();
         CBus comp3 = new CBus();
+
+        
         HQueen  human = new HQueen();
         board.hideTitleScreen();
         players.add(human);
@@ -71,9 +74,11 @@ public class Main {
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
             }
-
             if(round == 4)
                 economy.setTurns(economy.getTurns() + 1);
+            if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
+                players.get(currentPlayer).setLost();
+            }
             round++;
             currentPlayer++;
         }
@@ -96,7 +101,7 @@ public class Main {
             action = board.promptAction();
         else
         {
-          action = current.findMove();
+            action = current.findMove();
         }
         if (action == 1) {
             current.embezzle();
@@ -144,7 +149,7 @@ public class Main {
 
     
 
-  /*  public static void audit(Player target){
+    /*  public static void audit(Player target){
         if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
@@ -155,6 +160,11 @@ public class Main {
                 target.setReputation(target.getReputation() + 1);
             }
         }
+
+
+    }
+
+
 
     }
 
