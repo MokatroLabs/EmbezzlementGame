@@ -378,7 +378,13 @@ public class Board implements ActionListener {
     public int promptAction()
     {
         boolean actionPick = false;
+        int count = 0;
         while(!actionPick){
+            if (count == 100000)
+            {
+                System.out.println("in loop");
+                count =0;
+            }
             if(getEmbezzleClick() == true)
             {
                 setEmbezzleClick(false);

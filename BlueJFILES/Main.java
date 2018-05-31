@@ -14,6 +14,8 @@ public class Main {
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
+ 
+        
         File OST = new File("OST.WAV");
         boolean playPressed = false;
         PlaySound(OST);
@@ -39,12 +41,15 @@ public class Main {
         players = new ArrayList<Player>();
         int currentPlayer = 0;
         int round = 0;
+
+
         CBus comp = new CBus();
         HQueen  human = new HQueen();
         board.hideTitleScreen();
         players.add(human);
         players.add(comp);
         updateBoard(human, textArea);
+
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
@@ -57,16 +62,13 @@ public class Main {
             }
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
+
             if (currentPlayer  <= players.size() ){
-                players.get(currentPlayer).setCooldown((players.get(currentPlayer)).getCooldown() -1);
-                if(players.get(currentPlayer).getEmbezzle() == false){
-                    players.get(currentPlayer).setTWE(players.get(currentPlayer).getTWE() -1);
-                }
                 currentPlayer++;
-                if(round == 2)
+            }
+            if(round == 2)
                     economy.setTurns(economy.getTurns() + 1);
-                round++;
-            }         
+            round++;
         }
     }
     
@@ -75,14 +77,17 @@ public class Main {
         System.out.println("turn");
         int action=0;
         int target=-1;
+        current.setTWE(current.getTWE() +1);
+        current.setCooldown(current.getCooldown()-1);
         if(current.isHuman())
             action = board.promptAction();
         else
         {
-            action = current.findMove();
+          action = current.findMove();
         }
         if (action == 1) {
             current.embezzle();
+            current.setTWE(0);
             if((current.getChar()).equals("Spy")){
                 economy.setMoney(economy.getMoney() - 750);
             }else {
@@ -96,6 +101,10 @@ public class Main {
             }else {
                 economy.setMoney(economy.getMoney() + 400);
             }
+        }
+        if (action == 3)
+        {
+            current.interact();
         }
         if(action == 5){
             if(current.getChar().equals("Businessman")){
@@ -121,6 +130,7 @@ public class Main {
     }
 
     
+
     public static void audit(Player target){
         if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
@@ -152,7 +162,7 @@ public class Main {
         try{
             Clip clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(Sound));
-            clip.start();
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
             BGM = new AudioStream(new FileInputStream("OST.WAV"));
             MD = BGM.getData();
             loop = new ContinuousAudioDataStream(MD);

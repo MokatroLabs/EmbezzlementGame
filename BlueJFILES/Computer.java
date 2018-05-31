@@ -10,7 +10,12 @@ public abstract class Computer implements Player {
     protected boolean isToggled; //refers to the toggling of actions 
     protected boolean hasEmbezzled; //refers to audits
     protected int twe; //refers to turns without embezzle
-    
+    double embezzleW=.2;
+    double fundraiseW=.2;
+    double interactW=.2;
+    double upgradeW=.2;
+    double activeW=.2;
+    double bound=1;
     public Computer(){
         reputation = 50;
         money = 100;
@@ -54,6 +59,16 @@ public abstract class Computer implements Player {
     public void activeAbility() //Action 5
     {
         
+    }
+    
+    public void resetFocus()
+    {
+        embezzleW=.2;
+        fundraiseW=.2;
+        interactW=.2;
+        upgradeW=.2;
+        activeW=.2;
+        bound=1;
     }
     //Getters 
     public double getReputation() {
@@ -130,7 +145,7 @@ public abstract class Computer implements Player {
     //Gives paycheck
     public void paycheck()
     {
-        money += 100 + (reputation-50)*100;
+        money += 100 + (reputation*.01)*100;
     }
     
     public String toString()

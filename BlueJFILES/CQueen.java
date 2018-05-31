@@ -26,15 +26,22 @@ public class CQueen extends Computer
     {
         
     }
+
     public int findMove()
+
     {
         if(cooldown == 0) {
             return 5;
+
+
         }
-        else if (reputation < 30)
-            return 3;
+        else if (getReputation() < 30)
+        {
+            return 1;
+        }
         else 
             return 2;
     }
-    
 }
+    
+
