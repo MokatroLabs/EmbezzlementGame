@@ -29,7 +29,7 @@ public class Board implements ActionListener {
     private JButton embezzleAction;
     private JButton raiseFundsAction;
     private JButton interactAction;
-    private JButton skillTreeAction;
+    private JButton upgradeAction;
     private JButton activeAction;
     private JButton toggleAction;
     private JButton concedeBut;
@@ -45,8 +45,26 @@ public class Board implements ActionListener {
     private boolean interactClick;
     private boolean embezzleClick;
     private boolean fundraiseClick;
-    private boolean skillTreeClick;
+    private boolean upgradeClick;
     private boolean playClick;
+    
+    //Upgrade Screen
+    private JPanel upgradePanel;
+    private JButton upEmbezzle;
+    private JButton upUpgrade;
+    private JButton upInteract;
+    private JButton upFundraise;
+    private JButton upActive;
+    private JButton backButton;
+    private JLabel disEmbezzle;
+    private JLabel disRaiseFunds;
+    private JLabel disFundRaise;
+    private JLabel disInteract;
+    private JLabel disUpgrade;
+
+    
+    
+    
     public Board() 
     {
         master = new JFrame("Dont Assume");          //  title of the window
@@ -60,7 +78,7 @@ public class Board implements ActionListener {
         interactClick = false;
         embezzleClick = false;
         fundraiseClick = false;
-        skillTreeClick = false;
+        upgradeClick = false;
         playClick = false;
         
 
@@ -234,12 +252,12 @@ public class Board implements ActionListener {
         interactAction.setFont(newFont);
         gameScreen.add(interactAction, cons);
         
-        skillTreeAction = new JButton("Upgrade");
-        skillTreeAction.setActionCommand("Upgrade");
+        upgradeAction = new JButton("Upgrade");
+        upgradeAction.setActionCommand("Upgrade");
         /*
          * Sorry, Dust. I wanted to label it as an action. 
          */
-        skillTreeAction.addActionListener(this);
+        upgradeAction.addActionListener(this);
         cons.gridx = 4;
         cons.gridy = 3;
         cons.weightx = 1;
@@ -247,9 +265,9 @@ public class Board implements ActionListener {
         cons.insets = buttonSpacing;
         cons.fill = GridBagConstraints.BOTH;
         cons.anchor = GridBagConstraints.CENTER;
-        skillTreeAction.setPreferredSize(buttonSize);
-        skillTreeAction.setFont(newFont);
-        gameScreen.add(skillTreeAction, cons);
+        upgradeAction.setPreferredSize(buttonSize);
+        upgradeAction.setFont(newFont);
+        gameScreen.add(upgradeAction, cons);
         
         activeAction = new JButton("Active");
         activeAction.setActionCommand("Active");
@@ -288,7 +306,7 @@ public class Board implements ActionListener {
         embezzleAction.setVisible(false);
         raiseFundsAction.setVisible(false);
         interactAction.setVisible(false);
-        skillTreeAction.setVisible(false);
+        upgradeAction.setVisible(false);
         activeAction.setVisible(false);
     }
     
@@ -298,7 +316,7 @@ public class Board implements ActionListener {
         embezzleAction.setVisible(true);
         raiseFundsAction.setVisible(true);
         interactAction.setVisible(true);
-        skillTreeAction.setVisible(true);
+        upgradeAction.setVisible(true);
         activeAction.setVisible(true);
     }
     
@@ -374,11 +392,125 @@ public class Board implements ActionListener {
         panelChampSelect.setVisible(true);
     
     }
+    
+    public void makeUpgradeScreen()
+    {
+        upgradePanel = new JPanel();
+        cons = new GridBagConstraints();
+        upgradePanel.setLayout(new GridBagLayout());
+        backButton = new JButton("Back");
+        backButton.setActionCommand("Back");
+        backButton.addActionListener(this);
+        cons.gridx = 0;
+        cons.gridy = 0;
+        cons.weightx =1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        upgradePanel.add(backButton, cons);
+        
+        upActive = new JButton("Upgrade Active: lv 0");
+        upActive.setActionCommand("upActive");
+        upActive.addActionListener(this);
+        cons.gridx = 0;
+        cons.gridy = 1;
+        cons.weightx =1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        upgradePanel.add(upActive, cons);
+        
+        upInteract = new JButton("Upgrade Interact: lv 0");
+        upInteract.setActionCommand("upInteract");
+        upInteract.addActionListener(this);
+        cons.gridx = 2;
+        cons.gridy = 1;
+        cons.weightx =1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        upgradePanel.add(upInteract, cons);
+        
+        upEmbezzle = new JButton("Upgrade Embezzle: lv 0");
+        upEmbezzle.setActionCommand("upEmbezzle");
+        upEmbezzle.addActionListener(this);
+        cons.gridx = 3;
+        cons.gridy = 1;
+        cons.weightx =1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        upgradePanel.add(upEmbezzle, cons);
+        
+        upFundraise = new JButton("Upgrade Fundraise: lv 0");
+        upFundraise.setActionCommand("upFundraise");
+        upFundraise.addActionListener(this);
+        cons.gridx = 4;
+        cons.gridy = 1;
+        cons.weightx =1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        upgradePanel.add(upFundraise, cons);
+        
+        upUpgrade = new JButton("Upgrade Upgrade: lv 0");
+        upUpgrade.setActionCommand("upUpgrade");
+        upUpgrade.addActionListener(this);
+        cons.gridx = 5;
+        cons.gridy = 1;
+        cons.weightx =1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        upgradePanel.add(upUpgrade, cons);
+        
+        
+        
+        
+        
+        cons2 = new GridBagConstraints();
+        cons2.gridx = 0;
+        cons2.gridy = 0;
+        cons2.weightx = 1;
+        cons2.weighty = 1;
+        
+        cons2.fill = GridBagConstraints.BOTH; //how to make it take up the entire screen! 
+        
+        
+        master.getContentPane().add(upgradePanel,cons2);
+        
+        
+        master.pack();
+        upgradePanel.setVisible(true);
+        
+        
+    }
+    
+    public void hideUpgradeScreen()
+    {
+        upEmbezzle.setVisible(false);
+        upUpgrade.setVisible(false);
+        upInteract.setVisible(false);
+        upFundraise.setVisible(false);
+        upActive.setVisible(false);
+        upgradePanel.setVisible(false);
+    }
+    
+    public void showUpgradeScreen()
+    {
+        upEmbezzle.setVisible(true);
+        upUpgrade.setVisible(true);
+        upInteract.setVisible(true);
+        upFundraise.setVisible(true);
+        upActive.setVisible(true);
+        upgradePanel.setVisible(true);
+    }
+    
  
     public int promptAction()
     {
         boolean actionPick = false;
+        int count = 0;
         while(!actionPick){
+            if (count == 100000)
+            {
+                System.out.println("in loop");
+                count =0;
+            }
             if(getEmbezzleClick() == true)
             {
                 setEmbezzleClick(false);
@@ -397,9 +529,9 @@ public class Board implements ActionListener {
                 actionPick = true;
                 return 3;
             }
-            if(getSkillTreeClick() == true)
+            if(getUpgradeClick() == true)
             {
-                setSkillTreeClick(false);
+                setUpgradeClick(false);
                 actionPick = true;
                 return 4;
             }
@@ -458,9 +590,9 @@ public class Board implements ActionListener {
         return fundraiseClick;
     }
     
-    public boolean getSkillTreeClick()
+    public boolean getUpgradeClick()
     {
-        return skillTreeClick;
+        return upgradeClick;
     }
     
     //setters
@@ -504,9 +636,9 @@ public class Board implements ActionListener {
         fundraiseClick = bol;
     }
     
-    public void setSkillTreeClick(boolean bol)
+    public void setUpgradeClick(boolean bol)
     {
-        skillTreeClick = bol;
+        upgradeClick = bol;
     }
     
     public void setPlayClick(boolean bol)
@@ -529,10 +661,12 @@ public class Board implements ActionListener {
             embezzleClick = true;
             
         }
-        if(theEvent.getActionCommand().equals("Skill Tree"))
+        if(theEvent.getActionCommand().equals("Upgrade"))
         {
-            System.out.println("Skill Tree");
-            skillTreeClick = true;
+            System.out.println("Upgrade");
+            upgradeClick = true;
+            showUpgradeScreen();
+            hideGameScreen();
         }
         if(theEvent.getActionCommand().equals("Interact"))
         {
@@ -548,6 +682,11 @@ public class Board implements ActionListener {
         {
             System.out.println("Fundraise");
             fundraiseClick = true;
+        }
+        if(theEvent.getActionCommand().equals("Back"))
+        {
+            hideUpgradeScreen();
+            showGameScreen();
         }
     }
 

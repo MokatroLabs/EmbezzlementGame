@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=void\ paycheck()
 comment5.params=
 comment5.target=int\ findMove()
-numComments=6
+comment6.params=
+comment6.target=void\ printWeights()
+numComments=7

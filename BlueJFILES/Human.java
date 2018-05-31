@@ -65,6 +65,14 @@ public abstract class Human implements Player {
     {
         cooldown = 5;
     }
+<<<<<<< HEAD
+=======
+
+    public int findMove()
+    {    
+        return 0;
+    }  
+>>>>>>> 30e9e097b39d5e19d1b845c4845b733d15681bb0
     
     //Getters
     public double getReputation() 
@@ -151,7 +159,7 @@ public abstract class Human implements Player {
     //gives paycheck
     public void paycheck()
     {
-        money += 100 + (reputation-50)* 10;
+        money += 100 + (reputation*.01)* 100;
     }
     
     public String toString()

@@ -3,18 +3,27 @@ comment0.target=Human
 comment1.params=
 comment1.target=Human()
 comment10.params=
-comment10.target=int\ getMoney()
+comment10.target=java.lang.String\ getChar()
 comment11.params=
-comment11.target=int\ getCooldown()
+comment11.target=int\ getMoney()
 comment12.params=
+<<<<<<< HEAD
 comment12.target=boolean\ isHuman()
+=======
+comment12.target=int\ getCooldown()
+>>>>>>> 30e9e097b39d5e19d1b845c4845b733d15681bb0
 comment13.params=
-comment13.target=boolean\ getEmbezzle()
+comment13.target=boolean\ isHuman()
 comment14.params=
+<<<<<<< HEAD
 comment14.target=int\ getTWE()
+=======
+comment14.target=boolean\ getEmbezzle()
+>>>>>>> 30e9e097b39d5e19d1b845c4845b733d15681bb0
 comment15.params=
 comment15.target=boolean\ getLost()
 comment16.params=
+<<<<<<< HEAD
 comment16.target=boolean\ getToggled()
 comment17.params=newReputation
 comment17.target=void\ setReputation(double)
@@ -30,6 +39,23 @@ comment21.params=newTWE
 comment21.target=void\ setTWE(int)
 comment22.params=
 comment22.target=void\ setLost()
+=======
+comment16.target=boolean\ getLost()
+comment17.params=
+comment17.target=boolean\ getToggled()
+comment18.params=newReputation
+comment18.target=void\ setReputation(double)
+comment19.params=newMoney
+comment19.target=void\ setMoney(int)
+comment2.params=newReputation\ newMoney\ Char
+comment2.target=Human(double,\ int,\ java.lang.String)
+comment20.params=newCooldown
+comment20.target=void\ setCooldown(int)
+comment21.params=
+comment21.target=void\ setEmbezzle()
+comment22.params=newTWE
+comment22.target=void\ setTWE(int)
+>>>>>>> 30e9e097b39d5e19d1b845c4845b733d15681bb0
 comment23.params=
 comment23.target=void\ toggleView()
 comment24.params=
@@ -49,7 +75,11 @@ comment6.target=void\ upgrade()
 comment7.params=
 comment7.target=void\ activeAbility()
 comment8.params=
-comment8.target=double\ getReputation()
+comment8.target=int\ findMove()
 comment9.params=
+<<<<<<< HEAD
 comment9.target=java.lang.String\ getChar()
+=======
+comment9.target=double\ getReputation()
+>>>>>>> 30e9e097b39d5e19d1b845c4845b733d15681bb0
 numComments=27
