@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=Main
-<<<<<<< HEAD
 comment1.params=evt
 comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment2.params=args
@@ -9,23 +8,9 @@ comment3.params=
 comment3.target=void\ runGame()
 comment4.params=current
 comment4.target=void\ takeTurn(Player)
-comment5.params=human\ textArea\ totalTurn
-comment5.target=void\ updateBoard(Human,\ java.lang.String[],\ int)
+comment5.params=human\ textArea
+comment5.target=void\ updateBoard(Human,\ java.lang.String[])
 comment5.text=\ \ public\ static\ void\ audit(Player\ target){\r\n\r\n\r\n\ \ \ \r\n\ \ \ \ /*\ \ \ \ public\ static\ void\ audit(Player\ target){\r\n\r\n\r\n\ \ \ \ /*\ \ \ \ if(economy.getTurns()\ >\=\ 10){\r\n\ \ \ \ /*\ \ \ \ if(target.getReputation()\ <\=\ 15\ &&\ target.getTWE()\ <\=\ 5){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setLost();\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\ else\ if(target.getReputation()\ <\ 40\ &&\ target.getTWE()\ <\=\ 5)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setMoney(target.getMoney()\ -\ 1000);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setReputation(target.getReputation()\ -\ 5);\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\ else\ if(target.getTWE()\ >\ 5){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setReputation(target.getReputation()\ +\ 1);\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n\r\n\r\n\r\n\ \ \ \ }\r\n\r\n\r\n\r\n\ \ \ \ }\r\n\r\n}
 comment6.params=Sound
-comment6.target=void\ PlaySound(java.io.File)
+comment6.target=void\ PlaySoundLoop(java.io.File)
 numComments=7
-=======
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-comment2.params=
-comment2.target=void\ runGame()
-comment3.params=current
-comment3.target=void\ takeTurn(Player)
-comment4.params=human\ textArea
-comment4.target=void\ updateBoard(Human,\ java.lang.String[])
-comment4.text=\ \ public\ static\ void\ audit(Player\ target){\n\n\n\ \ \ \n\ \ \ \ /*\ \ \ \ public\ static\ void\ audit(Player\ target){\n\n\n\ \ \ \ /*\ \ \ \ if(economy.getTurns()\ >\=\ 10){\n\ \ \ \ /*\ \ \ \ if(target.getReputation()\ <\=\ 15\ &&\ target.getTWE()\ <\=\ 5){\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setLost();\n\ \ \ \ \ \ \ \ \ \ \ \ }\ else\ if(target.getReputation()\ <\ 40\ &&\ target.getTWE()\ <\=\ 5)\ {\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setMoney(target.getMoney()\ -\ 1000);\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setReputation(target.getReputation()\ -\ 5);\n\ \ \ \ \ \ \ \ \ \ \ \ }\ else\ if(target.getTWE()\ >\ 5){\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setReputation(target.getReputation()\ +\ 1);\n\ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ }\n\n\n\n\ \ \ \ }\n\n\n\n\ \ \ \ }\n\n}
-comment5.params=Sound
-comment5.target=void\ PlaySoundLoop(java.io.File)
-numComments=6
->>>>>>> 3859098c595c7bf3e2a2a1e31e5e7c46bfc4eeda
