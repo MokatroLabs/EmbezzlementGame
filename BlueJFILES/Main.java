@@ -11,6 +11,7 @@ public class Main {
     public static Mechanics economy = new Mechanics();
     private static ArrayList<Player> players;
     static Deck deck;
+    //saveme
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
