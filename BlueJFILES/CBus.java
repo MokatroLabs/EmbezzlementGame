@@ -36,20 +36,26 @@ public class CBus extends Computer
         if(cooldown == 0)
         {
             return 5;
+
+        }else if (reputation < 40)
+        {
+            
         }
-        else if (reputation < 40)
+
+        
+
+        else if (getReputation() < 40)
+
         {
             return 1;
         }
-        /*else if(reputation < 40)
-        {
-            //return 3;
-        }
-        */
+        
+        
         else 
         {
             return 2;
         }
+        return 1;
     }
     
    

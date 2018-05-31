@@ -9,7 +9,8 @@ public abstract class Computer implements Player {
     protected boolean isHuman; //refers to the identification of each class by whether they are human or not
     protected boolean isToggled; //refers to the toggling of actions 
     protected boolean hasEmbezzled; //refers to audits
-    protected int twe; //refers to turns without embezzle
+    protected int twe; //refers to turns without embezzle (also refers to audits)
+    protected boolean hasLost; //refers to whether the player has lost the game yet
     
     public Computer(){
         reputation = 50;
@@ -19,6 +20,7 @@ public abstract class Computer implements Player {
         isToggled = true;
         hasEmbezzled = false;
         twe = 0;
+        hasLost = false;
     }
     
     public Computer(double newReputation,int newMoney,String Char) {
@@ -78,19 +80,29 @@ public abstract class Computer implements Player {
     public boolean getEmbezzle(){
         return hasEmbezzled;
     }
+    
     public int getTWE()
     {
         return twe;
     }
-    //Setters
-    public void setReputation (double ammount)
-    {
-        reputation += ammount;
+    
+    public boolean getLost() {
+        return hasLost;
     }
     
-    public void setMoney(int ammount)
+    public boolean getToggled(){
+        return isToggled;
+    }
+    
+    //Setters
+    public void setReputation (double amount)
     {
-        money = ammount;
+        reputation += amount;
+    }
+    
+    public void setMoney(int amount)
+    {
+        money = amount;
     }
     
     public void setCooldown(int newCooldown){
@@ -103,6 +115,10 @@ public abstract class Computer implements Player {
     
     public void setTWE(int newTWE){
         twe = newTWE;
+    }
+    
+    public void setLost(){
+        hasLost = true;
     }
     
     //Miscellaneous
