@@ -12,6 +12,7 @@ public class Main {
     public static Mechanics economy = new Mechanics();
     private static ArrayList<Player> players;
     static Deck deck;
+    //saveme
     final static int maxTurns = 150;
 
     
@@ -29,7 +30,7 @@ public class Main {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
         boolean playPressed = false;
-        PlaySound(OST);
+        PlaySoundLoop(OST);
         board.makeTitleScreen();
         board.showTitleScreen();
         board.makeGameScreen();
@@ -55,7 +56,6 @@ public class Main {
         players = new ArrayList<Player>();
         int currentPlayer = 0;
         int round = 0;
-        int totalTurns = 0;
         board.makeTitleScreen();
         board.showTitleScreen();
         CBus comp1 = new CBus();
@@ -67,7 +67,7 @@ public class Main {
         players.add(comp1);
         players.add(comp2);
         players.add(comp3);
-        updateBoard(human, textArea, 0);
+        updateBoard(human, textArea);
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
@@ -80,7 +80,7 @@ public class Main {
                 //audit(players.get(currentPlayer));
             }
             takeTurn(players.get(currentPlayer));
-            updateBoard(human,textArea, totalTurns);
+            updateBoard(human,textArea);
 
 
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
@@ -93,7 +93,6 @@ public class Main {
             }
 
             round++;
-            totalTurns++;
             currentPlayer++;
             
             
@@ -193,18 +192,16 @@ public class Main {
 
   
 
-    public static void updateBoard(Human human, String[] textArea, int totalTurn)
+    public static void updateBoard(Human human, String[] textArea)
     { 
-       int currentTurn = economy.getTurns() + 1;
-       board.setTurnCount("Turn: " + currentTurn);
-
+       board.setTurnCount("Turn: " + (economy.getTurns() + 1));
        board.setRepCount("Rep: " + ((int)human.getReputation()) + "%" );
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
-       board.updateTurnBorder(totalTurn);
+       board.updateTurnBorder(economy.getTurns());
     }
 
-    static void PlaySound(File Sound)
+    static void PlaySoundLoop(File Sound)
     {
         ContinuousAudioDataStream loop = null;
         AudioPlayer MGP = AudioPlayer.player;
