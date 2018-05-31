@@ -46,6 +46,7 @@ public abstract class Computer implements Player {
     
     public void interact(){ //Action 3
         reputation += .5;
+        //Draws a Chance Card
     }
     
     public void upgrade() // Action 4
