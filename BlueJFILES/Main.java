@@ -6,12 +6,25 @@ import javax.swing.*;
 import sun.audio.*;
 import java.io.*;
 import java.util.ArrayList;
+
 public class Main {
     public static Board board = new Board();
     public static Mechanics economy = new Mechanics();
     private static ArrayList<Player> players;
     static Deck deck;
     final static int maxTurns = 150;
+
+    
+    private static ActionListener taskPerformer = new ActionListener() 
+    {
+      public void actionPerformed(ActionEvent evt) {
+          timerDelay.stop();
+          System.out.println("1 step of the work");
+      }
+    };
+    private static Timer timerDelay = new Timer(2000, taskPerformer);
+
+   
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
@@ -82,6 +95,8 @@ public class Main {
             round++;
             totalTurns++;
             currentPlayer++;
+            
+            
          }
     }
     public static void takeTurn(Player current){
@@ -100,6 +115,7 @@ public class Main {
             action = board.promptAction();
             else
             {
+                timerDelay.start();
                 action = current.findMove(economy.getTurns());
             }
         if (action == 1) {
