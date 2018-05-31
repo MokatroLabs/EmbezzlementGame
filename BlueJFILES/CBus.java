@@ -40,8 +40,7 @@ public class CBus extends Computer
             fundraiseW += bound*.25;
             interactW += bound*.5;
             embezzleW -= bound*.5;
-        } else if(reputation <=25)
-
+        } else  if(reputation <=25)
         {
             fundraiseW += bound*.125;
             interactW+=bound*.25;
@@ -80,6 +79,7 @@ public class CBus extends Computer
             fundraiseW -=bound*.125;
             interactW-=bound*.0625;
             embezzleW += bound*.0625;
+
         }
 
         // Money Based Changes
@@ -112,6 +112,7 @@ public class CBus extends Computer
         printWeights();
         return action;
     }
+    
     public void printWeights()
     {
         System.out.println("EmbezzleW:"+embezzleW);

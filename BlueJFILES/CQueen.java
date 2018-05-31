@@ -32,8 +32,6 @@ public class CQueen extends Computer
     {
         if(cooldown == 0) {
             return 5;
-
-
         }
         else if (getReputation() < 30)
         {

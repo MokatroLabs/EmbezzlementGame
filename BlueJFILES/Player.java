@@ -35,6 +35,7 @@ public interface Player {
 	boolean getLost();
 	
 	boolean getToggled();
+	
 	//Setters
 	void setReputation(double newReputation);
 	

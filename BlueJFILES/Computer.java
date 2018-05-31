@@ -10,12 +10,13 @@ public abstract class Computer implements Player {
     protected boolean isToggled; //refers to the toggling of actions 
     protected boolean hasEmbezzled; //refers to audits
     protected int twe; //refers to turns without embezzle
-    double embezzleW=.2;
-    double fundraiseW=.2;
-    double interactW=.2;
-    double upgradeW=.2;
-    double activeW=.2;
-    double bound=1;
+    protected int consecutive;
+    protected double embezzleW;
+    protected double fundraiseW;
+    protected double interactW;
+    protected double upgradeW;
+    protected double activeW;
+    protected double bound;
     protected boolean hasLost; //refers to whether the player has lost the game yet
     public Computer(){
         reputation = 50;
@@ -25,7 +26,14 @@ public abstract class Computer implements Player {
         isToggled = true;
         hasEmbezzled = false;
         twe = 0;
+        consecutive = 0;
         hasLost = false;
+        embezzleW = .2;
+        fundraiseW = .2;
+        interactW = .2;
+        upgradeW = .2;
+        activeW = .2;
+        bound = 1;
     }
     
     public Computer(double newReputation,int newMoney,String Char) {
@@ -40,17 +48,20 @@ public abstract class Computer implements Player {
     {
         money += 300;
         reputation += .25;
+        hasEmbezzled = false;
     }
     
     public void embezzle() //Action 2
     {   
         money += 500;
-        reputation -= .25;
+        reputation -= .25 - consecutive * .5;
         hasEmbezzled = true;
+        
     }
     
     public void interact(){ //Action 3
         reputation += .5;
+        //Draws a Chance Card
     }
     
     public void upgrade() // Action 4

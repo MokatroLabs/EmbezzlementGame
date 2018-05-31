@@ -1,12 +1,12 @@
-import java.io.File;
-import java.awt.event.*;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.swing.*;
-import sun.audio.*;
-import java.io.*;
-import java.util.ArrayList;
-public class Main {
+    import java.io.File;
+    import java.awt.event.*;
+    import javax.sound.sampled.AudioSystem;
+    import javax.sound.sampled.Clip;
+    import javax.swing.*;
+    import sun.audio.*;
+    import java.io.*;
+    import java.util.ArrayList;
+    public class Main {
     public static Board board = new Board();
     public static Mechanics economy = new Mechanics();
     private static ArrayList<Player> players;
@@ -31,6 +31,7 @@ public class Main {
         }
         runGame();
     }
+    
     public static void runGame()
     {
         String[] textArea = new String[5];
@@ -65,22 +66,36 @@ public class Main {
             }
             
             if(Math.random() * 100 < (10 - ((players.get(currentPlayer)).getReputation()) / 10)){
-               // audit(players.get(currentPlayer));
+                audit(players.get(currentPlayer));
             }
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
+
+
+            if (currentPlayer  <= players.size() ){
+            players.get(currentPlayer).setCooldown((players.get(currentPlayer)).getCooldown() -1);
+            if(players.get(currentPlayer).getEmbezzle() == false){
+                    players.get(currentPlayer).setTWE(players.get(currentPlayer).getTWE() -1);
+            }
+            if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
+                    players.get(currentPlayer).setLost();
+            }
+            currentPlayer++;
+            if(round == 2)
+
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
             }
             if(round == 2)
+
                     economy.setTurns(economy.getTurns() + 1);
             round++;
             currentPlayer++;
+         }
         }
-    }
+     }
     
-    public static void takeTurn(Player current)
-    {
+    public static void takeTurn(Player current){
         System.out.println("turn");
         int action=0;
         int target=-1;
@@ -96,7 +111,7 @@ public class Main {
             action = board.promptAction();
         else
         {
-            action = current.findMove();
+          action = current.findMove();
         }
         if (action == 1) {
             current.embezzle();
@@ -140,22 +155,26 @@ public class Main {
         }
         if(current.getCooldown()>0)
             current.setCooldown(current.getCooldown()-1);
+
     }
 
     
 
-    /*  public static void audit(Player target){
+
+   
+   public static void audit(Player target){
+
         if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
             } else if(target.getReputation() < 40 && target.getTWE() <= 5) {
-                target.setMoney(target.getMoney() - 500);
-                target.setReputation(target.getReputation() - 2.5);
+                target.setMoney(target.getMoney() - 1000);
+                target.setReputation(target.getReputation() - 5);
             } else if(target.getTWE() > 5){
                 target.setReputation(target.getReputation() + 1);
             }
         }
-    }*/
+    }
 
     public static void updateBoard(Human human, String[] textArea)
     { 
