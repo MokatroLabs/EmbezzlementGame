@@ -23,6 +23,8 @@ public class Main {
         board.hideGameScreen();
         board.makeUpgradeScreen();
         board.hideUpgradeScreen();
+        board.makeCharScreen();
+        board.showCharScreen();
         board.updateTurnBorder(economy.getTurns());
         while(!(playPressed))
         {

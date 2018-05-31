@@ -62,6 +62,21 @@ public class Board implements ActionListener {
     private JLabel disFundRaise;
     private JLabel disInteract;
     private JLabel disUpgrade;
+    
+    //charScreen
+    private JPanel charPanel;
+    private GridBagConstraints cons3;
+    private JButton queenSelect;
+    private JButton businessSelect;
+    private JButton fatherSelect;
+    private JButton spySelect;
+    private JLabel queenDesc;
+    private JLabel businessDesc;
+    private JLabel fatherDesc;
+    private JLabel spyDesc;
+    
+    
+    
 
     public Board() 
     {
@@ -300,6 +315,7 @@ public class Board implements ActionListener {
     
     }
     
+    
     public void hideGameScreen()
     {
         gameScreen.setVisible(false);
@@ -365,7 +381,7 @@ public class Board implements ActionListener {
     
     public void makeCharScreen()
     {
-        panelChampSelect = new JPanel();
+        /*panelChampSelect = new JPanel();
         GridBagConstraints gbc_panelChampSelect = new GridBagConstraints();
         gbc_panelChampSelect.gridheight = 8;
         gbc_panelChampSelect.gridwidth = 8;
@@ -379,17 +395,88 @@ public class Board implements ActionListener {
         gbc_btnPlay.gridy = 7;
         master.getContentPane().add(btnPlay, gbc_btnPlay);
         panelChampSelect.setVisible(false);
+        */
+        
+        charPanel = new JPanel();
+        cons3 = new GridBagConstraints();
+        charPanel.setLayout(new GridBagLayout());
+        
+        queenSelect = new JButton("Queen");
+        queenSelect.setActionCommand("queenSelect");
+        queenSelect.addActionListener(this);
+        cons3.gridx = 0;
+        cons3.gridy = 0;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        charPanel.add(queenSelect, cons3);
+        
+        businessSelect = new JButton("Business Man");
+        businessSelect.setActionCommand("businessSelect");
+        businessSelect.addActionListener(this);
+        cons3.gridx = 1;
+        cons3.gridy = 0;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        charPanel.add(businessSelect, cons3);
+        
+        fatherSelect = new JButton("Father");
+        fatherSelect.setActionCommand("fatherSelect");
+        fatherSelect.addActionListener(this);
+        cons3.gridx = 2;
+        cons3.gridy = 0;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        charPanel.add(fatherSelect, cons3);
+        
+        spySelect = new JButton("Spy");
+        spySelect.setActionCommand("spySelect");
+        spySelect.addActionListener(this);
+        cons3.gridx = 3;
+        cons3.gridy = 0;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        charPanel.add(spySelect, cons3);
+        
+        
+        
+        cons3 = new GridBagConstraints();
+        cons3.gridx = 0;
+        cons3.gridy = 0;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        
+        cons3.fill = GridBagConstraints.BOTH; //how to make it take up the entire screen! 
+        
+        
+        master.getContentPane().add(charPanel,cons3);
+        
+        
+        master.pack();
+        
+        
+        
+        
+
+        
+        
+        
+
+       
     }
     
     public void hideCharScreen()
     {
-        panelChampSelect.setVisible(false);
+        charPanel.setVisible(false);
     
     }
     
     public void showCharScreen()
     {
-        panelChampSelect.setVisible(true);
+        charPanel.setVisible(true);
     
     }
     
@@ -710,7 +797,8 @@ public class Board implements ActionListener {
         {
             hideTitleScreen();
             setPlayClick(true);
-            showGameScreen();
+            //showGameScreen();
+            showCharScreen();
         }
         if(theEvent.getActionCommand().equals("Embezzle"))
         {
@@ -744,6 +832,10 @@ public class Board implements ActionListener {
         {
             hideUpgradeScreen();
             showGameScreen();
+        }
+        if(theEvent.getActionCommand().equals("queenSelect"))
+        {
+            showCharScreen();
         }
     }
 
