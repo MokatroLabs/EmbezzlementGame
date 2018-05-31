@@ -23,14 +23,14 @@ public class Main {
         board.hideGameScreen();
         board.makeUpgradeScreen();
         board.hideUpgradeScreen();
+        board.updateTurnBorder(economy.getTurns());
         while(!(playPressed))
         {
             if(board.getPlayClick())
                 playPressed = true;
-        }
+            }
         runGame();
-    }
-    
+        }
     public static void runGame()
     {
         String[] textArea = new String[5];
@@ -44,12 +44,9 @@ public class Main {
         int round = 0;
         board.makeTitleScreen();
         board.showTitleScreen();
-
         CBus comp1 = new CBus();
         CBus comp2 = new CBus();
         CBus comp3 = new CBus();
-
-        
         HQueen  human = new HQueen();
         board.hideTitleScreen();
         players.add(human);
@@ -66,10 +63,11 @@ public class Main {
                 players.get(currentPlayer).paycheck();
             }
             if(Math.random() * 100 < (10 - ((players.get(currentPlayer)).getReputation()) / 10)){
-               // audit(players.get(currentPlayer));
+                //audit(players.get(currentPlayer));
             }
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
+
 
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
@@ -79,13 +77,12 @@ public class Main {
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
             }
+
             round++;
             currentPlayer++;
-        }
+         }
     }
-    
-    public static void takeTurn(Player current)
-    {
+    public static void takeTurn(Player current){
         System.out.println("turn");
         int action=0;
         int target=-1;
@@ -99,10 +96,10 @@ public class Main {
         }
         if(current.isHuman())
             action = board.promptAction();
-        else
-        {
-            action = current.findMove();
-        }
+            else
+            {
+                action = current.findMove();
+            }
         if (action == 1) {
             current.embezzle();
             current.setTWE(0);
@@ -145,21 +142,26 @@ public class Main {
         }
         if(current.getCooldown()>0)
             current.setCooldown(current.getCooldown()-1);
+
     }
-
-    
-
     /*  public static void audit(Player target){
-        if(economy.getTurns() >= 10){
-            if(target.getReputation() <= 15 && target.getTWE() <= 5){
+
+
+   
+    /*    public static void audit(Player target){
+
+
+    /*    if(economy.getTurns() >= 10){
+    /*    if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
             } else if(target.getReputation() < 40 && target.getTWE() <= 5) {
-                target.setMoney(target.getMoney() - 500);
-                target.setReputation(target.getReputation() - 2.5);
+                target.setMoney(target.getMoney() - 1000);
+                target.setReputation(target.getReputation() - 5);
             } else if(target.getTWE() > 5){
                 target.setReputation(target.getReputation() + 1);
             }
         }
+
 
 
     }
@@ -170,6 +172,8 @@ public class Main {
 
     }*/
 
+
+  
 
     public static void updateBoard(Human human, String[] textArea)
     { 
@@ -195,7 +199,5 @@ public class Main {
         }catch(Exception e){}
         MGP.start(loop);
     }
-    
-
 }
 
