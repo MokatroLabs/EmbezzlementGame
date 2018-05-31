@@ -41,6 +41,7 @@ public class Board implements ActionListener {
     private JTextArea displayWords;
     private Dimension buttonSize;
     private Border picBorder;
+    private Border picBorderYourTurn;
     private boolean activeClick; 
     private boolean interactClick;
     private boolean embezzleClick;
@@ -62,9 +63,6 @@ public class Board implements ActionListener {
     private JLabel disInteract;
     private JLabel disUpgrade;
 
-    
-    
-    
     public Board() 
     {
         master = new JFrame("Dont Assume");          //  title of the window
@@ -95,7 +93,9 @@ public class Board implements ActionListener {
         Font wordsFont = new Font("serif", Font.BOLD, 20); //these font are for the displays on the side, turn, money, rep
         Insets spacing = new Insets(20,20,20,20); //part of constraits, makes an inserts object to space out the boxes :  Insets(int top, int left, int bottom, int right)
         Insets buttonSpacing = new Insets(0,20,0,20);
+        
         picBorder = BorderFactory.createLineBorder(Color.gray, 2); //creates a border object whth the color and pixel width
+        picBorderYourTurn = BorderFactory.createLineBorder(Color.yellow, 5); 
         
         cons = new GridBagConstraints();
         gameScreen = new JPanel();
@@ -457,11 +457,7 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         upgradePanel.add(upUpgrade, cons);
-        
-        
-        
-        
-        
+
         cons2 = new GridBagConstraints();
         cons2.gridx = 0;
         cons2.gridy = 0;
@@ -475,7 +471,6 @@ public class Board implements ActionListener {
         
         
         master.pack();
-        upgradePanel.setVisible(true);
         
         
     }
@@ -544,6 +539,40 @@ public class Board implements ActionListener {
         }    
         return 0;        
     }  
+    
+    public void updateTurnBorder(int turnCount)
+    {
+        int currentPlayer = turnCount%4;
+        if(currentPlayer == 0)
+        {
+            imageLabel1.setBorder(picBorderYourTurn);
+            imageLabel2.setBorder(picBorder);
+            imageLabel3.setBorder(picBorder);
+            imageLabel4.setBorder(picBorder);
+        }
+        else if(currentPlayer ==1)
+        {
+            imageLabel1.setBorder(picBorder);
+            imageLabel2.setBorder(picBorderYourTurn);
+            imageLabel3.setBorder(picBorder);
+            imageLabel4.setBorder(picBorder);
+        }
+        else if(currentPlayer == 2)
+        {
+            imageLabel1.setBorder(picBorder);
+            imageLabel2.setBorder(picBorder);
+            imageLabel3.setBorder(picBorderYourTurn);
+            imageLabel4.setBorder(picBorder);
+        }
+        else if(currentPlayer == 3)
+        {
+            imageLabel1.setBorder(picBorder);
+            imageLabel2.setBorder(picBorder);
+            imageLabel3.setBorder(picBorder);
+            imageLabel4.setBorder(picBorderYourTurn);
+        }
+    }
+    
     //getters;
     public JLabel getTurnLabel()
     {
@@ -594,6 +623,8 @@ public class Board implements ActionListener {
     {
         return upgradeClick;
     }
+    
+    
     
     //setters
     public void setTurnCount(String words)
@@ -646,6 +677,32 @@ public class Board implements ActionListener {
         playClick = bol;
     }
     
+    public void setUpEmbezzle(String string)
+    {
+        upEmbezzle.setText(string);
+    }
+    
+    public void setUpUpgrade(String string)
+    {
+        upUpgrade.setText(string);
+    }
+
+    public void setUpInteract(String string)
+    {
+        upInteract.setText(string);
+    }
+    
+    public void setUpFundraise(String string)
+    {
+        upFundraise.setText(string);
+    }
+    
+    public void setUpActive(String string)
+    {
+        upEmbezzle.setText(string);
+    }
+    
+        
     
     public void actionPerformed(ActionEvent theEvent) 
     {

@@ -23,6 +23,7 @@ public class Main {
         board.hideGameScreen();
         board.makeUpgradeScreen();
         board.hideUpgradeScreen();
+        board.updateTurnBorder(economy.getTurns());
         while(!(playPressed))
         {
             if(board.getPlayClick())
@@ -143,7 +144,7 @@ public class Main {
 
     
 
-  /*  public static void audit(Player target){
+    /*  public static void audit(Player target){
         if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
