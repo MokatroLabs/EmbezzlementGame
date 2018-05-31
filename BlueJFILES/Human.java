@@ -1,7 +1,3 @@
- 
-
-
-
 public abstract class Human implements Player {
 
 
@@ -15,7 +11,7 @@ public abstract class Human implements Player {
     protected boolean hasEmbezzled; //refers to audits 
     protected int twe; //refers to turns without embezzle (also refers to audits)
     protected boolean hasLost; //refers to whether the player has lost the game yet
-    
+    int[] skills = new int[5]; 
     public Human()
     {
         reputation =  50;
@@ -37,38 +33,41 @@ public abstract class Human implements Player {
     }
     
     // Actions
-    public void fundraise() {
+    public void fundraise() { //Action 1
         // TODO Auto-generated method stub
         money += 200;
         reputation += .25;
     }
     
-    public void embezzle() {
+    public void embezzle() { //Action 2
         // TODO Auto-generated method stub
         money += 500;
         reputation -= .25;
         hasEmbezzled = true;
     }
     
-    public void interact() {
+    public void interact() { // Action 3
         // TODO Auto-generated method stub
         reputation += .25;
+        //Draws a Chance Card
     }
     
-    public void upgrade() {
+    public void upgrade() { // Action 4
         // TODO Auto-generated method stub
         
     }
     
-    public void activeAbility()
+    public void activeAbility() // Action 5
     {
         cooldown = 5;
     }
+
 
     public int findMove()
     {    
         return 0;
     }  
+
     
     //Getters
     public double getReputation() 
@@ -146,6 +145,7 @@ public abstract class Human implements Player {
             isToggled = true;
         }
     }
+    
     //gives paycheck
     public void paycheck()
     {

@@ -27,9 +27,16 @@ public class CBus extends Computer
     public void paycheck()
 
     {
-        money += 150 + (reputation * .01) * 100;
+        money += 250 + (reputation * .01) * 10;
     }
-    
+    public void printWeights()
+    {
+        System.out.println("EmbezzleW:"+embezzleW);
+        System.out.println("FundraiseW:"+fundraiseW);
+        System.out.println("InteractW:"+interactW);
+        System.out.println("UpgradeW:"+upgradeW);
+        System.out.println("ActiveW:"+activeW);
+    }
     public int findMove()
     // DO NOT GET RID OF THIS I SWEAR TO GOD
     {
@@ -81,7 +88,6 @@ public class CBus extends Computer
             interactW-=bound*.0625;
             embezzleW += bound*.0625;
         }
-
         // Money Based Changes
         //no negative Weights
         if(embezzleW <0)
@@ -112,14 +118,6 @@ public class CBus extends Computer
         printWeights();
         return action;
     }
-    public void printWeights()
-    {
-        System.out.println("EmbezzleW:"+embezzleW);
-        System.out.println("FundraiseW:"+fundraiseW);
-        System.out.println("InteractW:"+interactW);
-        System.out.println("UpgradeW:"+upgradeW);
-        System.out.println("ActiveW:"+activeW);
-
-    }
+    
    
 }

@@ -16,6 +16,7 @@ public abstract class Computer implements Player {
     double upgradeW=.2;
     double activeW=.2;
     double bound=1;
+    int[] skills = new int[5];
     protected boolean hasLost; //refers to whether the player has lost the game yet
     public Computer(){
         reputation = 50;
@@ -51,6 +52,7 @@ public abstract class Computer implements Player {
     
     public void interact(){ //Action 3
         reputation += .5;
+        //Draws a Chance Card
     }
     
     public void upgrade() // Action 4

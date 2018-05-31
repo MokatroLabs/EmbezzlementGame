@@ -30,6 +30,7 @@ public class Main {
         }
         runGame();
     }
+    
     public static void runGame()
     {
         String[] textArea = new String[5];
@@ -41,38 +42,38 @@ public class Main {
         players = new ArrayList<Player>();
         int currentPlayer = 0;
         int round = 0;
-
-
         board.makeTitleScreen();
         board.showTitleScreen();
-
-
-        CBus comp = new CBus();
+        CBus comp1 = new CBus();
+        CBus comp2 = new CBus();
+        CBus comp3 = new CBus();
         HQueen  human = new HQueen();
         board.hideTitleScreen();
         players.add(human);
-        players.add(comp);
+        players.add(comp1);
+        players.add(comp2);
+        players.add(comp3);
         updateBoard(human, textArea);
-
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
-            if(round > 2)
+            if(round > 4)
                 round = 0;
             if(economy.getTurns() %5 == 0){
                 players.get(currentPlayer).paycheck();
             }
-            
             if(Math.random() * 100 < (10 - ((players.get(currentPlayer)).getReputation()) / 10)){
                // audit(players.get(currentPlayer));
             }
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
+
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
             }
-            if(round == 2)
-                    economy.setTurns(economy.getTurns() + 1);
+
+            if(round == 4)
+                economy.setTurns(economy.getTurns() + 1);
             round++;
             currentPlayer++;
         }
@@ -95,7 +96,7 @@ public class Main {
             action = board.promptAction();
         else
         {
-            action = current.findMove();
+          action = current.findMove();
         }
         if (action == 1) {
             current.embezzle();
@@ -154,7 +155,11 @@ public class Main {
                 target.setReputation(target.getReputation() + 1);
             }
         }
+
+    }
+
     }*/
+
 
     public static void updateBoard(Human human, String[] textArea)
     { 
