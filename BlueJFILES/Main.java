@@ -179,7 +179,9 @@ public class Main {
 
     public static void updateBoard(Human human, String[] textArea, int totalTurn)
     { 
-       board.setTurnCount("Turn: " + (economy.getTurns() + 1));
+       int currentTurn = economy.getTurns() + 1;
+       board.setTurnCount("Turn: " + currentTurn);
+
        board.setRepCount("Rep: " + ((int)human.getReputation()) + "%" );
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
