@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
- 
->>>>>>> feb1f7d97406f0aa65ffa649499f36727e1a3c29
 public abstract class Human implements Player {
 
 
@@ -72,15 +68,7 @@ public abstract class Human implements Player {
     {    
         return 0;
     }  
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 30e9e097b39d5e19d1b845c4845b733d15681bb0
->>>>>>> b87c423a3c325a745ec97af7bb6fda722d016f50
-=======
-
->>>>>>> feb1f7d97406f0aa65ffa649499f36727e1a3c29
     
     //Getters
     public double getReputation() 
@@ -158,18 +146,6 @@ public abstract class Human implements Player {
             isToggled = true;
         }
     }
-    
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    public int findMove()
-    {    
-        return 0;
-    }  
-=======
->>>>>>> feb1f7d97406f0aa65ffa649499f36727e1a3c29
-    
->>>>>>> b87c423a3c325a745ec97af7bb6fda722d016f50
     //gives paycheck
     public void paycheck()
     {

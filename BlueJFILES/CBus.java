@@ -25,11 +25,8 @@ public class CBus extends Computer
     }
    
     public void paycheck()
-
     {
-<<<<<<< HEAD
         money += 250 + (reputation * .01) * 10;
-
     }
     public void printWeights()
     {
@@ -91,61 +88,7 @@ public class CBus extends Computer
             fundraiseW -=bound*.125;
             interactW-=bound*.0625;
             embezzleW += bound*.0625;
-=======
-        money += 150 + (reputation * .01) * 100;
-    }
-    
-    public int findMove()
-    // DO NOT GET RID OF THIS I SWEAR TO GOD
-    {
-        int action =0;
-        //Rep Based Changes
-        if(reputation <=15)
-        {
-            fundraiseW += bound*.25;
-            interactW += bound*.5;
-            embezzleW -= bound*.5;
-        } else  if(reputation <=25)
-        {
-            fundraiseW += bound*.125;
-            interactW+=bound*.25;
-            embezzleW -= bound*.25;
-        } else if(reputation <=35)
-        {
-            fundraiseW +=bound*.0625;
-            interactW+=bound*.125;
-            embezzleW -= bound*.125;
-        } else if(reputation <=45)
-        {
-            fundraiseW +=bound*.03125;
-            interactW+=bound*.0625;
-            embezzleW -= bound*.0625;
-        }else if(reputation <=55)
-        {
-            fundraiseW +=bound*.015625;
-            interactW+=bound*.03125;
-        }else if(reputation<= 65)
-        {
-            fundraiseW -=bound*.015625;
-            interactW+=bound*.015625;
-            embezzleW -= bound*.015625;
-        }else if(reputation <= 75)
-        {
-            fundraiseW -=bound*.03125;
-            interactW-= bound*.015625;
-            embezzleW += bound*.015625;
-        }else if(reputation <= 85)
-        {
-            fundraiseW -=bound*.0625;
-            interactW-=bound*.03125;
-            embezzleW += bound*.03125;
-        }else if(reputation <= 95)
-        {
-            fundraiseW -=bound*.125;
-            interactW-=bound*.0625;
-            embezzleW += bound*.0625;
 
->>>>>>> feb1f7d97406f0aa65ffa649499f36727e1a3c29
         }
 
         // Money Based Changes
@@ -177,20 +120,6 @@ public class CBus extends Computer
         System.out.println(money);
         printWeights();
         return action;
-<<<<<<< HEAD
-
-=======
->>>>>>> feb1f7d97406f0aa65ffa649499f36727e1a3c29
-    }
-    
-    public void printWeights()
-    {
-        System.out.println("EmbezzleW:"+embezzleW);
-        System.out.println("FundraiseW:"+fundraiseW);
-        System.out.println("InteractW:"+interactW);
-        System.out.println("UpgradeW:"+upgradeW);
-        System.out.println("ActiveW:"+activeW);
-
     }
    
 }

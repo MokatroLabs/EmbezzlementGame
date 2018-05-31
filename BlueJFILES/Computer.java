@@ -10,7 +10,6 @@ public abstract class Computer implements Player {
     protected boolean isToggled; //refers to the toggling of actions 
     protected boolean hasEmbezzled; //refers to audits
     protected int twe; //refers to turns without embezzle
-<<<<<<< HEAD
     double embezzleW=.2;
     double fundraiseW=.2;
     double interactW=.2;
@@ -18,15 +17,9 @@ public abstract class Computer implements Player {
     double activeW=.2;
     double bound=1;
     int[] skills = new int[5];
-=======
-    protected int consecutive;
-    protected double embezzleW;
-    protected double fundraiseW;
-    protected double interactW;
-    protected double upgradeW;
-    protected double activeW;
-    protected double bound;
->>>>>>> feb1f7d97406f0aa65ffa649499f36727e1a3c29
+    int consecutive;
+  
+
     protected boolean hasLost; //refers to whether the player has lost the game yet
     public Computer(){
         reputation = 50;
