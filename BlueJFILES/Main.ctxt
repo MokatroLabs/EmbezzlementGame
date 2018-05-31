@@ -6,8 +6,8 @@ comment2.params=
 comment2.target=void\ runGame()
 comment3.params=current
 comment3.target=void\ takeTurn(Player)
-comment4.params=human\ textArea
-comment4.target=void\ updateBoard(Human,\ java.lang.String[])
+comment4.params=human\ textArea\ totalTurn
+comment4.target=void\ updateBoard(Human,\ java.lang.String[],\ int)
 comment4.text=\ \ public\ static\ void\ audit(Player\ target){\r\n\r\n\r\n\ \ \ \r\n\ \ \ \ /*\ \ \ \ public\ static\ void\ audit(Player\ target){\r\n\r\n\r\n\ \ \ \ /*\ \ \ \ if(economy.getTurns()\ >\=\ 10){\r\n\ \ \ \ /*\ \ \ \ if(target.getReputation()\ <\=\ 15\ &&\ target.getTWE()\ <\=\ 5){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setLost();\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\ else\ if(target.getReputation()\ <\ 40\ &&\ target.getTWE()\ <\=\ 5)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setMoney(target.getMoney()\ -\ 1000);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setReputation(target.getReputation()\ -\ 5);\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\ else\ if(target.getTWE()\ >\ 5){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setReputation(target.getReputation()\ +\ 1);\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n\r\n\r\n\r\n\ \ \ \ }\r\n\r\n\r\n\r\n\ \ \ \ }\r\n\r\n}
 comment5.params=Sound
 comment5.target=void\ PlaySound(java.io.File)

@@ -1,9 +1,9 @@
 #BlueJ package file
-dependency1.from=Deck
-dependency1.to=Card
+dependency1.from=HFat
+dependency1.to=Player
 dependency1.type=UsesDependency
-dependency2.from=HFat
-dependency2.to=Player
+dependency2.from=Deck
+dependency2.to=Card
 dependency2.type=UsesDependency
 dependency3.from=Main
 dependency3.to=Board
@@ -26,39 +26,21 @@ dependency8.type=UsesDependency
 dependency9.from=Main
 dependency9.to=Human
 dependency9.type=UsesDependency
-<<<<<<< HEAD
-editor.fx.0.height=784
-editor.fx.0.width=1382
-editor.fx.0.x=-8
-editor.fx.0.y=-8
-objectbench.height=90
-objectbench.width=1342
-package.divider.horizontal=0.6
-package.divider.vertical=0.8581871345029239
-package.editor.height=580
-package.editor.width=1252
-package.editor.x=-32000
-package.editor.y=-32000
-package.frame.height=784
-package.frame.width=1382
-package.numDependencies=12
-=======
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
-objectbench.height=91
+editor.fx.0.height=1098
+editor.fx.0.width=1938
+editor.fx.0.x=-9
+editor.fx.0.y=-9
+objectbench.height=75
 objectbench.width=901
 package.divider.horizontal=0.6
-package.divider.vertical=0.827768014059754
-package.editor.height=464
+package.divider.vertical=0.8558875219683656
+package.editor.height=480
 package.editor.width=795
-package.editor.x=423
-package.editor.y=71
+package.editor.x=969
+package.editor.y=0
 package.frame.height=688
 package.frame.width=943
 package.numDependencies=9
->>>>>>> b6575b6468639740be9a073deb317e681d758676
 package.numTargets=16
 package.showExtends=true
 package.showUses=true
@@ -90,11 +72,7 @@ target11.showInterface=false
 target11.type=ClassTarget
 target11.typeParameters=
 target11.width=80
-<<<<<<< HEAD
-target11.x=430
-=======
 target11.x=440
->>>>>>> b6575b6468639740be9a073deb317e681d758676
 target11.y=30
 target12.height=50
 target12.name=HSpy
@@ -134,13 +112,8 @@ target16.showInterface=false
 target16.type=ClassTarget
 target16.typeParameters=
 target16.width=80
-<<<<<<< HEAD
-target16.x=240
-target16.y=0
-=======
 target16.x=250
 target16.y=20
->>>>>>> b6575b6468639740be9a073deb317e681d758676
 target2.height=50
 target2.name=CBus
 target2.showInterface=false
