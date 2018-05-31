@@ -98,11 +98,11 @@ public class Main {
             action = board.promptAction();
             else
             {
-                action = current.findMove();
+                action = current.findMove(economy.getTurns());
             }
         if (action == 1) {
             current.embezzle();
-            current.setTWE(0);
+            current.setTWE(-1);
             if((current.getChar()).equals("Spy")){
                 economy.setMoney(economy.getMoney() - 750);
             }else {

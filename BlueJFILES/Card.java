@@ -10,11 +10,15 @@
 public class Card extends Deck
 {
     String name;
+    String code;
+    int number;
     //protected int choice;
     //protected int random;
-    public Card()
+    public Card(String name, String code, int number)
     {
-        name  = "";
+        this.name = name;
+        this.code = code;
+        this.number= number;
         
     }
     

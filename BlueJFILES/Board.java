@@ -536,7 +536,8 @@ public class Board implements ActionListener {
                 actionPick = true;
                 return 5;
             }
-        }    
+        }
+        count++;
         return 0;        
     }  
     
