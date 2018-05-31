@@ -62,11 +62,9 @@ public class Main {
             if(economy.getTurns() %5 == 0){
                 players.get(currentPlayer).paycheck();
             }
-            if(players.get(currentPlayer).getToggled() && !players.get(currentPlayer).getChar().equals("Queen")){
-                players.get(currentPlayer).setReputation(players.get(currentPlayer).getReputation() + .2);
-            }
+            
             if(Math.random() * 100 < (10 - ((players.get(currentPlayer)).getReputation()) / 10)){
-                audit(players.get(currentPlayer));
+               // audit(players.get(currentPlayer));
             }
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
@@ -87,6 +85,12 @@ public class Main {
         int target=-1;
         current.setTWE(current.getTWE() +1);
         current.setCooldown(current.getCooldown()-1);
+        if(current.getToggled() == true)
+        {
+            //current.setReputation(current.getReputation() + .2);
+            //if(current.getChar().equals("Queen"))
+            //    current.setReputation(current.getReputation()+.1);
+        }
         if(current.isHuman())
             action = board.promptAction();
         else
@@ -139,7 +143,7 @@ public class Main {
 
     
 
-    public static void audit(Player target){
+  /*  public static void audit(Player target){
         if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
@@ -150,7 +154,7 @@ public class Main {
                 target.setReputation(target.getReputation() + 1);
             }
         }
-    }
+    }*/
 
     public static void updateBoard(Human human, String[] textArea)
     { 

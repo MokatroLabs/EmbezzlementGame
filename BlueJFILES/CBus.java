@@ -107,7 +107,8 @@ public class CBus extends Computer
                         else if(decision <= embezzleW+fundraiseW+interactW+upgradeW+activeW)
                             action=5;
         System.out.println(action);
-        System.out.print(reputation);
+        System.out.println(reputation);
+        System.out.println(money);
         printWeights();
         return action;
     }
