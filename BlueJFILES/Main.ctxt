@@ -10,5 +10,5 @@ comment4.params=human\ textArea
 comment4.target=void\ updateBoard(Human,\ java.lang.String[])
 comment4.text=\ \ public\ static\ void\ audit(Player\ target){\n\n\n\ \ \ \n\ \ \ \ /*\ \ \ \ public\ static\ void\ audit(Player\ target){\n\n\n\ \ \ \ /*\ \ \ \ if(economy.getTurns()\ >\=\ 10){\n\ \ \ \ /*\ \ \ \ if(target.getReputation()\ <\=\ 15\ &&\ target.getTWE()\ <\=\ 5){\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setLost();\n\ \ \ \ \ \ \ \ \ \ \ \ }\ else\ if(target.getReputation()\ <\ 40\ &&\ target.getTWE()\ <\=\ 5)\ {\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setMoney(target.getMoney()\ -\ 1000);\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setReputation(target.getReputation()\ -\ 5);\n\ \ \ \ \ \ \ \ \ \ \ \ }\ else\ if(target.getTWE()\ >\ 5){\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ target.setReputation(target.getReputation()\ +\ 1);\n\ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ }\n\n\n\n\ \ \ \ }\n\n\n\n\ \ \ \ }\n\n}
 comment5.params=Sound
-comment5.target=void\ PlaySound(java.io.File)
+comment5.target=void\ PlaySoundLoop(java.io.File)
 numComments=6

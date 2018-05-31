@@ -52,40 +52,34 @@ public abstract class Computer implements Player {
         money += 300;
         reputation += .25;
         hasEmbezzled = false;
+        consecutive = 0;
     }
     
     public void embezzle() //Action 2
     {   
         money += 500;
-        reputation -= .25 - consecutive * .5;
+        reputation -= .25 + consecutive * .25;
         hasEmbezzled = true;
-        
+        consecutive++;
     }
     
     public void interact(){ //Action 3
         reputation += .5;
+        consecutive = 0;
         //Draws a Chance Card
     }
     
     public void upgrade() // Action 4
     {
-        
+        consecutive = 0;
     }
     
     public void activeAbility() //Action 5
     {
-        
+        consecutive =0;
     }
     
-    public void resetFocus()
-    {
-        embezzleW=.2;
-        fundraiseW=.2;
-        interactW=.2;
-        upgradeW=.2;
-        activeW=.2;
-        bound=1;
-    }
+    
     //Getters 
     public double getReputation() {
         // TODO Auto-generated method stub
@@ -168,9 +162,27 @@ public abstract class Computer implements Player {
     }
 
     //This is the AI function
-    public int findMove()
+    public int findMove(int turncount)
     {
         return 0;
+    }
+    public void printWeights()
+    {
+        System.out.println("EmbezzleW:"+embezzleW);
+        System.out.println("FundraiseW:"+fundraiseW);
+        System.out.println("InteractW:"+interactW);
+        System.out.println("UpgradeW:"+upgradeW);
+        System.out.println("ActiveW:"+activeW);
+
+    }
+    public void resetFocus()
+    {
+        embezzleW=.2;
+        fundraiseW=.2;
+        interactW=.2;
+        upgradeW=.2;
+        activeW=.2;
+        bound=1;
     }
     //Gives paycheck
     public void paycheck()

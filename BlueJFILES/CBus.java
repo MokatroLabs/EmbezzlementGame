@@ -26,18 +26,9 @@ public class CBus extends Computer
    
     public void paycheck()
     {
-        money += 250 + (reputation * .01) * 10;
+        money += 150 + (reputation * .01) * 10;
     }
-    public void printWeights()
-    {
-        System.out.println("EmbezzleW:"+embezzleW);
-        System.out.println("FundraiseW:"+fundraiseW);
-        System.out.println("InteractW:"+interactW);
-        System.out.println("UpgradeW:"+upgradeW);
-        System.out.println("ActiveW:"+activeW);
-
-    }
-    public int findMove()
+    public int findMove(int turncount)
     {
         // DO NOT GET RID OF THIS I SWEAR TO GOD
     
@@ -92,6 +83,93 @@ public class CBus extends Computer
         }
 
         // Money Based Changes
+        if (money <= 1000)
+        {
+            embezzleW +=bound*.5;
+            fundraiseW += bound*.25;
+            interactW -= bound*.5;
+            upgradeW -= bound*.5;            
+        } else if (money <= 3000)
+        {
+            embezzleW += bound*.25;
+            fundraiseW += bound*.125;
+            interactW -= bound*.25;
+            upgradeW -= bound*.25;
+        } else if (money <= 9000)
+        {
+            embezzleW += bound*.125;
+            fundraiseW +=bound*.0625;
+            interactW -= bound*.125;
+            upgradeW -= bound*.125;
+        } else if (money <= 27000)
+        {   embezzleW += bound*.0625;
+            fundraiseW +=bound*.03125;
+            interactW -= bound*.0625;
+            upgradeW -= bound*.0625;
+        } else if (money <= 81000)
+        {
+            embezzleW += bound*.03125;
+            fundraiseW += bound*.015625;
+            interactW -=bound*.03125;
+            upgradeW -= bound*.03125;
+        } else if (money <= 243000)
+        {
+            embezzleW += bound*.015625;
+            fundraiseW -= bound*.015625;
+        } else if (money <= 729000)
+        {
+            embezzleW -= bound*.015625;
+            fundraiseW -= bound*.03125;
+        } else if (money <= 2187000)
+        {
+            embezzleW -= bound*.03125;
+            fundraiseW -=bound*.0625;
+        }
+        // Turn Based Changes
+        if (turncount <= 10)
+        {
+            fundraiseW +=bound*.5;
+            embezzleW -=bound*.5;
+            upgradeW -=bound*.25;
+        } else if (turncount <= 25)
+        {
+            fundraiseW +=bound*.125;
+            embezzleW-= bound*.125;
+        } else if (turncount <= 40)
+        { 
+            fundraiseW +=bound*.03125;
+            embezzleW -= bound*.03125;
+        } else if (turncount <= 55)
+        {
+            
+        } else if (turncount <= 70)
+        {
+            fundraiseW -= bound*.03125;
+            embezzleW += bound*.03125;
+        } else if (turncount <= 85)
+        {
+            fundraiseW -= bound*.125;
+            embezzleW += bound*.125;
+        } else if (turncount <= 100)
+        {
+            fundraiseW -= bound*.25;
+            embezzleW += bound*25;
+        } else if (turncount <=140)
+        {
+            fundraiseW -= bound*.95;
+            embezzleW += bound*.5;
+        }
+        // Consecutive Based Changes
+        if (consecutive >= 5)
+        {
+            embezzleW -= bound*.5;
+        } else if (consecutive >3)
+        {
+            embezzleW -= bound*.25;
+        } else if (consecutive >1)
+        {
+            embezzleW -= bound*.125;
+        }
         //no negative Weights
         if(embezzleW <0)
             embezzleW= .01;
@@ -119,6 +197,8 @@ public class CBus extends Computer
         System.out.println(reputation);
         System.out.println(money);
         printWeights();
+        if (embezzleW > 10000 || fundraiseW > 10000 || interactW > 10000 || upgradeW > 10000 || activeW > 10000 )
+            resetFocus();
         return action;
     }
    

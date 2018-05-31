@@ -15,7 +15,7 @@ public interface Player {
 	
 	void paycheck();
 	
-	int findMove();
+	int findMove(int turncount);
 	
 	//Getters
 	double getReputation();

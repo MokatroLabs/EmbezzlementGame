@@ -14,4 +14,8 @@ public class Deck
     public Deck(){
         deck = new ArrayList<Card>();
     }
+    public void createDeck()
+    {
+        deck.add(new Card("15 Minute Labor Break","+1R",1));
+    }
 }

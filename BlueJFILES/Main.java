@@ -11,12 +11,13 @@ public class Main {
     public static Mechanics economy = new Mechanics();
     private static ArrayList<Player> players;
     static Deck deck;
+    //saveme
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
         boolean playPressed = false;
-        PlaySound(OST);
+        PlaySoundLoop(OST);
         board.makeTitleScreen();
         board.showTitleScreen();
         board.makeGameScreen();
@@ -100,11 +101,11 @@ public class Main {
             action = board.promptAction();
             else
             {
-                action = current.findMove();
+                action = current.findMove(economy.getTurns());
             }
         if (action == 1) {
             current.embezzle();
-            current.setTWE(0);
+            current.setTWE(-1);
             if((current.getChar()).equals("Spy")){
                 economy.setMoney(economy.getMoney() - 750);
             }else {
@@ -186,7 +187,7 @@ public class Main {
        board.updateTurnBorder(economy.getTurns());
     }
 
-    static void PlaySound(File Sound)
+    static void PlaySoundLoop(File Sound)
     {
         ContinuousAudioDataStream loop = null;
         AudioPlayer MGP = AudioPlayer.player;
