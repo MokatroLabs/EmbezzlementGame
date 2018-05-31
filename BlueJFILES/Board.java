@@ -94,8 +94,8 @@ public class Board implements ActionListener {
         Insets spacing = new Insets(20,20,20,20); //part of constraits, makes an inserts object to space out the boxes :  Insets(int top, int left, int bottom, int right)
         Insets buttonSpacing = new Insets(0,20,0,20);
         
-        picBorder = BorderFactory.createLineBorder(Color.gray, 2); //creates a border object whth the color and pixel width
-        picBorderYourTurn = BorderFactory.createLineBorder(Color.yellow, 5); 
+        picBorder = BorderFactory.createLineBorder(Color.gray, 3); //creates a border object whth the color and pixel width
+        picBorderYourTurn = BorderFactory.createLineBorder(Color.yellow, 2); 
         
         cons = new GridBagConstraints();
         gameScreen = new JPanel();
@@ -536,7 +536,8 @@ public class Board implements ActionListener {
                 actionPick = true;
                 return 5;
             }
-        }    
+        }
+        count++;
         return 0;        
     }  
     

@@ -20,7 +20,8 @@ public class Mechanics {
     //setter for moneypot
     public void setMoney(int amount)
     {
-        moneyPot = amount;
+        if (!(moneyPot- amount <0))
+            moneyPot = amount;
     }
     //getter for moneyPot
     public int getMoney()
