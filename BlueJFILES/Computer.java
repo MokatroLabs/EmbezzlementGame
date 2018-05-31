@@ -16,6 +16,7 @@ public abstract class Computer implements Player {
     double upgradeW=.2;
     double activeW=.2;
     double bound=1;
+    protected boolean hasLost; //refers to whether the player has lost the game yet
     public Computer(){
         reputation = 50;
         money = 100;
@@ -24,6 +25,7 @@ public abstract class Computer implements Player {
         isToggled = true;
         hasEmbezzled = false;
         twe = 0;
+        hasLost = false;
     }
     
     public Computer(double newReputation,int newMoney,String Char) {
@@ -93,19 +95,29 @@ public abstract class Computer implements Player {
     public boolean getEmbezzle(){
         return hasEmbezzled;
     }
+    
     public int getTWE()
     {
         return twe;
     }
-    //Setters
-    public void setReputation (double ammount)
-    {
-        reputation += ammount;
+    
+    public boolean getLost() {
+        return hasLost;
     }
     
-    public void setMoney(int ammount)
+    public boolean getToggled(){
+        return isToggled;
+    }
+    
+    //Setters
+    public void setReputation (double amount)
     {
-        money = ammount;
+        reputation += amount;
+    }
+    
+    public void setMoney(int amount)
+    {
+        money = amount;
     }
     
     public void setCooldown(int newCooldown){
@@ -118,6 +130,10 @@ public abstract class Computer implements Player {
     
     public void setTWE(int newTWE){
         twe = newTWE;
+    }
+    
+    public void setLost(){
+        hasLost = true;
     }
     
     //Miscellaneous

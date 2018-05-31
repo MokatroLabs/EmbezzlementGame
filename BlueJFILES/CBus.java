@@ -41,6 +41,7 @@ public class CBus extends Computer
             interactW += bound*.5;
             embezzleW -= bound*.5;
         } else if(reputation <=25)
+
         {
             fundraiseW += bound*.125;
             interactW+=bound*.25;
@@ -80,6 +81,7 @@ public class CBus extends Computer
             interactW-=bound*.0625;
             embezzleW += bound*.0625;
         }
+
         // Money Based Changes
         //no negative Weights
         if(embezzleW <0)
@@ -116,6 +118,7 @@ public class CBus extends Computer
         System.out.println("InteractW:"+interactW);
         System.out.println("UpgradeW:"+upgradeW);
         System.out.println("ActiveW:"+activeW);
+
     }
    
 }

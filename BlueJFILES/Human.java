@@ -12,8 +12,9 @@ public abstract class Human implements Player {
     protected int cooldown; //refers to active ability cooldown times
     protected boolean isHuman; //refers to the identification of each class by whether they are human or not
     protected boolean isToggled; //refers to the toggling of actions
-    protected boolean hasEmbezzled; //refers to audits
-    protected int twe; //refers to turns without embezzle
+    protected boolean hasEmbezzled; //refers to audits 
+    protected int twe; //refers to turns without embezzle (also refers to audits)
+    protected boolean hasLost; //refers to whether the player has lost the game yet
     
     public Human()
     {
@@ -25,6 +26,7 @@ public abstract class Human implements Player {
         isToggled = true;
         hasEmbezzled = false;
         twe = 0;
+        hasLost = false;
     }
     
     public Human(double newReputation,int newMoney,String Char) { //meant just in case we want difficulties or multiplayer
@@ -62,6 +64,11 @@ public abstract class Human implements Player {
     {
         cooldown = 5;
     }
+
+    public int findMove()
+    {    
+        return 0;
+    }  
     
     //Getters
     public double getReputation() 
@@ -69,7 +76,6 @@ public abstract class Human implements Player {
         return reputation;
     }
 
-    
     public String getChar() {
         return character;
     }
@@ -95,6 +101,14 @@ public abstract class Human implements Player {
         return twe;
     }
     
+    public boolean getLost(){
+        return hasLost;
+    }
+    
+    public boolean getToggled(){
+        return isToggled;
+    }
+    
     //Setters
     public void setReputation(double newReputation)
     {
@@ -116,6 +130,10 @@ public abstract class Human implements Player {
     
     public void setTWE(int newTWE){
         twe = newTWE;
+        }
+        
+    public void setLost(){
+        hasLost = true;
     }
     
     //Miscellaneous
@@ -132,10 +150,6 @@ public abstract class Human implements Player {
     public void paycheck()
     {
         money += 100 + (reputation*.01)* 100;
-    }
-    
-    public int findMove(){
-        return 0;
     }
     
     public String toString()

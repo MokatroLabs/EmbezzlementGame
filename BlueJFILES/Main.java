@@ -14,8 +14,6 @@ public class Main {
     final static int maxTurns = 150;
     public static void main(String[] args) {
         // TODO Auto-generated method stub
- 
-        
         File OST = new File("OST.WAV");
         boolean playPressed = false;
         PlaySound(OST);
@@ -23,6 +21,8 @@ public class Main {
         board.showTitleScreen();
         board.makeGameScreen();
         board.hideGameScreen();
+        board.makeUpgradeScreen();
+        board.hideUpgradeScreen();
         while(!(playPressed))
         {
             if(board.getPlayClick())
@@ -43,6 +43,10 @@ public class Main {
         int round = 0;
 
 
+        board.makeTitleScreen();
+        board.showTitleScreen();
+
+
         CBus comp = new CBus();
         HQueen  human = new HQueen();
         board.hideTitleScreen();
@@ -55,20 +59,24 @@ public class Main {
                 currentPlayer =0;
             if(round > 2)
                 round = 0;
-            if(economy.getTurns() %5 == 0)
+            if(economy.getTurns() %5 == 0){
                 players.get(currentPlayer).paycheck();
+            }
+            if(players.get(currentPlayer).getToggled() && !players.get(currentPlayer).getChar().equals("Queen")){
+                players.get(currentPlayer).setReputation(players.get(currentPlayer).getReputation() + .2);
+            }
             if(Math.random() * 100 < (10 - ((players.get(currentPlayer)).getReputation()) / 10)){
                 audit(players.get(currentPlayer));
             }
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
-
-            if (currentPlayer  <= players.size() ){
-                currentPlayer++;
+            if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
+                players.get(currentPlayer).setLost();
             }
             if(round == 2)
                     economy.setTurns(economy.getTurns() + 1);
             round++;
+            currentPlayer++;
         }
     }
     
@@ -83,7 +91,7 @@ public class Main {
             action = board.promptAction();
         else
         {
-          action = current.findMove();
+            action = current.findMove();
         }
         if (action == 1) {
             current.embezzle();
@@ -134,7 +142,7 @@ public class Main {
     public static void audit(Player target){
         if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
-                //Lose the Game
+                target.setLost();
             } else if(target.getReputation() < 40 && target.getTWE() <= 5) {
                 target.setMoney(target.getMoney() - 500);
                 target.setReputation(target.getReputation() - 2.5);
@@ -143,7 +151,6 @@ public class Main {
             }
         }
     }
-
 
     public static void updateBoard(Human human, String[] textArea)
     { 
