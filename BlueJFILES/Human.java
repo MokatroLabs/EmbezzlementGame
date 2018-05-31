@@ -1,7 +1,4 @@
  
-
-
-
 public abstract class Human implements Player {
 
 
@@ -65,14 +62,13 @@ public abstract class Human implements Player {
     {
         cooldown = 5;
     }
-<<<<<<< HEAD
-=======
+
 
     public int findMove()
     {    
         return 0;
     }  
->>>>>>> 30e9e097b39d5e19d1b845c4845b733d15681bb0
+
     
     //Getters
     public double getReputation() 
@@ -151,10 +147,6 @@ public abstract class Human implements Player {
         }
     }
     
-    public int findMove()
-    {    
-        return 0;
-    }  
     
     //gives paycheck
     public void paycheck()

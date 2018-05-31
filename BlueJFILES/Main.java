@@ -47,10 +47,7 @@ public class Main {
         board.makeTitleScreen();
         board.showTitleScreen();
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 30e9e097b39d5e19d1b845c4845b733d15681bb0
         CBus comp = new CBus();
         HQueen  human = new HQueen();
         board.hideTitleScreen();
@@ -68,11 +65,11 @@ public class Main {
             }
             
             if(Math.random() * 100 < (10 - ((players.get(currentPlayer)).getReputation()) / 10)){
-               // audit(players.get(currentPlayer));
+                audit(players.get(currentPlayer));
             }
             takeTurn(players.get(currentPlayer));
             updateBoard(human,textArea);
-<<<<<<< HEAD
+
 
             if (currentPlayer  <= players.size() ){
                 players.get(currentPlayer).setCooldown((players.get(currentPlayer)).getCooldown() -1);
@@ -84,20 +81,20 @@ public class Main {
                 }
                 currentPlayer++;
                 if(round == 2)
-=======
+
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
             }
             if(round == 2)
->>>>>>> 30e9e097b39d5e19d1b845c4845b733d15681bb0
+
                     economy.setTurns(economy.getTurns() + 1);
             round++;
             currentPlayer++;
         }
     }
+}
     
-    public static void takeTurn(Player current)
-    {
+    public static void takeTurn(Player current){
         System.out.println("turn");
         int action=0;
         int target=-1;
@@ -113,11 +110,7 @@ public class Main {
             action = board.promptAction();
         else
         {
-<<<<<<< HEAD
           action = current.findMove();
-=======
-            action = current.findMove();
->>>>>>> 30e9e097b39d5e19d1b845c4845b733d15681bb0
         }
         if (action == 1) {
             current.embezzle();
@@ -161,26 +154,20 @@ public class Main {
         }
         if(current.getCooldown()>0)
             current.setCooldown(current.getCooldown()-1);
-    }
-
-    
-
-  /*  public static void audit(Player target){
+        }
+   
+   public static void audit(Player target){
         if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
             } else if(target.getReputation() < 40 && target.getTWE() <= 5) {
-                target.setMoney(target.getMoney() - 500);
-                target.setReputation(target.getReputation() - 2.5);
+                target.setMoney(target.getMoney() - 1000);
+                target.setReputation(target.getReputation() - 5);
             } else if(target.getTWE() > 5){
                 target.setReputation(target.getReputation() + 1);
             }
         }
-<<<<<<< HEAD
     }
-=======
-    }*/
->>>>>>> 30e9e097b39d5e19d1b845c4845b733d15681bb0
 
     public static void updateBoard(Human human, String[] textArea)
     { 
