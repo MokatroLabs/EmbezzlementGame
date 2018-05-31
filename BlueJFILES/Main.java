@@ -16,7 +16,7 @@ public class Main {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
         boolean playPressed = false;
-        PlaySound(OST);
+        PlaySoundLoop(OST);
         board.makeTitleScreen();
         board.showTitleScreen();
         board.makeGameScreen();
@@ -184,7 +184,7 @@ public class Main {
        board.updateTurnBorder(economy.getTurns());
     }
 
-    static void PlaySound(File Sound)
+    static void PlaySoundLoop(File Sound)
     {
         ContinuousAudioDataStream loop = null;
         AudioPlayer MGP = AudioPlayer.player;

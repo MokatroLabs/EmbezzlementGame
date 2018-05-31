@@ -1,4 +1,10 @@
-
+import java.io.File;
+import java.awt.event.*;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.swing.*;
+import sun.audio.*;
+import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,7 +19,8 @@ public class Board implements ActionListener {
     private JPanel titleScreen;
     private JButton btnPlay;
     
-    
+    // click sound
+    File click = new File("Click.WAV");
     //ChampSelect Variables
     private JPanel panelChampSelect;
     private JButton lockInButton;
@@ -337,6 +344,7 @@ public class Board implements ActionListener {
        gbc_btnPlay.fill = GridBagConstraints.NONE;
        btnPlay.setActionCommand("Play");
        btnPlay.addActionListener(this);
+       //btnPlay.PlaySound();
        btnPlay.setFont(newFont);
        titleScreen.add(btnPlay, gbc_btnPlay);
        GridBagConstraints gbc_panelTitleScreen = new GridBagConstraints();
@@ -349,6 +357,8 @@ public class Board implements ActionListener {
        master.getContentPane().add(titleScreen, gbc_panelTitleScreen);
        master.pack(); //need to pack the screen
        titleScreen.setVisible(false);
+       
+       
     }
     
     public void hideTitleScreen()
@@ -707,6 +717,7 @@ public class Board implements ActionListener {
     
     public void actionPerformed(ActionEvent theEvent) 
     {
+        PlaySound(click);
         if(theEvent.getActionCommand().equals("Play"))
         {
             hideTitleScreen();
@@ -747,6 +758,22 @@ public class Board implements ActionListener {
             showGameScreen();
         }
     }
-
+    static void PlaySound(File Sound)
+    {
+        //ContinuousAudioDataStream loop = null;
+        //AudioPlayer MGP = AudioPlayer.player;
+        //AudioStream BGM;
+        //AudioData MD;
+        try{
+               Clip clip = AudioSystem.getClip();
+               clip.open(AudioSystem.getAudioInputStream(Sound));
+               clip.start();
+               //BGM = new AudioStream(new FileInputStream("OST.WAV"));
+               //MD = BGM.getData();
+               //loop = new ContinuousAudioDataStream(MD);
+            }catch(Exception e)
+            {}
+        //MGP.start(loop);    
+    }
 
 }
