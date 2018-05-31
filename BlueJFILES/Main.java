@@ -21,6 +21,8 @@ public class Main {
         board.showTitleScreen();
         board.makeGameScreen();
         board.hideGameScreen();
+        board.makeUpgradeScreen();
+        board.hideUpgradeScreen();
         while(!(playPressed))
         {
             if(board.getPlayClick())
