@@ -71,6 +71,7 @@ public class Board implements ActionListener {
     private JLabel disUpgrade;
     
     //charScreen
+    private String charSelected;
     private JPanel charPanel;
     private GridBagConstraints cons3;
     private JButton queenSelect;
@@ -81,6 +82,7 @@ public class Board implements ActionListener {
     private JLabel businessDesc;
     private JLabel fatherDesc;
     private JLabel spyDesc;
+    private boolean charPicked;
     
     
     
@@ -406,6 +408,7 @@ public class Board implements ActionListener {
         master.getContentPane().add(btnPlay, gbc_btnPlay);
         panelChampSelect.setVisible(false);
         */
+        charPicked = false;
         
         charPanel = new JPanel();
         cons3 = new GridBagConstraints();
@@ -722,6 +725,16 @@ public class Board implements ActionListener {
         return upgradeClick;
     }
     
+    public String getCharSelect()
+    {
+        return charSelected;
+    }
+    
+    public boolean getCharPicked()
+    {
+        return charPicked;
+    }
+    
     
     
     //setters
@@ -805,6 +818,7 @@ public class Board implements ActionListener {
     public void actionPerformed(ActionEvent theEvent) 
     {
         PlaySound(click);
+        
         if(theEvent.getActionCommand().equals("Play"))
         {
             hideTitleScreen();
@@ -812,12 +826,14 @@ public class Board implements ActionListener {
             //showGameScreen();
             showCharScreen();
         }
+        
         if(theEvent.getActionCommand().equals("Embezzle"))
         {
             System.out.println("Embezzle");
             embezzleClick = true;
             
         }
+        
         if(theEvent.getActionCommand().equals("Upgrade"))
         {
             System.out.println("Upgrade");
@@ -825,30 +841,61 @@ public class Board implements ActionListener {
             showUpgradeScreen();
             hideGameScreen();
         }
+        
         if(theEvent.getActionCommand().equals("Interact"))
         {
             System.out.println("Interact");
             interactClick = true;
         }
+        
         if(theEvent.getActionCommand().equals("Active"))
         {
             System.out.println("Active");
             activeClick = true;
         }
+        
         if(theEvent.getActionCommand().equals("Fundraise"))
         {
             System.out.println("Fundraise");
             fundraiseClick = true;
         }
+        
         if(theEvent.getActionCommand().equals("Back"))
         {
             hideUpgradeScreen();
             showGameScreen();
         }
+        
         if(theEvent.getActionCommand().equals("queenSelect"))
         {
+            charSelected = "Queen";
             hideCharScreen();
             showGameScreen();
+            charPicked = true;
+        }
+        
+        if(theEvent.getActionCommand().equals("spySelect"))
+        {
+            charSelected = "Spy";
+            hideCharScreen();
+            showGameScreen();
+            charPicked = true;
+        }
+        
+        if(theEvent.getActionCommand().equals("fatherSelect"))
+        {
+            charSelected = "Father";
+            hideCharScreen();
+            showGameScreen();
+            charPicked = true;
+        }
+        
+        if(theEvent.getActionCommand().equals("businessSelect"))
+        {
+            charSelected = "Business";
+            hideCharScreen();
+            showGameScreen();
+            charPicked = true;
         }
     }
     static void PlaySound(File Sound)
