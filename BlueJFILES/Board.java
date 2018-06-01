@@ -847,7 +847,8 @@ public class Board implements ActionListener {
         }
         if(theEvent.getActionCommand().equals("queenSelect"))
         {
-            showCharScreen();
+            hideCharScreen();
+            showGameScreen();
         }
     }
     static void PlaySound(File Sound)
