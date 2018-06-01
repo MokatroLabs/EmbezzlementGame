@@ -81,12 +81,9 @@ public class Board implements ActionListener {
     private JLabel queenDesc;
     private JLabel businessDesc;
     private JLabel fatherDesc;
-<<<<<<< HEAD
     private JLabel spyDesc; 
-=======
-    private JLabel spyDesc;
     private boolean charPicked;
->>>>>>> ac219a63f0461fd787e0ed518b3e0a98ec375fbe
+
     
     
     
@@ -473,7 +470,7 @@ public class Board implements ActionListener {
         queenDesc.setBorder(picBorder);
         
         businessDesc= new JLabel("Business Description Here");
-        businessDesc.setIcon(new ImageIcon("./pictures/test2.png")); //references the picture
+        businessDesc.setIcon(new ImageIcon("./pictures/test3.png")); //references the picture
         cons3.gridx = 1;
         cons3.gridy = 1;
         cons3.weightx = 1;
@@ -485,7 +482,7 @@ public class Board implements ActionListener {
         businessDesc.setBorder(picBorder);
         
         fatherDesc= new JLabel("Father Description Here");
-        fatherDesc.setIcon(new ImageIcon("./pictures/test3.png")); //references the picture
+        fatherDesc.setIcon(new ImageIcon("./pictures/test2.png")); //references the picture
         cons3.gridx = 2;
         cons3.gridy = 1;
         cons3.weightx = 1;
