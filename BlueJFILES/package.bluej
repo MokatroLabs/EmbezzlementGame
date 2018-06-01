@@ -26,27 +26,10 @@ dependency8.type=UsesDependency
 dependency9.from=Main
 dependency9.to=Human
 dependency9.type=UsesDependency
-<<<<<<< HEAD
-editor.fx.0.height=722
-editor.fx.0.width=800
-editor.fx.0.x=240
-editor.fx.0.y=26
-objectbench.height=101
-objectbench.width=919
-package.divider.horizontal=0.6
-package.divider.vertical=0.8285714285714286
-package.editor.height=515
-package.editor.width=817
-package.editor.x=337
-package.editor.y=64
-package.frame.height=688
-package.frame.width=943
-package.numDependencies=9
-=======
-editor.fx.0.height=747
-editor.fx.0.width=818
-editor.fx.0.x=112
-editor.fx.0.y=493
+editor.fx.0.height=1098
+editor.fx.0.width=1938
+editor.fx.0.x=-9
+editor.fx.0.y=-9
 objectbench.height=91
 objectbench.width=901
 package.divider.horizontal=0.6
@@ -57,8 +40,7 @@ package.editor.x=693
 package.editor.y=186
 package.frame.height=688
 package.frame.width=943
-package.numDependencies=12
->>>>>>> ac219a63f0461fd787e0ed518b3e0a98ec375fbe
+package.numDependencies=9
 package.numTargets=16
 package.showExtends=true
 package.showUses=true
@@ -101,22 +83,17 @@ target12.width=80
 target12.x=460
 target12.y=390
 target13.height=50
-target13.name=Mechanics
+target13.name=Computer
 target13.showInterface=false
-target13.type=ClassTarget
+target13.type=AbstractTarget
 target13.typeParameters=
 target13.width=90
-<<<<<<< HEAD
-target13.x=10
-target13.y=80
-=======
 target13.x=150
 target13.y=240
->>>>>>> ac219a63f0461fd787e0ed518b3e0a98ec375fbe
 target14.height=50
-target14.name=Computer
+target14.name=Mechanics
 target14.showInterface=false
-target14.type=AbstractTarget
+target14.type=ClassTarget
 target14.typeParameters=
 target14.width=90
 target14.x=150
@@ -170,20 +147,15 @@ target5.width=80
 target5.x=140
 target5.y=320
 target6.height=50
-target6.name=Deck
+target6.name=CFat
 target6.showInterface=false
 target6.type=ClassTarget
 target6.typeParameters=
 target6.width=80
-<<<<<<< HEAD
-target6.x=10
-target6.y=200
-=======
 target6.x=370
 target6.y=260
->>>>>>> ac219a63f0461fd787e0ed518b3e0a98ec375fbe
 target7.height=50
-target7.name=CFat
+target7.name=Deck
 target7.showInterface=false
 target7.type=ClassTarget
 target7.typeParameters=

@@ -471,7 +471,7 @@ public class Board implements ActionListener {
         queenDesc.setBorder(picBorder);
         
         businessDesc= new JLabel("Business Description Here");
-        businessDesc.setIcon(new ImageIcon("./pictures/test2.png")); //references the picture
+        businessDesc.setIcon(new ImageIcon("./pictures/test.png")); //references the picture
         cons3.gridx = 1;
         cons3.gridy = 1;
         cons3.weightx = 1;
@@ -483,7 +483,7 @@ public class Board implements ActionListener {
         businessDesc.setBorder(picBorder);
         
         fatherDesc= new JLabel("Father Description Here");
-        fatherDesc.setIcon(new ImageIcon("./pictures/test3.png")); //references the picture
+        fatherDesc.setIcon(new ImageIcon("./pictures/test2.png")); //references the picture
         cons3.gridx = 2;
         cons3.gridy = 1;
         cons3.weightx = 1;
@@ -495,7 +495,7 @@ public class Board implements ActionListener {
         fatherDesc.setBorder(picBorder);
         
         spyDesc= new JLabel("Spy Description Here");
-        spyDesc.setIcon(new ImageIcon("./pictures/test.png")); //references the picture
+        spyDesc.setIcon(new ImageIcon("./pictures/test3.png")); //references the picture
         cons3.gridx = 3;
         cons3.gridy = 1;
         cons3.weightx = 1;
