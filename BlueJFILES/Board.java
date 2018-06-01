@@ -81,12 +81,10 @@ public class Board implements ActionListener {
     private JLabel queenDesc;
     private JLabel businessDesc;
     private JLabel fatherDesc;
-<<<<<<< HEAD
+
     private JLabel spyDesc; 
-=======
-    private JLabel spyDesc;
     private boolean charPicked;
->>>>>>> ac219a63f0461fd787e0ed518b3e0a98ec375fbe
+
     
     
     
@@ -725,6 +723,30 @@ public class Board implements ActionListener {
             imageLabel3.setBorder(picBorder);
             imageLabel4.setBorder(picBorderYourTurn);
         }
+    }
+    
+    public void rePic(String charSelect)
+    {
+        if(charSelect.equals("Queen"))
+        {
+            imageLabel4.setIcon(new ImageIcon("./pictures/test4.png"));
+        }
+        else if(charSelect.equals("Father"))
+        {
+            imageLabel4.setIcon(new ImageIcon("./pictures/test2.png"));
+            imageLabel2.setIcon(new ImageIcon("./pictures/test4.png"));
+        }
+        else if(charSelect.equals("Spy"))
+        {
+            imageLabel4.setIcon(new ImageIcon("./pictures/test3.png"));
+            imageLabel3.setIcon(new ImageIcon("./pictures/test4.png"));
+        }
+        else if(charSelect.equals("Business"))
+        {
+            imageLabel4.setIcon(new ImageIcon("./pictures/test.png"));
+            imageLabel1.setIcon(new ImageIcon("./pictures/test4.png"));
+        }
+    
     }
     
     //getters;
