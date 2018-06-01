@@ -26,9 +26,42 @@ dependency8.type=UsesDependency
 dependency9.from=Deck
 dependency9.to=Card
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=747
 editor.fx.0.width=676
 editor.fx.0.x=604
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=275
+editor.fx.0.y=10
+objectbench.height=95
+objectbench.width=903
+=======
+editor.fx.0.height=1098
+editor.fx.0.width=1938
+editor.fx.0.x=-9
+editor.fx.0.y=-9
+objectbench.height=91
+objectbench.width=901
+>>>>>>> 3cf259e813edab028701e0fa4262938475b7821c
+package.divider.horizontal=0.6
+package.divider.vertical=0.827768014059754
+package.editor.height=464
+package.editor.width=795
+package.editor.x=693
+package.editor.y=186
+package.frame.height=688
+package.frame.width=943
+<<<<<<< HEAD
+package.numDependencies=12
+=======
+editor.fx.0.height=722
+editor.fx.0.width=800
+editor.fx.0.x=224
+>>>>>>> 55449b2d7e1cee3d80ec3790c3e28305081007e2
 editor.fx.0.y=23
 objectbench.height=102
 objectbench.width=919
@@ -41,6 +74,10 @@ package.editor.y=112
 package.frame.height=688
 package.frame.width=943
 package.numDependencies=9
+>>>>>>> a7e3a75f23e01d6a86beebf77cb0554c0e8bb5e9
+=======
+package.numDependencies=9
+>>>>>>> 3cf259e813edab028701e0fa4262938475b7821c
 package.numTargets=16
 package.showExtends=true
 package.showUses=true
@@ -83,8 +120,18 @@ target13.name=Mechanics
 target13.showInterface=false
 target13.type=ClassTarget
 target13.width=90
+<<<<<<< HEAD
 target13.x=150
 target13.y=240
+=======
+<<<<<<< HEAD
+target13.x=150
+target13.y=240
+=======
+target13.x=10
+target13.y=80
+>>>>>>> a7e3a75f23e01d6a86beebf77cb0554c0e8bb5e9
+>>>>>>> 55449b2d7e1cee3d80ec3790c3e28305081007e2
 target14.height=50
 target14.name=Computer
 target14.showInterface=false
@@ -139,8 +186,18 @@ target6.name=Deck
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=80
+<<<<<<< HEAD
 target6.x=490
 target6.y=460
+=======
+<<<<<<< HEAD
+target6.x=370
+target6.y=260
+=======
+target6.x=10
+target6.y=200
+>>>>>>> a7e3a75f23e01d6a86beebf77cb0554c0e8bb5e9
+>>>>>>> 55449b2d7e1cee3d80ec3790c3e28305081007e2
 target7.height=50
 target7.name=CFat
 target7.showInterface=false

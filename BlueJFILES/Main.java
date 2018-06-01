@@ -54,6 +54,7 @@ public class Main {
                 System.out.println(board.getCharSelect());
             }
         }
+        board.rePic(board.getCharSelect());
         runGame();
         }
     public static void runGame()
@@ -79,6 +80,7 @@ public class Main {
         players.add(comp2);
         players.add(comp3);
         updateBoard(human, textArea);
+        
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
