@@ -558,7 +558,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         upgradePanel.add(backButton, cons);
         
-        upActive = new JButton("Upgrade Active: lv 0");
+        upActive = new JButton("Leadership: lv 0");
         upActive.setActionCommand("upActive");
         upActive.addActionListener(this);
         cons.gridx = 0;
@@ -568,7 +568,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         upgradePanel.add(upActive, cons);
         
-        upInteract = new JButton("Upgrade Interact: lv 0");
+        upInteract = new JButton("Public Relations: lv 0");
         upInteract.setActionCommand("upInteract");
         upInteract.addActionListener(this);
         cons.gridx = 2;
@@ -578,7 +578,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         upgradePanel.add(upInteract, cons);
         
-        upEmbezzle = new JButton("Upgrade Embezzle: lv 0");
+        upEmbezzle = new JButton("Espionage: lv 0");
         upEmbezzle.setActionCommand("upEmbezzle");
         upEmbezzle.addActionListener(this);
         cons.gridx = 3;
@@ -588,7 +588,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         upgradePanel.add(upEmbezzle, cons);
         
-        upFundraise = new JButton("Upgrade Fundraise: lv 0");
+        upFundraise = new JButton("Marketing: lv 0");
         upFundraise.setActionCommand("upFundraise");
         upFundraise.addActionListener(this);
         cons.gridx = 4;
@@ -598,7 +598,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         upgradePanel.add(upFundraise, cons);
         
-        upUpgrade = new JButton("Upgrade Upgrade: lv 0");
+        upUpgrade = new JButton("Research and Development: lv 0");
         upUpgrade.setActionCommand("upUpgrade");
         upUpgrade.addActionListener(this);
         cons.gridx = 5;
