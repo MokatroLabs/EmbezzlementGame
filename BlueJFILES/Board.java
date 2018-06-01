@@ -80,7 +80,7 @@ public class Board implements ActionListener {
     private JLabel queenDesc;
     private JLabel businessDesc;
     private JLabel fatherDesc;
-    private JLabel spyDesc;
+    private JLabel spyDesc; 
     
     
     
@@ -410,6 +410,8 @@ public class Board implements ActionListener {
         charPanel = new JPanel();
         cons3 = new GridBagConstraints();
         charPanel.setLayout(new GridBagLayout());
+        //Insets spacing = new Insets(20,20,20,20); //part of constraits, makes an inserts object to space out the boxes :  Insets(int top, int left, int bottom, int right)
+        //Insets buttonSpacing = new Insets(0,20,0,20);
         
         queenSelect = new JButton("Queen");
         queenSelect.setActionCommand("queenSelect");
@@ -451,6 +453,53 @@ public class Board implements ActionListener {
         cons3.fill = GridBagConstraints.NONE;
         charPanel.add(spySelect, cons3);
         
+        queenDesc= new JLabel("Queen Description here");
+        queenDesc.setIcon(new ImageIcon("./pictures/test4.png")); //references the picture
+        cons3.gridx = 0;
+        cons3.gridy = 1;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        cons3.anchor = GridBagConstraints.CENTER;
+        cons3.insets = new Insets(20,0,0,0);
+        charPanel.add(queenDesc, cons3);
+        queenDesc.setBorder(picBorder);
+        
+        businessDesc= new JLabel("Business Description Here");
+        businessDesc.setIcon(new ImageIcon("./pictures/test2.png")); //references the picture
+        cons3.gridx = 1;
+        cons3.gridy = 1;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        cons3.anchor = GridBagConstraints.CENTER;
+        cons3.insets = new Insets(20,0,0,0);
+        charPanel.add(businessDesc, cons3);
+        businessDesc.setBorder(picBorder);
+        
+        fatherDesc= new JLabel("Father Description Here");
+        fatherDesc.setIcon(new ImageIcon("./pictures/test3.png")); //references the picture
+        cons3.gridx = 2;
+        cons3.gridy = 1;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        cons3.anchor = GridBagConstraints.CENTER;
+        cons3.insets = new Insets(20,0,0,0);
+        charPanel.add(fatherDesc, cons3);
+        fatherDesc.setBorder(picBorder);
+        
+        spyDesc= new JLabel("Spy Description Here");
+        spyDesc.setIcon(new ImageIcon("./pictures/test.png")); //references the picture
+        cons3.gridx = 3;
+        cons3.gridy = 1;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        cons3.anchor = GridBagConstraints.CENTER;
+        cons3.insets = new Insets(20,0,0,0);
+        charPanel.add(spyDesc, cons3);
+        spyDesc.setBorder(picBorder);
         
         
         cons3 = new GridBagConstraints();
@@ -846,6 +895,21 @@ public class Board implements ActionListener {
             showGameScreen();
         }
         if(theEvent.getActionCommand().equals("queenSelect"))
+        {
+            hideCharScreen();
+            showGameScreen();
+        }
+        if(theEvent.getActionCommand().equals("businessSelect"))
+        {
+            hideCharScreen();
+            showGameScreen();
+        }
+        if(theEvent.getActionCommand().equals("fatherSelect"))
+        {
+            hideCharScreen();
+            showGameScreen();
+        }    
+        if(theEvent.getActionCommand().equals("spySelect"))
         {
             hideCharScreen();
             showGameScreen();
