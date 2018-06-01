@@ -35,39 +35,21 @@ dependency8.type=UsesDependency
 dependency9.from=Main
 dependency9.to=Deck
 dependency9.type=UsesDependency
-<<<<<<< HEAD
 editor.fx.0.height=739
 editor.fx.0.width=816
-editor.fx.0.x=-32000
-editor.fx.0.y=-32000
-objectbench.height=90
-objectbench.width=1342
+editor.fx.0.x=275
+editor.fx.0.y=10
+objectbench.height=95
+objectbench.width=903
 package.divider.horizontal=0.6
-package.divider.vertical=0.8581871345029239
-package.editor.height=580
-package.editor.width=1252
-package.editor.x=0
-package.editor.y=46
-package.frame.height=784
-package.frame.width=1382
-package.numDependencies=12
-=======
-editor.fx.0.height=1098
-editor.fx.0.width=1938
-editor.fx.0.x=-9
-editor.fx.0.y=-9
-objectbench.height=91
-objectbench.width=901
-package.divider.horizontal=0.6
-package.divider.vertical=0.827768014059754
-package.editor.height=464
-package.editor.width=795
-package.editor.x=693
-package.editor.y=186
+package.divider.vertical=0.826530612244898
+package.editor.height=479
+package.editor.width=813
+package.editor.x=315
+package.editor.y=49
 package.frame.height=688
 package.frame.width=943
-package.numDependencies=9
->>>>>>> a91994aa809137c4f2bb49abba0acb0dd135a258
+package.numDependencies=12
 package.numTargets=16
 package.showExtends=true
 package.showUses=true
@@ -115,13 +97,8 @@ target13.showInterface=false
 target13.type=AbstractTarget
 target13.typeParameters=
 target13.width=90
-<<<<<<< HEAD
-target13.x=130
-target13.y=200
-=======
 target13.x=150
 target13.y=240
->>>>>>> a91994aa809137c4f2bb49abba0acb0dd135a258
 target14.height=50
 target14.name=Mechanics
 target14.showInterface=false
@@ -184,13 +161,8 @@ target6.showInterface=false
 target6.type=ClassTarget
 target6.typeParameters=
 target6.width=80
-<<<<<<< HEAD
-target6.x=270
-target6.y=310
-=======
 target6.x=370
 target6.y=260
->>>>>>> a91994aa809137c4f2bb49abba0acb0dd135a258
 target7.height=50
 target7.name=Deck
 target7.showInterface=false
