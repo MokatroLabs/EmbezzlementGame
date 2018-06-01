@@ -81,6 +81,7 @@ public class Board implements ActionListener {
     private JLabel queenDesc;
     private JLabel businessDesc;
     private JLabel fatherDesc;
+
     private JLabel spyDesc; 
     private boolean charPicked;
 
@@ -470,7 +471,7 @@ public class Board implements ActionListener {
         queenDesc.setBorder(picBorder);
         
         businessDesc= new JLabel("Business Description Here");
-        businessDesc.setIcon(new ImageIcon("./pictures/test3.png")); //references the picture
+        businessDesc.setIcon(new ImageIcon("./pictures/test.png")); //references the picture
         cons3.gridx = 1;
         cons3.gridy = 1;
         cons3.weightx = 1;
@@ -494,7 +495,7 @@ public class Board implements ActionListener {
         fatherDesc.setBorder(picBorder);
         
         spyDesc= new JLabel("Spy Description Here");
-        spyDesc.setIcon(new ImageIcon("./pictures/test.png")); //references the picture
+        spyDesc.setIcon(new ImageIcon("./pictures/test3.png")); //references the picture
         cons3.gridx = 3;
         cons3.gridy = 1;
         cons3.weightx = 1;
@@ -722,6 +723,30 @@ public class Board implements ActionListener {
             imageLabel3.setBorder(picBorder);
             imageLabel4.setBorder(picBorderYourTurn);
         }
+    }
+    
+    public void rePic(String charSelect)
+    {
+        if(charSelect.equals("Queen"))
+        {
+            imageLabel4.setIcon(new ImageIcon("./pictures/test4.png"));
+        }
+        else if(charSelect.equals("Father"))
+        {
+            imageLabel4.setIcon(new ImageIcon("./pictures/test2.png"));
+            imageLabel2.setIcon(new ImageIcon("./pictures/test4.png"));
+        }
+        else if(charSelect.equals("Spy"))
+        {
+            imageLabel4.setIcon(new ImageIcon("./pictures/test3.png"));
+            imageLabel3.setIcon(new ImageIcon("./pictures/test4.png"));
+        }
+        else if(charSelect.equals("Business"))
+        {
+            imageLabel4.setIcon(new ImageIcon("./pictures/test.png"));
+            imageLabel1.setIcon(new ImageIcon("./pictures/test4.png"));
+        }
+    
     }
     
     //getters;
