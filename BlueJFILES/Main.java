@@ -30,6 +30,7 @@ public class Main {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
         boolean playPressed = false;
+        boolean charSelect = false;
         PlaySoundLoop(OST);
         board.makeTitleScreen();
         board.showTitleScreen();
@@ -44,7 +45,15 @@ public class Main {
         {
             if(board.getPlayClick())
                 playPressed = true;
+        }
+        while(!(charSelect))
+        {
+            if(board.getCharPicked())
+            {
+                charSelect = true;
+                System.out.println(board.getCharSelect());
             }
+        }
         runGame();
         }
     public static void runGame()
