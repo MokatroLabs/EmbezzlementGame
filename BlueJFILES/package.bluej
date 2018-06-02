@@ -1,37 +1,52 @@
 #BlueJ package file
-dependency1.from=Deck
-dependency1.to=Card
+dependency1.from=HFat
+dependency1.to=Player
 dependency1.type=UsesDependency
-dependency2.from=HFat
-dependency2.to=Player
+dependency2.from=Main
+dependency2.to=Board
 dependency2.type=UsesDependency
 dependency3.from=Main
-dependency3.to=Board
+dependency3.to=Mechanics
 dependency3.type=UsesDependency
 dependency4.from=Main
-dependency4.to=Mechanics
+dependency4.to=Player
 dependency4.type=UsesDependency
 dependency5.from=Main
-dependency5.to=Player
+dependency5.to=Deck
 dependency5.type=UsesDependency
 dependency6.from=Main
-dependency6.to=Deck
+dependency6.to=CBus
 dependency6.type=UsesDependency
 dependency7.from=Main
-dependency7.to=CBus
+dependency7.to=HQueen
 dependency7.type=UsesDependency
 dependency8.from=Main
-dependency8.to=HQueen
+dependency8.to=Human
 dependency8.type=UsesDependency
-dependency9.from=Main
-dependency9.to=Human
+dependency9.from=Deck
+dependency9.to=Card
 dependency9.type=UsesDependency
+<<<<<<< HEAD
+editor.fx.0.height=747
+editor.fx.0.width=676
+editor.fx.0.x=604
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=275
+editor.fx.0.y=10
+objectbench.height=95
+objectbench.width=903
+=======
 editor.fx.0.height=1098
 editor.fx.0.width=1938
 editor.fx.0.x=-9
 editor.fx.0.y=-9
 objectbench.height=91
 objectbench.width=901
+>>>>>>> 3cf259e813edab028701e0fa4262938475b7821c
 package.divider.horizontal=0.6
 package.divider.vertical=0.827768014059754
 package.editor.height=464
@@ -40,7 +55,29 @@ package.editor.x=693
 package.editor.y=186
 package.frame.height=688
 package.frame.width=943
+<<<<<<< HEAD
+package.numDependencies=12
+=======
+editor.fx.0.height=722
+editor.fx.0.width=800
+editor.fx.0.x=224
+>>>>>>> 55449b2d7e1cee3d80ec3790c3e28305081007e2
+editor.fx.0.y=23
+objectbench.height=102
+objectbench.width=919
+package.divider.horizontal=0.6
+package.divider.vertical=0.8269841269841269
+package.editor.height=514
+package.editor.width=817
+package.editor.x=337
+package.editor.y=112
+package.frame.height=688
+package.frame.width=943
 package.numDependencies=9
+>>>>>>> a7e3a75f23e01d6a86beebf77cb0554c0e8bb5e9
+=======
+package.numDependencies=9
+>>>>>>> 3cf259e813edab028701e0fa4262938475b7821c
 package.numTargets=16
 package.showExtends=true
 package.showUses=true
@@ -54,7 +91,6 @@ target1.height=50
 target1.name=Human
 target1.showInterface=false
 target1.type=AbstractTarget
-target1.typeParameters=
 target1.width=80
 target1.x=460
 target1.y=190
@@ -62,7 +98,6 @@ target10.height=50
 target10.name=HFat
 target10.showInterface=false
 target10.type=ClassTarget
-target10.typeParameters=
 target10.width=80
 target10.x=560
 target10.y=360
@@ -70,7 +105,6 @@ target11.height=50
 target11.name=Board
 target11.showInterface=false
 target11.type=ClassTarget
-target11.typeParameters=
 target11.width=80
 target11.x=440
 target11.y=30
@@ -78,31 +112,37 @@ target12.height=50
 target12.name=HSpy
 target12.showInterface=false
 target12.type=ClassTarget
-target12.typeParameters=
 target12.width=80
 target12.x=460
 target12.y=390
 target13.height=50
-target13.name=Computer
+target13.name=Mechanics
 target13.showInterface=false
-target13.type=AbstractTarget
-target13.typeParameters=
+target13.type=ClassTarget
 target13.width=90
+<<<<<<< HEAD
 target13.x=150
 target13.y=240
+=======
+<<<<<<< HEAD
+target13.x=150
+target13.y=240
+=======
+target13.x=10
+target13.y=80
+>>>>>>> a7e3a75f23e01d6a86beebf77cb0554c0e8bb5e9
+>>>>>>> 55449b2d7e1cee3d80ec3790c3e28305081007e2
 target14.height=50
-target14.name=Mechanics
+target14.name=Computer
 target14.showInterface=false
-target14.type=ClassTarget
-target14.typeParameters=
+target14.type=AbstractTarget
 target14.width=90
-target14.x=150
-target14.y=240
+target14.x=10
+target14.y=160
 target15.height=50
 target15.name=HBus
 target15.showInterface=false
 target15.type=ClassTarget
-target15.typeParameters=
 target15.width=80
 target15.x=610
 target15.y=280
@@ -110,7 +150,6 @@ target16.height=50
 target16.name=Main
 target16.showInterface=false
 target16.type=ClassTarget
-target16.typeParameters=
 target16.width=80
 target16.x=250
 target16.y=20
@@ -118,7 +157,6 @@ target2.height=50
 target2.name=CBus
 target2.showInterface=false
 target2.type=ClassTarget
-target2.typeParameters=
 target2.width=80
 target2.x=250
 target2.y=320
@@ -126,15 +164,13 @@ target3.height=50
 target3.name=Player
 target3.showInterface=false
 target3.type=InterfaceTarget
-target3.typeParameters=
 target3.width=80
-target3.x=360
-target3.y=90
+target3.x=340
+target3.y=130
 target4.height=50
 target4.name=CSpy
 target4.showInterface=false
 target4.type=ClassTarget
-target4.typeParameters=
 target4.width=80
 target4.x=370
 target4.y=330
@@ -142,31 +178,37 @@ target5.height=50
 target5.name=CQueen
 target5.showInterface=false
 target5.type=ClassTarget
-target5.typeParameters=
 target5.width=80
 target5.x=140
 target5.y=320
 target6.height=50
-target6.name=CFat
+target6.name=Deck
 target6.showInterface=false
 target6.type=ClassTarget
-target6.typeParameters=
 target6.width=80
+<<<<<<< HEAD
+target6.x=490
+target6.y=460
+=======
+<<<<<<< HEAD
 target6.x=370
 target6.y=260
+=======
+target6.x=10
+target6.y=200
+>>>>>>> a7e3a75f23e01d6a86beebf77cb0554c0e8bb5e9
+>>>>>>> 55449b2d7e1cee3d80ec3790c3e28305081007e2
 target7.height=50
-target7.name=Deck
+target7.name=CFat
 target7.showInterface=false
 target7.type=ClassTarget
-target7.typeParameters=
 target7.width=80
-target7.x=370
-target7.y=260
+target7.x=140
+target7.y=60
 target8.height=50
 target8.name=HQueen
 target8.showInterface=false
 target8.type=ClassTarget
-target8.typeParameters=
 target8.width=80
 target8.x=640
 target8.y=220
@@ -174,7 +216,6 @@ target9.height=50
 target9.name=Card
 target9.showInterface=false
 target9.type=ClassTarget
-target9.typeParameters=
 target9.width=80
-target9.x=60
-target9.y=260
+target9.x=220
+target9.y=420

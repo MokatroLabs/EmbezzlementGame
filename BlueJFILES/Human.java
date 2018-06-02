@@ -11,8 +11,10 @@ public abstract class Human implements Player {
     protected boolean hasEmbezzled; //refers to audits 
     protected int twe; //refers to turns without embezzle (also refers to audits)
     protected boolean hasLost; //refers to whether the player has lost the game yet
-    int[] skills = new int[5]; 
-    int consecutive= 0;
+    protected int[] skills; //refers to the skill tree levels
+    protected int consecutive;
+    
+    
     public Human()
     {
         reputation =  50;
@@ -24,6 +26,8 @@ public abstract class Human implements Player {
         hasEmbezzled = false;
         twe = 0;
         hasLost = false;
+        skills = new int[5];
+        consecutive = 0;
     }
     
     public Human(double newReputation,int newMoney,String Char) { //meant just in case we want difficulties or multiplayer
