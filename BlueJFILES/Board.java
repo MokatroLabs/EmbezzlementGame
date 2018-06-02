@@ -662,30 +662,35 @@ public class Board implements ActionListener {
             {
                 setLeadClick(false);
                 upgradePick = true;
+                hideUpgradeScreen();
                 return 1;
             }
             if(getPrClick() == true)
             {
                 setPrClick(false);
                 upgradePick = true;
+                hideUpgradeScreen();
                 return 2;
             }
             if(getEspClick() == true)
             {
                 setEspClick(false);
                 upgradePick = true;
+                hideUpgradeScreen();
                 return 3;
             }
             if(getMarClick() == true)
             {
                 setMarClick(false);
                 upgradePick = true;
+                hideUpgradeScreen();
                 return 4;
             }
             if(getRdClick() == true)
             {
                 setRdClick(false);
                 upgradePick = true;
+                hideUpgradeScreen();
                 return 5;
             }
         }

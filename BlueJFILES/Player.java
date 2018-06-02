@@ -34,6 +34,8 @@ public interface Player {
 	
 	boolean getLost();
 	
+	boolean getWon();
+	
 	boolean getToggled();
 	
 	int getLeadLV();
@@ -60,6 +62,8 @@ public interface Player {
 	void setTWE(int newTWE);
 	
 	void setLost();
+	
+	void setWon();
 	
 	void setLeadLV(int levelUp);
 	

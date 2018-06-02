@@ -10,6 +10,8 @@ public abstract class Computer implements Player {
     protected boolean isToggled; //refers to the toggling of actions 
     protected boolean hasEmbezzled; //refers to audits
     protected int twe; //refers to turns without embezzle
+    protected boolean hasLost; //refers to whether the player has lost the game yet
+    protected boolean hasWon; //refers to whether the player has won the game
     double embezzleW=.2;
     double fundraiseW=.2;
     double interactW=.2;
@@ -25,7 +27,7 @@ public abstract class Computer implements Player {
     protected int espLV; // Espionage Level
   
 
-    protected boolean hasLost; //refers to whether the player has lost the game yet
+    
     public Computer(){
         reputation = 50;
         money = 100;
@@ -35,6 +37,7 @@ public abstract class Computer implements Player {
         hasEmbezzled = false;
         twe = 0;
         hasLost = false;
+        hasWon = false;
         embezzleW = .2;
         fundraiseW = .2;
         interactW = .2;
@@ -139,6 +142,10 @@ public abstract class Computer implements Player {
         return hasLost;
     }
     
+    public boolean getWon(){
+        return hasWon;
+    }
+    
     public boolean getToggled(){
         return isToggled;
     }
@@ -192,6 +199,10 @@ public abstract class Computer implements Player {
     
     public void setLost(){
         hasLost = true;
+    }
+    
+    public void setWon(){
+        hasWon = true;
     }
     
     public void setLeadLV(int newLevel){

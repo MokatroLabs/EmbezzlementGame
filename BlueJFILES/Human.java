@@ -11,6 +11,7 @@ public abstract class Human implements Player {
     protected boolean hasEmbezzled; //refers to audits 
     protected int twe; //refers to turns without embezzle (also refers to audits)
     protected boolean hasLost; //refers to whether the player has lost the game yet
+    protected boolean hasWon; //refers to whether the player has won the game
     protected int[] skills; //refers to the skill tree levels
     protected int consecutive; // punishes players that embezzle too much
     protected int rdLV; // Research and Development Level
@@ -18,6 +19,7 @@ public abstract class Human implements Player {
     protected int prLV; // Public Relations Level
     protected int leadLV; // Leadership Level
     protected int espLV; // Espionage Level
+    
     
     
     
@@ -140,6 +142,10 @@ public abstract class Human implements Player {
         return hasLost;
     }
     
+    public boolean getWon(){
+        return hasWon;
+    }
+    
     public boolean getToggled(){
         return isToggled;
     }
@@ -193,6 +199,10 @@ public abstract class Human implements Player {
         
     public void setLost(){
         hasLost = true;
+    }
+    
+    public void setWon(){
+        hasWon = true;
     }
     
     public void setLeadLV(int newLevel){

@@ -11,8 +11,8 @@ public class Main {
     public static Board board = new Board();
     public static Mechanics economy = new Mechanics();
     private static ArrayList<Player> players;
-    private static int actionDone;
-    private static int upgradeDone;
+    private static int actionDone = 0;
+    private static int upgradeDone = 0;
     static Deck deck;
     //saveme
     final static int maxTurns = 150;
@@ -95,34 +95,42 @@ public class Main {
                 //audit(players.get(currentPlayer));
             }
             takeTurn(players.get(currentPlayer));
-            /*if(players.get(currentPlayer).getToggled()){
-                for(int i = 0; i < textArea.length - 1 ; i++){
-                    textArea[i+1] = textArea[i];
-                }
+            if(players.get(currentPlayer).getToggled()){
                 if(actionDone == 1){
-                    textArea[0] = "Player " + (currentPlayer + 1) + "has fundraised";
+                    System.out.println("Player " + (currentPlayer + 1) + "has fundraised");
                 }
                 if(actionDone == 2){
-                    textArea[0] = "Player " + (currentPlayer + 1) + "has embezzled";
+                    System.out.println("Player " + (currentPlayer + 1) + "has embezzled");
                 }
                 if(actionDone == 3){
-                    textArea[0] = "Player " + (currentPlayer + 1) + "has interacted";
+                    System.out.println("Player " + (currentPlayer + 1) + "has interacted");
                 }
                 if(actionDone == 4){
-                    textArea[0] = "Player " + (currentPlayer + 1) + "has upgraded";
+                    System.out.println("Player " + (currentPlayer + 1) + "has upgraded");
                 }
                 if(actionDone == 5){
-                    textArea[0] = "Player " + (currentPlayer + 1) + "has used an active ability";
+                    System.out.println("Player " + (currentPlayer + 1) + "has used an active ability");
                 }
                 
             }
             
-             */
+             
             updateBoard(human,textArea);
 
 
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
+            }
+            if(players.get(currentPlayer).getReputation() >= 100){
+                players.get(currentPlayer).setWon();
+            }
+            for(int i = 0; i < 4; i++){
+                int[] check = players.get(currentPlayer).getSkills();
+                if(check[i] != 5){
+                    break;
+                } else if(i == 4 && check[i] == 5){
+                    players.get(currentPlayer).setWon();
+                }
             }
             if(round == 4)
                 economy.setTurns(economy.getTurns() + 1);
@@ -189,6 +197,7 @@ public class Main {
                 }
                 current.upgrade(current.getLeadLV() + 1);
                 current.setLeadLV(current.getLeadLV() + 1);
+                board.setUpActive("Leadership : " + (current.getLeadLV()));
             }
             if(upgrade == 2){
                 if(current.getPrLV() >= 5){
@@ -196,6 +205,7 @@ public class Main {
                 }
                 current.upgrade(current.getPrLV() + 1);
                 current.setPrLV(current.getPrLV() + 1);
+                board.setUpInteract("Public Relations : " + (current.getPrLV()));
             }
             if(upgrade == 3){
                 if(current.getEspLV() >= 5){
@@ -203,6 +213,7 @@ public class Main {
                 }
                 current.upgrade(current.getEspLV() + 1);
                 current.setEspLV(current.getEspLV() + 1);
+                board.setUpEmbezzle("Espionage" + (current.getEspLV()));
             }
             if(upgrade == 4){
                 if(current.getMarLV() >= 5){
@@ -210,6 +221,7 @@ public class Main {
                 }
                 current.upgrade(current.getMarLV() + 1);
                 current.setMarLV(current.getMarLV() + 1);
+                board.setUpFundraise("Marketing" + (current.getMarLV()));
             }
             if(upgrade == 5){
                 if(current.getRdLV() >= 5){
@@ -217,6 +229,7 @@ public class Main {
                 }
                 current.upgrade(current.getRdLV() + 1);
                 current.setRdLV(current.getRdLV() + 1);
+                board.setUpUpgrade("Research and Development" + (current.getRdLV()));
             }
         }
         if(action == 5){
