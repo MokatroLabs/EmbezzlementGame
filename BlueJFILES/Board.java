@@ -697,10 +697,10 @@ public class Board implements ActionListener {
         int currentPlayer = turnCount%4;
         if(currentPlayer == 0)
         {
-            imageLabel1.setBorder(picBorderYourTurn);
+            imageLabel4.setBorder(picBorderYourTurn);
             imageLabel2.setBorder(picBorder);
             imageLabel3.setBorder(picBorder);
-            imageLabel4.setBorder(picBorder);
+            imageLabel1.setBorder(picBorder);
         }
         else if(currentPlayer ==1)
         {
@@ -711,17 +711,17 @@ public class Board implements ActionListener {
         }
         else if(currentPlayer == 2)
         {
-            imageLabel1.setBorder(picBorder);
+            imageLabel3.setBorder(picBorder);
             imageLabel2.setBorder(picBorder);
-            imageLabel3.setBorder(picBorderYourTurn);
+            imageLabel1.setBorder(picBorderYourTurn);
             imageLabel4.setBorder(picBorder);
         }
         else if(currentPlayer == 3)
         {
             imageLabel1.setBorder(picBorder);
             imageLabel2.setBorder(picBorder);
-            imageLabel3.setBorder(picBorder);
-            imageLabel4.setBorder(picBorderYourTurn);
+            imageLabel4.setBorder(picBorder);
+            imageLabel3.setBorder(picBorderYourTurn);
         }
     }
     
