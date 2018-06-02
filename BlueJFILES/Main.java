@@ -11,6 +11,8 @@ public class Main {
     public static Board board = new Board();
     public static Mechanics economy = new Mechanics();
     private static ArrayList<Player> players;
+    private static int actionDone;
+    private static int upgradeDone;
     static Deck deck;
     //saveme
     final static int maxTurns = 150;
@@ -93,6 +95,29 @@ public class Main {
                 //audit(players.get(currentPlayer));
             }
             takeTurn(players.get(currentPlayer));
+            /*if(players.get(currentPlayer).getToggled()){
+                for(int i = 0; i < textArea.length - 1 ; i++){
+                    textArea[i+1] = textArea[i];
+                }
+                if(actionDone == 1){
+                    textArea[0] = "Player " + (currentPlayer + 1) + "has fundraised";
+                }
+                if(actionDone == 2){
+                    textArea[0] = "Player " + (currentPlayer + 1) + "has embezzled";
+                }
+                if(actionDone == 3){
+                    textArea[0] = "Player " + (currentPlayer + 1) + "has interacted";
+                }
+                if(actionDone == 4){
+                    textArea[0] = "Player " + (currentPlayer + 1) + "has upgraded";
+                }
+                if(actionDone == 5){
+                    textArea[0] = "Player " + (currentPlayer + 1) + "has used an active ability";
+                }
+                
+            }
+            
+             */
             updateBoard(human,textArea);
 
 
@@ -115,6 +140,7 @@ public class Main {
         System.out.println("turn");
         int action=0;
         int target=-1;
+        int upgrade = 0;
         current.setTWE(current.getTWE() +1);
         current.setCooldown(current.getCooldown()-1);
         if(current.getToggled() == true)
@@ -151,6 +177,48 @@ public class Main {
         {
             current.interact();
         }
+        if(action == 4){
+            if(current.isHuman()){
+                upgrade = board.promptUpgrade();
+            } else {
+                // Implement AI choice here
+            }
+            if(upgrade == 1){
+                if(current.getLeadLV() >= 5){
+                    upgrade = board.promptUpgrade();
+                }
+                current.upgrade(current.getLeadLV() + 1);
+                current.setLeadLV(current.getLeadLV() + 1);
+            }
+            if(upgrade == 2){
+                if(current.getPrLV() >= 5){
+                    upgrade = board.promptUpgrade();
+                }
+                current.upgrade(current.getPrLV() + 1);
+                current.setPrLV(current.getPrLV() + 1);
+            }
+            if(upgrade == 3){
+                if(current.getEspLV() >= 5){
+                    upgrade = board.promptUpgrade();
+                }
+                current.upgrade(current.getEspLV() + 1);
+                current.setEspLV(current.getEspLV() + 1);
+            }
+            if(upgrade == 4){
+                if(current.getMarLV() >= 5){
+                    upgrade = board.promptUpgrade();
+                }
+                current.upgrade(current.getMarLV() + 1);
+                current.setMarLV(current.getMarLV() + 1);
+            }
+            if(upgrade == 5){
+                if(current.getRdLV() >= 5){
+                    upgrade = board.promptUpgrade();
+                }
+                current.upgrade(current.getRdLV() + 1);
+                current.setRdLV(current.getRdLV() + 1);
+            }
+        }
         if(action == 5){
             if(current.getChar().equals("Businessman")){
                 for(int i = 0; i < players.size(); i++){
@@ -170,9 +238,11 @@ public class Main {
                 current.activeAbility();
             }
         }
-        if(current.getCooldown()>0)
+        if(current.getCooldown()>0){
             current.setCooldown(current.getCooldown()-1);
-
+        }
+        actionDone = action;
+        upgradeDone = upgrade;
     }
     
 

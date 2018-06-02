@@ -17,7 +17,12 @@ public abstract class Computer implements Player {
     double activeW=.2;
     double bound=1;
     int[] skills = new int[5];
-    int consecutive;
+    protected int consecutive; // punishes players that embezzle too much
+    protected int rdLV; // Research and Development Level
+    protected int marLV; // Marketing Level
+    protected int prLV; // Public Relations Level
+    protected int leadLV; // Leadership Level
+    protected int espLV; // Espionage Level
   
 
     protected boolean hasLost; //refers to whether the player has lost the game yet
@@ -29,7 +34,6 @@ public abstract class Computer implements Player {
         isToggled = true;
         hasEmbezzled = false;
         twe = 0;
-        consecutive = 0;
         hasLost = false;
         embezzleW = .2;
         fundraiseW = .2;
@@ -37,6 +41,13 @@ public abstract class Computer implements Player {
         upgradeW = .2;
         activeW = .2;
         bound = 1;
+        skills = new int[5];
+        skills[0] = leadLV;
+        skills[1] = prLV;
+        skills[2] = espLV;
+        skills[3] = marLV;
+        skills[4] = rdLV;
+        consecutive = 0;
     }
     
     public Computer(double newReputation,int newMoney,String Char) {
@@ -69,9 +80,24 @@ public abstract class Computer implements Player {
         //Draws a Chance Card
     }
     
-    public void upgrade() // Action 4
+    public void upgrade(int level) // Action 4
     {
         consecutive = 0;
+        if(level == 1){
+            money -= 500;
+        }
+        if(level == 2){
+            money -= 1000;
+        }
+        if(level == 3){
+            money -= 2000;
+        }
+        if(level == 4){
+            money -= 4000;
+        }
+        if(level == 5){
+            money -= 6000;
+        }
     }
     
     public void activeAbility() //Action 5
@@ -117,6 +143,30 @@ public abstract class Computer implements Player {
         return isToggled;
     }
     
+    public int getLeadLV(){
+        return leadLV;
+    }
+    
+    public int getPrLV(){
+        return prLV;
+    }
+    
+    public int getEspLV(){
+        return espLV;
+    }
+    
+    public int getMarLV(){
+        return marLV;
+    }
+    
+    public int getRdLV(){
+        return rdLV;
+    }
+    
+    public int[] getSkills(){
+        return skills;
+    }
+    
     //Setters
     public void setReputation (double amount)
     {
@@ -142,6 +192,26 @@ public abstract class Computer implements Player {
     
     public void setLost(){
         hasLost = true;
+    }
+    
+    public void setLeadLV(int newLevel){
+        leadLV = newLevel;
+    }
+    
+    public void setPrLV(int newLevel){
+        prLV = newLevel;
+    }
+    
+    public void setEspLV(int newLevel){
+        espLV = newLevel;
+    }
+    
+    public void setMarLV(int newLevel){
+        marLV = newLevel;
+    }
+    
+    public void getRdLV(int newLevel){
+        rdLV = newLevel;
     }
     
     //Miscellaneous

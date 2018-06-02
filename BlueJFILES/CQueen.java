@@ -26,6 +26,10 @@ public class CQueen extends Computer
     {
         
     }
+    
+    public void setRdLV(int newLevel){
+        rdLV = newLevel;
+    }
 
     public int findMove()
 

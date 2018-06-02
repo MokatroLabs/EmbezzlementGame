@@ -25,4 +25,8 @@ public class HFat extends Human
     {
     }
     
+    public void setRdLV(int newLevel){
+        rdLV = newLevel;
+    }
+    
 }

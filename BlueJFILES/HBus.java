@@ -24,6 +24,11 @@ public class HBus extends Human
     {
         
     }
+    
+    public void setRdLV(int newLevel){
+        rdLV = newLevel;
+    }
+    
     public void paycheck()
     {
         money += 150 + (reputation*.01)*150;

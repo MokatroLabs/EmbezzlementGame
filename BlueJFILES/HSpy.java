@@ -26,4 +26,8 @@ public class HSpy extends Human
         reputation -= 0.25;
         hasEmbezzled = true;
     }
+    
+    public void setRdLV(int newLevel){
+        rdLV = newLevel;
+    }
 }

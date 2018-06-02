@@ -22,6 +22,10 @@ public class HQueen extends Human {
        money += 300;
        reputation += .5;
    }
+   
+   public void setRdLV(int newLevel){
+        rdLV = newLevel;
+    }
     
    public void toggleAction(){ //The queen cannot toggle her actions off
        

@@ -12,7 +12,13 @@ public abstract class Human implements Player {
     protected int twe; //refers to turns without embezzle (also refers to audits)
     protected boolean hasLost; //refers to whether the player has lost the game yet
     protected int[] skills; //refers to the skill tree levels
-    protected int consecutive;
+    protected int consecutive; // punishes players that embezzle too much
+    protected int rdLV; // Research and Development Level
+    protected int marLV; // Marketing Level
+    protected int prLV; // Public Relations Level
+    protected int leadLV; // Leadership Level
+    protected int espLV; // Espionage Level
+    
     
     
     public Human()
@@ -27,6 +33,11 @@ public abstract class Human implements Player {
         twe = 0;
         hasLost = false;
         skills = new int[5];
+        skills[0] = leadLV;
+        skills[1] = prLV;
+        skills[2] = espLV;
+        skills[3] = marLV;
+        skills[4] = rdLV;
         consecutive = 0;
     }
     
@@ -60,9 +71,24 @@ public abstract class Human implements Player {
         //Draws a Chance Card
     }
     
-    public void upgrade() { // Action 4
+    public void upgrade(int level) { // Action 4
         // TODO Auto-generated method stub
         consecutive = 0;
+        if(level == 1){
+            money -= 500;
+        }
+        if(level == 2){
+            money -= 1000;
+        }
+        if(level == 3){
+            money -= 2000;
+        }
+        if(level == 4){
+            money -= 4000;
+        }
+        if(level == 5){
+            money -= 6000;
+        }
     }
     
     public void activeAbility() // Action 5
@@ -118,6 +144,30 @@ public abstract class Human implements Player {
         return isToggled;
     }
     
+    public int getLeadLV(){
+        return leadLV;
+    }
+    
+    public int getPrLV(){
+        return prLV;
+    }
+    
+    public int getEspLV(){
+        return espLV;
+    }
+    
+    public int getMarLV(){
+        return marLV;
+    }
+    
+    public int getRdLV(){
+        return rdLV;
+    }
+    
+    public int[] getSkills(){
+        return skills;
+    }
+    
     //Setters
     public void setReputation(double newReputation)
     {
@@ -143,6 +193,26 @@ public abstract class Human implements Player {
         
     public void setLost(){
         hasLost = true;
+    }
+    
+    public void setLeadLV(int newLevel){
+        leadLV = newLevel;
+    }
+    
+    public void setPrLV(int newLevel){
+        prLV = newLevel;
+    }
+    
+    public void setEspLV(int newLevel){
+        espLV = newLevel;
+    }
+    
+    public void setMarLV(int newLevel){
+        marLV = newLevel;
+    }
+    
+    public void getRdLV(int newLevel){
+        rdLV = newLevel;
     }
     
     //Miscellaneous

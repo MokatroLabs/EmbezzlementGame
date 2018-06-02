@@ -28,6 +28,11 @@ public class CBus extends Computer
     {
         money += 150 + (reputation * .01) * 10;
     }
+    
+    public void setRdLV(int newLevel){
+        rdLV = newLevel;
+    }
+    
     public int findMove(int turncount)
     {
         // DO NOT GET RID OF THIS I SWEAR TO GOD

@@ -24,6 +24,10 @@ public class CFat extends Computer
     {
     }
     
+    public void setRdLV(int newLevel){
+        rdLV = newLevel;
+    }
+    
 
     public int findMove()
     {

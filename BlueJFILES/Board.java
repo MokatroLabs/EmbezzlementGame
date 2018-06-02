@@ -69,6 +69,12 @@ public class Board implements ActionListener {
     private JLabel disFundRaise;
     private JLabel disInteract;
     private JLabel disUpgrade;
+    private boolean leadClick;
+    private boolean prClick;
+    private boolean espClick;
+    private boolean marClick;
+    private boolean rdClick;
+    
     
     //charScreen
     private String charSelected;
@@ -91,7 +97,7 @@ public class Board implements ActionListener {
 
     public Board() 
     {
-        master = new JFrame("Dont Assume");          //  title of the window
+        master = new JFrame("The Long Con");          //  title of the window
         master.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         Toolkit theKit = master.getToolkit();//This gets the tool kit from the frame
         Dimension wndSize  = theKit.getScreenSize();//gets the screen size
@@ -104,6 +110,13 @@ public class Board implements ActionListener {
         fundraiseClick = false;
         upgradeClick = false;
         playClick = false;
+        
+        //Upgrade Screen
+        leadClick = false;
+        prClick = false;
+        espClick = false;
+        marClick = false;
+        rdClick = false;
         
 
         
@@ -636,6 +649,50 @@ public class Board implements ActionListener {
         upgradePanel.setVisible(false);
     }
     
+    public int promptUpgrade(){
+       boolean upgradePick = false;
+        int count = 0;
+        while(!upgradePick){
+            if (count == 100000)
+            {
+                System.out.println("in loop");
+                count =0;
+            }
+            if(getLeadClick() == true)
+            {
+                setLeadClick(false);
+                upgradePick = true;
+                return 1;
+            }
+            if(getPrClick() == true)
+            {
+                setPrClick(false);
+                upgradePick = true;
+                return 2;
+            }
+            if(getEspClick() == true)
+            {
+                setEspClick(false);
+                upgradePick = true;
+                return 3;
+            }
+            if(getMarClick() == true)
+            {
+                setMarClick(false);
+                upgradePick = true;
+                return 4;
+            }
+            if(getRdClick() == true)
+            {
+                setRdClick(false);
+                upgradePick = true;
+                return 5;
+            }
+        }
+        count++;
+        return 0;      
+    }
+    
     public void showUpgradeScreen()
     {
         upEmbezzle.setVisible(true);
@@ -800,6 +857,26 @@ public class Board implements ActionListener {
         return upgradeClick;
     }
     
+    public boolean getLeadClick(){
+        return leadClick;
+    }
+    
+    public boolean getPrClick(){
+        return prClick;
+    }
+    
+    public boolean getEspClick(){
+        return espClick;
+    }
+    
+    public boolean getMarClick(){
+        return marClick;
+    }
+    
+    public boolean getRdClick(){
+        return rdClick;
+    }
+    
     public String getCharSelect()
     {
         return charSelected;
@@ -861,6 +938,31 @@ public class Board implements ActionListener {
     public void setPlayClick(boolean bol)
     {
         playClick = bol;
+    }
+    
+    public void setLeadClick(boolean bol)
+    {
+        leadClick = bol;
+    }
+    
+    public void setPrClick(boolean bol)
+    {
+        prClick = bol;
+    }
+    
+    public void setEspClick(boolean bol)
+    {
+        espClick = bol;
+    }
+    
+    public void setMarClick(boolean bol)
+    {
+        marClick = bol;
+    }
+    
+    public void setRdClick(boolean bol)
+    {
+        rdClick = bol;
     }
     
     public void setUpEmbezzle(String string)

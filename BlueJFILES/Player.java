@@ -9,7 +9,7 @@ public interface Player {
 	
 	void fundraise();
 	
-	void upgrade();
+	void upgrade(int level);
 	
 	void embezzle();
 	
@@ -36,6 +36,18 @@ public interface Player {
 	
 	boolean getToggled();
 	
+	int getLeadLV();
+	
+	int getPrLV();
+	
+	int getEspLV();
+	
+	int getMarLV();
+	
+	int getRdLV();
+	
+	int[] getSkills();
+	
 	//Setters
 	void setReputation(double newReputation);
 	
@@ -48,6 +60,16 @@ public interface Player {
 	void setTWE(int newTWE);
 	
 	void setLost();
+	
+	void setLeadLV(int levelUp);
+	
+	void setPrLV(int levelUp);
+	
+	void setEspLV(int levelUp );
+	
+	void setMarLV(int levelUp);
+	
+	void setRdLV(int levelUp);
 	
 	
 

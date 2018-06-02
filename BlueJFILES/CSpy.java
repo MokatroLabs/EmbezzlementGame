@@ -24,6 +24,10 @@ public class CSpy extends Computer
         money += 750;
         reputation -= 0.3;
     }
+    
+    public void setRdLV(int newLevel){
+        rdLV = newLevel;
+    }
 
 
     public int findMove(int turncount)
