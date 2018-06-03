@@ -50,7 +50,7 @@ public class Deck
         deck.add(new Card("Found wallet on the floor and turned it into the police", "gain 1 rep", 32));
         deck.add(new Card("4th place","lose 3 rep", 33));
         deck.add(new Card("Invest in Moshi", "gain 2500 dollars", 34));
-        deck.add(new Card("Cut the BS", "During the next turn, if anyone activates embezzle next turn. the player lose the following turns.",35));
+        deck.add(new Card("Cut the BS", "reduce your cooldown by 1 turn",35));
         deck.add(new Card("Sashay Away", "reduce your cooldown by 2 turns", 36));
         deck.add(new Card("Ankush solo", "lose 2 rep", 37));
         deck.add(new Card("Liam solo", "gain 3 rep", 38));
@@ -71,7 +71,7 @@ public class Deck
         deck.add(new Card("Reuse props", "lose 5 rep, gain 2000 dollars", 53));
         deck.add(new Card("T-Helicopter", "gain 1500 dollars", 54));
         deck.add(new Card("Trostmobile", "gain 2 rep", 55));
-        deck.add(new Card("Don't react", "Choose a character, can't activate ability for the next three turns", 56));
+        deck.add(new Card("Don't react", "increase your cooldwon by 1", 56));
         
         
         
