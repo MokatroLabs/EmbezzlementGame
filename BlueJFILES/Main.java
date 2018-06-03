@@ -471,7 +471,7 @@ public class Main {
                 }
                 current.upgrade(current.getLeadLV() + 1);
                 current.setLeadLV(current.getLeadLV() + 1);
-                board.setUpActive("Leadership : " + (current.getLeadLV()));
+                board.setUpActive("Leadership Lvl: " + (current.getLeadLV()));
             }
             if(upgrade == 2){
                 if(current.getPrLV() >= 5){
@@ -480,7 +480,7 @@ public class Main {
                 current.upgrade(current.getPrLV() + 1);
                 current.setPrLV(current.getPrLV() + 1);
                 current.setRepIncrease(current.getPrLV());
-                board.setUpInteract("Public Relations : " + (current.getPrLV()));
+                board.setUpInteract("Public Relations Lvl: " + (current.getPrLV()));
             }
             if(upgrade == 3){
                 if(current.getEspLV() >= 5){
@@ -489,7 +489,7 @@ public class Main {
                 current.upgrade(current.getEspLV() + 1);
                 current.setEspLV(current.getEspLV() + 1);
                 current.setNoCons(current.getEspLV());
-                board.setUpEmbezzle("Espionage" + (current.getEspLV()));
+                board.setUpEmbezzle("Espionage Lvl: " + (current.getEspLV()));
             }
             if(upgrade == 4){
                 if(current.getMarLV() >= 5){
@@ -498,7 +498,7 @@ public class Main {
                 current.upgrade(current.getMarLV() + 1);
                 current.setMarLV(current.getMarLV() + 1);
                 current.setFundIncrease(current.getMarLV());
-                board.setUpFundraise("Marketing" + (current.getMarLV()));
+                board.setUpFundraise("Marketing Lvl: " + (current.getMarLV()));
             }
             if(upgrade == 5){
                 if(current.getRdLV() >= 5){
@@ -507,7 +507,7 @@ public class Main {
                 current.upgrade(current.getRdLV() + 1);
                 current.setRdLV(current.getRdLV() + 1);
                 current.setUpgradeDown(current.getRdLV());
-                board.setUpUpgrade("Research and Development" + (current.getRdLV()));
+                board.setUpUpgrade("Research and Development Lvl: " + (current.getRdLV()));
             }
         }
         if(action == 5 && current.getCooldown() <=0){
