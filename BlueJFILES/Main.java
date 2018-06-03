@@ -203,7 +203,18 @@ public class Main {
             timerDelay.start();
             action = current.findMove(economy.getTurns());
         }
-        if (action == 1) {
+        //change to fix money pit bug
+        if(economy.getMoney() < 1200)
+        {
+           current.fundraise();
+            if(current.getChar().equals("Queen")){
+                economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
+            }else {
+                economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
+            } 
+        }
+        //end of change
+        else if (action == 1) {
             if((current.getChar()).equals("Spy") && economy.getMoney()- 750 >=0){
                 if(thirty)
                 {
@@ -573,7 +584,7 @@ public class Main {
     public static void updateBoard(Human human, String[] textArea, int currentPlayer)
     { 
        board.setTurnCount("Turn: " + (economy.getTurns() ));
-       board.setRepCount("Rep: " + (human.getReputation()) + "%" );
+       board.setRepCount("Rep: " + (int) (human.getReputation()) + "%" );
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
        board.updateTurnBorder(currentPlayer);
