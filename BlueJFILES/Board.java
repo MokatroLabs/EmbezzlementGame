@@ -1228,7 +1228,7 @@ public class Board implements ActionListener {
     
     public void setCardPic(int cardNum)
     {
-        cardPic.setIcon(new ImageIcon("./pictures/card" + cardNum + ".jpg"));
+        cardPic.setIcon(new ImageIcon("./pictures/card" + cardNum + ".png"));
     }
     
 
