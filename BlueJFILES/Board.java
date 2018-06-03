@@ -650,7 +650,7 @@ public class Board implements ActionListener {
 
         upgradePanel.add(backButton, cons);
         
-        upActive = new JButton("Leadership: lv 0");
+        upActive = new JButton("Leadership Lvl: 0");
         upActive.setActionCommand("upActive");
         upActive.addActionListener(this);
         cons.gridx = 0;
@@ -662,7 +662,7 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upActive, cons);
         
-        upInteract = new JButton("Public Relations: lv 0");
+        upInteract = new JButton("Public Relations Lvl: 0");
         upInteract.setActionCommand("upInteract");
         upInteract.addActionListener(this);
         cons.gridx = 2;
@@ -674,7 +674,7 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upInteract, cons);
         
-        upEmbezzle = new JButton("Espionage: lv 0");
+        upEmbezzle = new JButton("Espionage Lvl: 0");
         upEmbezzle.setActionCommand("upEmbezzle");
         upEmbezzle.addActionListener(this);
         cons.gridx = 3;
@@ -686,7 +686,7 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upEmbezzle, cons);
         
-        upFundraise = new JButton("Marketing: lv 0");
+        upFundraise = new JButton("Marketing Lvl: 0");
         upFundraise.setActionCommand("upFundraise");
         upFundraise.addActionListener(this);
         cons.gridx = 4;
@@ -698,7 +698,7 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upFundraise, cons);
         
-        upUpgrade = new JButton("Research and Development: lv 0");
+        upUpgrade = new JButton("Research and Development Lvl: 0");
         upUpgrade.setActionCommand("upUpgrade");
         upUpgrade.addActionListener(this);
         cons.gridx = 5;
@@ -1317,35 +1317,35 @@ public class Board implements ActionListener {
         if(theEvent.getActionCommand().equals("upEmbezzle"))
         {
             embezzleLvl++;
-            upEmbezzle.setText("Espionage: lv "+ embezzleLvl);
+            //upEmbezzle.setText("Espionage: lv "+ embezzleLvl);
             setEspClick(true);
         }
         
         if(theEvent.getActionCommand().equals("upActive"))
         {
             activeLvl++;
-            upActive.setText("Leadership: lv "+ activeLvl);
+            //upActive.setText("Leadership Lvl: "+ activeLvl);
             setLeadClick(true);
         }
         
         if(theEvent.getActionCommand().equals("upInteract"))
         {
             interactLvl++;
-            upInteract.setText("Public Relations: lv "+ interactLvl);
+            //upInteract.setText("Public Relations: lv "+ interactLvl);
             setPrClick(true);
         }
         
         if(theEvent.getActionCommand().equals("upFundraise"))
         {
             fundraiseLvl++;
-            upFundraise.setText("Marketing: lv "+ fundraiseLvl);
+            //upFundraise.setText("Marketing: lv "+ fundraiseLvl);
             setMarClick(true);
         }
         
         if(theEvent.getActionCommand().equals("upUpgrade"))
         {
             upgradeLvl++;
-            upUpgrade.setText("Research and Development: lv "+ upgradeLvl);
+            //upUpgrade.setText("Research and Development: lv "+ upgradeLvl);
             setRdClick(true);
         }
         
