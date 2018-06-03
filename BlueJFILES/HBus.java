@@ -19,6 +19,8 @@ public class HBus extends Human
     {
        cooldown = 5;
        reputation -= 2.5;
+       setNoCons(espLV);
+       consecutive = 0;
     }
     
     public void setMoneyBoost(){
@@ -40,11 +42,6 @@ public class HBus extends Human
         if(leadLV == 5){
             moneyBoost = 250;
         }
-        
-    }
-    
-    public void interact()
-    {
         
     }
     

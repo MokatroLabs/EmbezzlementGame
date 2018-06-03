@@ -18,10 +18,8 @@ public class CFat extends Computer
     public void activeAbility()
     {
         cooldown = 5;
-    }
-    
-    public void interact()
-    {
+        setNoCons(espLV);
+        consecutive = 0;
     }
     
     public void setRdLV(int newLevel){

@@ -31,6 +31,8 @@ public class HQueen extends Human {
            money += 3500;
         }
        reputation -= 2.5;
+       setNoCons(espLV);
+       consecutive = 0;
        cooldown = 5;
    }
    

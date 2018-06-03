@@ -32,6 +32,8 @@ public class CQueen extends Computer
            money += 3500;
         }
         reputation -= 2.5;
+        consecutive = 0;
+        setNoCons(espLV);
         cooldown = 5;
     }    
     public void fundraise()

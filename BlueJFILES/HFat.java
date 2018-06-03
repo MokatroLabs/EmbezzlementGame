@@ -14,15 +14,11 @@ public class HFat extends Human
         this.character = "Father";
     }
     
-    public void activeAbility(Player choice, Player father)
+    public void activeAbility()
     {
         cooldown = 5;
-        choice.setMoney(choice.getMoney() - 300);
-        father.setMoney(father.getMoney() + 300);
-    }
-    
-    public void interact()
-    {
+        setNoCons(espLV);
+        consecutive = 0;
     }
     
     public void setRdLV(int newLevel){

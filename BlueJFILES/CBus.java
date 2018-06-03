@@ -23,6 +23,8 @@ public class CBus extends Computer
     {
        cooldown = 5;
        reputation -= 2.5;
+       setNoCons(espLV);
+       consecutive = 0;
     }
     
     public void setMoneyBoost(){

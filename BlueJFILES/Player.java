@@ -58,6 +58,8 @@ public interface Player {
 	
 	int getMoneyBoost();
 	
+	int getNoCons();
+	
 	//Setters
 	void setReputation(double newReputation);
 	
@@ -90,6 +92,8 @@ public interface Player {
 	void setRepIncrease(int level);
 	
 	void setMoneyBoost();
+	
+	void setNoCons(int level);
 	
 	
 

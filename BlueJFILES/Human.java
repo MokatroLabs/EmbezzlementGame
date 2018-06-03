@@ -23,6 +23,9 @@ public abstract class Human implements Player {
     protected int upgradeDown; // Helps Implement Research and Development
     protected double repIncrease; //Helps Implement Public Relations
     protected int moneyBoost; //Only refers to Business Man
+    protected int noCons; // Helps Implement Espionage
+    protected int embezzleBoost;
+    
     
     
     
@@ -48,6 +51,8 @@ public abstract class Human implements Player {
         upgradeDown = 0;
         repIncrease = 0;
         moneyBoost = 0;
+        noCons = 0;
+        embezzleBoost = 0;
     }
     
     public Human(double newReputation,int newMoney,String Char) { //meant just in case we want difficulties or multiplayer
@@ -63,20 +68,26 @@ public abstract class Human implements Player {
         money += 200;
         reputation += (.25 + repIncrease);
         consecutive = 0;
+        setNoCons(espLV);
     }
     
-    public void embezzle() { //Action 2
-        // TODO Auto-generated method stub
-        money += 500;
+    public void embezzle() //Action 2
+    {   
+        money += (500 + embezzleBoost);
         reputation -= .25 + consecutive * .25;
+        if(noCons == 0){
+            consecutive++;
+        }else{
+            noCons--;
+        }
         hasEmbezzled = true;
-        consecutive++;
     }
     
     public void interact() { // Action 3
         // TODO Auto-generated method stub
         reputation += (.25 + repIncrease);
         consecutive =0;
+        setNoCons(espLV);
         //Draws a Chance Card
     }
     
@@ -84,6 +95,7 @@ public abstract class Human implements Player {
         // TODO Auto-generated method stub
         int noAdd = 0;
         consecutive = 0;
+        setNoCons(espLV);
         if(level == 1){
             noAdd = (500 - upgradeDown);
             if(noAdd < 0){
@@ -130,6 +142,7 @@ public abstract class Human implements Player {
     {
         cooldown = 5;
         consecutive =0;
+        setNoCons(espLV);
     }
 
 
@@ -221,6 +234,14 @@ public abstract class Human implements Player {
     
     public int getMoneyBoost(){
         return moneyBoost;
+    }
+    
+    public int getNoCons(){
+        return noCons;
+    }
+    
+    public int getEmbezzleBoost(){
+        return embezzleBoost;
     }
     
     //Setters
@@ -341,7 +362,33 @@ public abstract class Human implements Player {
         
     }
     
+    public void setNoCons(int level){
+        if(level == 0){
+            noCons = 0;
+        }
+        if(level >= 2 && level < 4){
+            noCons = 1;
+        }
+        if(level >= 4){
+            noCons = 2;
+        }
+    }
     
+    public void setEmbezzleBoost(int level){
+        if(level == 0){
+            embezzleBoost = 0;
+        }
+        if(level == 1){
+            embezzleBoost = 250;
+        }
+        if(level <= 4 && level > 2){
+            embezzleBoost = 500;
+        }
+        if(level == 5){
+            embezzleBoost = 750;
+        }
+    }
+ 
     
     //Miscellaneous
     //toggles show action

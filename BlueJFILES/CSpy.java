@@ -17,13 +17,22 @@ public class CSpy extends Computer
     public void activeAbility()
     {
         cooldown = 5;
+        setNoCons(espLV);
+        consecutive = 0;
     }
     
     public void embezzle()
     {
-        money += 750;
-        reputation -= 0.3;
+        money += (750 + embezzleBoost);
+        reputation -= .25 + consecutive * .25;
+        if(noCons == 0){
+            consecutive++;
+        }else{
+            noCons--;
+        }
+        hasEmbezzled = true;
     }
+    
     
     public void setRdLV(int newLevel){
         rdLV = newLevel;
