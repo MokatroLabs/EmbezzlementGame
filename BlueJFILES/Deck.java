@@ -13,6 +13,7 @@ public class Deck
     
     public Deck(){
         deck = new ArrayList<Card>();
+        createDeck();
     }
     public void createDeck()
     {
@@ -77,4 +78,6 @@ public class Deck
         
         
     }
+
+        
 }
