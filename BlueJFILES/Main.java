@@ -277,11 +277,10 @@ public class Main {
                 current.setMoney(current.getMoney() + 700);
             } else if(pickedCard.getCardNumber() == 15)
             {
-                current.setReputation(current.getReputation() - 2);
-                //draw another card
+                current.setMoney(current.getMoney() + 560);
             } else if(pickedCard.getCardNumber() == 16)
             {
-                //draw a card and give it to another player
+                current.setReputation(current.getReputation() + 1);
             } else if(pickedCard.getCardNumber() == 17)
             {
                 current.setReputation(current.getReputation() - 4);
@@ -324,7 +323,7 @@ public class Main {
                 current.setReputation(current.getReputation() + 3);
             } else if(pickedCard.getCardNumber() == 30)
             {
-                // if you embezzle next turn, increase the amount but also increase the risk
+                // if you embezzle next turn, increase the amount by 10 % but also increase the risk
             } else if(pickedCard.getCardNumber() == 31)
             {
                 current.setReputation(current.getReputation() - 3);
@@ -417,7 +416,7 @@ public class Main {
                 current.setReputation(current.getReputation() + 2);
             } else if(pickedCard.getCardNumber() == 56)
             {
-                //increae your cooldown by 1
+                //increase your cooldown by 1
                 if(current.getCooldown() > 0)
                 {
                     current.setCooldown(current.getCooldown() + 1);
