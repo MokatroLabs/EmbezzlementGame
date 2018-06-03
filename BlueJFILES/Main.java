@@ -25,9 +25,9 @@ public class Main {
     private static ActionListener taskPerformer = new ActionListener()
     {
       public synchronized void actionPerformed(ActionEvent evt) {
-          notifyAll();
           System.out.println("2 steps of the work");
           timerDelay.stop();
+          notifyAll();
       }
     };
     private  static Timer timerDelay = new Timer(2000, taskPerformer);
@@ -38,6 +38,9 @@ public class Main {
             System.out.println("comp turn");
             System.out.println("1 step of the work");
             timerDelay.start();
+            try {
+                Main.class.wait();
+            } catch (InterruptedException e){}
         }
     }
     static TimeThread timeThread = new TimeThread();
@@ -212,9 +215,6 @@ public class Main {
         else
         {
             timeThread.run();
-            try {
-                Main.class.wait();
-            } catch(InterruptedException e){}
             action = current.findMove(economy.getTurns());
         }
         if (action == 1) {
