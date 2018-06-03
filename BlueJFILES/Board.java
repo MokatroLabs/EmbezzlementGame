@@ -801,9 +801,8 @@ public class Board implements ActionListener {
         return 0;        
     }  
     
-    public void updateTurnBorder(int turnCount)
+    public void updateTurnBorder(int currentPlayer)
     {
-        int currentPlayer = turnCount%4;
         if(currentPlayer == 0)
         {
             imageLabel4.setBorder(picBorderYourTurn);

@@ -67,17 +67,17 @@ public class CFat extends Computer
         {
             fundraiseW -=bound*.03125;
             interactW+= bound*.25;
-            embezzleW += bound*.015625;
+            embezzleW -= bound*.015625;
         }else if(reputation <= 85)
         {
             fundraiseW -=bound*.0625;
             interactW+=bound*.25;
-            embezzleW += bound*.03125;
+            embezzleW -= bound*.03125;
         }else if(reputation <= 95)
         {
             fundraiseW -=bound*.125;
             interactW+=bound*.25;
-            embezzleW += bound*.0625;
+            embezzleW -= bound*.0625;
         }
 
         // Money Based Changes
@@ -103,13 +103,13 @@ public class CFat extends Computer
         {   embezzleW += bound*.0625;
             fundraiseW +=bound*.03125;
             interactW -= bound*.0625;
-            upgradeW -= bound*.0625;
+            upgradeW += bound*.0625;
         } else if (money <= 81000)
         {
             embezzleW += bound*.03125;
             fundraiseW += bound*.015625;
             interactW -=bound*.03125;
-            upgradeW -= bound*.03125;
+            upgradeW += bound*.03125;
         } else if (money <= 243000)
         {
             embezzleW += bound*.015625;
@@ -128,11 +128,12 @@ public class CFat extends Computer
         {
             fundraiseW +=bound*.5;
             embezzleW -=bound*.5;
-            upgradeW -=bound*.25;
+            upgradeW -=bound*.125;
         } else if (turncount <= 25)
         {
             fundraiseW +=bound*.125;
             embezzleW-= bound*.125;
+            upgradeW +=bound*.125;
         } else if (turncount <= 40)
         { 
             fundraiseW +=bound*.03125;
@@ -146,16 +147,16 @@ public class CFat extends Computer
             embezzleW += bound*.03125;
         } else if (turncount <= 85)
         {
-            fundraiseW -= bound*.125;
+            fundraiseW -= bound*.5;
             embezzleW += bound*.125;
         } else if (turncount <= 100)
         {
-            fundraiseW -= bound*.25;
-            embezzleW += bound*25;
+            fundraiseW -= bound*.75;
+            interactW += bound*25;
         } else if (turncount <=140)
         {
             fundraiseW -= bound*.95;
-            embezzleW += bound*.5;
+            interactW += bound*.5;
         }
         // Consecutive Based Changes
         if (consecutive >= 5)
@@ -168,6 +169,7 @@ public class CFat extends Computer
         {
             embezzleW -= bound*.125;
         }
+        upgradeW -= bound*.125;
         //cooldown Change
         if (cooldown > 0)
             activeW = 0;

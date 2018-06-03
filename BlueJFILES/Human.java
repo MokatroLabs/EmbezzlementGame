@@ -1,6 +1,4 @@
 public abstract class Human implements Player {
-
-
     //Instance Variables
     protected double reputation;
     protected int money;
@@ -85,7 +83,7 @@ public abstract class Human implements Player {
     
     public void interact() { // Action 3
         // TODO Auto-generated method stub
-        reputation += (.25 + repIncrease);
+        reputation += (.5 + repIncrease);
         consecutive =0;
         setNoCons(espLV);
         //Draws a Chance Card

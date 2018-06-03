@@ -11,7 +11,7 @@ public class HQueen extends Human {
     
 
     public void activeAbility() //Royal Wealth
-   {
+    {
        if(leadLV == 0){
            money +=  1000;
         } 
@@ -34,20 +34,20 @@ public class HQueen extends Human {
        setNoCons(espLV);
        consecutive = 0;
        cooldown = 5;
-   }
+    }
    
-   public void fundraise()
-   {
-       money += 300;
-       reputation += .5;
-   }
+    public void fundraise()
+    {
+        money += 300;
+        reputation += .5;
+    }
    
-   public void setRdLV(int newLevel){
+    public void setRdLV(int newLevel){
         rdLV = newLevel;
     }
     
-   public void toggleAction(){ //The queen cannot toggle her actions off
-       
+    public void toggleAction(){ //The queen cannot toggle her actions off
+        
     }
 
 }

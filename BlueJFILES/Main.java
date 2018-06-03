@@ -85,7 +85,7 @@ public class Main {
         players.add(comp1);
         players.add(comp2);
         players.add(comp3);
-        updateBoard(human, textArea);
+        updateBoard(human, textArea, currentPlayer);
         
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
@@ -122,9 +122,9 @@ public class Main {
             }
             */
             
-             
-            updateBoard(human,textArea);
-
+            textArea[0] = "Money Pot:"+ economy.getMoney();
+            updateBoard(human,textArea,currentPlayer);
+            System.out.println("Money Pot:"+ economy.getMoney());
 
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
@@ -159,6 +159,7 @@ public class Main {
         int upgrade = 0;
         current.setTWE(current.getTWE() +1);
         current.setCooldown(current.getCooldown()-1);
+        
         if(current.getToggled() == true)
         {
             //current.setReputation(current.getReputation() + .2);
@@ -167,11 +168,11 @@ public class Main {
         }
         if(current.isHuman())
             action = board.promptAction();
-            else
-            {
-                timerDelay.start();
-                action = current.findMove(economy.getTurns());
-            }
+        else
+        {
+            timerDelay.start();
+            action = current.findMove(economy.getTurns());
+        }
         if (action == 1) {
             if((current.getChar()).equals("Spy") && economy.getMoney()- 750 >=0){
                 economy.setMoney(economy.getMoney() - 750);
@@ -179,6 +180,8 @@ public class Main {
                 current.setTWE(-1);
             }else if(economy.getMoney()-500 >=0){
                 economy.setMoney(economy.getMoney() - 500);
+                current.embezzle();
+                current.setTWE(-1);
             }
         } 
         if (action == 2)
@@ -244,11 +247,11 @@ public class Main {
                 board.setUpUpgrade("Research and Development" + (current.getRdLV()));
             }
         }
-        if(action == 5){
+        if(action == 5 && current.getCooldown() <=0){
             if(current.getChar().equals("Businessman")){
                 for(int i = 0; i < players.size(); i++){
                     if(players.get(i) !=current && (players.get(i).getCooldown() != 0)){
-                        (players.get(i)).setCooldown((players.get(i).getCooldown() + 2));
+                        (players.get(i)).setCooldown((players.get(i).getCooldown() + 1));
                     }
                 }
                 current.activeAbility();
@@ -313,23 +316,13 @@ public class Main {
 
 
     }
-
-
-
-    
-
-    
-
-
-  
-
-    public static void updateBoard(Human human, String[] textArea)
+    public static void updateBoard(Human human, String[] textArea, int currentPlayer)
     { 
        board.setTurnCount("Turn: " + (economy.getTurns() + 1));
        board.setRepCount("Rep: " + (human.getReputation()) + "%" );
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
-       board.updateTurnBorder(economy.getTurns());
+       board.updateTurnBorder(currentPlayer);
     }
 
     static void PlaySoundLoop(File Sound)
