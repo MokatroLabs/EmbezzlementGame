@@ -31,5 +31,10 @@ public class Card
         return code;
     }
     
+    public String toString() // testing function, overrides toString
+    {
+        return "Name : " + getCardName() + "Code: " + getCardCode() + "Num: " + getCardNumber();  
+    }
+    
     
 }

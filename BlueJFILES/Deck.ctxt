@@ -5,4 +5,6 @@ comment1.params=
 comment1.target=Deck()
 comment2.params=
 comment2.target=void\ createDeck()
-numComments=3
+comment3.params=num
+comment3.target=Card\ getCard(int)
+numComments=4

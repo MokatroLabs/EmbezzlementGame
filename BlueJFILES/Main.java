@@ -46,6 +46,7 @@ public class Main {
         board.makeCharScreen();
         board.hideCharScreen();
         board.updateTurnBorder(economy.getTurns());
+        System.out.println(pickACard().toString());
 
         while(!(playPressed))
         {
@@ -326,12 +327,11 @@ public class Main {
        board.updateTurnBorder(economy.getTurns());
     }
     
-    //public static Card pickACard(Deck deck)
-    //{
-        //double num = ( 56 * Math.random());
-        //return deck.get((int)num);
-       // return deck.get(1);
-    //}
+    public static Card pickACard()
+    {
+        double num = ( 56 * Math.random());
+        return deck.getCard((int)num);
+    }
 
     static void PlaySoundLoop(File Sound)
     {
