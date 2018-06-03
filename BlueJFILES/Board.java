@@ -98,6 +98,12 @@ public class Board implements ActionListener {
     private JLabel fatherPic;
     private JLabel spyPic;
     private boolean charPicked;
+    
+    //gameWin Screen
+    private JPanel gameWinPanel;
+    
+    //gameLose Screen
+    private JPanel gameLosePanel;
 
     
     
@@ -740,6 +746,44 @@ public class Board implements ActionListener {
         upFundraise.setVisible(true);
         upActive.setVisible(true);
         upgradePanel.setVisible(true);
+    }
+    
+    public void makeGameWinScreen()
+    {
+        gameWinPanel = new JPanel();
+        cons2 = new GridBagConstraints();
+        cons2.gridx = 0;
+        cons2.gridy = 0;
+        cons2.weightx = 1;
+        cons2.weighty = 1;
+        
+        cons2.fill = GridBagConstraints.BOTH; //how to make it take up the entire screen! 
+        
+        
+        master.getContentPane().add(gameWinPanel,cons2);
+    }
+    
+    public void showGameWinScreen()
+    {
+        gameWinPanel.setVisible(true);
+    }
+    
+    public void makeGameLoseScreen()
+    {
+        gameLosePanel = new JPanel();
+        cons2 = new GridBagConstraints();
+        cons2.gridx = 0;
+        cons2.gridy = 0;
+        cons2.weightx = 1;
+        cons2.weighty = 1;
+        
+        cons2.fill = GridBagConstraints.BOTH; //how to make it take up the entire screen! 
+        master.getContentPane().add(gameWinPanel,cons2);
+    }
+    
+    public void showGameLoseScreen()
+    {
+        gameLosePanel.setVisible(true);
     }
     
     public int promptUpgrade(){
