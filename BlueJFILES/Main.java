@@ -576,7 +576,7 @@ public class Main {
                 target.setMoney(target.getMoney() - 1000);
                 target.setReputation(target.getReputation() - 5);
             } else if(target.getTWE() > 5){
-                target.setReputation(target.getReputation() + 1);
+                //target.setReputation(target.getReputation() + 1);
             }
         }
     }
