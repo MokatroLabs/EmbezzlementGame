@@ -74,6 +74,11 @@ public class Board implements ActionListener {
     private boolean espClick;
     private boolean marClick;
     private boolean rdClick;
+    private int embezzleLvl;
+    private int upgradeLvl;
+    private int interactLvl;
+    private int fundraiseLvl;
+    private int activeLvl;
     
     
     //charScreen
@@ -87,7 +92,6 @@ public class Board implements ActionListener {
     private JLabel queenDesc;
     private JLabel businessDesc;
     private JLabel fatherDesc;
-
     private JLabel spyDesc; 
     private boolean charPicked;
 
@@ -559,6 +563,12 @@ public class Board implements ActionListener {
     
     public void makeUpgradeScreen()
     {
+        embezzleLvl = 0;
+        upgradeLvl = 0;
+        interactLvl = 0;
+        fundraiseLvl = 0;
+        activeLvl = 0;
+        
         upgradePanel = new JPanel();
         cons = new GridBagConstraints();
         upgradePanel.setLayout(new GridBagLayout());
@@ -570,6 +580,7 @@ public class Board implements ActionListener {
         cons.weightx =1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
+
         upgradePanel.add(backButton, cons);
         
         upActive = new JButton("Leadership: lv 0");
@@ -580,6 +591,8 @@ public class Board implements ActionListener {
         cons.weightx =1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
+        cons.ipadx = 40;
+        cons.ipady = 40;
         upgradePanel.add(upActive, cons);
         
         upInteract = new JButton("Public Relations: lv 0");
@@ -590,6 +603,8 @@ public class Board implements ActionListener {
         cons.weightx =1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
+        cons.ipadx = 40;
+        cons.ipady = 40;
         upgradePanel.add(upInteract, cons);
         
         upEmbezzle = new JButton("Espionage: lv 0");
@@ -600,6 +615,8 @@ public class Board implements ActionListener {
         cons.weightx =1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
+        cons.ipadx = 40;
+        cons.ipady = 40;
         upgradePanel.add(upEmbezzle, cons);
         
         upFundraise = new JButton("Marketing: lv 0");
@@ -610,6 +627,8 @@ public class Board implements ActionListener {
         cons.weightx =1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
+        cons.ipadx = 40;
+        cons.ipady = 40;
         upgradePanel.add(upFundraise, cons);
         
         upUpgrade = new JButton("Research and Development: lv 0");
@@ -620,6 +639,8 @@ public class Board implements ActionListener {
         cons.weightx =1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
+        cons.ipadx = 40;
+        cons.ipady = 40;
         upgradePanel.add(upUpgrade, cons);
 
         cons2 = new GridBagConstraints();
@@ -650,7 +671,7 @@ public class Board implements ActionListener {
     }
     
     public int promptUpgrade(){
-       boolean upgradePick = false;
+        boolean upgradePick = false;
         int count = 0;
         while(!upgradePick){
             if (count == 100000)
@@ -891,7 +912,31 @@ public class Board implements ActionListener {
     {
         return charPicked;
     }
+
+    public int getEmbezzleLvl()
+    {
+        return embezzleLvl;
+    }
     
+    public int getUpgradeLvl()
+    {
+        return upgradeLvl;
+    }
+    
+    public int getInteractLvl()
+    {
+        return interactLvl;
+    }
+    
+    public int getFundraiseLvl()
+    {
+        return fundraiseLvl;
+    }
+
+    public int getActiveLvl()
+    {
+        return activeLvl;
+    }
     
     
     //setters
@@ -996,6 +1041,8 @@ public class Board implements ActionListener {
     }
     
         
+  
+    
     
     public void actionPerformed(ActionEvent theEvent) 
     {
@@ -1079,22 +1126,39 @@ public class Board implements ActionListener {
             showGameScreen();
             charPicked = true;
         }
-        if(theEvent.getActionCommand().equals("businessSelect"))
+        
+        if(theEvent.getActionCommand().equals("upEmbezzle"))
         {
-            hideCharScreen();
-            showGameScreen();
+            embezzleLvl++;
+            upEmbezzle.setText("Espionage: lv "+ embezzleLvl);
         }
-        if(theEvent.getActionCommand().equals("fatherSelect"))
+        
+        if(theEvent.getActionCommand().equals("upActive"))
         {
-            hideCharScreen();
-            showGameScreen();
-        }    
-        if(theEvent.getActionCommand().equals("spySelect"))
-        {
-            hideCharScreen();
-            showGameScreen();
+            activeLvl++;
+            upActive.setText("Leadership: lv "+ activeLvl);
         }
+        
+        if(theEvent.getActionCommand().equals("upInteract"))
+        {
+            interactLvl++;
+            upInteract.setText("Public Relations: lv "+ interactLvl);
+        }
+        
+        if(theEvent.getActionCommand().equals("upFundraise"))
+        {
+            fundraiseLvl++;
+            upFundraise.setText("Marketing: lv "+ fundraiseLvl);
+        }
+        
+        if(theEvent.getActionCommand().equals("upUpgrade"))
+        {
+            upgradeLvl++;
+            upUpgrade.setText("Research and Development: lv "+ upgradeLvl);
+        }
+
     }
+    
     static void PlaySound(File Sound)
     {
         //ContinuousAudioDataStream loop = null;
