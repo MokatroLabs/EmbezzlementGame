@@ -305,11 +305,10 @@ public class Main {
                 current.setMoney(current.getMoney() + 700);
             } else if(pickedCard.getCardNumber() == 15)
             {
-                current.setReputation(current.getReputation() - 2);
-                // draw another card
+                current.setMoney(current.getMoney() + 560);
             } else if(pickedCard.getCardNumber() == 16)
             {
-                //draw a card and give it to another player
+                current.setReputation(current.getReputation() + 1);
             } else if(pickedCard.getCardNumber() == 17)
             {
                 current.setReputation(current.getReputation() - 4);

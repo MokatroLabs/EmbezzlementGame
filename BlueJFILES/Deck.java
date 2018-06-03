@@ -29,8 +29,8 @@ public class Deck
         deck.add(new Card("Instrument maintence","lose 800 dollars", 12));
         deck.add(new Card("Tax cut", "gain 400 dollars", 13));
         deck.add(new Card("Win the lottery", "gain 700 dollars", 14));
-        deck.add(new Card("Cinquantasei", "lose 2 rep draw another card", 15));
-        deck.add(new Card("Don't play the victim", "draw a card and give it to another player", 16));
+        deck.add(new Card("Cinquantasei", "gain 560 dollars", 15));
+        deck.add(new Card("Don't play the victim", "gain 1 rep", 16));
         deck.add(new Card("Caught for DUI", "lose 4 reps", 17));
         deck.add(new Card("Caught for tax evasion", "lose 3 reps" , 18));
         deck.add(new Card("Summon the heroes", "lose 3 rep", 19));
