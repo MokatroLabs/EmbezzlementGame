@@ -887,6 +887,7 @@ public class Board implements ActionListener {
         {
             imageLabel4.setIcon(new ImageIcon("./pictures/test3.png"));
             imageLabel3.setIcon(new ImageIcon("./pictures/test4.png"));
+            embezzleAction.setVisible(false);
         }
         else if(charSelect.equals("Business"))
         {
@@ -1149,8 +1150,11 @@ public class Board implements ActionListener {
         
         if(theEvent.getActionCommand().equals("Fundraise"))
         {
-            System.out.println("Fundraise");
-            fundraiseClick = true;
+            if(!(charSelected.equals("Spy")))
+            {
+                System.out.println("Fundraise");
+                fundraiseClick = true;
+            }
         }
         
         if(theEvent.getActionCommand().equals("Back"))
