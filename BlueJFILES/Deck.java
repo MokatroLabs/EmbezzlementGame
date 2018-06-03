@@ -68,7 +68,7 @@ public class Deck
         deck.add(new Card("Birth of a new child", "gain 1 rep, lose 400 dollars", 51));
         deck.add(new Card("Roll call", "lose 3 reps", 52));
         deck.add(new Card("Reuse props", "lose 5 rep, gain 2000 dollars", 53));
-        deck.add(new Card("T-Helicopter", "gain 1500 dollars", 54));
+        deck.add(new Card("Getting A Grant", "gain 1500 dollars", 54));
         deck.add(new Card("Trostmobile", "gain 2 rep", 55));
         deck.add(new Card("Don't react", "increase your cooldwon by 1", 56));
     }

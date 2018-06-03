@@ -12,6 +12,7 @@ public class Main {
     private static ArrayList<Player> players;
     private static int actionDone = 0;
     private static int upgradeDone = 0;
+    private static final Object lock = new Object();
     static Deck deck = new Deck();
     static String[] textArea = {"Gaynald is Gay" , "Next Line", "Next Line", "Next Line", "Next Line"};
     static int gruul;
@@ -21,16 +22,26 @@ public class Main {
     static boolean thirty;
     static int gruulcounter;
     final static int maxTurns = 150;
-    private static ActionListener taskPerformer = new ActionListener() 
+    private static ActionListener taskPerformer = new ActionListener()
     {
-      public void actionPerformed(ActionEvent evt) {
-          System.out.println("comp turn");
+      public synchronized void actionPerformed(ActionEvent evt) {
+          notifyAll();
+          System.out.println("2 steps of the work");
           timerDelay.stop();
-          System.out.println("1 step of the work");
       }
     };
-    private static Timer timerDelay = new Timer(2000, taskPerformer);
-    public static void main(String[] args) {
+    private  static Timer timerDelay = new Timer(2000, taskPerformer);
+    public static class TimeThread implements Runnable
+    {
+        public synchronized void run()
+        {
+            System.out.println("comp turn");
+            System.out.println("1 step of the work");
+            timerDelay.start();
+        }
+    }
+    static TimeThread timeThread = new TimeThread();
+    public synchronized static void main(String[] args) {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
         boolean playPressed = false;
@@ -62,7 +73,7 @@ public class Main {
         board.rePic(board.getCharSelect());
         runGame();
     }
-    public static void runGame()
+    public synchronized static void runGame()
     {
         Human human;
         if(board.getCharSelect().equals("Father"))
@@ -111,7 +122,7 @@ public class Main {
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
-            if(round > 4)
+            if(round >= 4)
                 round = 0;
             if(economy.getTurns() %5 == 0){
                 players.get(currentPlayer).paycheck();
@@ -127,19 +138,19 @@ public class Main {
             takeTurn(players.get(currentPlayer));
             if(players.get(currentPlayer).getToggled()){
                 if(actionDone == 1){
-                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" embezzled.";
+                    textArea[currentPlayer+1] = "The " + players.get(currentPlayer).getChar() +" embezzled.";
                 }
                 if(actionDone == 2){
-                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" fundraised.";
+                    textArea[currentPlayer+1] = "The " + players.get(currentPlayer).getChar() +" fundraised.";
                 }
                 if(actionDone == 3){
-                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" interacted.";
+                    textArea[currentPlayer+1] = "The " + players.get(currentPlayer).getChar() +" interacted.";
                 }
                 if(actionDone == 4){
-                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" upgraded.";
+                    textArea[currentPlayer+1] = "The " + players.get(currentPlayer).getChar() +" upgraded.";
                 }
                 if(actionDone == 5){
-                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" used "+ players.get(currentPlayer).getActiveName();
+                    textArea[currentPlayer+1] = "The " + players.get(currentPlayer).getChar() +" used "+ players.get(currentPlayer).getActiveName();
                 }
             }
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
@@ -167,7 +178,7 @@ public class Main {
             currentPlayer++;
          }
     }
-    public static void takeTurn(Player current){
+    public synchronized static void takeTurn(Player current){
         System.out.println("turn");
         gruulcounter ++;
         if(gruulboo && gruulcounter <=5)
@@ -200,7 +211,10 @@ public class Main {
             action = board.promptAction();
         else
         {
-            timerDelay.start();
+            timeThread.run();
+            try {
+                Main.class.wait();
+            } catch(InterruptedException e){}
             action = current.findMove(economy.getTurns());
         }
         if (action == 1) {
@@ -583,7 +597,6 @@ public class Main {
         double num = ( 56 * Math.random());
         return deck.getCard((int)num);
     }
-
     static void PlaySoundLoop(File Sound)
     {
         ContinuousAudioDataStream loop = null;
