@@ -157,7 +157,7 @@ public class CBus extends Computer
             embezzleW += bound*.125;
         } else if (turncount <= 100)
         {
-            fundraiseW -= bound*.25;
+            fundraiseW -= bound*.5;
             embezzleW += bound*25;
         } else if (turncount <=140)
         {
@@ -175,6 +175,9 @@ public class CBus extends Computer
         {
             embezzleW -= bound*.125;
         }
+        //cooldown Change
+        if (cooldown > 0)
+            activeW = 0;
         //no negative Weights
         if(embezzleW <0)
             embezzleW= .01;

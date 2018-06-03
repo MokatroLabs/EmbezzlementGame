@@ -147,6 +147,10 @@ public class CSpy extends Computer
         {
             embezzleW -= bound*.125;
         }
+        fundraiseW =0;
+        //cooldown Change
+        if (cooldown > 0)
+            activeW = 0;
         //no negative Weights
         if(embezzleW <0)
             embezzleW= .01;

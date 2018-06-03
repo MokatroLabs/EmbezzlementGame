@@ -17,9 +17,9 @@ public class Deck
     public void createDeck()
     {
         deck.add(new Card("Bruul","at the end of each turn for 5 turns, gain +1rep/+100 dollars",1));
-        deck.add(new Card("Got into a card accident", "lose 1000 dollars", 2));
+        deck.add(new Card("Got into a car accident", "lose 1000 dollars", 2));
         deck.add(new Card("Featured on a newspaper front cover", "gain 2 rep", 3));
-        deck.add(new Card("Glacial pace", "increase your cooldowns by 2 turns", 4));
+        deck.add(new Card("Glacial pace", "increase your cooldown by 2 turns", 4));
         deck.add(new Card("Gush and Go", "your next move is randomized", 5));
         deck.add(new Card("Did you just fart?", "lose 1 rep", 6));
         deck.add(new Card("Courtyard meeting", "silence next rehearsal(lose a turn)", 7));

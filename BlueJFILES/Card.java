@@ -19,7 +19,6 @@ public class Card extends Deck
         this.name = name;
         this.code = code;
         this.number= number;
-        
     }
     
     

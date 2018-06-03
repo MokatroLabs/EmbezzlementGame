@@ -22,6 +22,7 @@ public class Main {
     private static ActionListener taskPerformer = new ActionListener() 
     {
       public void actionPerformed(ActionEvent evt) {
+          System.out.println("comp turn");
           timerDelay.stop();
           System.out.println("1 step of the work");
       }
@@ -62,16 +63,23 @@ public class Main {
         }
     public static void runGame()
     {
-
+        Human human;
+        if(board.getCharSelect().equals("Father"))
+            human = new HFat();
+        else if (board.getCharSelect().equals("Spy"))
+            human = new HSpy();
+        else if (board.getCharSelect().equals("Queen"))
+            human = new HQueen();
+        else 
+            human = new HBus();
         players = new ArrayList<Player>();
         int currentPlayer = 0;
         int round = 0;
         board.makeTitleScreen();
         board.showTitleScreen();
         CBus comp1 = new CBus();
-        CBus comp2 = new CBus();
-        CBus comp3 = new CBus();
-        HQueen  human = new HQueen();
+        CSpy comp2 = new CSpy();
+        CFat comp3 = new CFat();
         board.hideTitleScreen();
         players.add(human);
         players.add(comp1);
@@ -162,11 +170,11 @@ public class Main {
                 action = current.findMove(economy.getTurns());
             }
         if (action == 1) {
-            current.embezzle();
-            current.setTWE(-1);
-            if((current.getChar()).equals("Spy")){
+            if((current.getChar()).equals("Spy") && economy.getMoney()- 750 >=0){
                 economy.setMoney(economy.getMoney() - 750);
-            }else {
+                current.embezzle();
+                current.setTWE(-1);
+            }else if(economy.getMoney()-500 >=0){
                 economy.setMoney(economy.getMoney() - 500);
             }
         } 
