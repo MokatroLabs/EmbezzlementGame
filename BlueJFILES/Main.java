@@ -214,7 +214,7 @@ public class Main {
             if(current.isHuman()){
                 upgrade = board.promptUpgrade();
             } else {
-                // Implement AI choice here
+                //upgrade = findUpgrade();
             }
             if(upgrade == 1){
                 if(current.getLeadLV() >= 5){
