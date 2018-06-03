@@ -15,7 +15,10 @@ public class Main {
     private static int upgradeDone = 0;
     static Deck deck = new Deck();
     static String[] textArea = {"Gaynald is Gay" , "Next Line", "Next Line", "Next Line", "Next Line"};
-
+    static int gruul;
+    static boolean gruulboo;
+    static int counter;
+    static int gruulcounter;
     //saveme
     final static int maxTurns = 150;
 
@@ -175,6 +178,16 @@ public class Main {
     }
     public static void takeTurn(Player current){
         System.out.println("turn");
+        counter++;
+        if(counter == 1 || counter%4==1)
+        {
+            gruulcounter ++;
+            if(gruulboo && gruulcounter <=5)
+            {
+                current.setMoney(current.getMoney() + 100);
+                current.setReputation(current.getReputation() + 1);
+            }
+        }
         int action=0;
         int target=-1;
         int upgrade = 0;
@@ -227,7 +240,12 @@ public class Main {
             }
             if(pickedCard.getCardNumber() == 1)
             {
-                //+1rep/+100 dollars im dying here
+                gruulboo = true;
+                gruul = gruulcounter;
+                if(!gruulboo && gruul <= (gruul+5))
+                {
+                    gruulboo = false;
+                }
             }
             else if(pickedCard.getCardNumber() == 2)
             {
@@ -237,11 +255,25 @@ public class Main {
                 current.setReputation(current.getReputation() + 2);
             } else if(pickedCard.getCardNumber() == 4)
             {
-                //increase your cooldown
+                current.setCooldown(current.getCooldown()+2);
             }else if (pickedCard.getCardNumber() == 5)
             {
-                //move is randomized 
-                //what is this
+                int chance = (int)Math.random()*4+1;
+                if(chance ==1)
+                {
+                    
+                }else if (chance == 2)
+                {
+                    
+                }else if (chance == 3)
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+                
             }else if(pickedCard.getCardNumber() == 6)
             {
                 current.setReputation(current.getReputation() - 1);
@@ -274,7 +306,7 @@ public class Main {
             } else if(pickedCard.getCardNumber() == 15)
             {
                 current.setReputation(current.getReputation() - 2);
-                //draw another card
+                // draw another card
             } else if(pickedCard.getCardNumber() == 16)
             {
                 //draw a card and give it to another player
