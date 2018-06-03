@@ -208,7 +208,185 @@ public class Main {
             {
                 board.setCardPic(2);
             }
-            
+            if(pickedCard.getCardNumber() == 1)
+            {
+                //+1rep/+100 dollars im dying here
+            }
+            else if(pickedCard.getCardNumber() == 2)
+            {
+                current.setMoney(current.getMoney() - 1000);
+            } else if(pickedCard.getCardNumber() == 3)
+            {
+                current.setReputation(current.getReputation() + 2);
+            } else if(pickedCard.getCardNumber() == 4)
+            {
+                //increase your cooldown
+            }else if (pickedCard.getCardNumber() == 5)
+            {
+                //move is randomized 
+                //what is this
+            }else if(pickedCard.getCardNumber() == 6)
+            {
+                current.setReputation(current.getReputation() - 1);
+            }else if(pickedCard.getCardNumber() == 7)
+            {
+                //lose a turn
+            }else if(pickedCard.getCardNumber() == 8)
+            {
+                current.setReputation(current.getReputation() - 1);
+                current.setMoney(current.getMoney() - 200);
+            } else if(pickedCard.getCardNumber() == 9)
+            {
+                current.setReputation(current.getReputation()-3);
+                current.setMoney(current.getMoney() - 500);
+            } else if(pickedCard.getCardNumber() == 10)
+            {
+                //every player lose 750 dollars
+            }else if(pickedCard.getCardNumber() == 11)
+            {
+                current.setReputation(current.getReputation() + 3);
+            } else if(pickedCard.getCardNumber() == 12)
+            {
+                current.setMoney(current.getMoney() - 800);
+            } else if(pickedCard.getCardNumber() == 13)
+            {
+                current.setMoney(current.getMoney() + 400);
+            } else if(pickedCard.getCardNumber() == 14)
+            {
+                current.setMoney(current.getMoney() + 700);
+            } else if(pickedCard.getCardNumber() == 15)
+            {
+                current.setReputation(current.getReputation() - 2);
+                //draw another card
+            } else if(pickedCard.getCardNumber() == 16)
+            {
+                //draw a card and give it to another player
+            } else if(pickedCard.getCardNumber() == 17)
+            {
+                current.setReputation(current.getReputation() - 4);
+            } else if(pickedCard.getCardNumber() == 18)
+            {
+                current.setReputation(current.getReputation() - 3);
+            } else if(pickedCard.getCardNumber() == 19)
+            {
+                current.setReputation(current.getReputation() - 3);
+            } else if(pickedCard.getCardNumber() == 20)
+            {
+                current.setReputation(current.getReputation() - 1);
+            } else if(pickedCard.getCardNumber() == 21)
+            {
+                current.setMoney(current.getMoney() - 200);
+                current.setReputation(current.getReputation() + 2);
+            } else if(pickedCard.getCardNumber() == 22)
+            {
+                current.setReputation(current.getReputation() + 2);
+            } else if(pickedCard.getCardNumber() == 23)
+            {
+                current.setReputation(current.getReputation() - 3);
+            } else if(pickedCard.getCardNumber() == 24)
+            {
+                current.setReputation(current.getReputation() + 4);
+            } else if(pickedCard.getCardNumber() == 25)
+            {
+                current.setReputation(current.getReputation() + 1);
+            } else if(pickedCard.getCardNumber() == 26)
+            {
+                current.setReputation(current.getReputation() + 2);
+            } else if(pickedCard.getCardNumber() == 27)
+            {
+                current.setReputation(current.getReputation() + 3);
+            } else if(pickedCard.getCardNumber() == 28)
+            {
+                audit(current);
+            } else if(pickedCard.getCardNumber() == 29)
+            {
+                current.setReputation(current.getReputation() + 3);
+            } else if(pickedCard.getCardNumber() == 30)
+            {
+                // if you embezzle next turn, increase the amount but also increase the risk
+            } else if(pickedCard.getCardNumber() == 31)
+            {
+                current.setReputation(current.getReputation() - 3);
+                current.setMoney(current.getMoney() - 500);
+            } else if(pickedCard.getCardNumber() == 32)
+            {
+                current.setReputation(current.getReputation() + 1);
+            } else if(pickedCard.getCardNumber() == 33)
+            {
+                current.setReputation(current.getReputation() - 3);
+            } else if(pickedCard.getCardNumber() == 34)
+            {
+                current.setMoney(current.getMoney() + 2500);
+            } else if(pickedCard.getCardNumber() == 35)
+            {
+                //reduce your cooldown by 1 turns
+            } else if(pickedCard.getCardNumber() == 36)
+            {
+                //reduce your cooldwon by 2 turns
+            } else if(pickedCard.getCardNumber() == 37)
+            {
+                current.setReputation(current.getReputation() - 2);
+            } else if(pickedCard.getCardNumber() == 38)
+            {
+                current.setReputation(current.getReputation() + 3);
+            } else if(pickedCard.getCardNumber() == 39)
+            {
+                current.setReputation(current.getReputation() - 1);
+                current.setMoney(current.getMoney() + 2000);
+            } else if(pickedCard.getCardNumber() == 40)
+            {
+                current.setReputation(current.getReputation() + 2);
+            } else if(pickedCard.getCardNumber() == 41)
+            {
+                current.setMoney(current.getMoney() - 600);
+            } else if(pickedCard.getCardNumber() == 42)
+            {
+                current.setReputation(current.getReputation() + 3);
+            } else if(pickedCard.getCardNumber() == 43)
+            {
+                current.setMoney(current.getMoney() - 200);
+            } else if(pickedCard.getCardNumber() == 44)
+            {
+                current.setMoney(current.getMoney() + 300);
+            } else if(pickedCard.getCardNumber() == 45)
+            {
+                current.setMoney(current.getMoney() + 700);
+            } else if(pickedCard.getCardNumber() == 46)
+            {
+                // gain 1000 dollars in 4 turns
+            } else if(pickedCard.getCardNumber() == 47)
+            {
+                current.setReputation(current.getReputation() - 2);
+            } else if(pickedCard.getCardNumber() == 48)
+            {
+                current.setReputation(current.getReputation() - 2);
+            } else if(pickedCard.getCardNumber() == 49)
+            {
+                current.setMoney(current.getMoney() - 1000);
+            } else if(pickedCard.getCardNumber() == 50)
+            {
+                current.setReputation(current.getReputation() + 2);
+            } else if(pickedCard.getCardNumber() == 51)
+            {
+                current.setReputation(current.getReputation() + 1);
+                current.setMoney(current.getMoney() - 400);
+            } else if(pickedCard.getCardNumber() == 52)
+            {
+                current.setReputation(current.getReputation() - 3);
+            } else if(pickedCard.getCardNumber() == 53)
+            {
+                current.setReputation(current.getReputation() - 5);
+                current.setMoney(current.getMoney() + 2000);
+            } else if(pickedCard.getCardNumber() == 54)
+            {
+                current.setMoney(current.getMoney() + 1500);
+            } else if(pickedCard.getCardNumber() == 55)
+            {
+                current.setReputation(current.getReputation() + 2);
+            } else if(pickedCard.getCardNumber() == 56)
+            {
+                //increae your cooldown by 1
+            }
         }
         if(action == 4){
             if(current.isHuman()){
