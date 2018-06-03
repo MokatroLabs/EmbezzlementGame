@@ -22,7 +22,7 @@ public class Main {
     static boolean thirty;
     
     static int gruulcounter;
-    //saveme
+    //savemeplease
     final static int maxTurns = 150;
 
     
