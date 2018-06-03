@@ -14,6 +14,8 @@ import javax.swing.BorderFactory; //need for borders
 public class Board implements ActionListener { 
     private boolean gameScreenClicked = false; //not used currently
     private JFrame master; //the window
+    private Toolkit theKit;//gets the tool kit
+    private Dimension wndSize;//
     
     //title screen
     private JPanel titleScreen;
@@ -121,8 +123,8 @@ public class Board implements ActionListener {
     {
         master = new JFrame("The Long Con");          //  title of the window
         master.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
-        Toolkit theKit = master.getToolkit();//This gets the tool kit from the frame
-        Dimension wndSize  = theKit.getScreenSize();//gets the screen size
+        theKit = master.getToolkit();//This gets the tool kit from the frame
+        wndSize  = theKit.getScreenSize();//gets the screen size
         master.setPreferredSize(new Dimension(9*wndSize.width/10, 9*wndSize.height/10)); //half the screen, gotta change
         master.setLocation(wndSize.width/16, wndSize.height/16);
         master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style
