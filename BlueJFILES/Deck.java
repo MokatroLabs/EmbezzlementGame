@@ -23,7 +23,7 @@ public class Deck
         deck.add(new Card("Gush and Go", "your next move is randomized", 5));
         deck.add(new Card("Did you just fart?", "lose 1 rep", 6));
         deck.add(new Card("Courtyard meeting", "silence next rehearsal(lose a turn)", 7));
-        deck.add(new Card("Clow fiesta", "lose 1 rep and lose 200 dollars", 8));
+        deck.add(new Card("Clown fiesta", "lose 1 rep and lose 200 dollars", 8));
         deck.add(new Card("Went on a losing spree when gambling in Las Vegas", "lose 3 reps and 500 dollars", 9)); 
         deck.add(new Card("Fair share", "all players pay 750 dollars to the middle", 10));
         deck.add(new Card("15 min labor break", "gain 3 rep", 11));

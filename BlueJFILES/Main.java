@@ -261,11 +261,11 @@ public class Main {
 
 
    
-    /*    public static void audit(Player target){
+     public static void audit(Player target){
 
 
-    /*    if(economy.getTurns() >= 10){
-    /*    if(target.getReputation() <= 15 && target.getTWE() <= 5){
+       if(economy.getTurns() >= 10){
+       if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
             } else if(target.getReputation() < 40 && target.getTWE() <= 5) {
                 target.setMoney(target.getMoney() - 1000);
@@ -281,9 +281,9 @@ public class Main {
 
 
 
-    }
+    
 
-    }*/
+    
 
 
   
@@ -291,7 +291,7 @@ public class Main {
     public static void updateBoard(Human human, String[] textArea)
     { 
        board.setTurnCount("Turn: " + (economy.getTurns() + 1));
-       board.setRepCount("Rep: " + ((int)human.getReputation()) + "%" );
+       board.setRepCount("Rep: " + (human.getReputation()) + "%" );
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
        board.updateTurnBorder(economy.getTurns());
