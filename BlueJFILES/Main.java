@@ -179,7 +179,7 @@ public class Main {
     public static void takeTurn(Player current){
         System.out.println("turn");
         counter++;
-        if(counter == 1 || counter%4==1)
+        if(counter == 1 || counter%4==1)//grruuulll
         {
             gruulcounter ++;
             if(gruulboo && gruulcounter <=5)
