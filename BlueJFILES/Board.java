@@ -104,6 +104,14 @@ public class Board implements ActionListener {
     
     //gameLose Screen
     private JPanel gameLosePanel;
+    
+    //Card screen
+    private JPanel cardPanel;
+    private JLabel cardPic;
+    private JButton cardBackButton;
+    private JButton redrawButton;
+    
+    
 
     
     
@@ -605,16 +613,7 @@ public class Board implements ActionListener {
         
         
         master.pack();
-        
-        
-        
-        
 
-        
-        
-        
-
-       
     }
     
     public void hideCharScreen()
@@ -761,6 +760,8 @@ public class Board implements ActionListener {
         
         
         master.getContentPane().add(gameWinPanel,cons2);
+        
+        master.pack();
     }
     
     public void showGameWinScreen()
@@ -779,11 +780,60 @@ public class Board implements ActionListener {
         
         cons2.fill = GridBagConstraints.BOTH; //how to make it take up the entire screen! 
         master.getContentPane().add(gameWinPanel,cons2);
+        
+        master.pack();
     }
     
     public void showGameLoseScreen()
     {
         gameLosePanel.setVisible(true);
+    }
+    
+    public void makeCardScreen()
+    {
+        cardPanel = new JPanel();
+        cons = new GridBagConstraints();
+        
+        cardBackButton = new JButton("Back");
+        cons.gridx = 0;
+        cons.gridy = 0;
+        cons.weightx = 1;
+        cons.weighty = 1;
+        cardBackButton.setActionCommand("cardBack");
+        cardBackButton.addActionListener(this);
+        cardPanel.add(cardBackButton, cons);
+
+        cardPic = new JLabel("");
+        cardPic.setIcon(new ImageIcon("./pictures/cardImage.jpg")); //references the picture
+        cons.gridx = 1;
+        cons.gridy = 3;
+        cons.weightx = 1;
+        cons.weighty = 1;
+        cardPanel.add(cardPic, cons);
+        
+        cons2 = new GridBagConstraints();
+        cons2.gridx = 0;
+        cons2.gridy = 0;
+        cons2.weightx = 1;
+        cons2.weighty = 1;
+        
+        master.getContentPane().add(cardPanel, cons2);
+        
+        master.pack();
+    }
+    
+    public void showCardScreen()
+    {
+        cardPanel.setVisible(true);
+        cardPic.setVisible(true);
+        cardBackButton.setVisible(true);
+    }
+    
+    public void hideCardScreen()
+    {
+        cardPanel.setVisible(false);
+        cardPic.setVisible(false);
+        cardBackButton.setVisible(false);
     }
     
     public int promptUpgrade(){
@@ -835,9 +885,6 @@ public class Board implements ActionListener {
         return 0;      
     }
     
-
-    
- 
     public int promptAction()
     {
         boolean actionPick = false;
@@ -1163,6 +1210,7 @@ public class Board implements ActionListener {
             setPlayClick(true);
             //showGameScreen();
             showCharScreen();
+            makeCardScreen();
         }
         
         if(theEvent.getActionCommand().equals("Embezzle"))
@@ -1184,6 +1232,8 @@ public class Board implements ActionListener {
         {
             System.out.println("Interact");
             interactClick = true;
+            showCardScreen();
+            hideGameScreen();
         }
         
         if(theEvent.getActionCommand().equals("Active"))
@@ -1267,6 +1317,12 @@ public class Board implements ActionListener {
         {
             upgradeLvl++;
             upUpgrade.setText("Research and Development: lv "+ upgradeLvl);
+        }
+        
+        if(theEvent.getActionCommand().equals("cardBack"))
+        {
+            hideCardScreen();
+            showGameScreen();
         }
 
     }

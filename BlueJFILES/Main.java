@@ -15,6 +15,7 @@ public class Main {
     private static int upgradeDone = 0;
     static Deck deck;
     static String[] textArea = {"Gaynald is Gay" , "Next Line", "Next Line", "Next Line", "Next Line"};
+
     //saveme
     final static int maxTurns = 150;
 
