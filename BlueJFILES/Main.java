@@ -17,7 +17,10 @@ public class Main {
     static String[] textArea = {"Gaynald is Gay" , "Next Line", "Next Line", "Next Line", "Next Line"};
     static int gruul;
     static boolean gruulboo;
-    static int counter;
+    static boolean fourtysix;
+    static int fourtysixCounter;
+    static boolean thirty;
+    
     static int gruulcounter;
     //saveme
     final static int maxTurns = 150;
@@ -178,15 +181,16 @@ public class Main {
     }
     public static void takeTurn(Player current){
         System.out.println("turn");
-        counter++;
-        if(counter == 1 || counter%4==1)//grruuulll
-        {
-            gruulcounter ++;
-            if(gruulboo && gruulcounter <=5)
-            {
+
+        gruulcounter ++;
+       if(gruulboo && gruulcounter <=5)
+          {
                 current.setMoney(current.getMoney() + 100);
                 current.setReputation(current.getReputation() + 1);
-            }
+         }else{gruulboo = false;}
+        if (fourtysix && fourtysixCounter+5 == gruulcounter )
+        {
+            current.setMoney(current.getMoney() + 1000);
         }
         int action=0;
         int target=-1;
@@ -209,10 +213,26 @@ public class Main {
         }
         if (action == 1) {
             if((current.getChar()).equals("Spy") && economy.getMoney()- 750 >=0){
+                if(thirty)
+                {
+                    economy.setMoney(economy.getMoney() - 825);
+                    current.embezzle();
+                    current.setMoney(current.getMoney() + 75);
+                    current.setTWE(-2);
+                    thirty = false;
+                }
                 economy.setMoney(economy.getMoney() - 750);
                 current.embezzle();
                 current.setTWE(-1);
             }else if(economy.getMoney()-500 >=0){
+                if (thirty)
+                {
+                    economy.setMoney(economy.getMoney() - 550);
+                    current.embezzle();
+                    current.setMoney(current.getMoney() + 50);
+                    current.setTWE(-2);
+                    thirty = false;
+                }
                 economy.setMoney(economy.getMoney() - 500);
                 current.embezzle();
                 current.setTWE(-1);
@@ -352,7 +372,7 @@ public class Main {
                 current.setReputation(current.getReputation() + 3);
             } else if(pickedCard.getCardNumber() == 30)
             {
-                // if you embezzle next turn, increase the amount but also increase the risk
+                thirty = true;
             } else if(pickedCard.getCardNumber() == 31)
             {
                 current.setReputation(current.getReputation() - 3);
@@ -402,7 +422,8 @@ public class Main {
                 current.setMoney(current.getMoney() + 700);
             } else if(pickedCard.getCardNumber() == 46)
             {
-                // gain 1000 dollars in 4 turns
+                fourtysixCounter = gruulcounter;
+                fourtysix = true;
             } else if(pickedCard.getCardNumber() == 47)
             {
                 current.setReputation(current.getReputation() - 2);
