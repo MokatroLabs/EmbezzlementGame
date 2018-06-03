@@ -52,6 +52,8 @@ public interface Player {
 	
 	int getFundIncrease();
 	
+	int getUpgradeDown();
+	
 	//Setters
 	void setReputation(double newReputation);
 	
@@ -78,6 +80,8 @@ public interface Player {
 	void setRdLV(int levelUp);
 	
 	void setFundIncrease(int level);
+	
+	void setUpgradeDown(int level);
 	
 	
 	

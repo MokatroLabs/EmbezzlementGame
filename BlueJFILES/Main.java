@@ -227,6 +227,7 @@ public class Main {
                 }
                 current.upgrade(current.getRdLV() + 1);
                 current.setRdLV(current.getRdLV() + 1);
+                current.setUpgradeDown(current.getRdLV());
                 board.setUpUpgrade("Research and Development" + (current.getRdLV()));
             }
         }

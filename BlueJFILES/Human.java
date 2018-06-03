@@ -20,6 +20,7 @@ public abstract class Human implements Player {
     protected int leadLV; // Leadership Level
     protected int espLV; // Espionage Level
     protected int fundIncrease; // Helps Implement Marketing
+    protected int upgradeDown; // Helps Implement Research and Development
     
     
     
@@ -43,6 +44,7 @@ public abstract class Human implements Player {
         skills[4] = rdLV;
         consecutive = 0;
         fundIncrease = 0;
+        upgradeDown = 0;
     }
     
     public Human(double newReputation,int newMoney,String Char) { //meant just in case we want difficulties or multiplayer
@@ -77,21 +79,47 @@ public abstract class Human implements Player {
     
     public void upgrade(int level) { // Action 4
         // TODO Auto-generated method stub
+        int noAdd = 0;
         consecutive = 0;
         if(level == 1){
-            money -= 500;
+            noAdd = (500 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
         }
         if(level == 2){
-            money -= 1000;
+            noAdd = (1000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
         }
         if(level == 3){
-            money -= 2000;
+            noAdd = (2000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
         }
         if(level == 4){
-            money -= 4000;
+            noAdd = (4000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
         }
         if(level == 5){
-            money -= 6000;
+            noAdd = (6000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
         }
     }
     
@@ -180,6 +208,10 @@ public abstract class Human implements Player {
         return fundIncrease;
     }
     
+    public int getUpgradeDown(){
+        return upgradeDown;
+    }
+    
     //Setters
     public void setReputation(double newReputation)
     {
@@ -249,6 +281,27 @@ public abstract class Human implements Player {
         }
         if(level == 5){
             fundIncrease = 600;
+        }
+    }
+    
+    public void setUpgradeDown(int level){
+        if(level == 0){
+            upgradeDown = 0;
+        }
+        if(level ==  1){
+            upgradeDown =  250;
+        }
+        if(level == 2){
+            upgradeDown = 500;
+        }
+        if(level == 3){
+            upgradeDown = 750;
+        }
+        if(level == 4){
+            upgradeDown = 1000;
+        }
+        if(level == 5){
+            upgradeDown = 1250;
         }
     }
     
