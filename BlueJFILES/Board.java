@@ -14,6 +14,10 @@ import javax.swing.BorderFactory; //need for borders
 public class Board implements ActionListener { 
     private boolean gameScreenClicked = false; //not used currently
     private JFrame master; //the window
+    private Toolkit theKit;
+    private Dimension wndSize;
+    
+    
     
     //title screen
     private JPanel titleScreen;
@@ -55,6 +59,14 @@ public class Board implements ActionListener {
     private boolean fundraiseClick;
     private boolean upgradeClick;
     private boolean playClick;
+    private JLabel background;
+    private  ImageIcon origBackground;
+    private  Image origBackgroundImg;
+    private  Image scaledImage;
+    private ImageIcon newIcon;
+    
+    
+    
     
     //Upgrade Screen
     private JPanel upgradePanel;
@@ -121,8 +133,8 @@ public class Board implements ActionListener {
     {
         master = new JFrame("The Long Con");          //  title of the window
         master.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
-        Toolkit theKit = master.getToolkit();//This gets the tool kit from the frame
-        Dimension wndSize  = theKit.getScreenSize();//gets the screen size
+        theKit = master.getToolkit();//This gets the tool kit from the frame
+        wndSize  = theKit.getScreenSize();//gets the screen size
         master.setPreferredSize(new Dimension(9*wndSize.width/10, 9*wndSize.height/10)); //half the screen, gotta change
         master.setLocation(wndSize.width/16, wndSize.height/16);
         master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style
@@ -162,6 +174,13 @@ public class Board implements ActionListener {
         gameScreen = new JPanel();
         gameScreen.setLayout(new GridBagLayout());
         
+        origBackground = new ImageIcon("./pictures/TitleBackGround.png");
+        origBackgroundImg = origBackground.getImage();
+        scaledImage = origBackgroundImg.getScaledInstance(9*wndSize.width/10, 9*wndSize.height/10, Image.SCALE_DEFAULT);
+        newIcon = new ImageIcon(scaledImage);
+        background = new JLabel(newIcon);
+        background.setLayout(new GridBagLayout());
+        
         turnCount = new JLabel("gay"); //makes a new label, with the words on it
         cons.gridx = 0; // point 0,0 on the grid, which in on the top left corner
         cons.gridy = 0;
@@ -170,7 +189,7 @@ public class Board implements ActionListener {
         cons.gridwidth = 1;
         cons.fill = GridBagConstraints.NONE; //it doesn't blow up to fill the sapce
         cons.anchor = GridBagConstraints.NORTHWEST; //makes it "stick" to the northwest corner of its space
-        gameScreen.add(turnCount, cons);
+        background.add(turnCount, cons);
         turnCount.setFont(wordsFont);
         
         moneyCount = new JLabel("Money: 100");
@@ -179,10 +198,9 @@ public class Board implements ActionListener {
         cons.weightx = 1;
         cons.weighty = 1;
         moneyCount.setFont(wordsFont);
-       
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.SOUTHEAST;
-        gameScreen.add(moneyCount, cons);
+        background.add(moneyCount, cons);
         
         concedeBut = new JButton("Concede");
         cons.gridx = 4;
@@ -191,7 +209,7 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.NORTHEAST;
-        gameScreen.add(concedeBut, cons);
+        background.add(concedeBut, cons);
         
         repCount = new JLabel("Rep: 50");
         cons.gridx = 0;
@@ -200,7 +218,7 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.SOUTHWEST;
-        gameScreen.add(repCount, cons);
+        background.add(repCount, cons);
         repCount.setFont(wordsFont);
         
         imageLabel1= new JLabel("");//makes it blank
@@ -212,7 +230,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
         cons.insets = new Insets(20,0,0,0);
-        gameScreen.add(imageLabel1, cons);
+        background.add(imageLabel1, cons);
         imageLabel1.setBorder(picBorder);
         
         imageLabel2 = new JLabel("");
@@ -223,7 +241,7 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
-        gameScreen.add(imageLabel2, cons);
+        background.add(imageLabel2, cons);
         imageLabel2.setBorder(picBorder);
         
         displayWords = new JTextArea("Gaynald is gay \n next line"); //to combat issue, we print things using ln, have a array of past actions that will get printed and added
@@ -236,15 +254,13 @@ public class Board implements ActionListener {
         cons.weightx = 1;
         cons.weighty = 1;
         displayWords.setBorder(picBorder);
-        
-        
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
         displayWords.setEditable(false); //cant edit it
         displayWords.setLineWrap(true); // so it will wrap around when it gets too big
         displayWords.setColumns(28);
         //displayWords.setRows(20);
-        gameScreen.add(displayWords, cons); //It dont work, and I dont wanna do it rn, ill fix it later
+        background.add(displayWords, cons); //It dont work, and I dont wanna do it rn, ill fix it later
         
         imageLabel3 = new JLabel("");
         imageLabel3.setIcon(new ImageIcon("./pictures/test3.png"));
@@ -254,7 +270,7 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
-        gameScreen.add(imageLabel3, cons);
+        background.add(imageLabel3, cons);
         imageLabel3.setBorder(picBorder);
         
         imageLabel4 = new JLabel("");
@@ -265,9 +281,8 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
         cons.anchor = GridBagConstraints.CENTER;
-        gameScreen.add(imageLabel4, cons);
+        background.add(imageLabel4, cons);
         imageLabel4.setBorder(picBorder);
-        
         buttonSize = new Dimension(120, 40);
         
         embezzleAction = new JButton("Embezzle");
@@ -282,7 +297,7 @@ public class Board implements ActionListener {
         embezzleAction.setPreferredSize(buttonSize);
         cons.insets = buttonSpacing;
         embezzleAction.setFont(newFont);
-        gameScreen.add(embezzleAction, cons);
+        background.add(embezzleAction, cons);
         
         
         raiseFundsAction = new JButton("Fundraise");
@@ -297,7 +312,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         raiseFundsAction.setPreferredSize(buttonSize);
         raiseFundsAction.setFont(newFont);
-        gameScreen.add(raiseFundsAction, cons);
+        background.add(raiseFundsAction, cons);
         
         interactAction = new JButton("Interact");
         interactAction.setActionCommand("Interact");
@@ -311,7 +326,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         interactAction.setPreferredSize(buttonSize);
         interactAction.setFont(newFont);
-        gameScreen.add(interactAction, cons);
+        background.add(interactAction, cons);
         
         upgradeAction = new JButton("Upgrade");
         upgradeAction.setActionCommand("Upgrade");
@@ -328,7 +343,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         upgradeAction.setPreferredSize(buttonSize);
         upgradeAction.setFont(newFont);
-        gameScreen.add(upgradeAction, cons);
+        background.add(upgradeAction, cons);
         
         activeAction = new JButton("Active");
         activeAction.setActionCommand("Active");
@@ -342,7 +357,7 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.CENTER;
         activeAction.setPreferredSize(buttonSize);
         activeAction.setFont(newFont);
-        gameScreen.add(activeAction, cons);
+        background.add(activeAction, cons);
         
         cons2 = new GridBagConstraints();
         cons2.gridx = 0;
@@ -351,6 +366,8 @@ public class Board implements ActionListener {
         cons2.weighty = 1;
         
         cons2.fill = GridBagConstraints.BOTH; //how to make it take up the entire screen! 
+        
+        gameScreen.add(background,cons2);
         
         
         master.getContentPane().add(gameScreen,cons2);
