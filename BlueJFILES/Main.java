@@ -234,8 +234,8 @@ public class Main {
         if(action == 5){
             if(current.getChar().equals("Businessman")){
                 for(int i = 0; i < players.size(); i++){
-                    if(players.get(i) !=current)
-                        (players.get(i)).setCooldown((players.get(i).getCooldown() + 2));
+                    if(players.get(i) !=current && players.get(i).getCooldown() != 0)
+                        (players.get(i)).setCooldown((players.get(i).getCooldown() + 1));
                 }
                 current.activeAbility();
             } else if(current.getChar().equals("Father")){
