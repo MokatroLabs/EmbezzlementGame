@@ -22,6 +22,7 @@ public abstract class Human implements Player {
     protected int fundIncrease; // Helps Implement Marketing
     protected int upgradeDown; // Helps Implement Research and Development
     protected double repIncrease; //Helps Implement Public Relations
+    protected int moneyBoost; //Only refers to Business Man
     
     
     
@@ -47,6 +48,7 @@ public abstract class Human implements Player {
         fundIncrease = 0;
         upgradeDown = 0;
         repIncrease = 0;
+        moneyBoost = 0;
     }
     
     public Human(double newReputation,int newMoney,String Char) { //meant just in case we want difficulties or multiplayer
@@ -218,6 +220,10 @@ public abstract class Human implements Player {
         return repIncrease;
     }
     
+    public int getMoneyBoost(){
+        return moneyBoost;
+    }
+    
     //Setters
     public void setReputation(double newReputation)
     {
@@ -330,6 +336,10 @@ public abstract class Human implements Player {
         if(level == 5){
             upgradeDown = 1250;
         }
+    }
+    
+    public void setMoneyBoost(){
+        
     }
     
     

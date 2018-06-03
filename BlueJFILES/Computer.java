@@ -28,6 +28,7 @@ public abstract class Computer implements Player {
     protected int fundIncrease; // Helps Implement Marketing
     protected int upgradeDown; //Helps Implement Research and Development
     protected double repIncrease; //Helps Implement Public Relations
+    protected int moneyBoost; //Only refers to businessman
   
 
     
@@ -57,6 +58,7 @@ public abstract class Computer implements Player {
         fundIncrease = 0;
         upgradeDown = 0;
         repIncrease = 0;
+        moneyBoost = 0;
     }
     
     public Computer(double newReputation,int newMoney,String Char) {
@@ -218,6 +220,10 @@ public abstract class Computer implements Player {
         return upgradeDown;
     }
     
+    public int getMoneyBoost(){
+        return moneyBoost;
+    }
+    
     //Setters
     public void setReputation (double amount)
     {
@@ -332,6 +338,9 @@ public abstract class Computer implements Player {
         }
     }
     
+    public void setMoneyBoost(){
+        
+    }
     
     //Miscellaneous
     //toggles show action feture

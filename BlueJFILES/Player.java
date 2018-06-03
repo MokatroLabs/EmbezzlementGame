@@ -56,6 +56,8 @@ public interface Player {
 	
 	double getRepIncrease();
 	
+	int getMoneyBoost();
+	
 	//Setters
 	void setReputation(double newReputation);
 	
@@ -86,6 +88,8 @@ public interface Player {
 	void setUpgradeDown(int level);
 	
 	void setRepIncrease(int level);
+	
+	void setMoneyBoost();
 	
 	
 

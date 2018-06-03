@@ -87,6 +87,9 @@ public class Main {
             if(economy.getTurns() %5 == 0){
                 players.get(currentPlayer).paycheck();
             }
+            if((players.get(currentPlayer).getChar()).equals("Business Man")){
+                players.get(currentPlayer).setMoney(players.get(currentPlayer).getMoney() + (50 + players.get(currentPlayer).getMoneyBoost()));
+            }
             if(Math.random() * 100 < (10 - ((players.get(currentPlayer)).getReputation()) / 10)){
                 //audit(players.get(currentPlayer));
             }
@@ -235,14 +238,37 @@ public class Main {
         if(action == 5){
             if(current.getChar().equals("Businessman")){
                 for(int i = 0; i < players.size(); i++){
-                    if(players.get(i) !=current && players.get(i).getCooldown() != 0)
-                        (players.get(i)).setCooldown((players.get(i).getCooldown() + 1));
+                    if(players.get(i) !=current && (players.get(i).getCooldown() != 0)){
+                        (players.get(i)).setCooldown((players.get(i).getCooldown() + 2));
+                    }
                 }
                 current.activeAbility();
             } else if(current.getChar().equals("Father")){
                 for(int i = 0; i < players.size(); i++){
-                    (players.get(i)).setMoney((players.get(i).getMoney() - 300));
-                    current.setMoney(current.getMoney() + 300);
+                    if(current.getLeadLV() == 0){
+                        (players.get(i)).setMoney((players.get(i).getMoney() - 50));
+                        current.setMoney(current.getMoney() + 50);
+                    }
+                    if(current.getLeadLV() == 1){
+                        (players.get(i)).setMoney((players.get(i).getMoney() - 100 ));
+                        current.setMoney(current.getMoney() + 100);
+                    }
+                    if(current.getLeadLV() == 2){
+                        (players.get(i)).setMoney((players.get(i).getMoney() - 200));
+                        current.setMoney(current.getMoney() + 200);
+                    }
+                    if(current.getLeadLV() == 3){
+                        (players.get(i)).setMoney((players.get(i).getMoney() - 300));
+                        current.setMoney(current.getMoney() + 300);
+                    }
+                    if(current.getLeadLV() == 4){
+                        (players.get(i)).setMoney((players.get(i).getMoney() - 400));
+                        current.setMoney(current.getMoney() + 400);
+                    }
+                    if(current.getLeadLV() == 5){
+                        (players.get(i)).setMoney((players.get(i).getMoney() - 500));
+                        current.setMoney(current.getMoney() + 500);
+                    }
                 }
                 current.activeAbility();
             } else if(current.getChar().equals("Spy")) {
