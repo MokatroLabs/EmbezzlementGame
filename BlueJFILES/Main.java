@@ -367,10 +367,20 @@ public class Main {
                 current.setMoney(current.getMoney() + 2500);
             } else if(pickedCard.getCardNumber() == 35)
             {
-                //reduce your cooldown by 1 turns
+                if(current.getCooldown() > 0)
+                {
+                    current.setCooldown(current.getCooldown() - 1);
+                }
             } else if(pickedCard.getCardNumber() == 36)
             {
                 //reduce your cooldwon by 2 turns
+                if(current.getCooldown() > 0 && current.getCooldown() < 2)
+                {
+                    current.setCooldown(current.getCooldown() - 1);
+                } else if(current.getCooldown() > 0)
+                {
+                    current.setCooldown(current.getCooldown() - 2);
+                }
             } else if(pickedCard.getCardNumber() == 37)
             {
                 current.setReputation(current.getReputation() - 2);
@@ -433,7 +443,8 @@ public class Main {
                 current.setReputation(current.getReputation() + 2);
             } else if(pickedCard.getCardNumber() == 56)
             {
-                //increae your cooldown by 1
+                //increase your cooldown by 1
+                current.setCooldown(current.getCooldown() + 1);
             }
         }
         if(action == 4){
