@@ -13,6 +13,7 @@ public class CBus extends Computer
         super();
         this.character = "Businessman";
         this.reputation = 25;
+        activeName = "Class Action Lawsuit";
     }
     
     public int getTWE(){
@@ -51,7 +52,7 @@ public class CBus extends Computer
    
     public void paycheck()
     {
-        money += 150 + (reputation * .01) * 10;
+        money += 150 + (reputation * .01) * 150;
     }
     
     public void setRdLV(int newLevel){

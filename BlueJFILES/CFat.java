@@ -13,6 +13,7 @@ public class CFat extends Computer
     public CFat(){
         super();
         this.character = "Father";
+        activeName = "Power of the Mobster";
     }
     
     public void activeAbility()

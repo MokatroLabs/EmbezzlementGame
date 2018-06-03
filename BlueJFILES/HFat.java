@@ -12,6 +12,7 @@ public class HFat extends Human
     public HFat(){
         super();
         this.character = "Father";
+        activeName = "Power of the Mobster";
     }
     
     public void activeAbility()

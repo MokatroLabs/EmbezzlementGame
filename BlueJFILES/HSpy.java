@@ -13,6 +13,7 @@ public class HSpy extends Human
     {
         super();
         super.character = "Spy";
+        activeName = "Sabotage";
     }
     
     public void activeAbility()
