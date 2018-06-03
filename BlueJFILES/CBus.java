@@ -21,7 +21,32 @@ public class CBus extends Computer
     
     public void activeAbility()
     {
-        cooldown = 5;
+       cooldown = 5;
+       reputation -= 2.5;
+       setNoCons(espLV);
+       consecutive = 0;
+    }
+    
+    public void setMoneyBoost(){
+        if(leadLV == 0){
+            moneyBoost = 0;
+        }
+        if(leadLV == 1){
+            moneyBoost = 50;
+        }
+        if(leadLV == 2){
+            moneyBoost = 100;
+        }
+        if(leadLV == 3){
+            moneyBoost = 150;
+        }
+        if(leadLV == 4){
+            moneyBoost = 200;
+        }
+        if(leadLV == 5){
+            moneyBoost = 250;
+        }
+        
     }
    
     public void paycheck()

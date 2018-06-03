@@ -50,6 +50,16 @@ public interface Player {
 	
 	int[] getSkills();
 	
+	int getFundIncrease();
+	
+	int getUpgradeDown();
+	
+	double getRepIncrease();
+	
+	int getMoneyBoost();
+	
+	int getNoCons();
+	
 	//Setters
 	void setReputation(double newReputation);
 	
@@ -65,15 +75,25 @@ public interface Player {
 	
 	void setWon();
 	
-	void setLeadLV(int levelUp);
+	void setLeadLV(int level);
 	
-	void setPrLV(int levelUp);
+	void setPrLV(int level);
 	
-	void setEspLV(int levelUp );
+	void setEspLV(int level);
 	
-	void setMarLV(int levelUp);
+	void setMarLV(int level);
 	
-	void setRdLV(int levelUp);
+	void setRdLV(int level);
+	
+	void setFundIncrease(int level);
+	
+	void setUpgradeDown(int level);
+	
+	void setRepIncrease(int level);
+	
+	void setMoneyBoost();
+	
+	void setNoCons(int level);
 	
 	
 
