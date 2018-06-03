@@ -987,7 +987,7 @@ public class Board implements ActionListener {
         {
             imageLabel4.setIcon(new ImageIcon("./pictures/test3.png"));
             imageLabel3.setIcon(new ImageIcon("./pictures/test4.png"));
-            embezzleAction.setVisible(false);
+            raiseFundsAction.setVisible(false);
         }
         else if(charSelect.equals("Business"))
         {
@@ -1209,6 +1209,7 @@ public class Board implements ActionListener {
     {
         cardPic.setIcon(new ImageIcon("./pictures/card" + cardNum + ".jpg"));
     }
+    
 
     
     public void actionPerformed(ActionEvent theEvent) 
@@ -1244,6 +1245,14 @@ public class Board implements ActionListener {
         {
             System.out.println("Interact");
             interactClick = true;
+            if(!(charSelected.equals("Father")))
+            {
+                redrawButton.setVisible(false);
+            }
+            else
+            {
+                redrawButton.setVisible(true);
+            }
             showCardScreen();
             hideGameScreen();
         }
