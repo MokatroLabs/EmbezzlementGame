@@ -180,7 +180,7 @@ public class Main {
         int upgrade = 0;
         current.setTWE(current.getTWE() +1);
         current.setCooldown(current.getCooldown()-1);
-        
+        //can i send this
         if(current.getToggled() == true)
         {
             //current.setReputation(current.getReputation() + .2);
