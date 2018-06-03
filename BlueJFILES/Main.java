@@ -204,7 +204,7 @@ public class Main {
             action = current.findMove(economy.getTurns());
         }
         //change to fix money pit bug
-        if(economy.getMoney() < 1200)
+        if(economy.getMoney() < 975)
         {
            current.fundraise();
             if(current.getChar().equals("Queen")){
