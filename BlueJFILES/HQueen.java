@@ -7,6 +7,7 @@ public class HQueen extends Human {
     {
         super();
         super.character = "Queen";
+        activeName = "Royal Wealth";
     }
     
 

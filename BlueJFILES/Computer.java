@@ -31,9 +31,8 @@ public abstract class Computer implements Player {
     protected int moneyBoost; //Only refers to businessman
     protected int noCons; // Helps Implement Espionage (Fewer Consecutive)
     protected int embezzleBoost;
-    
-
-    
+    String activeName;
+    int card46 = 0;
     public Computer(){
         reputation = 50;
         money = 100;
@@ -155,7 +154,12 @@ public abstract class Computer implements Player {
     }
     
     
-    //Getters 
+    //Getters
+    public String getActiveName()
+    {
+        return activeName;
+    }
+    
     public double getReputation() {
         // TODO Auto-generated method stub
         return reputation;
@@ -244,6 +248,10 @@ public abstract class Computer implements Player {
         return embezzleBoost;
     }
     
+    public int getCard46()
+    {
+        return card46;
+    }
     //Setters
     public void setReputation (double amount)
     {
@@ -356,6 +364,10 @@ public abstract class Computer implements Player {
         if(level == 5){
             upgradeDown = 1250;
         }
+    }
+    public void setCard46(int turn)
+    {
+        card46 = turn;
     }
     
     public void setMoneyBoost(){

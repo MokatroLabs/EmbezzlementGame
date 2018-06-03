@@ -12,6 +12,7 @@ public class CSpy extends Computer
     public CSpy(){
         super();
         this.character = "Spy";
+        activeName = "Sabotage";
     }
     
     public void activeAbility()

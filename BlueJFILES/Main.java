@@ -6,7 +6,6 @@ import javax.swing.*;
 import sun.audio.*;
 import java.io.*;
 import java.util.ArrayList;
-
 public class Main {
     public static Board board = new Board();
     public static Mechanics economy = new Mechanics();
@@ -15,11 +14,7 @@ public class Main {
     private static int upgradeDone = 0;
     static Deck deck = new Deck();
     static String[] textArea = {"Gaynald is Gay" , "Next Line", "Next Line", "Next Line", "Next Line"};
-
-    //saveme
     final static int maxTurns = 150;
-
-    
     private static ActionListener taskPerformer = new ActionListener() 
     {
       public void actionPerformed(ActionEvent evt) {
@@ -29,8 +24,6 @@ public class Main {
       }
     };
     private static Timer timerDelay = new Timer(2000, taskPerformer);
-
-   
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
@@ -47,7 +40,6 @@ public class Main {
         board.hideCharScreen();
         board.updateTurnBorder(economy.getTurns());
         System.out.println(pickACard().toString());
-
         while(!(playPressed))
         {
             if(board.getPlayClick())
@@ -99,8 +91,11 @@ public class Main {
             comp2 = new CSpy();
             comp3 = new CFat();
         }
-        
         players = new ArrayList<Player>();
+        players.add(human);
+        players.add(comp1);
+        players.add(comp2);
+        players.add(comp3);
         int currentPlayer = 0;
         int round = 0;
         board.makeTitleScreen();
@@ -114,7 +109,6 @@ public class Main {
                 round = 0;
             if(economy.getTurns() %5 == 0){
                 players.get(currentPlayer).paycheck();
-                textArea[0] = "Here is your paycheck!"; // doesnt work for some reason
             }
             if((players.get(currentPlayer).getChar()).equals("Business Man")){
                 players.get(currentPlayer).setMoney(players.get(currentPlayer).getMoney() + (50 + players.get(currentPlayer).getMoneyBoost()));
@@ -122,31 +116,26 @@ public class Main {
             if(Math.random() * 100 < (5 - ((players.get(currentPlayer)).getReputation()) / 10)){
                 audit(players.get(currentPlayer));
             }
+            updateBoard(human,textArea,currentPlayer);
+            textArea[0] = "Money Pot:"+ economy.getMoney();
             takeTurn(players.get(currentPlayer));
-            /*if(players.get(currentPlayer).getToggled()){
+            if(players.get(currentPlayer).getToggled()){
                 if(actionDone == 1){
-                    System.out.println("Player " + (currentPlayer + 1) + "has fundraised");
+                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" embezzled.";
                 }
                 if(actionDone == 2){
-                    System.out.println("Player " + (currentPlayer + 1) + "has embezzled");
+                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" fundraised.";
                 }
                 if(actionDone == 3){
-                    System.out.println("Player " + (currentPlayer + 1) + "has interacted");
+                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" interacted.";
                 }
                 if(actionDone == 4){
-                    System.out.println("Player " + (currentPlayer + 1) + "has upgraded");
+                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" upgraded.";
                 }
                 if(actionDone == 5){
-                    System.out.println("Player " + (currentPlayer + 1) + "has used an active ability");
+                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" used "+ players.get(currentPlayer).getActiveName();
                 }
-                
             }
-            */
-            
-            textArea[0] = "Money Pot:"+ economy.getMoney();
-            updateBoard(human,textArea,currentPlayer);
-            System.out.println("Money Pot:"+ economy.getMoney());
-
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
             }
@@ -166,11 +155,10 @@ public class Main {
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
             }
-
+            updateBoard(human,textArea,currentPlayer);
+            textArea[0] = "Money Pot:"+ economy.getMoney();
             round++;
             currentPlayer++;
-            
-            
          }
     }
     public static void takeTurn(Player current){
@@ -180,7 +168,9 @@ public class Main {
         int upgrade = 0;
         current.setTWE(current.getTWE() +1);
         current.setCooldown(current.getCooldown()-1);
-        //can i send this
+        current.setCard46(current.getCard46()-1);
+        if (current.getCard46() == 0)
+            current.setMoney(current.getMoney() +1000);
         if(current.getToggled() == true)
         {
             //current.setReputation(current.getReputation() + .2);
@@ -370,7 +360,7 @@ public class Main {
                 current.setMoney(current.getMoney() + 700);
             } else if(pickedCard.getCardNumber() == 46)
             {
-                // gain 1000 dollars in 4 turns
+                current.setCard46(4);
             } else if(pickedCard.getCardNumber() == 47)
             {
                 current.setReputation(current.getReputation() - 2);
@@ -402,7 +392,7 @@ public class Main {
                 current.setReputation(current.getReputation() + 2);
             } else if(pickedCard.getCardNumber() == 56)
             {
-                //increae your cooldown by 1
+                current.setCooldown(current.getCooldown() + 1);
             }
         }
         if(action == 4){
@@ -505,7 +495,7 @@ public class Main {
         upgradeDone = upgrade;
     }
     public static void audit(Player target){
-        if(economy.getTurns() >= 10){
+        /*if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
             } else if(target.getReputation() < 40 && target.getTWE() <= 5) {
@@ -514,7 +504,7 @@ public class Main {
             } else if(target.getTWE() > 5){
                 target.setReputation(target.getReputation() + 1);
             }
-        }
+        }*/
     }
     public static void updateBoard(Human human, String[] textArea, int currentPlayer)
     { 

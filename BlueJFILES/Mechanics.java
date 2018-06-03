@@ -6,7 +6,7 @@ public class Mechanics {
 
     public Mechanics()
     {
-        moneyPot = 400;
+        moneyPot = 1500;
         turnCount = 0;
     }
     // setter for moneyPot

@@ -13,6 +13,7 @@ public class CBus extends Computer
         super();
         this.character = "Businessman";
         this.reputation = 25;
+        activeName = "Class Action Lawsuit";
     }
     
     public int getTWE(){

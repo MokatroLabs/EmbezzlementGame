@@ -13,6 +13,7 @@ public class HBus extends Human
         super();
         this.character = "Business Man";
         this.reputation = 25;
+        activeName = "Class Action Lawsuit";
     }
     
     public void activeAbility()

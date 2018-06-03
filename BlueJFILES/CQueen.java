@@ -9,6 +9,7 @@ public class CQueen extends Computer
     public CQueen(){
         super();
         this.character = "Queen";
+        activeName = "Royal Wealth";
     }
     
     public void activeAbility()

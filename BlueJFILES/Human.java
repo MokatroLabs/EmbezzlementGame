@@ -23,7 +23,8 @@ public abstract class Human implements Player {
     protected int moneyBoost; //Only refers to Business Man
     protected int noCons; // Helps Implement Espionage
     protected int embezzleBoost;
-    
+    String activeName;
+    int card46 = 0;
     
     
     
@@ -152,6 +153,11 @@ public abstract class Human implements Player {
 
     
     //Getters
+    public String getActiveName()
+    {
+        return activeName;
+    }
+    
     public double getReputation() 
     {
         return reputation;
@@ -242,6 +248,10 @@ public abstract class Human implements Player {
         return embezzleBoost;
     }
     
+    public int getCard46()
+    {
+        return card46;
+    }
     //Setters
     public void setReputation(double newReputation)
     {
@@ -355,7 +365,10 @@ public abstract class Human implements Player {
             upgradeDown = 1250;
         }
     }
-    
+    public void setCard46(int turn)
+    {
+        card46 = turn;
+    }
     public void setMoneyBoost(){
         
     }
