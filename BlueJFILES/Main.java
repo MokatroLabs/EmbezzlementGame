@@ -95,7 +95,7 @@ public class Main {
                 //audit(players.get(currentPlayer));
             }
             takeTurn(players.get(currentPlayer));
-            if(players.get(currentPlayer).getToggled()){
+            /*if(players.get(currentPlayer).getToggled()){
                 if(actionDone == 1){
                     System.out.println("Player " + (currentPlayer + 1) + "has fundraised");
                 }
@@ -113,6 +113,7 @@ public class Main {
                 }
                 
             }
+            */
             
              
             updateBoard(human,textArea);
