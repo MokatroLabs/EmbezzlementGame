@@ -14,6 +14,12 @@ public class Main {
     private static int upgradeDone = 0;
     static Deck deck = new Deck();
     static String[] textArea = {"Gaynald is Gay" , "Next Line", "Next Line", "Next Line", "Next Line"};
+    static int gruul;
+    static boolean gruulboo;
+    static boolean fourtysix;
+    static int fourtysixCounter;
+    static boolean thirty;
+    static int gruulcounter;
     final static int maxTurns = 150;
     private static ActionListener taskPerformer = new ActionListener() 
     {
@@ -163,6 +169,19 @@ public class Main {
     }
     public static void takeTurn(Player current){
         System.out.println("turn");
+        gruulcounter ++;
+        if(gruulboo && gruulcounter <=5)
+        {
+            current.setMoney(current.getMoney() + 100);
+            current.setReputation(current.getReputation() + 1);
+        }else
+        {
+            gruulboo = false;
+        }
+        if (fourtysix && fourtysixCounter+5 == gruulcounter )
+        {
+            current.setMoney(current.getMoney() + 1000);
+        }
         int action=0;
         int target=-1;
         int upgrade = 0;
@@ -186,10 +205,26 @@ public class Main {
         }
         if (action == 1) {
             if((current.getChar()).equals("Spy") && economy.getMoney()- 750 >=0){
+                if(thirty)
+                {
+                    economy.setMoney(economy.getMoney() - 825);
+                    current.embezzle();
+                    current.setMoney(current.getMoney() + 75);
+                    current.setTWE(-2);
+                    thirty = false;
+                }
                 economy.setMoney(economy.getMoney() - 750);
                 current.embezzle();
                 current.setTWE(-1);
             }else if(economy.getMoney()-500 >=0){
+                if (thirty)
+                {
+                    economy.setMoney(economy.getMoney() - 550);
+                    current.embezzle();
+                    current.setMoney(current.getMoney() + 50);
+                    current.setTWE(-2);
+                    thirty = false;
+                }
                 economy.setMoney(economy.getMoney() - 500);
                 current.embezzle();
                 current.setTWE(-1);
@@ -217,7 +252,12 @@ public class Main {
             }
             if(pickedCard.getCardNumber() == 1)
             {
-                //+1rep/+100 dollars im dying here
+                gruulboo = true;
+                gruul = gruulcounter;
+                if(!gruulboo && gruul <= (gruul+5))
+                {
+                    gruulboo = false;
+                }
             }
             else if(pickedCard.getCardNumber() == 2)
             {
@@ -227,11 +267,25 @@ public class Main {
                 current.setReputation(current.getReputation() + 2);
             } else if(pickedCard.getCardNumber() == 4)
             {
-                //increase your cooldown
+                current.setCooldown(current.getCooldown()+2);
             }else if (pickedCard.getCardNumber() == 5)
             {
-                //move is randomized 
-                //what is this
+                int chance = (int)Math.random()*4+1;
+                if(chance ==1)
+                {
+                    
+                }else if (chance == 2)
+                {
+                    
+                }else if (chance == 3)
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+                
             }else if(pickedCard.getCardNumber() == 6)
             {
                 current.setReputation(current.getReputation() - 1);
@@ -263,11 +317,10 @@ public class Main {
                 current.setMoney(current.getMoney() + 700);
             } else if(pickedCard.getCardNumber() == 15)
             {
-                current.setReputation(current.getReputation() - 2);
-                //draw another card
+                current.setMoney(current.getMoney() + 560);
             } else if(pickedCard.getCardNumber() == 16)
             {
-                //draw a card and give it to another player
+                current.setReputation(current.getReputation() + 1);
             } else if(pickedCard.getCardNumber() == 17)
             {
                 current.setReputation(current.getReputation() - 4);
@@ -310,7 +363,7 @@ public class Main {
                 current.setReputation(current.getReputation() + 3);
             } else if(pickedCard.getCardNumber() == 30)
             {
-                // if you embezzle next turn, increase the amount but also increase the risk
+                thirty = true;
             } else if(pickedCard.getCardNumber() == 31)
             {
                 current.setReputation(current.getReputation() - 3);
@@ -327,9 +380,20 @@ public class Main {
             } else if(pickedCard.getCardNumber() == 35)
             {
                 //reduce your cooldown by 1 turns
+                if(current.getCooldown() > 0)
+                {
+                    current.setCooldown(current.getCooldown()-1);
+                }
             } else if(pickedCard.getCardNumber() == 36)
             {
                 //reduce your cooldwon by 2 turns
+                if(current.getCooldown() > 0 && current.getCooldown() < 2)
+                {
+                    current.setCooldown(current.getCooldown()-1);
+                } else if(current.getCooldown() > 0)
+                {
+                    current.setCooldown(current.getCooldown() -2 );
+                }
             } else if(pickedCard.getCardNumber() == 37)
             {
                 current.setReputation(current.getReputation() - 2);
@@ -537,4 +601,3 @@ public class Main {
         MGP.start(loop);
     }
 }
-
