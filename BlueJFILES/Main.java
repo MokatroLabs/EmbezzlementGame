@@ -13,7 +13,7 @@ public class Main {
     private static ArrayList<Player> players;
     private static int actionDone = 0;
     private static int upgradeDone = 0;
-    static Deck deck;
+    static Deck deck = new Deck();
     static String[] textArea = {"Gaynald is Gay" , "Next Line", "Next Line", "Next Line", "Next Line"};
 
     //saveme
@@ -46,6 +46,7 @@ public class Main {
         board.makeCharScreen();
         board.hideCharScreen();
         board.updateTurnBorder(economy.getTurns());
+
         while(!(playPressed))
         {
             if(board.getPlayClick())
@@ -61,7 +62,7 @@ public class Main {
         }
         board.rePic(board.getCharSelect());
         runGame();
-        }
+    }
     public static void runGame()
     {
         Human human;
@@ -298,7 +299,6 @@ public class Main {
     
 
 
-   
      public static void audit(Player target){
 
 
@@ -317,23 +317,21 @@ public class Main {
 
     }
 
-
-
-    
-
-    
-
-
-  
-
     public static void updateBoard(Human human, String[] textArea)
     { 
-       board.setTurnCount("Turn: " + (economy.getTurns() + 1));
+       board.setTurnCount("Turn: " + (economy.getTurns() ));
        board.setRepCount("Rep: " + (human.getReputation()) + "%" );
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
        board.updateTurnBorder(economy.getTurns());
     }
+    
+    //public static Card pickACard(Deck deck)
+    //{
+        //double num = ( 56 * Math.random());
+        //return deck.get((int)num);
+       // return deck.get(1);
+    //}
 
     static void PlaySoundLoop(File Sound)
     {

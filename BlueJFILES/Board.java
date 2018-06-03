@@ -811,6 +811,15 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cardPanel.add(cardPic, cons);
         
+        redrawButton = new JButton("ReDraw!");
+        cons.gridx = 1;
+        cons.gridy = 2;
+        cons.weightx = 1;
+        cons.weighty = 1;
+        cardPanel.add(redrawButton, cons);
+        
+        
+        
         cons2 = new GridBagConstraints();
         cons2.gridx = 0;
         cons2.gridy = 0;
