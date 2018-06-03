@@ -78,7 +78,6 @@ public class Main {
         players.add(comp2);
         players.add(comp3);
         updateBoard(human, textArea);
-        
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
@@ -258,9 +257,12 @@ public class Main {
         upgradeDone = upgrade;
     }
     
-
-
-   
+    public static void DrawACard(Player drawer)
+    {
+        
+    }
+    
+    
      public static void audit(Player target){
 
 
@@ -278,12 +280,6 @@ public class Main {
 
 
     }
-
-
-
-    
-
-    
 
 
   

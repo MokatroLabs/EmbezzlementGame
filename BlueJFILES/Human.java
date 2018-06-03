@@ -25,7 +25,6 @@ public abstract class Human implements Player {
     
     
     
-    
     public Human()
     {
         reputation =  50;
