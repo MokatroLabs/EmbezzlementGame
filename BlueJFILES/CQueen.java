@@ -41,10 +41,6 @@ public class CQueen extends Computer
         money += 300;
         reputation += .5;
     }
-    public void interact()
-    {
-        
-    }
     
     public void setRdLV(int newLevel){
         rdLV = newLevel;

@@ -75,21 +75,38 @@ public class Main {
             human = new HQueen();
         else 
             human = new HBus();
+        Computer comp1;
+        Computer comp2;
+        Computer comp3;
+        if(human.getChar().equals("Queen"))
+        {
+            comp1 = new CSpy();
+            comp2 = new CBus();
+            comp3 = new CFat();
+        }else if (human.getChar().equals("Spy"))
+        {
+            comp1 = new CQueen();
+            comp2 = new CBus();
+            comp3 = new CFat();
+        }else if (human.getChar().equals("Father"))
+        {
+            comp1 = new CQueen();
+            comp2 = new CSpy();
+            comp3 = new CBus();
+        }else
+        {
+            comp1 = new CQueen();
+            comp2 = new CSpy();
+            comp3 = new CFat();
+        }
+        
         players = new ArrayList<Player>();
         int currentPlayer = 0;
         int round = 0;
         board.makeTitleScreen();
         board.showTitleScreen();
-        CBus comp1 = new CBus();
-        CSpy comp2 = new CSpy();
-        CFat comp3 = new CFat();
         board.hideTitleScreen();
-        players.add(human);
-        players.add(comp1);
-        players.add(comp2);
-        players.add(comp3);
         updateBoard(human, textArea, currentPlayer);
-        
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
@@ -102,8 +119,8 @@ public class Main {
             if((players.get(currentPlayer).getChar()).equals("Business Man")){
                 players.get(currentPlayer).setMoney(players.get(currentPlayer).getMoney() + (50 + players.get(currentPlayer).getMoneyBoost()));
             }
-            if(Math.random() * 100 < (10 - ((players.get(currentPlayer)).getReputation()) / 10)){
-                //audit(players.get(currentPlayer));
+            if(Math.random() * 100 < (5 - ((players.get(currentPlayer)).getReputation()) / 10)){
+                audit(players.get(currentPlayer));
             }
             takeTurn(players.get(currentPlayer));
             /*if(players.get(currentPlayer).getToggled()){
@@ -163,7 +180,7 @@ public class Main {
         int upgrade = 0;
         current.setTWE(current.getTWE() +1);
         current.setCooldown(current.getCooldown()-1);
-        
+        //can i send this
         if(current.getToggled() == true)
         {
             //current.setReputation(current.getReputation() + .2);
@@ -392,7 +409,7 @@ public class Main {
             if(current.isHuman()){
                 upgrade = board.promptUpgrade();
             } else {
-                // Implement AI choice here
+                //upgrade = findUpgrade();
             }
             if(upgrade == 1){
                 if(current.getLeadLV() >= 5){
@@ -487,14 +504,9 @@ public class Main {
         actionDone = action;
         upgradeDone = upgrade;
     }
-    
-
-
-     public static void audit(Player target){
-
-
-       if(economy.getTurns() >= 10){
-       if(target.getReputation() <= 15 && target.getTWE() <= 5){
+    public static void audit(Player target){
+        if(economy.getTurns() >= 10){
+            if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
             } else if(target.getReputation() < 40 && target.getTWE() <= 5) {
                 target.setMoney(target.getMoney() - 1000);
@@ -503,9 +515,6 @@ public class Main {
                 target.setReputation(target.getReputation() + 1);
             }
         }
-
-
-
     }
     public static void updateBoard(Human human, String[] textArea, int currentPlayer)
     { 
@@ -515,7 +524,6 @@ public class Main {
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
        board.updateTurnBorder(currentPlayer);
     }
-    
     public static Card pickACard()
     {
         double num = ( 56 * Math.random());

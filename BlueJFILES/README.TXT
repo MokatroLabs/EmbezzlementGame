@@ -1,12 +1,28 @@
+
+Overview: This is an original turn-based game in which you play as one of four characters. Each character has 
+their own unique abilities that make them different from one another. 
+
 Objective
-    The objective of the game is to win by either a money victory or 
-    reputation victory, or if you are the only player left.  To win
-    a money victory, you must have the highest amount of money when
-    the game ends, at turn 150.  To win by reputation victory, you 
-    must reach 100% reputation before turn 150.
+    There are many ways to win and lose in this game. 
+    
+    To win:
+        Science Victory: If you finish upgrading all your skills before anyone else! (Lvl 5)
+        
+        Time Victory: If you own the most money at the end of the game (150 turns)
+        
+        Diplomatic Victory: If you get 100 rep! 
+        
+        Domination Victory: If you are the lasy player in the game! 
+        
+    To Lose:
+        No money
+        No rep
+        If you get audited (a chance that increases based on lower rep) 
+        
     
 Rules
-    Every turn, you have to do one action. These are:
+    Every turn, you have to do one of five actions.
+    
         Fundraise: Raises the amount of money in the money pit and 
         also raises your reputation by a small amount.
         
@@ -17,27 +33,31 @@ Rules
         reputation and money.
         
         Active: Allows you to use your special ability.  Each player 
-        has their own ability with a set cooldown period.  These are:
+        has their own ability with a set cooldown period.  
+        
             Royal Wealth (Queen): Gives the player a large amount of 
             money.
+            
             Sabotage (Spy): Deals a random reputation penalty to a player
             of the spy's choosing.
+            
             Class Action Lawsuit (Businessman): Increases all other players'
             cooldown by two. Effect is lost once active ability is used.
-            Power of the Mobster (Father): All players pay a maderate sum
+            
+            Power of the Mobster (Father): All players pay a sum
             to the Father.
             
-        Upgrade: Allows you to upgrade your skill tree.
+            Upgrade: Allows you to upgrade your actions to increase its effectiveness. By spending money, you can upgrade
+            your skill tree, with each skill costing more and more.  The upgrades
+            boost a wide range of things, from the amount of money you get
+            from embezzleing to the cooldown of your active ability.
     
     Once you do an action, your reputation and money will be affected accordingly.  
     After you end your turn, the next player plays their turn.
     
-Upgrading
 
-    Every player has their own skill tree.  By spending money, you can upgrade
-    your skill tree, with each skill costing more and more.  The upgrades
-    boost a wide range of things, from the amount of money you get
-    from embezzleing to the cooldown of your active ability.
+
+
     
   
         
