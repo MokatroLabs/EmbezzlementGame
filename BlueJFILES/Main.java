@@ -173,9 +173,9 @@ public class Main {
         if (action == 2)
         {   current.fundraise();
             if(current.getChar().equals("Queen")){
-                economy.setMoney(economy.getMoney() + 300);
+                economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
             }else {
-                economy.setMoney(economy.getMoney() + 400);
+                economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
             }
         }
         if (action == 3)
@@ -218,6 +218,7 @@ public class Main {
                 }
                 current.upgrade(current.getMarLV() + 1);
                 current.setMarLV(current.getMarLV() + 1);
+                current.setFundIncrease(current.getMarLV() + 1);
                 board.setUpFundraise("Marketing" + (current.getMarLV()));
             }
             if(upgrade == 5){

@@ -476,6 +476,12 @@ public class Board implements ActionListener {
         charPanel.add(spySelect, cons3);
         
         queenDesc= new JLabel("Queen Description here");
+        /**
+         * Nobody messes with the Queen. Nobody.
+         * As a Queen, she is able to get more money when she fundraises; however, she must always show her actions to the world.
+         * And, her royal privilege is showcased through her active ability Royal Wealth which gives her a significant money boost , especially in the early game.
+         * Preferred Victory: Science
+         */
         queenDesc.setIcon(new ImageIcon("./pictures/test4.png")); //references the picture
         cons3.gridx = 0;
         cons3.gridy = 1;
@@ -488,6 +494,12 @@ public class Board implements ActionListener {
         queenDesc.setBorder(picBorder);
         
         businessDesc= new JLabel("Business Description Here");
+        /**
+         * If Money is King, then the Businessman is God. He is a true entrepeneur always looking for cheap ways to make money.
+         * Although he boasts a very low reputation at the start, his ability to to gain money everyday makes him a tough opponent.
+         * He is also very defensive focused with a active ability of Class Action Lawsuit which increases all other opponent's cooldown times by 2.
+         * Preferred Victory: Time
+         */
         businessDesc.setIcon(new ImageIcon("./pictures/test.png")); //references the picture
         cons3.gridx = 1;
         cons3.gridy = 1;
@@ -500,6 +512,13 @@ public class Board implements ActionListener {
         businessDesc.setBorder(picBorder);
         
         fatherDesc= new JLabel("Father Description Here");
+        /**
+         * Father Description:
+         * 56 people. The father has killed 56 people in cold blood before for crossing him.
+         * Although the father has trouble upgrading his skills, he is able to redraw his chance card when he interacts.
+         * His active ability Power of the Mobster can force all other players to pay a fee to the Father.
+         * Preferred Victory: Diplomatic
+         */
         fatherDesc.setIcon(new ImageIcon("./pictures/test2.png")); //references the picture
         cons3.gridx = 2;
         cons3.gridy = 1;
@@ -512,6 +531,13 @@ public class Board implements ActionListener {
         fatherDesc.setBorder(picBorder);
         
         spyDesc= new JLabel("Spy Description Here");
+        /**
+         * Spy Description:
+         * A master of deception and manipulation, the Spy can be a very dangerous foe to fight against.
+         * Despite his inability to fundraise, he can embezzle more money from the money pot and can evade audits easily, making him a late-game powerhouse.
+         * Not to mention, his active ability Sabotage can inflict reputation and money penalties to an enemy of his choosing
+         * Preferred Victory: Domination
+         */
         spyDesc.setIcon(new ImageIcon("./pictures/test3.png")); //references the picture
         cons3.gridx = 3;
         cons3.gridy = 1;

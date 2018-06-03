@@ -50,6 +50,8 @@ public interface Player {
 	
 	int[] getSkills();
 	
+	int getFundIncrease();
+	
 	//Setters
 	void setReputation(double newReputation);
 	
@@ -74,6 +76,9 @@ public interface Player {
 	void setMarLV(int levelUp);
 	
 	void setRdLV(int levelUp);
+	
+	void setFundIncrease(int level);
+	
 	
 	
 

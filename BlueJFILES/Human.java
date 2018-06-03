@@ -19,6 +19,7 @@ public abstract class Human implements Player {
     protected int prLV; // Public Relations Level
     protected int leadLV; // Leadership Level
     protected int espLV; // Espionage Level
+    protected int fundIncrease; // Helps Implement Marketing
     
     
     
@@ -41,6 +42,7 @@ public abstract class Human implements Player {
         skills[3] = marLV;
         skills[4] = rdLV;
         consecutive = 0;
+        fundIncrease = 0;
     }
     
     public Human(double newReputation,int newMoney,String Char) { //meant just in case we want difficulties or multiplayer
@@ -174,6 +176,10 @@ public abstract class Human implements Player {
         return skills;
     }
     
+    public int getFundIncrease(){
+        return fundIncrease;
+    }
+    
     //Setters
     public void setReputation(double newReputation)
     {
@@ -223,6 +229,27 @@ public abstract class Human implements Player {
     
     public void getRdLV(int newLevel){
         rdLV = newLevel;
+    }
+    
+    public void setFundIncrease(int level){
+        if(level == 0){
+            fundIncrease = 0;
+        }
+        if(level ==  1){
+            fundIncrease =  50;
+        }
+        if(level == 2){
+            fundIncrease = 100;
+        }
+        if(level == 3){
+            fundIncrease = 200;
+        }
+        if(level == 4){
+            fundIncrease = 400;
+        }
+        if(level == 5){
+            fundIncrease = 600;
+        }
     }
     
     //Miscellaneous
