@@ -31,7 +31,7 @@ public abstract class Computer implements Player {
     protected int moneyBoost; //Only refers to businessman
     protected int noCons; // Helps Implement Espionage (Fewer Consecutive)
     protected int embezzleBoost;
-  
+    
 
     
     public Computer(){

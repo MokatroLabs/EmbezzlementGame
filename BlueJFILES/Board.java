@@ -859,6 +859,7 @@ public class Board implements ActionListener {
                 setLeadClick(false);
                 upgradePick = true;
                 hideUpgradeScreen();
+                showGameScreen();
                 return 1;
             }
             if(getPrClick() == true)
@@ -866,6 +867,7 @@ public class Board implements ActionListener {
                 setPrClick(false);
                 upgradePick = true;
                 hideUpgradeScreen();
+                showGameScreen();
                 return 2;
             }
             if(getEspClick() == true)
@@ -873,6 +875,7 @@ public class Board implements ActionListener {
                 setEspClick(false);
                 upgradePick = true;
                 hideUpgradeScreen();
+                showGameScreen();
                 return 3;
             }
             if(getMarClick() == true)
@@ -880,6 +883,7 @@ public class Board implements ActionListener {
                 setMarClick(false);
                 upgradePick = true;
                 hideUpgradeScreen();
+                showGameScreen();
                 return 4;
             }
             if(getRdClick() == true)
@@ -887,6 +891,7 @@ public class Board implements ActionListener {
                 setRdClick(false);
                 upgradePick = true;
                 hideUpgradeScreen();
+                showGameScreen();
                 return 5;
             }
         }
@@ -1313,30 +1318,35 @@ public class Board implements ActionListener {
         {
             embezzleLvl++;
             upEmbezzle.setText("Espionage: lv "+ embezzleLvl);
+            setEspClick(true);
         }
         
         if(theEvent.getActionCommand().equals("upActive"))
         {
             activeLvl++;
             upActive.setText("Leadership: lv "+ activeLvl);
+            setLeadClick(true);
         }
         
         if(theEvent.getActionCommand().equals("upInteract"))
         {
             interactLvl++;
             upInteract.setText("Public Relations: lv "+ interactLvl);
+            setPrClick(true);
         }
         
         if(theEvent.getActionCommand().equals("upFundraise"))
         {
             fundraiseLvl++;
             upFundraise.setText("Marketing: lv "+ fundraiseLvl);
+            setMarClick(true);
         }
         
         if(theEvent.getActionCommand().equals("upUpgrade"))
         {
             upgradeLvl++;
             upUpgrade.setText("Research and Development: lv "+ upgradeLvl);
+            setRdClick(true);
         }
         
         if(theEvent.getActionCommand().equals("cardBack"))

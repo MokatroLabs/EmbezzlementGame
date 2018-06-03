@@ -214,7 +214,7 @@ public class Main {
             if(current.isHuman()){
                 upgrade = board.promptUpgrade();
             } else {
-                // Implement AI choice here
+                //upgrade = findUpgrade();
             }
             if(upgrade == 1){
                 if(current.getLeadLV() >= 5){
@@ -309,12 +309,7 @@ public class Main {
         actionDone = action;
         upgradeDone = upgrade;
     }
-    
-
-
      public static void audit(Player target){
-
-
        if(economy.getTurns() >= 10){
        if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
@@ -325,9 +320,6 @@ public class Main {
                 target.setReputation(target.getReputation() + 1);
             }
         }
-
-
-
     }
     public static void updateBoard(Human human, String[] textArea, int currentPlayer)
     { 
