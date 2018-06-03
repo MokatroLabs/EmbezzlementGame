@@ -21,6 +21,7 @@ public abstract class Human implements Player {
     protected int espLV; // Espionage Level
     protected int fundIncrease; // Helps Implement Marketing
     protected int upgradeDown; // Helps Implement Research and Development
+    protected double repIncrease; //Helps Implement Public Relations
     
     
     
@@ -45,6 +46,7 @@ public abstract class Human implements Player {
         consecutive = 0;
         fundIncrease = 0;
         upgradeDown = 0;
+        repIncrease = 0;
     }
     
     public Human(double newReputation,int newMoney,String Char) { //meant just in case we want difficulties or multiplayer
@@ -58,7 +60,7 @@ public abstract class Human implements Player {
     public void fundraise() { //Action 1
         // TODO Auto-generated method stub
         money += 200;
-        reputation += .25;
+        reputation += (.25 + repIncrease);
         consecutive = 0;
     }
     
@@ -72,7 +74,7 @@ public abstract class Human implements Player {
     
     public void interact() { // Action 3
         // TODO Auto-generated method stub
-        reputation += .25;
+        reputation += (.25 + repIncrease);
         consecutive =0;
         //Draws a Chance Card
     }
@@ -212,6 +214,10 @@ public abstract class Human implements Player {
         return upgradeDown;
     }
     
+    public double getRepIncrease(){
+        return repIncrease;
+    }
+    
     //Setters
     public void setReputation(double newReputation)
     {
@@ -263,6 +269,27 @@ public abstract class Human implements Player {
         rdLV = newLevel;
     }
     
+    public void setRepIncrease(int level){
+        if(level == 0){
+            repIncrease = 0;
+        }
+        if(level ==  1){
+            repIncrease =  .1;
+        }
+        if(level == 2){
+            repIncrease = .2;
+        }
+        if(level == 3){
+            repIncrease = .3;
+        }
+        if(level == 4){
+            repIncrease = .4;
+        }
+        if(level == 5){
+            repIncrease = .5;
+        }
+    }
+    
     public void setFundIncrease(int level){
         if(level == 0){
             fundIncrease = 0;
@@ -304,6 +331,8 @@ public abstract class Human implements Player {
             upgradeDown = 1250;
         }
     }
+    
+    
     
     //Miscellaneous
     //toggles show action

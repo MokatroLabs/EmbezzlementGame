@@ -27,6 +27,7 @@ public abstract class Computer implements Player {
     protected int espLV; // Espionage Level
     protected int fundIncrease; // Helps Implement Marketing
     protected int upgradeDown; //Helps Implement Research and Development
+    protected double repIncrease; //Helps Implement Public Relations
   
 
     
@@ -55,6 +56,7 @@ public abstract class Computer implements Player {
         consecutive = 0;
         fundIncrease = 0;
         upgradeDown = 0;
+        repIncrease = 0;
     }
     
     public Computer(double newReputation,int newMoney,String Char) {
@@ -68,7 +70,7 @@ public abstract class Computer implements Player {
     public void fundraise() //Action 1
     {
         money += 300;
-        reputation += .25;
+        reputation += (.25 + repIncrease);
         hasEmbezzled = false;
         consecutive = 0;
     }
@@ -82,7 +84,7 @@ public abstract class Computer implements Player {
     }
     
     public void interact(){ //Action 3
-        reputation += .5;
+        reputation += (.5 + repIncrease);
         consecutive = 0;
         //Draws a Chance Card
     }
@@ -204,6 +206,10 @@ public abstract class Computer implements Player {
         return skills;
     }
     
+    public double getRepIncrease(){
+        return repIncrease;
+    }
+    
     public int getFundIncrease(){
         return fundIncrease;
     }
@@ -263,6 +269,27 @@ public abstract class Computer implements Player {
         rdLV = newLevel;
     }
     
+    public void setRepIncrease(int level){
+        if(level == 0){
+            repIncrease = 0;
+        }
+        if(level ==  1){
+            repIncrease =  .1;
+        }
+        if(level == 2){
+            repIncrease = .2;
+        }
+        if(level == 3){
+            repIncrease = .3;
+        }
+        if(level == 4){
+            repIncrease = .4;
+        }
+        if(level == 5){
+            repIncrease = .5;
+        }
+    }
+    
     public void setFundIncrease(int level){
         if(level == 0){
             fundIncrease = 0;
@@ -304,6 +331,7 @@ public abstract class Computer implements Player {
             upgradeDown = 1250;
         }
     }
+    
     
     //Miscellaneous
     //toggles show action feture

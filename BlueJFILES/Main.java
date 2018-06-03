@@ -202,6 +202,7 @@ public class Main {
                 }
                 current.upgrade(current.getPrLV() + 1);
                 current.setPrLV(current.getPrLV() + 1);
+                current.setRepIncrease(current.getPrLV());
                 board.setUpInteract("Public Relations : " + (current.getPrLV()));
             }
             if(upgrade == 3){
