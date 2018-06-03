@@ -94,6 +94,7 @@ public class Main {
                 round = 0;
             if(economy.getTurns() %5 == 0){
                 players.get(currentPlayer).paycheck();
+                textArea[0] = "Here is your paycheck!";
             }
             if((players.get(currentPlayer).getChar()).equals("Business Man")){
                 players.get(currentPlayer).setMoney(players.get(currentPlayer).getMoney() + (50 + players.get(currentPlayer).getMoneyBoost()));
@@ -170,6 +171,7 @@ public class Main {
             else
             {
                 timerDelay.start();
+                
                 action = current.findMove(economy.getTurns());
             }
         if (action == 1) {
