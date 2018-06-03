@@ -5,7 +5,7 @@ public interface Player {
 	//Actions
 	void activeAbility();
 	
-	void interact();
+	void interact(); //There should be a Card Parameter in here, not putting it Becuase it will not complie 
 	
 	void fundraise();
 	

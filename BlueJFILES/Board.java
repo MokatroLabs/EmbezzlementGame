@@ -1205,9 +1205,11 @@ public class Board implements ActionListener {
         upEmbezzle.setText(string);
     }
     
-        
-  
-    
+    public void setCardPic(int cardNum)
+    {
+        cardPic.setIcon(new ImageIcon("./pictures/card" + cardNum + ".jpg"));
+    }
+
     
     public void actionPerformed(ActionEvent theEvent) 
     {
@@ -1220,6 +1222,7 @@ public class Board implements ActionListener {
             //showGameScreen();
             showCharScreen();
             makeCardScreen();
+            hideCardScreen();
         }
         
         if(theEvent.getActionCommand().equals("Embezzle"))

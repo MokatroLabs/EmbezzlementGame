@@ -97,7 +97,7 @@ public class Main {
                 round = 0;
             if(economy.getTurns() %5 == 0){
                 players.get(currentPlayer).paycheck();
-                textArea[0] = "Here is your paycheck!";
+                textArea[0] = "Here is your paycheck!"; // doesnt work for some reason
             }
             if((players.get(currentPlayer).getChar()).equals("Business Man")){
                 players.get(currentPlayer).setMoney(players.get(currentPlayer).getMoney() + (50 + players.get(currentPlayer).getMoneyBoost()));
@@ -196,7 +196,17 @@ public class Main {
         }
         if (action == 3)
         {
-            current.interact();
+            Card pickedCard = pickACard();
+            //current.interact(pickedCard);
+            if(Math.random() > .5)
+            {
+                board.setCardPic(1);
+            }
+            else
+            {
+                board.setCardPic(2);
+            }
+            
         }
         if(action == 4){
             if(current.isHuman()){
