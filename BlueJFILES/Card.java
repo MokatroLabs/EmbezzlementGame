@@ -1,13 +1,7 @@
  
 
 
-/**
- * Write a description of class Card here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Card extends Deck
+public class Card 
 {
     String name;
     String code;
@@ -21,6 +15,26 @@ public class Card extends Deck
         this.number= number;
     }
     
+    public int getCardNumber()
+    {
+        return number;
+ 
+    }
+    
+    public String getCardName()
+    {
+        return name;
+    }
+    
+    public String getCardCode()
+    {
+        return code;
+    }
+    
+    public String toString() // testing function, overrides toString
+    {
+        return "Name : " + getCardName() + "Code: " + getCardCode() + "Num: " + getCardNumber();  
+    }
     
     
 }

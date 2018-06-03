@@ -9,10 +9,8 @@ import java.util.ArrayList;
  */
 public class Deck
 {
-    private ArrayList<Card> deck;
-    
+    private ArrayList<Card> deck = new ArrayList();
     public Deck(){
-        deck = new ArrayList<Card>();
         createDeck();
     }
     public void createDeck()
@@ -73,10 +71,10 @@ public class Deck
         deck.add(new Card("T-Helicopter", "gain 1500 dollars", 54));
         deck.add(new Card("Trostmobile", "gain 2 rep", 55));
         deck.add(new Card("Don't react", "increase your cooldwon by 1", 56));
-        
-        
-        
-        
+    }
+    public Card getCard(int num)
+    {
+        return deck.get(num);
     }
 
         

@@ -13,8 +13,9 @@ public class Main {
     private static ArrayList<Player> players;
     private static int actionDone = 0;
     private static int upgradeDone = 0;
-    static Deck deck;
+    static Deck deck = new Deck();
     static String[] textArea = {"Gaynald is Gay" , "Next Line", "Next Line", "Next Line", "Next Line"};
+
     //saveme
     final static int maxTurns = 150;
 
@@ -45,6 +46,8 @@ public class Main {
         board.makeCharScreen();
         board.hideCharScreen();
         board.updateTurnBorder(economy.getTurns());
+        System.out.println(pickACard().toString());
+
         while(!(playPressed))
         {
             if(board.getPlayClick())
@@ -60,7 +63,7 @@ public class Main {
         }
         board.rePic(board.getCharSelect());
         runGame();
-        }
+    }
     public static void runGame()
     {
         Human human;
@@ -94,6 +97,7 @@ public class Main {
                 round = 0;
             if(economy.getTurns() %5 == 0){
                 players.get(currentPlayer).paycheck();
+                textArea[0] = "Here is your paycheck!"; // doesnt work for some reason
             }
             if((players.get(currentPlayer).getChar()).equals("Business Man")){
                 players.get(currentPlayer).setMoney(players.get(currentPlayer).getMoney() + (50 + players.get(currentPlayer).getMoneyBoost()));
@@ -194,7 +198,17 @@ public class Main {
         }
         if (action == 3)
         {
-            current.interact();
+            Card pickedCard = pickACard();
+            //current.interact(pickedCard);
+            if(Math.random() > .5)
+            {
+                board.setCardPic(1);
+            }
+            else
+            {
+                board.setCardPic(2);
+            }
+            
         }
         if(action == 4){
             if(current.isHuman()){
@@ -298,7 +312,6 @@ public class Main {
     
 
 
-   
      public static void audit(Player target){
 
 
@@ -318,11 +331,17 @@ public class Main {
     }
     public static void updateBoard(Human human, String[] textArea, int currentPlayer)
     { 
-       board.setTurnCount("Turn: " + (economy.getTurns() + 1));
+       board.setTurnCount("Turn: " + (economy.getTurns() ));
        board.setRepCount("Rep: " + (human.getReputation()) + "%" );
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
        board.updateTurnBorder(currentPlayer);
+    }
+    
+    public static Card pickACard()
+    {
+        double num = ( 56 * Math.random());
+        return deck.getCard((int)num);
     }
 
     static void PlaySoundLoop(File Sound)

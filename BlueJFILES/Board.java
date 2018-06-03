@@ -89,11 +89,29 @@ public class Board implements ActionListener {
     private JButton businessSelect;
     private JButton fatherSelect;
     private JButton spySelect;
-    private JLabel queenDesc;
-    private JLabel businessDesc;
-    private JLabel fatherDesc;
-    private JLabel spyDesc; 
+    private JTextArea queenDesc;
+    private JTextArea businessDesc;
+    private JTextArea fatherDesc;
+    private JTextArea spyDesc; 
+    private JLabel queenPic;
+    private JLabel businessPic;
+    private JLabel fatherPic;
+    private JLabel spyPic;
     private boolean charPicked;
+    
+    //gameWin Screen
+    private JPanel gameWinPanel;
+    
+    //gameLose Screen
+    private JPanel gameLosePanel;
+    
+    //Card screen
+    private JPanel cardPanel;
+    private JLabel cardPic;
+    private JButton cardBackButton;
+    private JButton redrawButton;
+    
+    
 
     
     
@@ -412,21 +430,7 @@ public class Board implements ActionListener {
     
     public void makeCharScreen()
     {
-        /*panelChampSelect = new JPanel();
-        GridBagConstraints gbc_panelChampSelect = new GridBagConstraints();
-        gbc_panelChampSelect.gridheight = 8;
-        gbc_panelChampSelect.gridwidth = 8;
-        gbc_panelChampSelect.insets = new Insets(0, 0, 5, 5);
-        gbc_panelChampSelect.fill = GridBagConstraints.BOTH;
-        gbc_panelChampSelect.gridx = 0;
-        gbc_panelChampSelect.gridy = 0;
-        master.getContentPane().add(panelChampSelect, gbc_panelChampSelect);
-        GridBagConstraints gbc_btnPlay = new GridBagConstraints();
-        gbc_btnPlay.gridx = 6;
-        gbc_btnPlay.gridy = 7;
-        master.getContentPane().add(btnPlay, gbc_btnPlay);
-        panelChampSelect.setVisible(false);
-        */
+
         charPicked = false;
         
         charPanel = new JPanel();
@@ -475,14 +479,9 @@ public class Board implements ActionListener {
         cons3.fill = GridBagConstraints.NONE;
         charPanel.add(spySelect, cons3);
         
-        queenDesc= new JLabel("Queen Description here");
-        /**
-         * Nobody messes with the Queen. Nobody.
-         * As a Queen, she is able to get more money when she fundraises; however, she must always show her actions to the world.
-         * And, her royal privilege is showcased through her active ability Royal Wealth which gives her a significant money boost , especially in the early game.
-         * Preferred Victory: Science
-         */
-        queenDesc.setIcon(new ImageIcon("./pictures/test4.png")); //references the picture
+        queenDesc= new JTextArea("Nobody messes with the Queen. Nobody. \n\n As a Queen, she is able to get more money when she \n fundraises; however, she must always show her actions to \n the world. \n And, her royal privilege is showcased through her active \n ability Royal Wealth which gives her a significant money \n boost , especially in the early game.\n\n Preferred Victory: Science ", 10, 30);
+        queenDesc.setLineWrap(true);
+        queenDesc.setEditable(false);
         cons3.gridx = 0;
         cons3.gridy = 1;
         cons3.weightx = 1;
@@ -490,17 +489,30 @@ public class Board implements ActionListener {
         cons3.fill = GridBagConstraints.NONE;
         cons3.anchor = GridBagConstraints.CENTER;
         cons3.insets = new Insets(20,0,0,0);
-        charPanel.add(queenDesc, cons3);
-        queenDesc.setBorder(picBorder);
-        
-        businessDesc= new JLabel("Business Description Here");
+        charPanel.add(queenDesc,cons3);        
         /**
-         * If Money is King, then the Businessman is God. He is a true entrepeneur always looking for cheap ways to make money.
-         * Although he boasts a very low reputation at the start, his ability to to gain money everyday makes him a tough opponent.
-         * He is also very defensive focused with a active ability of Class Action Lawsuit which increases all other opponent's cooldown times by 2.
-         * Preferred Victory: Time
+         * Nobody messes with the Queen. Nobody.
+         * As a Queen, she is able to get more money when she fundraises; however, she must always show her actions to the world.
+         * And, her royal privilege is showcased through her active ability Royal Wealth which gives her a significant money boost , especially in the early game.
+         * Preferred Victory: Science
          */
-        businessDesc.setIcon(new ImageIcon("./pictures/test.png")); //references the picture
+        
+        queenPic = new JLabel("");
+        queenPic.setIcon(new ImageIcon("./pictures/test4.png")); //references the picture
+        cons3.gridx = 0;
+        cons3.gridy = 2;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        cons3.anchor = GridBagConstraints.CENTER;
+        cons3.insets = new Insets(20,0,0,0);
+        charPanel.add(queenPic, cons3);
+        queenPic.setBorder(picBorder);
+        
+        
+        businessDesc= new JTextArea("If Money is King, then the Businessman is God. \n\n He is a true entrepeneur always looking for cheap ways to make money. Although he boasts a very low reputation at thestart, his ability to to gain money everyday makes him a \ntough opponent. He is also very defensive focused with a \nactive  ability of Class Action Lawsuit which increases all \nother opponent's cooldown times by 2. \n\n Preferred Victory: Time ", 10, 30);
+        businessDesc.setLineWrap(true);
+        businessDesc.setEditable(false);
         cons3.gridx = 1;
         cons3.gridy = 1;
         cons3.weightx = 1;
@@ -508,18 +520,29 @@ public class Board implements ActionListener {
         cons3.fill = GridBagConstraints.NONE;
         cons3.anchor = GridBagConstraints.CENTER;
         cons3.insets = new Insets(20,0,0,0);
-        charPanel.add(businessDesc, cons3);
-        businessDesc.setBorder(picBorder);
-        
-        fatherDesc= new JLabel("Father Description Here");
+        charPanel.add(businessDesc,cons3);
         /**
-         * Father Description:
-         * 56 people. The father has killed 56 people in cold blood before for crossing him.
-         * Although the father has trouble upgrading his skills, he is able to redraw his chance card when he interacts.
-         * His active ability Power of the Mobster can force all other players to pay a fee to the Father.
-         * Preferred Victory: Diplomatic
+         * If Money is King, then the Businessman is God. He is a true entrepeneur always looking for cheap ways to make money.
+         * Although he boasts a very low reputation at the start, his ability to to gain money everyday makes him a tough opponent.
+         * He is also very defensive focused with a active ability of Class Action Lawsuit which increases all other opponent's cooldown times by 2.
+         * Preferred Victory: Time
          */
-        fatherDesc.setIcon(new ImageIcon("./pictures/test2.png")); //references the picture
+        
+        businessPic= new JLabel("");
+        businessPic.setIcon(new ImageIcon("./pictures/test.png")); //references the picture
+        cons3.gridx = 1;
+        cons3.gridy = 2;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        cons3.anchor = GridBagConstraints.CENTER;
+        cons3.insets = new Insets(20,0,0,0);
+        charPanel.add(businessPic, cons3);
+        businessPic.setBorder(picBorder);
+        
+        fatherDesc= new JTextArea("56 people. The father has killed 56 people in cold blood \nbefore for crossing him.\n\nAlthough the father has trouble upgrading his skills, he is \nable to redraw his chance card when he interacts. His active ability Power of the Mobster can force all other players to pay a fee to the Father.\n\n\nPreferred Victory: Diplomatic ", 10,30);
+        fatherDesc.setLineWrap(true);
+        fatherDesc.setEditable(false);
         cons3.gridx = 2;
         cons3.gridy = 1;
         cons3.weightx = 1;
@@ -527,18 +550,27 @@ public class Board implements ActionListener {
         cons3.fill = GridBagConstraints.NONE;
         cons3.anchor = GridBagConstraints.CENTER;
         cons3.insets = new Insets(20,0,0,0);
-        charPanel.add(fatherDesc, cons3);
-        fatherDesc.setBorder(picBorder);
-        
-        spyDesc= new JLabel("Spy Description Here");
+        charPanel.add(fatherDesc,cons3);
         /**
-         * Spy Description:
-         * A master of deception and manipulation, the Spy can be a very dangerous foe to fight against.
-         * Despite his inability to fundraise, he can embezzle more money from the money pot and can evade audits easily, making him a late-game powerhouse.
-         * Not to mention, his active ability Sabotage can inflict reputation and money penalties to an enemy of his choosing
-         * Preferred Victory: Domination
+         * 56 people. The father has killed 56 people in cold blood before for crossing him.
+         * Although the father has trouble upgrading his skills, he is able to redraw his chance card when he interacts.
+         * His active ability Power of the Mobster can force all other players to pay a fee to the Father.
+         * Preferred Victory: Diplomatic
          */
-        spyDesc.setIcon(new ImageIcon("./pictures/test3.png")); //references the picture
+        
+        fatherPic = new JLabel("");
+        fatherPic.setIcon(new ImageIcon("./pictures/test2.png")); //references the picture
+        cons3.gridx = 2;
+        cons3.gridy = 2;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        cons3.anchor = GridBagConstraints.CENTER;
+        cons3.insets = new Insets(20,0,0,0);
+        charPanel.add(fatherPic, cons3);
+        fatherPic.setBorder(picBorder);
+        
+        spyDesc= new JTextArea("A master of deception and manipulation, the Spy can be a \nvery dangerous foe to fight against.\n\nDespite his inability to fundraise, he can embezzle \nmore money from the money pot and can evade audits \neasily, making him a late-game powerhouse. Not to mentionhis active ability Sabotage can inflict reputation and money penalties to an enemy of his choosing. \n\nPreferred Victory: Domination",10,30);
         cons3.gridx = 3;
         cons3.gridy = 1;
         cons3.weightx = 1;
@@ -546,8 +578,26 @@ public class Board implements ActionListener {
         cons3.fill = GridBagConstraints.NONE;
         cons3.anchor = GridBagConstraints.CENTER;
         cons3.insets = new Insets(20,0,0,0);
-        charPanel.add(spyDesc, cons3);
-        spyDesc.setBorder(picBorder);
+        spyDesc.setLineWrap(true);
+        spyDesc.setEditable(false);
+        charPanel.add(spyDesc,cons3);
+        /**
+         * A master of deception and manipulation, the Spy can be a very dangerous foe to fight against.
+         * Despite his inability to fundraise, he can embezzle more money from the money pot and can evade audits easily, making him a late-game powerhouse.
+         * Not to mention, his active ability Sabotage can inflict reputation and money penalties to an enemy of his choosing
+         * Preferred Victory: Domination
+         */
+        spyPic = new JLabel("");
+        spyPic.setIcon(new ImageIcon("./pictures/test3.png")); //references the picture
+        cons3.gridx = 3;
+        cons3.gridy = 2;
+        cons3.weightx = 1;
+        cons3.weighty = 1;
+        cons3.fill = GridBagConstraints.NONE;
+        cons3.anchor = GridBagConstraints.CENTER;
+        cons3.insets = new Insets(20,0,0,0);
+        charPanel.add(spyPic, cons3);
+        spyPic.setBorder(picBorder);
         
         
         cons3 = new GridBagConstraints();
@@ -563,16 +613,7 @@ public class Board implements ActionListener {
         
         
         master.pack();
-        
-        
-        
-        
 
-        
-        
-        
-
-       
     }
     
     public void hideCharScreen()
@@ -696,6 +737,114 @@ public class Board implements ActionListener {
         upgradePanel.setVisible(false);
     }
     
+    public void showUpgradeScreen()
+    {
+        upEmbezzle.setVisible(true);
+        upUpgrade.setVisible(true);
+        upInteract.setVisible(true);
+        upFundraise.setVisible(true);
+        upActive.setVisible(true);
+        upgradePanel.setVisible(true);
+    }
+    
+    public void makeGameWinScreen()
+    {
+        gameWinPanel = new JPanel();
+        cons2 = new GridBagConstraints();
+        cons2.gridx = 0;
+        cons2.gridy = 0;
+        cons2.weightx = 1;
+        cons2.weighty = 1;
+        
+        cons2.fill = GridBagConstraints.BOTH; //how to make it take up the entire screen! 
+        
+        
+        master.getContentPane().add(gameWinPanel,cons2);
+        
+        master.pack();
+    }
+    
+    public void showGameWinScreen()
+    {
+        gameWinPanel.setVisible(true);
+    }
+    
+    public void makeGameLoseScreen()
+    {
+        gameLosePanel = new JPanel();
+        cons2 = new GridBagConstraints();
+        cons2.gridx = 0;
+        cons2.gridy = 0;
+        cons2.weightx = 1;
+        cons2.weighty = 1;
+        
+        cons2.fill = GridBagConstraints.BOTH; //how to make it take up the entire screen! 
+        master.getContentPane().add(gameWinPanel,cons2);
+        
+        master.pack();
+    }
+    
+    public void showGameLoseScreen()
+    {
+        gameLosePanel.setVisible(true);
+    }
+    
+    public void makeCardScreen()
+    {
+        cardPanel = new JPanel();
+        cons = new GridBagConstraints();
+        
+        cardBackButton = new JButton("Back");
+        cons.gridx = 0;
+        cons.gridy = 0;
+        cons.weightx = 1;
+        cons.weighty = 1;
+        cardBackButton.setActionCommand("cardBack");
+        cardBackButton.addActionListener(this);
+        cardPanel.add(cardBackButton, cons);
+
+        cardPic = new JLabel("");
+        cardPic.setIcon(new ImageIcon("./pictures/cardImage.jpg")); //references the picture
+        cons.gridx = 1;
+        cons.gridy = 3;
+        cons.weightx = 1;
+        cons.weighty = 1;
+        cardPanel.add(cardPic, cons);
+        
+        redrawButton = new JButton("ReDraw!");
+        cons.gridx = 1;
+        cons.gridy = 2;
+        cons.weightx = 1;
+        cons.weighty = 1;
+        cardPanel.add(redrawButton, cons);
+        
+        
+        
+        cons2 = new GridBagConstraints();
+        cons2.gridx = 0;
+        cons2.gridy = 0;
+        cons2.weightx = 1;
+        cons2.weighty = 1;
+        
+        master.getContentPane().add(cardPanel, cons2);
+        
+        master.pack();
+    }
+    
+    public void showCardScreen()
+    {
+        cardPanel.setVisible(true);
+        cardPic.setVisible(true);
+        cardBackButton.setVisible(true);
+    }
+    
+    public void hideCardScreen()
+    {
+        cardPanel.setVisible(false);
+        cardPic.setVisible(false);
+        cardBackButton.setVisible(false);
+    }
+    
     public int promptUpgrade(){
         boolean upgradePick = false;
         int count = 0;
@@ -745,17 +894,6 @@ public class Board implements ActionListener {
         return 0;      
     }
     
-    public void showUpgradeScreen()
-    {
-        upEmbezzle.setVisible(true);
-        upUpgrade.setVisible(true);
-        upInteract.setVisible(true);
-        upFundraise.setVisible(true);
-        upActive.setVisible(true);
-        upgradePanel.setVisible(true);
-    }
-    
- 
     public int promptAction()
     {
         boolean actionPick = false;
@@ -848,6 +986,7 @@ public class Board implements ActionListener {
         {
             imageLabel4.setIcon(new ImageIcon("./pictures/test3.png"));
             imageLabel3.setIcon(new ImageIcon("./pictures/test4.png"));
+            raiseFundsAction.setVisible(false);
         }
         else if(charSelect.equals("Business"))
         {
@@ -1065,9 +1204,12 @@ public class Board implements ActionListener {
         upEmbezzle.setText(string);
     }
     
-        
-  
+    public void setCardPic(int cardNum)
+    {
+        cardPic.setIcon(new ImageIcon("./pictures/card" + cardNum + ".jpg"));
+    }
     
+
     
     public void actionPerformed(ActionEvent theEvent) 
     {
@@ -1079,6 +1221,8 @@ public class Board implements ActionListener {
             setPlayClick(true);
             //showGameScreen();
             showCharScreen();
+            makeCardScreen();
+            hideCardScreen();
         }
         
         if(theEvent.getActionCommand().equals("Embezzle"))
@@ -1100,6 +1244,16 @@ public class Board implements ActionListener {
         {
             System.out.println("Interact");
             interactClick = true;
+            if(!(charSelected.equals("Father")))
+            {
+                redrawButton.setVisible(false);
+            }
+            else
+            {
+                redrawButton.setVisible(true);
+            }
+            showCardScreen();
+            hideGameScreen();
         }
         
         if(theEvent.getActionCommand().equals("Active"))
@@ -1110,8 +1264,11 @@ public class Board implements ActionListener {
         
         if(theEvent.getActionCommand().equals("Fundraise"))
         {
-            System.out.println("Fundraise");
-            fundraiseClick = true;
+            if(!(charSelected.equals("Spy")))
+            {
+                System.out.println("Fundraise");
+                fundraiseClick = true;
+            }
         }
         
         if(theEvent.getActionCommand().equals("Back"))
@@ -1180,6 +1337,12 @@ public class Board implements ActionListener {
         {
             upgradeLvl++;
             upUpgrade.setText("Research and Development: lv "+ upgradeLvl);
+        }
+        
+        if(theEvent.getActionCommand().equals("cardBack"))
+        {
+            hideCardScreen();
+            showGameScreen();
         }
 
     }
