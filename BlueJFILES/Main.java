@@ -218,7 +218,7 @@ public class Main {
                 }
                 current.upgrade(current.getMarLV() + 1);
                 current.setMarLV(current.getMarLV() + 1);
-                current.setFundIncrease(current.getMarLV() + 1);
+                current.setFundIncrease(current.getMarLV());
                 board.setUpFundraise("Marketing" + (current.getMarLV()));
             }
             if(upgrade == 5){
