@@ -25,6 +25,9 @@ public abstract class Computer implements Player {
     protected int prLV; // Public Relations Level
     protected int leadLV; // Leadership Level
     protected int espLV; // Espionage Level
+    protected int fundIncrease; // Helps Implement Marketing
+    protected int upgradeDown; //Helps Implement Research and Development
+    protected double repIncrease; //Helps Implement Public Relations
   
 
     
@@ -51,6 +54,9 @@ public abstract class Computer implements Player {
         skills[3] = marLV;
         skills[4] = rdLV;
         consecutive = 0;
+        fundIncrease = 0;
+        upgradeDown = 0;
+        repIncrease = 0;
     }
     
     public Computer(double newReputation,int newMoney,String Char) {
@@ -64,7 +70,7 @@ public abstract class Computer implements Player {
     public void fundraise() //Action 1
     {
         money += 300;
-        reputation += .25;
+        reputation += (.25 + repIncrease);
         hasEmbezzled = false;
         consecutive = 0;
     }
@@ -78,28 +84,54 @@ public abstract class Computer implements Player {
     }
     
     public void interact(){ //Action 3
-        reputation += .5;
+        reputation += (.5 + repIncrease);
         consecutive = 0;
         //Draws a Chance Card
     }
     
-    public void upgrade(int level) // Action 4
-    {
+    public void upgrade(int level) { // Action 4
+        // TODO Auto-generated method stub
+        int noAdd = 0;
         consecutive = 0;
         if(level == 1){
-            money -= 500;
+            noAdd = (500 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
         }
         if(level == 2){
-            money -= 1000;
+            noAdd = (1000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
         }
         if(level == 3){
-            money -= 2000;
+            noAdd = (2000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
         }
         if(level == 4){
-            money -= 4000;
+            noAdd = (4000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
         }
         if(level == 5){
-            money -= 6000;
+            noAdd = (6000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
         }
     }
     
@@ -174,6 +206,18 @@ public abstract class Computer implements Player {
         return skills;
     }
     
+    public double getRepIncrease(){
+        return repIncrease;
+    }
+    
+    public int getFundIncrease(){
+        return fundIncrease;
+    }
+    
+    public int getUpgradeDown(){
+        return upgradeDown;
+    }
+    
     //Setters
     public void setReputation (double amount)
     {
@@ -224,6 +268,70 @@ public abstract class Computer implements Player {
     public void getRdLV(int newLevel){
         rdLV = newLevel;
     }
+    
+    public void setRepIncrease(int level){
+        if(level == 0){
+            repIncrease = 0;
+        }
+        if(level ==  1){
+            repIncrease =  .1;
+        }
+        if(level == 2){
+            repIncrease = .2;
+        }
+        if(level == 3){
+            repIncrease = .3;
+        }
+        if(level == 4){
+            repIncrease = .4;
+        }
+        if(level == 5){
+            repIncrease = .5;
+        }
+    }
+    
+    public void setFundIncrease(int level){
+        if(level == 0){
+            fundIncrease = 0;
+        }
+        if(level ==  1){
+            fundIncrease =  50;
+        }
+        if(level == 2){
+            fundIncrease = 100;
+        }
+        if(level == 3){
+            fundIncrease = 200;
+        }
+        if(level == 4){
+            fundIncrease = 400;
+        }
+        if(level == 5){
+            fundIncrease = 600;
+        }
+    }
+    
+    public void setUpgradeDown(int level){
+        if(level == 0){
+            upgradeDown = 0;
+        }
+        if(level ==  1){
+            upgradeDown =  250;
+        }
+        if(level == 2){
+            upgradeDown = 500;
+        }
+        if(level == 3){
+            upgradeDown = 750;
+        }
+        if(level == 4){
+            upgradeDown = 1000;
+        }
+        if(level == 5){
+            upgradeDown = 1250;
+        }
+    }
+    
     
     //Miscellaneous
     //toggles show action feture

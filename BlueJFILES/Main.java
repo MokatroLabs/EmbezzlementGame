@@ -173,9 +173,9 @@ public class Main {
         if (action == 2)
         {   current.fundraise();
             if(current.getChar().equals("Queen")){
-                economy.setMoney(economy.getMoney() + 300);
+                economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
             }else {
-                economy.setMoney(economy.getMoney() + 400);
+                economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
             }
         }
         if (action == 3)
@@ -202,6 +202,7 @@ public class Main {
                 }
                 current.upgrade(current.getPrLV() + 1);
                 current.setPrLV(current.getPrLV() + 1);
+                current.setRepIncrease(current.getPrLV());
                 board.setUpInteract("Public Relations : " + (current.getPrLV()));
             }
             if(upgrade == 3){
@@ -218,6 +219,7 @@ public class Main {
                 }
                 current.upgrade(current.getMarLV() + 1);
                 current.setMarLV(current.getMarLV() + 1);
+                current.setFundIncrease(current.getMarLV());
                 board.setUpFundraise("Marketing" + (current.getMarLV()));
             }
             if(upgrade == 5){
@@ -226,6 +228,7 @@ public class Main {
                 }
                 current.upgrade(current.getRdLV() + 1);
                 current.setRdLV(current.getRdLV() + 1);
+                current.setUpgradeDown(current.getRdLV());
                 board.setUpUpgrade("Research and Development" + (current.getRdLV()));
             }
         }

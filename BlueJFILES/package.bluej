@@ -26,18 +26,31 @@ dependency8.type=UsesDependency
 dependency9.from=Deck
 dependency9.to=Card
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=2261
 editor.fx.0.y=79
 objectbench.height=75
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+objectbench.height=94
+>>>>>>> 9971553dfaa6d440e45c08f7d7fe6bea0c038387
 objectbench.width=903
 package.divider.horizontal=0.6
 package.divider.vertical=0.8605442176870748
 package.editor.height=499
 package.editor.width=813
+<<<<<<< HEAD
 package.editor.x=337
 package.editor.y=64
+=======
+package.editor.x=100
+package.editor.y=100
+>>>>>>> 9971553dfaa6d440e45c08f7d7fe6bea0c038387
 package.frame.height=688
 package.frame.width=943
 package.numDependencies=9
