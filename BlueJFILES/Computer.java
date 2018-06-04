@@ -1,6 +1,3 @@
- 
-
-
 public abstract class Computer implements Player {
     protected double reputation;
     protected int money;

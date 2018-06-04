@@ -21,15 +21,6 @@ public class Main {
     static boolean thirty;
     static int gruulcounter;
     final static int maxTurns = 150;
-    private static ActionListener taskPerformer = new ActionListener() 
-    {
-      public void actionPerformed(ActionEvent evt) {
-          //System.out.println("comp turn");
-          timerDelay.stop();
-          //System.out.println("1 step of the work");
-      }
-    };
-    private static Timer timerDelay = new Timer(2000, taskPerformer);
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         File OST = new File("OST.WAV");
@@ -245,7 +236,6 @@ public class Main {
         }
         else
         {
-            timerDelay.start();
             action = current.findMove(economy.getTurns());
         }
         //change to fix money pit bug

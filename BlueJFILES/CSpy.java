@@ -189,7 +189,9 @@ public class CSpy extends Computer
         //printWeights();
         if (embezzleW > 10000 || fundraiseW > 10000 || interactW > 10000 || upgradeW > 10000 || activeW > 10000 )
             resetFocus();
-        return action;
+        if(!hasLost)
+            return action;
+        return 0;
     }
     
         
