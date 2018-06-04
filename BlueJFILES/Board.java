@@ -16,6 +16,7 @@ public class Board implements ActionListener {
     private JFrame master; //the window
     private Toolkit theKit;
     private Dimension wndSize;
+    private int activeCool = 0;
     
     
     
@@ -129,6 +130,7 @@ public class Board implements ActionListener {
     
     //gameWin Screen
     private JPanel gameWinPanel;
+    private JLabel tempWin;
     private JLabel backgroundWin;
     private ImageIcon origBackgroundWin;
     private Image origBackgroundImgWin;
@@ -799,6 +801,12 @@ public class Board implements ActionListener {
     public void makeGameWinScreen()
     {
         gameWinPanel = new JPanel();
+        tempWin = new JLabel(new ImageIcon("./pictures/winTitle.png"));
+        cons.gridx = 0;
+        cons.gridy=0;
+        gameWinPanel.add(tempWin, cons);
+        
+        
         cons2 = new GridBagConstraints();
         cons2.gridx = 0;
         cons2.gridy = 0;
@@ -817,7 +825,7 @@ public class Board implements ActionListener {
     {
         gameWinPanel.setVisible(true);
     }
-    
+
     public void makeGameLoseScreen()
     {
         gameLosePanel = new JPanel();
@@ -1050,6 +1058,26 @@ public class Board implements ActionListener {
     
     }
     
+    public void checkActive()
+    {
+        if(activeCool ==0)
+        {
+            setActiveButton(true);
+        }
+        else
+        {
+            activeCool--;
+        }
+    }
+    
+    public void checkFundraise()
+    {
+        if(charSelected.equals("Spy"))
+        {
+            raiseFundsAction.setVisible(false);
+        }
+    }
+    
     //getters;
     public JLabel getTurnLabel()
     {
@@ -1154,6 +1182,11 @@ public class Board implements ActionListener {
     public int getActiveLvl()
     {
         return activeLvl;
+    }
+    
+    public int getActiveCool()
+    {
+        return activeCool;
     }
     
     
@@ -1263,6 +1296,15 @@ public class Board implements ActionListener {
         cardPic.setIcon(new ImageIcon("./pictures/pic/card" + cardNum + ".png"));
     }
     
+    public void setActiveCool(int num)
+    {
+        activeCool = num;
+    }
+    
+    public void setActiveButton(boolean bol)
+    {
+        activeAction.setVisible(bol);
+    }
     
 
     
@@ -1314,6 +1356,8 @@ public class Board implements ActionListener {
         if(theEvent.getActionCommand().equals("Active"))
         {
             System.out.println("Active");
+            activeCool = 5;
+            setActiveButton(false);
             activeClick = true;
         }
         
@@ -1403,6 +1447,7 @@ public class Board implements ActionListener {
         {
             hideCardScreen();
             showGameScreen();
+            checkFundraise();
         }
 
     }
