@@ -230,7 +230,7 @@ public class CBus extends Computer
         System.out.println(action);
         System.out.println(reputation);
         System.out.println(money);
-        printWeights();
+        //printWeights();
         if (embezzleW > 10000 || fundraiseW > 10000 || interactW > 10000 || upgradeW > 10000 || activeW > 10000 )
             resetFocus();
         return action;

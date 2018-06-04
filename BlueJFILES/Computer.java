@@ -259,7 +259,7 @@ public abstract class Computer implements Player {
     //Setters
     public void setReputation (double amount)
     {
-        reputation += amount;
+        reputation = amount;
     }
     
     public void setMoney(int amount)

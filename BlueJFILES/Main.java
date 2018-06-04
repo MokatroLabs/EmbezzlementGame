@@ -24,9 +24,9 @@ public class Main {
     private static ActionListener taskPerformer = new ActionListener() 
     {
       public void actionPerformed(ActionEvent evt) {
-          System.out.println("comp turn");
+          //System.out.println("comp turn");
           timerDelay.stop();
-          System.out.println("1 step of the work");
+          //System.out.println("1 step of the work");
       }
     };
     private static Timer timerDelay = new Timer(2000, taskPerformer);
@@ -249,12 +249,7 @@ public class Main {
         //change to fix money pit bug
         if(economy.getMoney() < 975)
         {
-           current.fundraise();
-           if(current.getChar().equals("Queen")){
-               economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
-           }else {
-               economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
-           } 
+           economy.setMoney(economy.getMoney() + 300);
         }
         //end of change
         else if (action == 1) {
@@ -286,7 +281,8 @@ public class Main {
             current.setPastAction(0,1);
         } 
         if (action == 2)
-        {   current.fundraise();
+        {   
+            current.fundraise();
             if(current.getChar().equals("Queen")){
                 economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
             }else {
