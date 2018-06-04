@@ -21,6 +21,12 @@ public class Board implements ActionListener {
     
     //title screen
     private JPanel titleScreen;
+    private JLabel backgroundTitle;
+    private ImageIcon origBackgroundTitle;
+    private Image origBackgroundImgTitle;
+    private Image scaledImageTitle;
+    private ImageIcon newIconTitle;
+    private JButton btnPlayTitle;
     private JButton btnPlay;
     
     // click sound
@@ -60,9 +66,9 @@ public class Board implements ActionListener {
     private boolean upgradeClick;
     private boolean playClick;
     private JLabel background;
-    private  ImageIcon origBackground;
-    private  Image origBackgroundImg;
-    private  Image scaledImage;
+    private ImageIcon origBackground;
+    private Image origBackgroundImg;
+    private Image scaledImage;
     private ImageIcon newIcon;
     
     
@@ -70,6 +76,11 @@ public class Board implements ActionListener {
     
     //Upgrade Screen
     private JPanel upgradePanel;
+    private JLabel backgroundUpgrade;
+    private ImageIcon origBackgroundUpgrade;
+    private Image origBackgroundImgUpgrade;
+    private Image scaledImageUpgrade;
+    private ImageIcon newIconUpgrade;
     private JButton upEmbezzle;
     private JButton upUpgrade;
     private JButton upInteract;
@@ -95,6 +106,11 @@ public class Board implements ActionListener {
     
     //charScreen
     private String charSelected;
+    private JLabel backgroundChar;
+    private ImageIcon origBackgroundChar;
+    private Image origBackgroundImgChar;
+    private Image scaledImageChar;
+    private ImageIcon newIconChar;
     private JPanel charPanel;
     private GridBagConstraints cons3;
     private JButton queenSelect;
@@ -113,15 +129,30 @@ public class Board implements ActionListener {
     
     //gameWin Screen
     private JPanel gameWinPanel;
+    private JLabel backgroundWin;
+    private ImageIcon origBackgroundWin;
+    private Image origBackgroundImgWin;
+    private Image scaledImageWin;
+    private ImageIcon newIconWin;
     
     //gameLose Screen
     private JPanel gameLosePanel;
+    private JLabel backgroundLose;
+    private ImageIcon origBackgroundLose;
+    private Image origBackgroundImgLose;
+    private Image scaledImageLose;
+    private ImageIcon newIconLose;
     
     //Card screen
     private JPanel cardPanel;
     private JLabel cardPic;
     private JButton cardBackButton;
     private JButton redrawButton;
+    private JLabel backgroundCard;
+    private ImageIcon origBackgroundCard;
+    private Image origBackgroundImgCard;
+    private Image scaledImageCard;
+    private ImageIcon newIconCard;
     
     
 
@@ -1228,7 +1259,7 @@ public class Board implements ActionListener {
     
     public void setCardPic(int cardNum)
     {
-        cardPic.setIcon(new ImageIcon("./pictures/card" + cardNum + ".jpg"));
+        cardPic.setIcon(new ImageIcon("./pictures/card" + cardNum + ".png"));
     }
     
 

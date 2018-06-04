@@ -232,7 +232,18 @@ public class Main {
             timerDelay.start();
             action = current.findMove(economy.getTurns());
         }
-        if (action == 1) {
+        //change to fix money pit bug
+        if(economy.getMoney() < 975)
+        {
+           current.fundraise();
+            if(current.getChar().equals("Queen")){
+                economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
+            }else {
+                economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
+            } 
+        }
+        //end of change
+        else if (action == 1) {
             if((current.getChar()).equals("Spy") && economy.getMoney()- 750 >=0){
                 if(thirty)
                 {
