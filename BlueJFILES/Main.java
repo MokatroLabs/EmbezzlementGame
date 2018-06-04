@@ -294,14 +294,7 @@ public class Main {
         {
             Card pickedCard = pickACard();
             //current.interact(pickedCard);
-            if(Math.random() > .5)
-            {
-                board.setCardPic(1);
-            }
-            else
-            {
-                board.setCardPic(2);
-            }
+            board.setCardPic(pickedCard.getCardNumber());
             if(pickedCard.getCardNumber() == 1)
             {
                 gruulboo = true;
