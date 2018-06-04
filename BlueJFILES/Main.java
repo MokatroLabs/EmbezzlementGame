@@ -310,13 +310,58 @@ public class Main {
                 current.setCooldown(current.getCooldown()+2);
             }else if (pickedCard.getCardNumber() == 5)
             {
-                current.setCooldown(current.getCooldown()+3);
+                int choice = (int)Math.random()*4;
+                if(choice ==1)
+                {
+                    if((current.getChar()).equals("Spy") && economy.getMoney()- 750 >=0){
+                if(thirty)
+                {
+                    economy.setMoney(economy.getMoney() - 825);
+                    current.embezzle();
+                    current.setMoney(current.getMoney() + 75);
+                    current.setTWE(-2);
+                    thirty = false;
+                }
+                economy.setMoney(economy.getMoney() - 750);
+                current.embezzle();
+                current.setTWE(-1);
+                }else if(economy.getMoney()-500 >=0){
+                if (thirty)
+                {
+                    economy.setMoney(economy.getMoney() - 550);
+                    current.embezzle();
+                    current.setMoney(current.getMoney() + 50);
+                    current.setTWE(-2);
+                    thirty = false;
+                }
+                economy.setMoney(economy.getMoney() - 500);
+                current.embezzle();
+                current.setTWE(-1);
+            }
+                current.setPastAction(0,1);
+                // randomized: embezzle
+                }
+                else if(choice ==2)
+                {
+                    current.fundraise();
+                    if(current.getChar().equals("Queen"))
+                    {
+                        economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
+                }
+                else 
+                {
+                     economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
+                }
+                 current.setPastAction(1,1);
+            // randomized: fundraise
+                }
+                
             }else if(pickedCard.getCardNumber() == 6)
             {
                 current.setReputation(current.getReputation() - 1);
             }else if(pickedCard.getCardNumber() == 7)
             {
-                current.setMoney(current.getMoney() - 1000);
+                //current.setMoney(current.getMoney() - 1000);
             }else if(pickedCard.getCardNumber() == 8)
             {
                 current.setReputation(current.getReputation() - 1);
