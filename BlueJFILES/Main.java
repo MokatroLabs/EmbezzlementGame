@@ -124,6 +124,8 @@ public class Main {
             }
             updateBoard(human,textArea,currentPlayer);
             textArea[0] = "Pot:"+ economy.getMoney();
+            if(economy.getTurns() > 20)
+                board.checkActive();
             takeTurn(players.get(currentPlayer));
             if(players.get(currentPlayer).getToggled()){
                 if(actionDone == 1){
@@ -231,9 +233,9 @@ public class Main {
             current.setMoney(current.getMoney() +1000);
         if(current.getToggled() == true)
         {
-            //current.setReputation(current.getReputation() + .2);
-            //if(current.getChar().equals("Queen"))
-            //    current.setReputation(current.getReputation()+.1);
+            current.setReputation(current.getReputation() + .2);
+            if(current.getChar().equals("Queen"))
+                current.setReputation(current.getReputation()+.1);
         }
         if(current.isHuman())
         {
@@ -611,16 +613,16 @@ public class Main {
         upgradeDone = upgrade;
     }
     public static void audit(Player target){
-        /*if(economy.getTurns() >= 10){
+        if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
             } else if(target.getReputation() < 40 && target.getTWE() <= 5) {
                 target.setMoney(target.getMoney() - 1000);
                 target.setReputation(target.getReputation() - 5);
             } else if(target.getTWE() > 5){
-                //target.setReputation(target.getReputation() + 1);
+                target.setReputation(target.getReputation() + 1);
             }
-        }*/
+        }
     }
     public static void updateBoard(Human human, String[] textArea, int currentPlayer)
     { 
