@@ -169,7 +169,7 @@ public class Board implements ActionListener {
         master.setPreferredSize(new Dimension(9*wndSize.width/10, 9*wndSize.height/10)); //half the screen, gotta change
         master.setLocation(wndSize.width/16, wndSize.height/16);
         master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style\
-        master.setResizable(false);
+        //master.setResizable(false);
         activeClick = false;
         interactClick = false;
         embezzleClick = false;
@@ -853,7 +853,7 @@ public class Board implements ActionListener {
         cardPanel.add(cardBackButton, cons);
 
         cardPic = new JLabel("");
-        cardPic.setIcon(new ImageIcon("./pictures/cardImage.jpg")); //references the picture
+        cardPic.setIcon(new ImageIcon("./pictures/pic/cardImage.jpg")); //references the picture
         cons.gridx = 1;
         cons.gridy = 3;
         cons.weightx = 1;
@@ -1260,7 +1260,7 @@ public class Board implements ActionListener {
     
     public void setCardPic(int cardNum)
     {
-        cardPic.setIcon(new ImageIcon("./pictures/card" + cardNum + ".png"));
+        cardPic.setIcon(new ImageIcon("./pictures/pic/card" + cardNum + ".png"));
     }
     
 
