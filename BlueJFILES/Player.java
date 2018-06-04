@@ -17,6 +17,7 @@ public interface Player {
     
     int findMove(int turncount);
     
+    int findUpgrade();
     //Getters
     double getReputation();
     
@@ -50,6 +51,8 @@ public interface Player {
     
     int[] getSkills();
     
+    int[] getPastAction();
+    
     int getFundIncrease();
     
     int getUpgradeDown();
@@ -65,6 +68,8 @@ public interface Player {
     int getCard46();
     //Setters
     void setReputation(double newReputation);
+    
+    void setPastAction(int loc, int number);
     
     void setMoney(int newMoney);
     

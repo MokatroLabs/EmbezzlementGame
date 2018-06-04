@@ -83,19 +83,19 @@ public class Main {
             comp3 = new CFat();
         }else if (human.getChar().equals("Spy"))
         {
-            comp1 = new CQueen();
+            comp1 = new CFat();
             comp2 = new CBus();
-            comp3 = new CFat();
+            comp3 = new CQueen();
         }else if (human.getChar().equals("Father"))
         {
-            comp1 = new CQueen();
-            comp2 = new CSpy();
-            comp3 = new CBus();
+            comp1 = new CSpy();
+            comp2 = new CBus();
+            comp3 = new CQueen();
         }else
         {
-            comp1 = new CQueen();
-            comp2 = new CSpy();
-            comp3 = new CFat();
+            comp1 = new CSpy();
+            comp2 = new CFat();
+            comp3 = new CQueen();
         }
         players = new ArrayList<Player>();
         players.add(human);
@@ -246,11 +246,11 @@ public class Main {
         if(economy.getMoney() < 975)
         {
            current.fundraise();
-            if(current.getChar().equals("Queen")){
-                economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
-            }else {
-                economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
-            } 
+           if(current.getChar().equals("Queen")){
+               economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
+           }else {
+               economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
+           } 
         }
         //end of change
         else if (action == 1) {
@@ -279,6 +279,7 @@ public class Main {
                 current.embezzle();
                 current.setTWE(-1);
             }
+            current.setPastAction(0,1);
         } 
         if (action == 2)
         {   current.fundraise();
@@ -287,6 +288,7 @@ public class Main {
             }else {
                 economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
             }
+            current.setPastAction(1,1);
         }
         if (action == 3)
         {
@@ -501,12 +503,13 @@ public class Main {
             {
                 current.setCooldown(current.getCooldown() + 1);
             }
+            current.setPastAction(2,1);
         }
         if(action == 4){
             if(current.isHuman()){
                 upgrade = board.promptUpgrade();
             } else {
-                //upgrade = findUpgrade();
+                upgrade = current.findUpgrade();
             }
             if(upgrade == 1){
                 if(current.getLeadLV() >= 5){
@@ -552,6 +555,7 @@ public class Main {
                 current.setUpgradeDown(current.getRdLV());
                 board.setUpUpgrade("Research and Development Lvl: " + (current.getRdLV()));
             }
+            current.setPastAction(3,1);
         }
         if(action == 5 && current.getCooldown() <=0){
             if(current.getChar().equals("Businessman")){
@@ -598,6 +602,7 @@ public class Main {
             } else {
                 current.activeAbility();
             }
+            current.setPastAction(4,1);
         }
         if(current.getCooldown()>0){
             current.setCooldown(current.getCooldown()-1);
@@ -623,6 +628,7 @@ public class Main {
        board.setRepCount("Rep: " + (int) (human.getReputation()) + "%" );
        board.setMoneyCount("Money: " + human.getMoney() );
        board.setTextArea("-"+ textArea[0] + "\n" + "-" + textArea[1] + "\n" + "-" + textArea[2] + "\n"+ "-" + textArea[3] + "\n" + "-" + textArea[4] );
+       
        board.updateTurnBorder(currentPlayer);
     }
     public static Card pickACard()
