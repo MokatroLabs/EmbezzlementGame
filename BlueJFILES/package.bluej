@@ -47,10 +47,33 @@ dependency8.type=UsesDependency
 dependency9.from=Main
 dependency9.to=HQueen
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=275
 editor.fx.0.y=10
+=======
+<<<<<<< HEAD
+editor.fx.0.height=1098
+editor.fx.0.width=1938
+editor.fx.0.x=-9
+editor.fx.0.y=-9
+objectbench.height=132
+objectbench.width=980
+package.divider.horizontal=0.6
+package.divider.vertical=0.7884322678843226
+package.editor.height=511
+package.editor.width=874
+package.editor.x=583
+package.editor.y=390
+package.frame.height=776
+package.frame.width=1022
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+>>>>>>> 95762913413a96e5062cb3849f9bcab3883ed063
 objectbench.height=75
 objectbench.width=903
 package.divider.horizontal=0.6
@@ -61,6 +84,7 @@ package.editor.x=100
 package.editor.y=100
 package.frame.height=688
 package.frame.width=943
+>>>>>>> 0ebf49cf4a5041ba7dfb26508309789af012ac37
 package.numDependencies=16
 package.numTargets=16
 package.showExtends=true
