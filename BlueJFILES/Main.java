@@ -123,30 +123,32 @@ public class Main {
                 audit(players.get(currentPlayer));
             }
             updateBoard(human,textArea,currentPlayer);
-            textArea[0] = "Money Pot:"+ economy.getMoney();
+            textArea[0] = "Pot:"+ economy.getMoney();
             takeTurn(players.get(currentPlayer));
             if(players.get(currentPlayer).getToggled()){
                 if(actionDone == 1){
-                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" embezzled.";
+                    textArea[currentPlayer+1] = (players.get(currentPlayer).getChar()).substring(0,1) +" embezzle";
                 }
                 if(actionDone == 2){
-                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" fundraised.";
+                    textArea[currentPlayer+1] = (players.get(currentPlayer).getChar()).substring(0,1) +" fundraise";
                 }
                 if(actionDone == 3){
-                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" interacted.";
+                    textArea[currentPlayer+1] = (players.get(currentPlayer).getChar()).substring(0,1) +" interact";
                 }
                 if(actionDone == 4){
-                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" upgraded.";
+                    textArea[currentPlayer+1] = (players.get(currentPlayer).getChar()).substring(0,1) +" upgrade";
                 }
                 if(actionDone == 5){
-                    textArea[currentPlayer+1] = "The" + players.get(currentPlayer).getChar() +" used "+ players.get(currentPlayer).getActiveName();
+                    textArea[currentPlayer+1] = (players.get(currentPlayer).getChar()).substring(0,1) +" used "+ players.get(currentPlayer).getActiveName();
                 }
-            }
-            if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
-                players.get(currentPlayer).setLost();
             }
             if(players.get(currentPlayer).getReputation() >= 100){
                 players.get(currentPlayer).setWon();
+                if(currentPlayer == 0){
+                        board.showGameWinScreen();
+                    }else{
+                        board.showGameLoseScreen();
+                        }
             }
             for(int i = 0; i < 4; i++){
                 int[] check = players.get(currentPlayer).getSkills();
@@ -154,18 +156,45 @@ public class Main {
                     break;
                 } else if(i == 4 && check[i] == 5){
                     players.get(currentPlayer).setWon();
+                    if(currentPlayer == 0){
+                        board.showGameWinScreen();
+                    }else{
+                        board.showGameLoseScreen();
+                    }
                 }
             }
             if(round == 4)
                 economy.setTurns(economy.getTurns() + 1);
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
+                if(currentPlayer == 0){
+                    board.showGameLoseScreen();
+                } 
             }
             updateBoard(human,textArea,currentPlayer);
             textArea[0] = "Money Pot:"+ economy.getMoney();
             round++;
             currentPlayer++;
          }
+        int highest = 0;
+        int indexHigh = 0;
+         if(economy.getTurns() >= 150){
+            for(int i = 0; i < players.size(); i++){
+                if(players.get(i).getLost() != true){
+                    if(players.get(i).getMoney() > highest){
+                        highest = players.get(i).getMoney();
+                        indexHigh = i;
+                    }
+                }
+            }
+            players.get(indexHigh).setWon();
+            if(indexHigh != 0){
+                board.showGameLoseScreen();
+            } else {
+                board.showGameWinScreen();
+            }
+        }
+        
     }
     public static void takeTurn(Player current){
         System.out.println("turn");
