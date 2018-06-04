@@ -237,14 +237,19 @@ public class Board implements ActionListener {
         cons.anchor = GridBagConstraints.SOUTHEAST;
         background.add(moneyCount, cons);
         
-        concedeBut = new JButton("Concede");
-        cons.gridx = 4;
-        cons.gridy = 0;
-        cons.weightx = 1;
-        cons.weighty = 1;
-        cons.fill = GridBagConstraints.NONE;
-        cons.anchor = GridBagConstraints.NORTHEAST;
-        background.add(concedeBut, cons);
+        
+        /*
+         *         concedeBut = new JButton("Concede");
+         *         cons.gridx = 4;
+         *         cons.gridy = 0;
+         *         cons.weightx = 1;
+         *         cons.weighty = 1;
+         *         cons.fill = GridBagConstraints.NONE;
+         *         cons.anchor = GridBagConstraints.NORTHEAST;
+         *         background.add(concedeBut, cons);
+         
+         */
+
         
         repCount = new JLabel("Rep: 50");
         cons.gridx = 0;
