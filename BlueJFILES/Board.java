@@ -168,7 +168,8 @@ public class Board implements ActionListener {
         wndSize  = theKit.getScreenSize();//gets the screen size
         master.setPreferredSize(new Dimension(9*wndSize.width/10, 9*wndSize.height/10)); //half the screen, gotta change
         master.setLocation(wndSize.width/16, wndSize.height/16);
-        master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style
+        master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style\
+        master.setResizable(false);
         activeClick = false;
         interactClick = false;
         embezzleClick = false;
