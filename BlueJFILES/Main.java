@@ -161,8 +161,12 @@ public class Main {
                 } else if(i == 4 && check[i] == 5){
                     players.get(currentPlayer).setWon();
                     if(currentPlayer == 0){
+                        board.makeGameWinScreen();
+                        board.hideGameScreen();
                         board.showGameWinScreen();
                     }else{
+                        board.makeGameLoseScreen();
+                        board.hideGameScreen();
                         board.showGameLoseScreen();
                     }
                 }
@@ -172,7 +176,9 @@ public class Main {
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
                 if(currentPlayer == 0){
-                    board.showGameLoseScreen();
+                        board.makeGameLoseScreen();
+                        board.hideGameScreen();
+                        board.showGameLoseScreen();
                 } 
             }
             updateBoard(human,textArea,currentPlayer);

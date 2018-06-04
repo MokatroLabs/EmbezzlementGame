@@ -47,16 +47,6 @@ dependency8.type=UsesDependency
 dependency9.from=Main
 dependency9.to=HQueen
 dependency9.type=UsesDependency
-<<<<<<< HEAD
-<<<<<<< HEAD
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=275
-editor.fx.0.y=10
-=======
-<<<<<<< HEAD
-=======
->>>>>>> ecd76b77196bc788cbe814aef3b598ec19a3b52b
 editor.fx.0.height=1098
 editor.fx.0.width=1938
 editor.fx.0.x=-9
@@ -64,35 +54,11 @@ editor.fx.0.y=-9
 objectbench.height=73
 objectbench.width=901
 package.divider.horizontal=0.6
-<<<<<<< HEAD
-package.divider.vertical=0.7884322678843226
-package.editor.height=511
-package.editor.width=874
-package.editor.x=583
-package.editor.y=390
-package.frame.height=776
-package.frame.width=1022
-=======
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
->>>>>>> 95762913413a96e5062cb3849f9bcab3883ed063
-objectbench.height=75
-objectbench.width=903
-package.divider.horizontal=0.6
-package.divider.vertical=0.8605442176870748
-package.editor.height=499
-package.editor.width=813
-package.editor.x=100
-package.editor.y=100
-=======
 package.divider.vertical=0.859402460456942
 package.editor.height=482
 package.editor.width=795
-package.editor.x=811
-package.editor.y=502
->>>>>>> ecd76b77196bc788cbe814aef3b598ec19a3b52b
+package.editor.x=100
+package.editor.y=100
 package.frame.height=688
 package.frame.width=943
 package.numDependencies=16
@@ -167,8 +133,8 @@ target16.showInterface=false
 target16.type=ClassTarget
 target16.typeParameters=
 target16.width=80
-target16.x=240
-target16.y=20
+target16.x=260
+target16.y=0
 target2.height=50
 target2.name=CBus
 target2.showInterface=false
