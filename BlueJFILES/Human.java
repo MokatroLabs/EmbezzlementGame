@@ -141,9 +141,7 @@ public abstract class Human implements Player {
         consecutive =0;
         setNoCons(espLV);
     }
-
-
-
+    
     public int findMove(int turncount)
     {    
         return 0;

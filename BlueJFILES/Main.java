@@ -310,28 +310,13 @@ public class Main {
                 current.setCooldown(current.getCooldown()+2);
             }else if (pickedCard.getCardNumber() == 5)
             {
-                int chance = (int)Math.random()*4+1;
-                if(chance ==1)
-                {
-                    
-                }else if (chance == 2)
-                {
-                    
-                }else if (chance == 3)
-                {
-                    
-                }
-                else
-                {
-                    
-                }
-                
+                current.setCooldown(current.getCooldown()+3);
             }else if(pickedCard.getCardNumber() == 6)
             {
                 current.setReputation(current.getReputation() - 1);
             }else if(pickedCard.getCardNumber() == 7)
             {
-                //lose a turn
+                current.setMoney(current.getMoney() - 1000);
             }else if(pickedCard.getCardNumber() == 8)
             {
                 current.setReputation(current.getReputation() - 1);
@@ -342,7 +327,7 @@ public class Main {
                 current.setMoney(current.getMoney() - 500);
             } else if(pickedCard.getCardNumber() == 10)
             {
-                //every player lose 750 dollars
+                current.setMoney(current.getMoney() - 750);
             }else if(pickedCard.getCardNumber() == 11)
             {
                 current.setReputation(current.getReputation() + 3);
