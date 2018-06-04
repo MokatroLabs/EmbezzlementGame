@@ -1090,6 +1090,7 @@ public class Board implements ActionListener {
         }
         else
         {
+            activeAction.setVisible(false);
             activeCool--;
         }
     }
@@ -1330,6 +1331,14 @@ public class Board implements ActionListener {
         activeAction.setVisible(bol);
     }
     
+    public void hideAcctiveQ()
+    {
+        if(activeCool !=0)
+        {
+            activeAction.setVisible(false);
+        }
+    }
+    
 
     
     public void actionPerformed(ActionEvent theEvent) 
@@ -1398,6 +1407,8 @@ public class Board implements ActionListener {
         {
             hideUpgradeScreen();
             showGameScreen();
+            checkFundraise();
+            hideAcctiveQ();
         }
         
         if(theEvent.getActionCommand().equals("queenSelect"))
@@ -1437,6 +1448,7 @@ public class Board implements ActionListener {
             embezzleLvl++;
             upEmbezzle.setText("Espionage: lv "+ embezzleLvl);
             setEspClick(true);
+            hideAcctiveQ();
         }
         
         if(theEvent.getActionCommand().equals("upActive"))
@@ -1444,6 +1456,7 @@ public class Board implements ActionListener {
             activeLvl++;
             upActive.setText("Leadership: lv "+ activeLvl);
             setLeadClick(true);
+            hideAcctiveQ();
         }
         
         if(theEvent.getActionCommand().equals("upInteract"))
@@ -1451,6 +1464,7 @@ public class Board implements ActionListener {
             interactLvl++;
             upInteract.setText("Public Relations: lv "+ interactLvl);
             setPrClick(true);
+            hideAcctiveQ();
         }
         
         if(theEvent.getActionCommand().equals("upFundraise"))
@@ -1458,6 +1472,7 @@ public class Board implements ActionListener {
             fundraiseLvl++;
             upFundraise.setText("Marketing: lv "+ fundraiseLvl);
             setMarClick(true);
+            hideAcctiveQ();
         }
         
         if(theEvent.getActionCommand().equals("upUpgrade"))
@@ -1465,6 +1480,7 @@ public class Board implements ActionListener {
             upgradeLvl++;
             upUpgrade.setText("Research and Development: lv "+ upgradeLvl);
             setRdClick(true);
+            hideAcctiveQ();
         }
         
         if(theEvent.getActionCommand().equals("cardBack"))
@@ -1472,6 +1488,7 @@ public class Board implements ActionListener {
             hideCardScreen();
             showGameScreen();
             checkFundraise();
+            hideAcctiveQ();
         }
 
     }
