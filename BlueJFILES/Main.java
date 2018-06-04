@@ -591,7 +591,11 @@ public class Main {
                 }
                 current.activeAbility();
             } else if(current.getChar().equals("Spy")) {
-                //current.activeAbility(players.get(0));
+                for(int i = 0; i < 4; i++){
+                    if(players.get(i) != current && !players.get(i).getLost()){
+                        players.get(i).setReputation(players.get(i).getReputation() - 5);
+                    }
+                }
             } else {
                 current.activeAbility();
             }
