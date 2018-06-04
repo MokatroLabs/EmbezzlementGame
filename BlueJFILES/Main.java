@@ -489,7 +489,7 @@ public class Main {
             if(current.isHuman()){
                 upgrade = board.promptUpgrade();
             } else {
-                upgrade = current.findUpgrade();
+                //upgrade = current.findUpgrade();
             }
             if(upgrade == 1){
                 if(current.getLeadLV() >= 5){

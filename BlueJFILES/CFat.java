@@ -87,30 +87,30 @@ public class CFat extends Computer
             embezzleW +=bound*.5;
             fundraiseW += bound*.25;
             interactW -= bound*.5;
-            upgradeW -= bound*.5;            
+            //upgradeW -= bound*.5;            
         } else if (money <= 3000)
         {
             embezzleW += bound*.25;
             fundraiseW += bound*.125;
             interactW -= bound*.25;
-            upgradeW -= bound*.25;
+            //upgradeW -= bound*.25;
         } else if (money <= 9000)
         {
             embezzleW += bound*.125;
             fundraiseW +=bound*.0625;
             interactW -= bound*.125;
-            upgradeW -= bound*.125;
+            //upgradeW -= bound*.125;
         } else if (money <= 27000)
         {   embezzleW += bound*.0625;
             fundraiseW +=bound*.03125;
             interactW -= bound*.0625;
-            upgradeW += bound*.0625;
+            //upgradeW += bound*.0625;
         } else if (money <= 81000)
         {
             embezzleW += bound*.03125;
             fundraiseW += bound*.015625;
             interactW -=bound*.03125;
-            upgradeW += bound*.03125;
+            //upgradeW += bound*.03125;
         } else if (money <= 243000)
         {
             embezzleW += bound*.015625;
@@ -129,12 +129,12 @@ public class CFat extends Computer
         {
             fundraiseW +=bound*.5;
             embezzleW -=bound*.5;
-            upgradeW -=bound*.125;
+            //upgradeW -=bound*.125;
         } else if (turncount <= 25)
         {
             fundraiseW +=bound*.125;
             embezzleW-= bound*.125;
-            upgradeW +=bound*.125;
+            //upgradeW +=bound*.125;
         } else if (turncount <= 40)
         { 
             fundraiseW +=bound*.03125;
@@ -170,7 +170,7 @@ public class CFat extends Computer
         {
             embezzleW -= bound*.125;
         }
-        upgradeW -= bound*.125;
+        //upgradeW -= bound*.125;
         //cooldown Change
         if (cooldown > 0)
             activeW = 0;
@@ -182,7 +182,7 @@ public class CFat extends Computer
         if(interactW <0)
             interactW= .01;
         if(upgradeW <0)
-            upgradeW= .01; 
+            //upgradeW= .01; 
         if(activeW <0)
             activeW= .01;
         bound = embezzleW + fundraiseW + interactW + upgradeW + activeW;

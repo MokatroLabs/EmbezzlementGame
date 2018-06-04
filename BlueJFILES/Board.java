@@ -1362,13 +1362,13 @@ public class Board implements ActionListener {
             
         }
         
-        if(theEvent.getActionCommand().equals("Upgrade"))
+        /*if(theEvent.getActionCommand().equals("Upgrade"))
         {
             System.out.println("Upgrade");
             upgradeClick = true;
             showUpgradeScreen();
             hideGameScreen();
-        }
+        }*/
         
         if(theEvent.getActionCommand().equals("Interact"))
         {
