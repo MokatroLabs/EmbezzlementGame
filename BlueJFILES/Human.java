@@ -25,9 +25,7 @@ public abstract class Human implements Player {
     protected int embezzleBoost;
     String activeName;
     int card46 = 0;
-    
-    
-    
+    int[] pastAction = new int[5];
     public Human()
     {
         reputation =  50;
@@ -150,7 +148,10 @@ public abstract class Human implements Player {
     {    
         return 0;
     }  
-
+    public int findUpgrade()
+    {
+        return 0;
+    }
     
     //Getters
     public String getActiveName()
@@ -252,12 +253,21 @@ public abstract class Human implements Player {
     {
         return card46;
     }
+    
+    public int[] getPastAction()
+    {
+        return pastAction;
+    }
     //Setters
     public void setReputation(double newReputation)
     {
         reputation = newReputation;
     }
     
+    public void setPastAction(int loc, int number)
+    {
+        pastAction[loc] += number;
+    }
     public void setMoney(int newMoney)
     {
         money = newMoney;

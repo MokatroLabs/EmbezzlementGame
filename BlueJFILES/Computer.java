@@ -32,6 +32,7 @@ public abstract class Computer implements Player {
     protected int noCons; // Helps Implement Espionage (Fewer Consecutive)
     protected int embezzleBoost;
     String activeName;
+    int[] pastAction = new int[5];
     int card46 = 0;
     public Computer(){
         reputation = 50;
@@ -247,7 +248,10 @@ public abstract class Computer implements Player {
     public int getEmbezzleBoost(){
         return embezzleBoost;
     }
-    
+    public int[] getPastAction()
+    {
+        return pastAction;
+    }
     public int getCard46()
     {
         return card46;
@@ -374,6 +378,11 @@ public abstract class Computer implements Player {
         
     }
     
+    public void setPastAction(int loc, int number)
+    {
+        pastAction[loc] = number;
+    }
+    
     public void setNoCons(int level){
         if(level == 0){
             noCons = 0;
@@ -422,6 +431,16 @@ public abstract class Computer implements Player {
     public int findMove(int turncount)
     {
         return 0;
+    }
+    public int findUpgrade()
+    {
+        int max = 0;
+        for (int i =0; i< pastAction.length-1;i++)
+        {
+            if( pastAction[i]> max)
+                max = i;
+        }
+        return max+ 1;
     }
     public void printWeights()
     {
