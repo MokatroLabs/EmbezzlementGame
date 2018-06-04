@@ -102,8 +102,11 @@ public class Main {
         while(economy.getTurns() <= maxTurns) {
             if (currentPlayer  >= players.size() )
                 currentPlayer =0;
-            if(round > 4)
+            if(round >= 4)
+            {
                 round = 0;
+                economy.setTurns(economy.getTurns()+1);
+            }    
             if(economy.getTurns() %5 == 0){
                 players.get(currentPlayer).paycheck();
             }
@@ -164,8 +167,6 @@ public class Main {
                     }
                 }
             }
-            if(round == 4)
-                economy.setTurns(economy.getTurns() + 1);
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
                 if(currentPlayer == 0){
