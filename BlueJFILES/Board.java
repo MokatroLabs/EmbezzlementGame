@@ -1313,7 +1313,7 @@ public class Board implements ActionListener {
     
     public void setUpActive(String string)
     {
-        upEmbezzle.setText(string);
+        upActive.setText(string);
     }
     
     public void setCardPic(int cardNum)
