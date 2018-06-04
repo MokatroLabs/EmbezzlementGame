@@ -13,7 +13,7 @@ public class Main {
     private static int actionDone = 0;
     private static int upgradeDone = 0;
     static Deck deck = new Deck();
-    static String[] textArea = {"Gaynald is Gay" , "Next Line", "Next Line", "Next Line", "Next Line"};
+    static String[] textArea = {"First Line" , "Next Line", "Next Line", "Next Line", "Next Line"};
     static int gruul;
     static boolean gruulboo;
     static boolean fourtysix;
@@ -236,7 +236,11 @@ public class Main {
             //    current.setReputation(current.getReputation()+.1);
         }
         if(current.isHuman())
+        {
             action = board.promptAction();
+            board.checkActive();
+            board.checkFundraise();
+        }
         else
         {
             timerDelay.start();
