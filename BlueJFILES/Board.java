@@ -139,6 +139,7 @@ public class Board implements ActionListener {
     
     //gameLose Screen
     private JPanel gameLosePanel;
+    private JLabel tempLosePic;
     private JLabel backgroundLose;
     private ImageIcon origBackgroundLose;
     private Image origBackgroundImgLose;
@@ -438,21 +439,38 @@ public class Board implements ActionListener {
        Font newFont = new Font("Serif", Font.PLAIN, 20);
        titleScreen = new JPanel();
        btnPlay = new JButton("Play");
-       GridBagLayout gridBagLayout = new GridBagLayout();
-       gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-       gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
-       gridBagLayout.columnWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-       gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-       titleScreen.setLayout(gridBagLayout);
-       GridBagConstraints gbc_btnPlay = new GridBagConstraints();
-       gbc_btnPlay.gridx = 0;
-       gbc_btnPlay.gridy = 0;
-       gbc_btnPlay.fill = GridBagConstraints.NONE;
        btnPlay.setActionCommand("Play");
        btnPlay.addActionListener(this);
-       //btnPlay.PlaySound();
-       btnPlay.setFont(newFont);
-       titleScreen.add(btnPlay, gbc_btnPlay);
+       
+       origBackgroundTitle = new ImageIcon("./pictures/TitleBackground.png");
+       origBackgroundImgTitle = origBackgroundTitle.getImage();
+       scaledImageTitle = origBackgroundImgTitle.getScaledInstance(9*wndSize.width/10, 9*wndSize.height/10, Image.SCALE_DEFAULT);
+       newIconTitle = new ImageIcon(scaledImageTitle);
+       backgroundTitle = new JLabel(newIconTitle);
+       backgroundTitle.setLayout(new GridBagLayout());
+       
+       cons = new GridBagConstraints();
+       
+       backgroundTitle.add(btnPlay, cons);
+       
+        
+       /* GridBagLayout gridBagLayout = new GridBagLayout();
+        * gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+        * gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
+        * gridBagLayout.columnWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+        * gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+        * titleScreen.setLayout(gridBagLayout);
+        * GridBagConstraints gbc_btnPlay = new GridBagConstraints();
+        * gbc_btnPlay.gridx = 0;
+        * gbc_btnPlay.gridy = 0;
+        * gbc_btnPlay.fill = GridBagConstraints.NONE;
+        * //btnPlay.PlaySound();
+        * btnPlay.setFont(newFont);
+        * titleScreen.add(btnPlay, gbc_btnPlay);
+        */
+       
+       
+
        GridBagConstraints gbc_panelTitleScreen = new GridBagConstraints();
        gbc_panelTitleScreen.gridheight = 8;
        gbc_panelTitleScreen.gridwidth = 8;
@@ -460,6 +478,7 @@ public class Board implements ActionListener {
        gbc_panelTitleScreen.fill = GridBagConstraints.BOTH;
        gbc_panelTitleScreen.gridx = 0;
        gbc_panelTitleScreen.gridy = 0;
+       titleScreen.add(backgroundTitle, gbc_panelTitleScreen);
        master.getContentPane().add(titleScreen, gbc_panelTitleScreen);
        master.pack(); //need to pack the screen
        titleScreen.setVisible(false);
@@ -834,6 +853,11 @@ public class Board implements ActionListener {
         cons2.gridy = 0;
         cons2.weightx = 1;
         cons2.weighty = 1;
+        
+        tempLosePic = new JLabel("");
+        tempLosePic.setIcon(new ImageIcon("./pictures/loseTitle.png"));
+        gameLosePanel.add(tempLosePic, cons2);
+        
         
         cons2.fill = GridBagConstraints.BOTH; //how to make it take up the entire screen! 
         master.getContentPane().add(gameLosePanel,cons2);
@@ -1481,3 +1505,4 @@ public class Board implements ActionListener {
     }
 
 }
+ 

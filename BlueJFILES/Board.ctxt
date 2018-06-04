@@ -125,7 +125,6 @@ comment64.target=void\ setRdClick(boolean)
 comment65.params=string
 comment65.target=void\ setUpEmbezzle(java.lang.String)
 comment66.params=string
-<<<<<<< HEAD
 comment66.target=void\ setUpUpgrade(java.lang.String)
 comment67.params=string
 comment67.target=void\ setUpInteract(java.lang.String)
@@ -143,27 +142,12 @@ comment72.params=bol
 comment72.target=void\ setActiveButton(boolean)
 comment73.params=theEvent
 comment73.target=void\ actionPerformed(java.awt.event.ActionEvent)
-comment74.params=Sound
-comment74.target=void\ PlaySound(java.io.File)
-=======
-comment66.target=void\ setUpActive(java.lang.String)
-comment67.params=cardNum
-comment67.target=void\ setCardPic(int)
-comment68.params=theEvent
-comment68.target=void\ actionPerformed(java.awt.event.ActionEvent)
-comment69.params=number
-comment69.target=void\ setLostChar(int)
-comment7.params=
-comment7.target=void\ showTitleScreen()
-comment70.params=Sound
-comment70.target=void\ PlaySound(java.io.File)
->>>>>>> 73dc09904970311e142649cea6799d407091bafb
+comment74.params=number
+comment74.target=void\ setLostChar(int)
+comment75.params=Sound
+comment75.target=void\ PlaySound(java.io.File)
 comment8.params=
 comment8.target=void\ makeCharScreen()
 comment9.params=
 comment9.target=void\ hideCharScreen()
-<<<<<<< HEAD
-numComments=75
-=======
-numComments=71
->>>>>>> 73dc09904970311e142649cea6799d407091bafb
+numComments=76
