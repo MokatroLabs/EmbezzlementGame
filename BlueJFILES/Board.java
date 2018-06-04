@@ -1406,7 +1406,17 @@ public class Board implements ActionListener {
         }
 
     }
-    
+    public void setLostChar(int number)
+    {
+        if (number == 1)
+            imageLabel1.setIcon(new ImageIcon("./pictures/busX.png"));
+        if (number == 2)
+            imageLabel2.setIcon(new ImageIcon("./pictures/fatX.png"));
+        if (number == 3)
+            imageLabel3.setIcon(new ImageIcon("./pictures/spyX.png"));
+        if (number == 4)
+            imageLabel4.setIcon(new ImageIcon("./pictures/queenX.png"));
+    }
     static void PlaySound(File Sound)
     {
         //ContinuousAudioDataStream loop = null;
