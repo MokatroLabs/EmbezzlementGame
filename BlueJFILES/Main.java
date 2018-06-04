@@ -127,32 +127,32 @@ public class Main {
             takeTurn(players.get(currentPlayer));
             if(players.get(currentPlayer).getToggled()){
                 if(actionDone == 1){
-                    textArea[currentPlayer+1] = (players.get(currentPlayer).getChar()).substring(0,1) +" embezzle";
+                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar())  +" embezzled.";
                 }
                 if(actionDone == 2){
-                    textArea[currentPlayer+1] = (players.get(currentPlayer).getChar()).substring(0,1) +" fundraise";
+                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar())  +" fundraised.";
                 }
                 if(actionDone == 3){
-                    textArea[currentPlayer+1] = (players.get(currentPlayer).getChar()).substring(0,1) +" interact";
+                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar())  +" interacted.";
                 }
                 if(actionDone == 4){
-                    textArea[currentPlayer+1] = (players.get(currentPlayer).getChar()).substring(0,1) +" upgrade";
+                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar())  +" upgraded.";
                 }
                 if(actionDone == 5){
-                    textArea[currentPlayer+1] = (players.get(currentPlayer).getChar()).substring(0,1) +" used "+ players.get(currentPlayer).getActiveName();
+                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar()) +" used "+ players.get(currentPlayer).getActiveName()+".";
                 }
             }
             if(players.get(currentPlayer).getReputation() >= 100){
                 players.get(currentPlayer).setWon();
                 if(currentPlayer == 0){
-                        board.makeGameWinScreen();
-                        board.hideGameScreen();
-                        board.showGameWinScreen();
-                    }else{
-                        board.makeGameLoseScreen();
-                        board.hideGameScreen();
-                        board.showGameLoseScreen();
-                        }
+                    board.makeGameWinScreen();
+                    board.hideGameScreen();
+                    board.showGameWinScreen();
+                }else{
+                    board.makeGameLoseScreen();
+                    board.hideGameScreen();
+                    board.showGameLoseScreen();
+                }
             }
             for(int i = 0; i < 4; i++){
                 int[] check = players.get(currentPlayer).getSkills();
@@ -176,7 +176,7 @@ public class Main {
             if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
                 players.get(currentPlayer).setLost();
                 if(currentPlayer == 0){
-                        board.makeGameLoseScreen();
+                    board.makeGameLoseScreen();
                         board.hideGameScreen();
                         board.showGameLoseScreen();
                 } 
