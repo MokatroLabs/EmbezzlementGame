@@ -22,27 +22,6 @@ public class Main {
     static boolean thirty;
     static int gruulcounter;
     final static int maxTurns = 150;
-    private static ActionListener taskPerformer = new ActionListener()
-    {
-      public synchronized void actionPerformed(ActionEvent evt) {
-          System.out.println("2 steps of the work");
-          timerDelay.stop();
-          notifyAll();
-      }
-    };
-    private  static Timer timerDelay = new Timer(2000, taskPerformer);
-    public static class TimeThread implements Runnable
-    {
-        public synchronized void run()
-        {
-            System.out.println("comp turn");
-            System.out.println("1 step of the work");
-            timerDelay.start();
-            try {
-                Main.class.wait();
-            } catch (InterruptedException e){}
-        }
-    }
     static TimeThread timeThread = new TimeThread();
     public synchronized static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -215,6 +194,7 @@ public class Main {
         else
         {
             timeThread.run();
+            
             action = current.findMove(economy.getTurns());
         }
         if (action == 1) {
