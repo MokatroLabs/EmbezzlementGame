@@ -828,7 +828,7 @@ public class Board implements ActionListener {
         cons2.weighty = 1;
         
         cons2.fill = GridBagConstraints.BOTH; //how to make it take up the entire screen! 
-        master.getContentPane().add(gameWinPanel,cons2);
+        master.getContentPane().add(gameLosePanel,cons2);
         
         master.pack();
     }

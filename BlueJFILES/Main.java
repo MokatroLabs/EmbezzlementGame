@@ -145,8 +145,12 @@ public class Main {
             if(players.get(currentPlayer).getReputation() >= 100){
                 players.get(currentPlayer).setWon();
                 if(currentPlayer == 0){
+                        board.makeGameWinScreen();
+                        board.hideGameScreen();
                         board.showGameWinScreen();
                     }else{
+                        board.makeGameLoseScreen();
+                        board.hideGameScreen();
                         board.showGameLoseScreen();
                         }
             }
