@@ -36,7 +36,7 @@ public class Main {
         board.makeCharScreen();
         board.hideCharScreen();
         board.updateTurnBorder(economy.getTurns());
-        System.out.println(pickACard().toString());
+        //System.out.println(pickACard().toString());
         while(!(playPressed))
         {
             if(board.getPlayClick())
@@ -230,6 +230,8 @@ public class Main {
         }
         if(current.isHuman())
         {
+            board.checkFundraise();
+            board.hideAcctiveQ();
             action = board.promptAction();
             board.checkActive();
             board.checkFundraise();
