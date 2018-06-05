@@ -197,10 +197,10 @@ public class CFat extends Computer
                         action=4;
                         else if(decision <= embezzleW+fundraiseW+interactW+upgradeW+activeW)
                             action=5;
-        System.out.println(action);
+        /*System.out.println(action);
         System.out.println(reputation);
         System.out.println(money);
-        //printWeights();
+        printWeights();*/
         if (embezzleW > 10000 || fundraiseW > 10000 || interactW > 10000 || upgradeW > 10000 || activeW > 10000 )
             resetFocus();
         if(!hasLost)

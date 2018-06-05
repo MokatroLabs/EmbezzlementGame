@@ -156,7 +156,8 @@ public class Board implements ActionListener {
     private Image origBackgroundImgCard;
     private Image scaledImageCard;
     private ImageIcon newIconCard;
-    
+    private boolean redrawClick;
+    private boolean cardBackClicked;
     
 
     
@@ -172,7 +173,7 @@ public class Board implements ActionListener {
         master.setPreferredSize(new Dimension(9*wndSize.width/10, 9*wndSize.height/10)); //half the screen, gotta change
         master.setLocation(wndSize.width/16, wndSize.height/16);
         master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style\
-        //master.setResizable(false);
+        master.setResizable(false);
         activeClick = false;
         interactClick = false;
         embezzleClick = false;
@@ -186,6 +187,10 @@ public class Board implements ActionListener {
         espClick = false;
         marClick = false;
         rdClick = false;
+        
+        //card screen
+        redrawClick = false;
+        cardBackClicked = false;
         
 
         
@@ -902,6 +907,8 @@ public class Board implements ActionListener {
         cons.gridy = 2;
         cons.weightx = 1;
         cons.weighty = 1;
+        redrawButton.setActionCommand("redraw");
+        redrawButton.addActionListener(this);
         cardPanel.add(redrawButton, cons);
         
         
@@ -1219,6 +1226,16 @@ public class Board implements ActionListener {
         return activeCool;
     }
     
+    public boolean getRedrawClick()
+    {
+        return redrawClick;
+    }
+    
+    public boolean getCardBackClicked()
+    {
+        return cardBackClicked;
+    }
+    
     
     //setters
     public void setTurnCount(String words)
@@ -1336,12 +1353,22 @@ public class Board implements ActionListener {
         activeAction.setVisible(bol);
     }
     
+    public void setRedrawClcik(boolean bol)
+    {
+        redrawClick = bol;
+    }
+    
     public void hideAcctiveQ()
     {
         if(activeCool !=0)
         {
             activeAction.setVisible(false);
         }
+    }
+    
+    public void setCardBackClicked(boolean bol)
+    {
+        cardBackClicked = bol;
     }
     
 
@@ -1389,6 +1416,8 @@ public class Board implements ActionListener {
             }
             showCardScreen();
             hideGameScreen();
+            cardBackClicked = false;
+            redrawClick = false;
         }
         
         if(theEvent.getActionCommand().equals("Active"))
@@ -1490,10 +1519,18 @@ public class Board implements ActionListener {
         
         if(theEvent.getActionCommand().equals("cardBack"))
         {
+            cardBackClicked = true;
+            
             hideCardScreen();
             showGameScreen();
             checkFundraise();
             hideAcctiveQ();
+        }
+        
+        if (theEvent.getActionCommand().equals("redraw"))
+        {
+            System.out.println("redraw clicked");
+            redrawClick = true;
         }
 
     }

@@ -201,7 +201,7 @@ public class Main {
         
     }
     public static void takeTurn(Player current){
-        System.out.println("turn");
+        //System.out.println("turn");
         gruulcounter ++;
         if(gruulboo && gruulcounter <=5)
         {
@@ -290,6 +290,27 @@ public class Main {
             Card pickedCard = pickACard();
             //current.interact(pickedCard);
             board.setCardPic(pickedCard.getCardNumber());
+            
+            if(board.getCharSelect().equals("Father") && current.isHuman())
+            {
+                System.out.println("The father picked a card");
+                while(board.getCardBackClicked() == false && board.getRedrawClick() == false)
+                {
+                    //System.out.println("waiting");
+                }
+                System.out.println("Got out of the loop");
+                if(board.getCardBackClicked() == true)
+                {
+                    board.setCardBackClicked(false);
+                }
+                if(board.getRedrawClick() == true)
+                {
+                    pickedCard = pickACard();
+                    board.setCardPic(pickedCard.getCardNumber());
+                }
+            }
+            System.out.println(pickedCard.toString());
+            
             if(pickedCard.getCardNumber() == 1)
             {
                 gruulboo = true;
