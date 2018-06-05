@@ -173,7 +173,7 @@ public class Board implements ActionListener {
         master.setPreferredSize(new Dimension(9*wndSize.width/10, 9*wndSize.height/10)); //half the screen, gotta change
         master.setLocation(wndSize.width/16, wndSize.height/16);
         master.getContentPane().setLayout(new GridBagLayout()); // Setting the pane in the master frame to use the GridBagLayout style\
-        master.setResizable(false);
+        master.setResizable(true);
         activeClick = false;
         interactClick = false;
         embezzleClick = false;
@@ -1394,13 +1394,13 @@ public class Board implements ActionListener {
             
         }
         
-        /*if(theEvent.getActionCommand().equals("Upgrade"))
+        if(theEvent.getActionCommand().equals("Upgrade"))
         {
             System.out.println("Upgrade");
             upgradeClick = true;
             showUpgradeScreen();
             hideGameScreen();
-        }*/
+        }
         
         if(theEvent.getActionCommand().equals("Interact"))
         {
@@ -1442,7 +1442,7 @@ public class Board implements ActionListener {
             hideUpgradeScreen();
             showGameScreen();
             checkFundraise();
-            hideAcctiveQ();
+            //hideAcctiveQ();
         }
         
         if(theEvent.getActionCommand().equals("queenSelect"))
@@ -1482,7 +1482,7 @@ public class Board implements ActionListener {
             embezzleLvl++;
             upEmbezzle.setText("Espionage: lv "+ embezzleLvl);
             setEspClick(true);
-            hideAcctiveQ();
+            //hideAcctiveQ();
         }
         
         if(theEvent.getActionCommand().equals("upActive"))
@@ -1490,7 +1490,7 @@ public class Board implements ActionListener {
             activeLvl++;
             upActive.setText("Leadership: lv "+ activeLvl);
             setLeadClick(true);
-            hideAcctiveQ();
+            //hideAcctiveQ();
         }
         
         if(theEvent.getActionCommand().equals("upInteract"))
@@ -1506,7 +1506,7 @@ public class Board implements ActionListener {
             fundraiseLvl++;
             upFundraise.setText("Marketing: lv "+ fundraiseLvl);
             setMarClick(true);
-            hideAcctiveQ();
+            //hideAcctiveQ();
         }
         
         if(theEvent.getActionCommand().equals("upUpgrade"))
@@ -1514,7 +1514,7 @@ public class Board implements ActionListener {
             upgradeLvl++;
             upUpgrade.setText("Research and Development: lv "+ upgradeLvl);
             setRdClick(true);
-            hideAcctiveQ();
+            //hideAcctiveQ();
         }
         
         if(theEvent.getActionCommand().equals("cardBack"))

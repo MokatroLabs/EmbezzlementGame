@@ -132,10 +132,10 @@ public class Main {
                     textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar())  +" interacted.";
                 }
                 if(actionDone == 4){
-                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar())  +" upgraded.";
+                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar().substring(0,1))  +" upgraded.";
                 }
                 if(actionDone == 5){
-                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar()) +" used "+ players.get(currentPlayer).getActiveName()+".";
+                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar().substring(0,1)) +" used "+ players.get(currentPlayer).getActiveName()+".";
                 }
             }
             if(players.get(currentPlayer).getReputation() >= 100){
