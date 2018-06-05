@@ -35,6 +35,8 @@ public class Main {
         board.hideUpgradeScreen();
         board.makeCharScreen();
         board.hideCharScreen();
+        board.makeGameWinScreen();
+        board.makeGameLoseScreen();
         board.updateTurnBorder(economy.getTurns());
         //System.out.println(pickACard().toString());
         while(!(playPressed))
@@ -111,15 +113,13 @@ public class Main {
                 players.get(currentPlayer).paycheck();
             }
             if((players.get(currentPlayer).getChar()).equals("Business Man")){
-                players.get(currentPlayer).setMoney(players.get(currentPlayer).getMoney() + (50 + players.get(currentPlayer).getMoneyBoost()));
+                //players.get(currentPlayer).setMoney(players.get(currentPlayer).getMoney() + (50 + players.get(currentPlayer).getMoneyBoost()));
             }
             if(Math.random() * 100 < (5 - ((players.get(currentPlayer)).getReputation()) / 10)){
                 audit(players.get(currentPlayer));
             }
             updateBoard(human,textArea,currentPlayer);
             textArea[0] = "Pot:"+ economy.getMoney();
-            if(economy.getTurns() > 20)
-                board.checkActive();
             takeTurn(players.get(currentPlayer));
             if(players.get(currentPlayer).getToggled()){
                 if(actionDone == 1){
@@ -141,11 +141,9 @@ public class Main {
             if(players.get(currentPlayer).getReputation() >= 100){
                 players.get(currentPlayer).setWon();
                 if(currentPlayer == 0){
-                    board.makeGameWinScreen();
                     board.hideGameScreen();
                     board.showGameWinScreen();
                 }else{
-                    board.makeGameLoseScreen();
                     board.hideGameScreen();
                     board.showGameLoseScreen();
                 }
@@ -157,51 +155,50 @@ public class Main {
                 } else if(i == 4 && check[i] == 5){
                     players.get(currentPlayer).setWon();
                     if(currentPlayer == 0){
-                        board.makeGameWinScreen();
                         board.hideGameScreen();
                         board.showGameWinScreen();
                     }else{
-                        board.makeGameLoseScreen();
                         board.hideGameScreen();
                         board.showGameLoseScreen();
                     }
                 }
             }
-            if(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0){
+            if(!(players.get(currentPlayer).getLost())&&(players.get(currentPlayer).getReputation() <=0 || players.get(currentPlayer).getMoney() <= 0))
+            {
                 players.get(currentPlayer).setLost();
-                if(currentPlayer == 0){
-                    board.makeGameLoseScreen();
-                        board.hideGameScreen();
-                        board.showGameLoseScreen();
+                if(currentPlayer == 0)
+                {
+                    board.hideGameScreen();
+                    board.showGameLoseScreen();
                 } 
             }
+        
             updateBoard(human,textArea,currentPlayer);
             textArea[0] = "Money Pot:"+ economy.getMoney();
             round++;
             currentPlayer++;
-         }
+        }   
         int highest = 0;
         int indexHigh = 0;
-         if(economy.getTurns() >= 150){
-            for(int i = 0; i < players.size(); i++){
-                if(players.get(i).getLost() != true){
-                    if(players.get(i).getMoney() > highest){
-                        highest = players.get(i).getMoney();
-                        indexHigh = i;
-                    }
+        for(int i = 0; i < players.size(); i++){
+            if(players.get(i).getLost() != true){
+                if(players.get(i).getMoney() > highest){
+                    highest = players.get(i).getMoney();
+                    indexHigh = i;
                 }
             }
-            players.get(indexHigh).setWon();
-            if(indexHigh != 0){
-                board.showGameLoseScreen();
-            } else {
-                board.showGameWinScreen();
-            }
         }
-        
+        players.get(indexHigh).setWon();
+        if(indexHigh != 0){
+            board.hideGameScreen();
+            board.showGameLoseScreen();
+        } else {
+            board.hideGameScreen();
+            board.showGameWinScreen();
+        }
     }
     public static void takeTurn(Player current){
-        //System.out.println("turn");
+        System.out.println(current.getChar() +" turn");
         gruulcounter ++;
         if(gruulboo && gruulcounter <=5)
         {
@@ -661,6 +658,7 @@ public class Main {
                 }
                 current.activeAbility();
             } else if(current.getChar().equals("Spy")) {
+                current.activeAbility();
                 for(int i = 0; i < 4; i++){
                     if(players.get(i) != current && !players.get(i).getLost()){
                         players.get(i).setReputation(players.get(i).getReputation() - 5);
@@ -681,6 +679,8 @@ public class Main {
         if(economy.getTurns() >= 10){
             if(target.getReputation() <= 15 && target.getTWE() <= 5){
                 target.setLost();
+                board.hideGameScreen();
+                board.showGameLoseScreen();
             } else if(target.getReputation() < 40 && target.getTWE() <= 5) {
                 target.setMoney(target.getMoney() - 1000);
                 target.setReputation(target.getReputation() - 5);
@@ -699,46 +699,46 @@ public class Main {
         if(human.getChar().equals("Queen"))
         {
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Businessman"))
-                board.setLostChar(1);
+                board.setLostChar(1,1);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Father"))
-                board.setLostChar(2);
+                board.setLostChar(2,2);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Spy"))
-                board.setLostChar(3);
+                board.setLostChar(3,3);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Queen"))
-                board.setLostChar(4);
+                board.setLostChar(4,4);
         }
         if(human.getChar().equals("Spy"))
         {
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Businessman"))
-                board.setLostChar(1);
+                board.setLostChar(1,1);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Father"))
-                board.setLostChar(2);
+                board.setLostChar(2,2);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Queen"))
-                board.setLostChar(3);
+                board.setLostChar(3,4);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Spy"))
-                board.setLostChar(4);
+                board.setLostChar(4,3);
         }
         if(human.getChar().equals("Father"))
         {
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Businessman"))
-                board.setLostChar(1);
+                board.setLostChar(1,1);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Queen"))
-                board.setLostChar(2);
+                board.setLostChar(2,4);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Spy"))
-                board.setLostChar(3);
+                board.setLostChar(3,3);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Father"))
-                board.setLostChar(4);
+                board.setLostChar(4,2);
         }
         if(human.getChar().equals("Businessman"))
         {
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Queen"))
-                board.setLostChar(1);
+                board.setLostChar(1,4);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Father"))
-                board.setLostChar(2);
+                board.setLostChar(2,2);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Spy"))
-                board.setLostChar(3);
+                board.setLostChar(3,3);
             if(players.get(currentPlayer).getLost() && players.get(currentPlayer).getChar().equals("Businessman"))
-                board.setLostChar(4);
+                board.setLostChar(4,1);
         }
     }
     public static Card pickACard()

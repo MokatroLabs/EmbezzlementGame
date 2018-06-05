@@ -134,6 +134,22 @@ comment69.params=string
 comment69.target=void\ setUpInteract(java.lang.String)
 comment7.params=
 comment7.target=void\ showTitleScreen()
+<<<<<<< HEAD
+comment70.params=cardNum
+comment70.target=void\ setCardPic(int)
+comment71.params=num
+comment71.target=void\ setActiveCool(int)
+comment72.params=bol
+comment72.target=void\ setActiveButton(boolean)
+comment73.params=
+comment73.target=void\ hideAcctiveQ()
+comment74.params=theEvent
+comment74.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment75.params=pos\ person
+comment75.target=void\ setLostChar(int,\ int)
+comment76.params=Sound
+comment76.target=void\ PlaySound(java.io.File)
+=======
 comment70.params=string
 comment70.target=void\ setUpFundraise(java.lang.String)
 comment71.params=string
@@ -150,10 +166,18 @@ comment76.params=
 comment76.target=void\ hideAcctiveQ()
 comment77.params=bol
 comment77.target=void\ setCardBackClicked(boolean)
+<<<<<<< HEAD
 comment78.params=bol
 comment78.target=void\ setUpActiveButton(boolean)
 comment79.params=bol
 comment79.target=void\ setUpInteractButton(boolean)
+=======
+comment78.params=theEvent
+comment78.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment79.params=number
+comment79.target=void\ setLostChar(int)
+>>>>>>> 84d4f2801b3bc94db80f90cf9565ab00e34a06f8
+>>>>>>> fa04ea78275497231f66391cc6558a60a5d4dfa4
 comment8.params=
 comment8.target=void\ makeCharScreen()
 comment80.params=bol

@@ -164,11 +164,13 @@ public class CSpy extends Computer
         //no negative Weights
         if(embezzleW <0)
             embezzleW= .01;
-        fundraiseW= .01;
+        fundraiseW= 0;
         if(interactW <0)
             interactW= .01;
         if(upgradeW <0)
-            //upgradeW= .01; 
+            //upgradeW= .01;
+        // While Upgrade dead!
+        upgradeW = 0;
         if(activeW <0)
             activeW= .01;
         bound = embezzleW + interactW + upgradeW + activeW;
@@ -179,9 +181,9 @@ public class CSpy extends Computer
                 action = 2;
                 else if(decision <= embezzleW+interactW)
                     action =3;
-                    else if(decision <= embezzleW+interactW+upgradeW)
-                        action=4;
-                        else if(decision <= embezzleW+interactW+upgradeW+activeW)
+                    /*else if(decision <= embezzleW+interactW+upgradeW)
+                        action=4;*/
+                        else if(decision <= embezzleW+interactW/*+upgradeW*/+activeW)
                             action=5;
         /*System.out.println(action);
         System.out.println(reputation);

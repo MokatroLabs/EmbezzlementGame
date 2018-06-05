@@ -1558,16 +1558,25 @@ public class Board implements ActionListener {
         }
 
     }
-    public void setLostChar(int number)
+    public void setLostChar(int pos,int person)
     {
-        if (number == 1)
-            imageLabel1.setIcon(new ImageIcon("./pictures/busX.png"));
-        if (number == 2)
-            imageLabel2.setIcon(new ImageIcon("./pictures/fatX.png"));
-        if (number == 3)
-            imageLabel3.setIcon(new ImageIcon("./pictures/spyX.png"));
-        if (number == 4)
-            imageLabel4.setIcon(new ImageIcon("./pictures/queenX.png"));
+        ImageIcon pic = new ImageIcon();
+        if(person ==1)
+            pic = new ImageIcon("./pictures/busX.png");
+        if(person ==2)
+            pic = new ImageIcon("./pictures/fatX.png");
+        if(person ==3)
+            pic = new ImageIcon("./pictures/spyX.png");
+        if(person ==4)
+            pic = new ImageIcon("./pictures/queenX.png");
+        if (pos == 1)
+            imageLabel1.setIcon(pic);
+        if (pos == 2)
+            imageLabel1.setIcon(pic);
+        if (pos == 3)
+            imageLabel1.setIcon(pic);
+        if (pos == 4)
+            imageLabel1.setIcon(pic);
     }
     static void PlaySound(File Sound)
     {
@@ -1582,8 +1591,7 @@ public class Board implements ActionListener {
                //BGM = new AudioStream(new FileInputStream("OST.WAV"));
                //MD = BGM.getData();
                //loop = new ContinuousAudioDataStream(MD);
-            }catch(Exception e)
-            {}
+            }catch(Exception e) {}
         //MGP.start(loop);    
     }
 
