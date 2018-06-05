@@ -854,6 +854,11 @@ public class Board implements ActionListener {
     {
         gameWinPanel.setVisible(true);
     }
+    
+    public void hideGameWinScreen()
+    {
+        gameWinPanel.setVisible(false);
+    }
 
     public void makeGameLoseScreen()
     {
@@ -879,6 +884,12 @@ public class Board implements ActionListener {
     {
         gameLosePanel.setVisible(true);
     }
+    
+    public void hideGameLoseScreen()
+    {
+        gameLosePanel.setVisible(false);
+    }
+
     
     public void makeCardScreen()
     {

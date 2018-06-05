@@ -37,6 +37,8 @@ public class Main {
         board.hideCharScreen();
         board.makeGameWinScreen();
         board.makeGameLoseScreen();
+        board.hideGameLoseScreen();
+        board.hideGameWinScreen();
         board.updateTurnBorder(economy.getTurns());
         //System.out.println(pickACard().toString());
         while(!(playPressed))
@@ -617,6 +619,23 @@ public class Main {
                     {
                         board.setUpUpgrade("Research and Development Lvl: 5");
                     }
+            }
+            if(current.getRdLV() >= 5)
+            {
+                if(current.getMarLV() >= 5)
+                {
+                    if(current.getEspLV() >= 5)
+                    {
+                        if(current.getPrLV() >= 5)
+                        {
+                            if(current.getLeadLV() >= 5)
+                            {
+                                board.hideGameScreen();
+                                board.showGameWinScreen();
+                            }
+                        }
+                    }
+                }
             }
             
             current.setPastAction(3,1);
