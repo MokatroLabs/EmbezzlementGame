@@ -12,7 +12,7 @@ Objective
         
         Diplomatic Victory: If you get 100 rep! 
         
-        Domination Victory: If you are the lasy player in the game! 
+        Domination Victory: If you are the last player in the game! 
         
     To Lose:
         No money

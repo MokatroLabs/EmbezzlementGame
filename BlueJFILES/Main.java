@@ -132,10 +132,10 @@ public class Main {
                     textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar())  +" interacted.";
                 }
                 if(actionDone == 4){
-                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar())  +" upgraded.";
+                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar().substring(0,1))  +" upgraded.";
                 }
                 if(actionDone == 5){
-                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar()) +" used "+ players.get(currentPlayer).getActiveName()+".";
+                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar().substring(0,1)) +" used "+ players.get(currentPlayer).getActiveName()+".";
                 }
             }
             if(players.get(currentPlayer).getReputation() >= 100){
@@ -287,6 +287,27 @@ public class Main {
             Card pickedCard = pickACard();
             //current.interact(pickedCard);
             board.setCardPic(pickedCard.getCardNumber());
+            
+            if(board.getCharSelect().equals("Father") && current.isHuman())
+            {
+                System.out.println("The father picked a card");
+                while(board.getCardBackClicked() == false && board.getRedrawClick() == false)
+                {
+                    //System.out.println("waiting");
+                }
+                System.out.println("Got out of the loop");
+                if(board.getCardBackClicked() == true)
+                {
+                    board.setCardBackClicked(false);
+                }
+                if(board.getRedrawClick() == true)
+                {
+                    pickedCard = pickACard();
+                    board.setCardPic(pickedCard.getCardNumber());
+                }
+            }
+            System.out.println(pickedCard.toString());
+            
             if(pickedCard.getCardNumber() == 1)
             {
                 gruulboo = true;
@@ -307,13 +328,58 @@ public class Main {
                 current.setCooldown(current.getCooldown()+2);
             }else if (pickedCard.getCardNumber() == 5)
             {
-                current.setCooldown(current.getCooldown()+3);
+                int choice = (int)Math.random()*4;
+                if(choice ==1)
+                {
+                    if((current.getChar()).equals("Spy") && economy.getMoney()- 750 >=0){
+                if(thirty)
+                {
+                    economy.setMoney(economy.getMoney() - 825);
+                    current.embezzle();
+                    current.setMoney(current.getMoney() + 75);
+                    current.setTWE(-2);
+                    thirty = false;
+                }
+                economy.setMoney(economy.getMoney() - 750);
+                current.embezzle();
+                current.setTWE(-1);
+                }else if(economy.getMoney()-500 >=0){
+                if (thirty)
+                {
+                    economy.setMoney(economy.getMoney() - 550);
+                    current.embezzle();
+                    current.setMoney(current.getMoney() + 50);
+                    current.setTWE(-2);
+                    thirty = false;
+                }
+                economy.setMoney(economy.getMoney() - 500);
+                current.embezzle();
+                current.setTWE(-1);
+            }
+                current.setPastAction(0,1);
+                // randomized: embezzle
+                }
+                else if(choice ==2)
+                {
+                    current.fundraise();
+                    if(current.getChar().equals("Queen"))
+                    {
+                        economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
+                }
+                else 
+                {
+                     economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
+                }
+                 current.setPastAction(1,1);
+            // randomized: fundraise
+                }
+                
             }else if(pickedCard.getCardNumber() == 6)
             {
                 current.setReputation(current.getReputation() - 1);
             }else if(pickedCard.getCardNumber() == 7)
             {
-                current.setMoney(current.getMoney() - 1000);
+                //current.setMoney(current.getMoney() - 1000);
             }else if(pickedCard.getCardNumber() == 8)
             {
                 current.setReputation(current.getReputation() - 1);
