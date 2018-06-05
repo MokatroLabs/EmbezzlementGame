@@ -309,7 +309,7 @@ public class Main {
                     board.setCardPic(pickedCard.getCardNumber());
                 }
             }
-            System.out.println(pickedCard.toString());
+            //System.out.println(pickedCard.toString());
             
             if(pickedCard.getCardNumber() == 1)
             {
@@ -558,49 +558,70 @@ public class Main {
                 //upgrade = current.findUpgrade();
             }
             if(upgrade == 1){
-                if(current.getLeadLV() >= 5){
-                    upgrade = board.promptUpgrade();
+                if(!(current.getLeadLV() >= 5))
+                {
+                    current.upgrade(current.getLeadLV() + 1);
+                    current.setLeadLV(current.getLeadLV() + 1);
+                    board.setUpActive("Leadership Lvl: " + (current.getLeadLV()));
                 }
-                current.upgrade(current.getLeadLV() + 1);
-                current.setLeadLV(current.getLeadLV() + 1);
-                board.setUpActive("Leadership Lvl: " + (current.getLeadLV()));
+                else
+                {
+                    board.setUpActive("Public Relations Lvl: 5");
+                }                   
             }
             if(upgrade == 2){
-                if(current.getPrLV() >= 5){
-                    upgrade = board.promptUpgrade();
+                if(!(current.getPrLV() >= 5))
+                {
+                    current.upgrade(current.getPrLV() + 1);
+                    current.setPrLV(current.getPrLV() + 1);
+                    current.setRepIncrease(current.getPrLV());
+                    board.setUpInteract("Public Relations Lvl: " + (current.getPrLV()));
                 }
-                current.upgrade(current.getPrLV() + 1);
-                current.setPrLV(current.getPrLV() + 1);
-                current.setRepIncrease(current.getPrLV());
-                board.setUpInteract("Public Relations Lvl: " + (current.getPrLV()));
+                else
+                {
+                    board.setUpInteract("Public Relations Lvl: 5");
+                }                  
             }
             if(upgrade == 3){
-                if(current.getEspLV() >= 5){
-                    upgrade = board.promptUpgrade();
+                if(!(current.getEspLV() >= 5))
+                {
+                    current.upgrade(current.getEspLV() + 1);
+                    current.setEspLV(current.getEspLV() + 1);
+                    current.setNoCons(current.getEspLV());
+                    board.setUpEmbezzle("Espionage Lvl: " + (current.getEspLV()));
                 }
-                current.upgrade(current.getEspLV() + 1);
-                current.setEspLV(current.getEspLV() + 1);
-                current.setNoCons(current.getEspLV());
-                board.setUpEmbezzle("Espionage Lvl: " + (current.getEspLV()));
+                else
+                {
+                    board.setUpEmbezzle("Espionage Lvl: 5");
+                }                
             }
             if(upgrade == 4){
-                if(current.getMarLV() >= 5){
-                    upgrade = board.promptUpgrade();
+                if(!(current.getMarLV() >= 5))
+                {
+                    current.upgrade(current.getMarLV() + 1);
+                    current.setMarLV(current.getMarLV() + 1);
+                    current.setFundIncrease(current.getMarLV());
+                    board.setUpFundraise("Marketing Lvl: " + (current.getMarLV()));
                 }
-                current.upgrade(current.getMarLV() + 1);
-                current.setMarLV(current.getMarLV() + 1);
-                current.setFundIncrease(current.getMarLV());
-                board.setUpFundraise("Marketing Lvl: " + (current.getMarLV()));
+                else
+                {
+                    board.setUpFundraise("Marketing Lvl: 5");
+                }
             }
             if(upgrade == 5){
-                if(current.getRdLV() >= 5){
-                    upgrade = board.promptUpgrade();
-                }
-                current.upgrade(current.getRdLV() + 1);
-                current.setRdLV(current.getRdLV() + 1);
-                current.setUpgradeDown(current.getRdLV());
-                board.setUpUpgrade("Research and Development Lvl: " + (current.getRdLV()));
+                    if(!(current.getRdLV() >= 5))
+                    {
+                        current.upgrade(current.getRdLV() + 1);
+                        current.setRdLV(current.getRdLV() + 1);
+                        current.setUpgradeDown(current.getRdLV());
+                        board.setUpUpgrade("Research and Development Lvl: " + (current.getRdLV()));                      
+                    }
+                    else
+                    {
+                        board.setUpUpgrade("Research and Development Lvl: 5");
+                    }
             }
+            
             current.setPastAction(3,1);
         }
         if(action == 5 && current.getCooldown() <=0){

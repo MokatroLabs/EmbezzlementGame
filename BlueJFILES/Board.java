@@ -1371,7 +1371,31 @@ public class Board implements ActionListener {
         cardBackClicked = bol;
     }
     
-
+    public void setUpActiveButton(boolean bol)
+    {
+        upActive.setVisible(bol);
+    }
+    
+    public void setUpInteractButton(boolean bol)
+    {
+        upInteract.setVisible(bol);
+    }
+    
+    public void setUpEmbezzleButton(boolean bol)
+    {
+        upEmbezzle.setVisible(bol);
+    }
+    
+    public void setUpUpgradeButton(boolean bol)
+    {
+        upUpgrade.setVisible(bol);
+    }
+    
+    public void setUpFundraiseButton(boolean bol)
+    {
+        upFundraise.setVisible(bol);
+    }   
+    
     
     public void actionPerformed(ActionEvent theEvent) 
     {
