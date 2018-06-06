@@ -1364,7 +1364,7 @@ public class Board implements ActionListener {
         activeAction.setVisible(bol);
     }
     
-    public void setRedrawClcik(boolean bol)
+    public void setRedrawClick(boolean bol)
     {
         redrawClick = bol;
     }
@@ -1407,6 +1407,10 @@ public class Board implements ActionListener {
         upFundraise.setVisible(bol);
     }   
     
+    public void setRedrawVisible(boolean bol)
+    {
+        redrawButton.setVisible(bol);
+    }
     
     public void actionPerformed(ActionEvent theEvent) 
     {

@@ -47,6 +47,7 @@ dependency8.type=UsesDependency
 dependency9.from=Main
 dependency9.to=HBus
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=552
@@ -61,6 +62,22 @@ package.editor.x=100
 package.editor.y=100
 package.frame.height=1098
 package.frame.width=1938
+=======
+editor.fx.0.height=1098
+editor.fx.0.width=1938
+editor.fx.0.x=-9
+editor.fx.0.y=-9
+objectbench.height=124
+objectbench.width=1876
+package.divider.horizontal=0.5997794928335171
+package.divider.vertical=0.8633993743482794
+package.editor.height=821
+package.editor.width=1770
+package.editor.x=-229
+package.editor.y=238
+package.frame.height=1078
+package.frame.width=1918
+>>>>>>> 312db9698e8554cf43a9dd5569222b5ed5df777f
 package.numDependencies=16
 package.numTargets=16
 package.showExtends=true
