@@ -295,9 +295,12 @@ public class Main {
             if(board.getCharSelect().equals("Father") && current.isHuman())
             {
                 System.out.println("The father picked a card");
+                int count =0;
                 while((board.getCardBackClicked() == false && board.getRedrawClick() == false) )
                 {
-                   System.out.println("ion first loop");
+                    if(count == 100000)
+                        System.out.println("ion first loop");
+                    count++;
                 }
                 System.out.println("Got out of the loop");
                 if(board.getCardBackClicked() == true)
@@ -311,7 +314,9 @@ public class Main {
                     board.setRedrawVisible(false);
                     while(!board.getCardBackClicked() )
                     {
-                        System.out.println("in second loop");
+                        if(count == 100000)
+                            System.out.println("in second loop");
+                        count++;
                     }
                 }
             }
