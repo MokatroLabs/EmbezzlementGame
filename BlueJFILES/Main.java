@@ -299,7 +299,6 @@ public class Main {
                 int count =0;
                 while((board.getCardBackClicked() == false && board.getRedrawClick() == false) )
                 {
-<<<<<<< HEAD
                    if(counter1 > 999999999)
                    {
                        System.out.println("In loop 1");
@@ -309,11 +308,6 @@ public class Main {
                    {
                        counter1++;
                    }
-=======
-                    if(count == 100000)
-                        System.out.println("ion first loop");
-                    count++;
->>>>>>> 61d767f99f6918344d9bac8489d709e69a1ed84a
                 }
                 System.out.println("Got out of the loop");
                 if(board.getCardBackClicked() == true)
@@ -327,7 +321,6 @@ public class Main {
                     board.setRedrawVisible(false);
                     while(!board.getCardBackClicked() )
                     {
-<<<<<<< HEAD
                         if(counter2 > 999999999)
                         {
                             System.out.println("In loop 2");
@@ -337,13 +330,10 @@ public class Main {
                         {
                             counter2++;
                         }
-=======
-                        if(count == 100000)
-                            System.out.println("in second loop");
-                        count++;
->>>>>>> 61d767f99f6918344d9bac8489d709e69a1ed84a
                     }
                 }
+                board.setRedrawClick(false);
+                board.setCardBackClicked(false);
             }
             //System.out.println(pickedCard.toString());
             
