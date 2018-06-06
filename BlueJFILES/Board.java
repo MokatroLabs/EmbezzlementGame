@@ -32,6 +32,7 @@ public class Board implements ActionListener {
     
     // click sound
     File click = new File("Click.WAV");
+    File senate = new File("senate.WAV");
     //ChampSelect Variables
     private JPanel panelChampSelect;
     private JButton lockInButton;
@@ -243,17 +244,19 @@ public class Board implements ActionListener {
         background.add(moneyCount, cons);
         
         
-        /*
-         *         concedeBut = new JButton("Concede");
-         *         cons.gridx = 4;
-         *         cons.gridy = 0;
-         *         cons.weightx = 1;
-         *         cons.weighty = 1;
-         *         cons.fill = GridBagConstraints.NONE;
-         *         cons.anchor = GridBagConstraints.NORTHEAST;
-         *         background.add(concedeBut, cons);
+        
+        concedeBut = new JButton("Concede");
+        cons.gridx = 4;
+        cons.gridy = 0;
+        cons.weightx = 1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        cons.anchor = GridBagConstraints.NORTHEAST;
+        concedeBut.setActionCommand("Concede");
+        concedeBut.addActionListener(this);
+        background.add(concedeBut, cons);
          
-         */
+
 
         
         repCount = new JLabel("Rep: 50");
@@ -940,6 +943,14 @@ public class Board implements ActionListener {
         cardPanel.setVisible(true);
         cardPic.setVisible(true);
         cardBackButton.setVisible(true);
+        if(!(charSelected.equals("Father")))
+        {
+           redrawButton.setVisible(false);
+        }
+        else
+        {
+           redrawButton.setVisible(true);
+        }
     }
     
     public void hideCardScreen()
@@ -1445,14 +1456,6 @@ public class Board implements ActionListener {
         {
             System.out.println("Interact");
             interactClick = true;
-            if(!(charSelected.equals("Father")))
-            {
-                redrawButton.setVisible(false);
-            }
-            else
-            {
-                redrawButton.setVisible(true);
-            }
             showCardScreen();
             hideGameScreen();
             cardBackClicked = false;
@@ -1570,6 +1573,13 @@ public class Board implements ActionListener {
         {
             System.out.println("redraw clicked");
             redrawClick = true;
+        }
+        
+        if(theEvent.getActionCommand().equals("Concede"))
+        {
+            hideGameScreen();
+            showGameLoseScreen();
+            PlaySound(senate);
         }
 
     }
