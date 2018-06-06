@@ -134,10 +134,10 @@ public class Main {
                     textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar())  +" interacted.";
                 }
                 if(actionDone == 4){
-                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar().substring(0,1))  +" upgraded.";
+                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar())  +" upgraded.";
                 }
                 if(actionDone == 5){
-                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar().substring(0,1)) +" used "+ players.get(currentPlayer).getActiveName()+".";
+                    textArea[currentPlayer+1] = "The "+(players.get(currentPlayer).getChar()) +" used "+ players.get(currentPlayer).getActiveName()+".";
                 }
             }
             if(players.get(currentPlayer).getReputation() >= 100){
@@ -286,6 +286,8 @@ public class Main {
         }
         if (action == 3)
         {
+            int counter1 = 0;
+            int counter2 = 0;
             Card pickedCard = pickACard();
             //current.interact(pickedCard);
             board.setCardPic(pickedCard.getCardNumber());
@@ -293,19 +295,24 @@ public class Main {
             if(board.getCharSelect().equals("Father") && current.isHuman())
             {
                 System.out.println("The father picked a card");
-                while(board.getCardBackClicked() == false && board.getRedrawClick() == false)
+                while((board.getCardBackClicked() == false && board.getRedrawClick() == false) )
                 {
-                    //System.out.println("waiting");
+                   System.out.println("ion first loop");
                 }
                 System.out.println("Got out of the loop");
                 if(board.getCardBackClicked() == true)
                 {
                     board.setCardBackClicked(false);
                 }
-                if(board.getRedrawClick() == true)
+                if(board.getRedrawClick() == true )
                 {
                     pickedCard = pickACard();
                     board.setCardPic(pickedCard.getCardNumber());
+                    board.setRedrawVisible(false);
+                    while(!board.getCardBackClicked() )
+                    {
+                        System.out.println("in second loop");
+                    }
                 }
             }
             //System.out.println(pickedCard.toString());
