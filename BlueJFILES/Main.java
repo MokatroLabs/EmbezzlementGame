@@ -387,21 +387,21 @@ public class Main {
             }
                 current.setPastAction(0,1);
                 // randomized: embezzle
-                }
-                else if(choice ==2)
+            }
+             else if(choice ==2)
+            {
+                current.fundraise();
+                if(current.getChar().equals("Queen"))
                 {
-                    current.fundraise();
-                    if(current.getChar().equals("Queen"))
-                    {
-                        economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
+                    economy.setMoney(economy.getMoney() + 300 + (current.getFundIncrease()));
                 }
                 else 
                 {
-                     economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
+                    economy.setMoney(economy.getMoney() + 400 + (current.getFundIncrease() * 2));
                 }
                  current.setPastAction(1,1);
-            // randomized: fundraise
-                }
+                 // randomized: fundraise
+            }
                 
             }else if(pickedCard.getCardNumber() == 6)
             {
@@ -787,6 +787,7 @@ public class Main {
                 board.setLostChar(4,1);
         }
     }
+    
     public static Card pickACard()
     {
         double num = ( 56 * Math.random());
