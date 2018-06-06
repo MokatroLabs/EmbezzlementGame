@@ -76,6 +76,4 @@ public class Deck
     {
         return deck.get(num);
     }
-
-        
 }

@@ -244,5 +244,3 @@ public class CQueen extends Computer
         return 0;
     }
 }
-    
-
