@@ -72,6 +72,11 @@ public class Board implements ActionListener {
     private Image origBackgroundImg;
     private Image scaledImage;
     private ImageIcon newIcon;
+    private JLabel activeUpDes;
+    private JLabel interactUpDes;
+    private JLabel embezzleUpDes;
+    private JLabel fundraiseUpDes;
+    private JLabel upgradeUpDes;
     
     
     
@@ -737,7 +742,7 @@ public class Board implements ActionListener {
         upActive.setActionCommand("upActive");
         upActive.addActionListener(this);
         cons.gridx = 0;
-        cons.gridy = 1;
+        cons.gridy = 2;
         cons.weightx =1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
@@ -745,11 +750,23 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upActive, cons);
         
+        activeUpDes = new JLabel("Upgrade Active: 500");
+        cons.gridx = 0;
+        cons.gridy = 1;
+        cons.weightx =1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        cons.ipadx = 40;
+        cons.ipady = 40;
+        upgradePanel.add(activeUpDes, cons);
+        
+        
+        
         upInteract = new JButton("Public Relations: lv 0");
         upInteract.setActionCommand("upInteract");
         upInteract.addActionListener(this);
         cons.gridx = 2;
-        cons.gridy = 1;
+        cons.gridy = 2;
         cons.weightx =1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
@@ -757,11 +774,21 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upInteract, cons);
         
+        interactUpDes = new JLabel("Upgrade Interact: 500");
+        cons.gridx = 2;
+        cons.gridy = 1;
+        cons.weightx =1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        cons.ipadx = 40;
+        cons.ipady = 40;
+        upgradePanel.add(interactUpDes, cons);
+        
         upEmbezzle = new JButton("Espionage: lv 0");
         upEmbezzle.setActionCommand("upEmbezzle");
         upEmbezzle.addActionListener(this);
         cons.gridx = 3;
-        cons.gridy = 1;
+        cons.gridy = 2;
         cons.weightx =1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
@@ -769,11 +796,21 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upEmbezzle, cons);
         
+        embezzleUpDes = new JLabel("Upgrade Embezzle: 500");
+        cons.gridx = 3;
+        cons.gridy = 1;
+        cons.weightx =1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        cons.ipadx = 40;
+        cons.ipady = 40;
+        upgradePanel.add(embezzleUpDes, cons);
+        
         upFundraise = new JButton("Marketing: lv 0");
         upFundraise.setActionCommand("upFundraise");
         upFundraise.addActionListener(this);
         cons.gridx = 4;
-        cons.gridy = 1;
+        cons.gridy = 2;
         cons.weightx =1;
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
@@ -781,9 +818,29 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upFundraise, cons);
         
+        fundraiseUpDes = new JLabel("Upgrade Fundraise: 500");
+        cons.gridx = 4;
+        cons.gridy = 1;
+        cons.weightx =1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        cons.ipadx = 40;
+        cons.ipady = 40;
+        upgradePanel.add(fundraiseUpDes, cons);
+        
         upUpgrade = new JButton("Research and Development: lv 0");
         upUpgrade.setActionCommand("upUpgrade");
         upUpgrade.addActionListener(this);
+        cons.gridx = 5;
+        cons.gridy = 2;
+        cons.weightx =1;
+        cons.weighty = 1;
+        cons.fill = GridBagConstraints.NONE;
+        cons.ipadx = 40;
+        cons.ipady = 40;
+        upgradePanel.add(upUpgrade, cons);
+        
+        upgradeUpDes = new JLabel("Upgrade Upgrade: 500");
         cons.gridx = 5;
         cons.gridy = 1;
         cons.weightx =1;
@@ -791,7 +848,7 @@ public class Board implements ActionListener {
         cons.fill = GridBagConstraints.NONE;
         cons.ipadx = 40;
         cons.ipady = 40;
-        upgradePanel.add(upUpgrade, cons);
+        upgradePanel.add(upgradeUpDes, cons);
 
         cons2 = new GridBagConstraints();
         cons2.gridx = 0;
@@ -1423,6 +1480,60 @@ public class Board implements ActionListener {
         redrawButton.setVisible(bol);
     }
     
+    public void setUpgradeActiveDes(int price)
+    {
+        activeUpDes.setText("Upgrade Active: " + price);
+    }
+
+    public void setUpgradeInteractDes(int price)
+    {
+        interactUpDes.setText("Upgrade Interact: " + price);
+    }
+
+    public void setUpgradeEmbezzleDes(int price)
+    {
+        embezzleUpDes.setText("Upgrade Embezzle: " + price);
+    }
+    
+    public void setUpgradeFundriaseDes(int price)
+    {
+        fundraiseUpDes.setText("Upgrade Fundraise: " + price);
+    }
+
+    public void setUpgradeUpgradeDes(int price)
+    {
+        upgradeUpDes.setText("Upgrade Upgrade: " + price);
+    }
+    
+    public void setUpgradeActiveVis(boolean bol)
+    {
+        activeUpDes.setVisible(bol);
+    }
+    
+    public void setUpgradeInteractVis(boolean bol)
+    {
+        interactUpDes.setVisible(bol);
+    }
+    
+    public void setUpgradeEmbezzleVis(boolean bol)
+    {
+        embezzleUpDes.setVisible(bol);
+    }    
+    
+    public void setUpgradeFundraiseVis(boolean bol)
+    {
+        fundraiseUpDes.setVisible(bol);
+    }    
+    
+    public void setUpgradeUpgradeVis(boolean bol)
+    {
+        upgradeUpDes.setVisible(bol);
+    }
+    
+    
+    
+    
+    
     public void actionPerformed(ActionEvent theEvent) 
     {
         PlaySound(click);
@@ -1449,6 +1560,31 @@ public class Board implements ActionListener {
             System.out.println("Upgrade");
             upgradeClick = true;
             showUpgradeScreen();
+            if(activeLvl == 5)
+            {
+                upActive.setVisible(false);
+                activeUpDes.setVisible(false);
+            }
+            if(interactLvl ==5)
+            {
+                upInteract.setVisible(false);
+                interactUpDes.setVisible(false);
+            }   
+            if(embezzleLvl ==5)
+            {
+                upEmbezzle.setVisible(false);
+                embezzleUpDes.setVisible(false);
+            }  
+            if(fundraiseLvl ==5)
+            {
+                upFundraise.setVisible(false);
+                fundraiseUpDes.setVisible(false);
+            }       
+            if(upgradeLvl ==5)
+            {
+                upUpgrade.setVisible(false);
+                upgradeUpDes.setVisible(false);
+            } 
             hideGameScreen();
         }
         
@@ -1562,7 +1698,6 @@ public class Board implements ActionListener {
         if(theEvent.getActionCommand().equals("cardBack"))
         {
             cardBackClicked = true;
-            
             hideCardScreen();
             showGameScreen();
             checkFundraise();

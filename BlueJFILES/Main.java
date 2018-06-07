@@ -592,7 +592,7 @@ public class Main {
                 }
                 else
                 {
-                    board.setUpActive("Public Relations Lvl: 5");
+                    board.setUpActive("Leadership Lvl: 5");
                 }                   
             }
             if(upgrade == 2){
@@ -647,12 +647,12 @@ public class Main {
                         board.setUpUpgrade("Research and Development Lvl: 5");
                     }
             }
-            if(current.getRdLV() >= 5)
+            if(current.getRdLV() >= 5 && current.isHuman()) 
             {
                 if(current.getMarLV() >= 5)
                 {
                     if(current.getEspLV() >= 5)
-                    {
+                    {                                               
                         if(current.getPrLV() >= 5)
                         {
                             if(current.getLeadLV() >= 5)
@@ -664,7 +664,54 @@ public class Main {
                     }
                 }
             }
-            
+            if(current.isHuman())
+            {
+                if(current.getRdLV() == 1)
+                    board.setUpgradeUpgradeDes(1000);
+                if(current.getRdLV() == 2)
+                    board.setUpgradeUpgradeDes(2000);
+                if(current.getRdLV() == 3)
+                    board.setUpgradeUpgradeDes(4000);
+                if(current.getRdLV() == 4)
+                    board.setUpgradeUpgradeDes(6000);              
+                    
+                if(current.getMarLV() == 1)
+                    board.setUpgradeFundriaseDes(1000);
+                if(current.getMarLV() == 2)
+                    board.setUpgradeFundriaseDes(2000);
+                if(current.getMarLV() == 3)
+                    board.setUpgradeFundriaseDes(4000);
+                if(current.getMarLV() == 4)
+                    board.setUpgradeFundriaseDes(6000);     
+                    
+                if(current.getEspLV() == 1)
+                    board.setUpgradeEmbezzleDes(1000);
+                if(current.getEspLV() == 2)
+                    board.setUpgradeEmbezzleDes(2000);
+                if(current.getEspLV() == 3)
+                    board.setUpgradeEmbezzleDes(4000);
+                if(current.getEspLV() == 4)
+                    board.setUpgradeEmbezzleDes(6000);                     
+                    
+                if(current.getPrLV() == 1)
+                    board.setUpgradeInteractDes(1000);
+                if(current.getPrLV() == 2)
+                    board.setUpgradeInteractDes(2000);
+                if(current.getPrLV() == 3)
+                    board.setUpgradeInteractDes(4000);
+                if(current.getPrLV() == 4)
+                    board.setUpgradeInteractDes(6000);                    
+
+                if(current.getLeadLV() == 1)
+                    board.setUpgradeActiveDes(1000);
+                if(current.getLeadLV() == 2)
+                    board.setUpgradeActiveDes(2000);
+                if(current.getLeadLV() == 3)
+                    board.setUpgradeActiveDes(4000);
+                if(current.getLeadLV() == 4)
+                    board.setUpgradeActiveDes(6000);                    
+                    
+            }
             current.setPastAction(3,1);
         }
         if(action == 5 && current.getCooldown() <=0){
@@ -720,6 +767,7 @@ public class Main {
         }
         actionDone = action;
         upgradeDone = upgrade;
+        System.out.println(current.getReputation());
     }
     public static void audit(Player target){
         if(economy.getTurns() >= 10){

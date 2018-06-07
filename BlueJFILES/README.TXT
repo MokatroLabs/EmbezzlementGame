@@ -6,7 +6,7 @@ Objective
     There are many ways to win and lose in this game. 
     
     To win:
-        Science Victory: If you finish upgrading all your skills before anyone else! (Lvl 5)
+        Science Victory: If you finish upgrading all your skills before anyone else! (Lvl 5 Max)
         
         Time Victory: If you own the most money at the end of the game (150 turns)
         
