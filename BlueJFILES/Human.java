@@ -94,7 +94,7 @@ public abstract class Human implements Player {
         consecutive = 0;
         setNoCons(espLV);
         if(level == 1){
-            noAdd = (500 - upgradeDown);
+            noAdd = (250 - upgradeDown);
             if(noAdd < 0){
                 noAdd = 0;
             } else {
@@ -102,7 +102,7 @@ public abstract class Human implements Player {
             }
         }
         if(level == 2){
-            noAdd = (1000 - upgradeDown);
+            noAdd = (500 - upgradeDown);
             if(noAdd < 0){
                 noAdd = 0;
             } else {
@@ -110,7 +110,7 @@ public abstract class Human implements Player {
             }
         }
         if(level == 3){
-            noAdd = (2000 - upgradeDown);
+            noAdd = (1000 - upgradeDown);
             if(noAdd < 0){
                 noAdd = 0;
             } else {
@@ -118,7 +118,7 @@ public abstract class Human implements Player {
             }
         }
         if(level == 4){
-            noAdd = (4000 - upgradeDown);
+            noAdd = (2000 - upgradeDown);
             if(noAdd < 0){
                 noAdd = 0;
             } else {
@@ -126,7 +126,7 @@ public abstract class Human implements Player {
             }
         }
         if(level == 5){
-            noAdd = (6000 - upgradeDown);
+            noAdd = (3000 - upgradeDown);
             if(noAdd < 0){
                 noAdd = 0;
             } else {

@@ -22,6 +22,53 @@ public class HFat extends Human
         consecutive = 0;
     }
     
+    public void upgrade(int level) { // Action 4
+        // TODO Auto-generated method stub
+        int noAdd = 0;
+        consecutive = 0;
+        setNoCons(espLV);
+        if(level == 1){
+            noAdd = (500 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
+        }
+        if(level == 2){
+            noAdd = (1000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
+        }
+        if(level == 3){
+            noAdd = (2000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
+        }
+        if(level == 4){
+            noAdd = (4000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
+        }
+        if(level == 5){
+            noAdd = (6000 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
+        }
+    }
+    
     public void setRdLV(int newLevel){
         rdLV = newLevel;
     }
