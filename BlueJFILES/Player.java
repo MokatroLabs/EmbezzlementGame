@@ -104,4 +104,6 @@ public interface Player {
     void setNoCons(int level);
     
     void setCard46(int turn);
+    
+    void setEmbezzleBoost(int num);
 }
