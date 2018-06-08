@@ -750,7 +750,7 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upActive, cons);
         
-        activeUpDes = new JLabel("Upgrade Active: 250");
+        activeUpDes = new JLabel("Upgrade Active: 500");
         cons.gridx = 0;
         cons.gridy = 1;
         cons.weightx =1;
@@ -774,7 +774,7 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upInteract, cons);
         
-        interactUpDes = new JLabel("Upgrade Interact: 250");
+        interactUpDes = new JLabel("Upgrade Interact: 500");
         cons.gridx = 2;
         cons.gridy = 1;
         cons.weightx =1;
@@ -796,7 +796,7 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upEmbezzle, cons);
         
-        embezzleUpDes = new JLabel("Upgrade Embezzle: 250");
+        embezzleUpDes = new JLabel("Upgrade Embezzle: 500");
         cons.gridx = 3;
         cons.gridy = 1;
         cons.weightx =1;
@@ -818,7 +818,7 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upFundraise, cons);
         
-        fundraiseUpDes = new JLabel("Upgrade Fundraise: 250");
+        fundraiseUpDes = new JLabel("Upgrade Fundraise: 500");
         cons.gridx = 4;
         cons.gridy = 1;
         cons.weightx =1;
@@ -840,7 +840,7 @@ public class Board implements ActionListener {
         cons.ipady = 40;
         upgradePanel.add(upUpgrade, cons);
         
-        upgradeUpDes = new JLabel("Upgrade Upgrade: 250");
+        upgradeUpDes = new JLabel("Upgrade Upgrade: 500");
         cons.gridx = 5;
         cons.gridy = 1;
         cons.weightx =1;

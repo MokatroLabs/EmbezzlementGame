@@ -63,7 +63,7 @@ public abstract class Human implements Player {
     public void fundraise() { //Action 1
         // TODO Auto-generated method stub
         money += 200;
-        reputation += (.25 + repIncrease);
+        reputation += (.2 + repIncrease);
         consecutive = 0;
         setNoCons(espLV);
     }
@@ -94,14 +94,6 @@ public abstract class Human implements Player {
         consecutive = 0;
         setNoCons(espLV);
         if(level == 1){
-            noAdd = (250 - upgradeDown);
-            if(noAdd < 0){
-                noAdd = 0;
-            } else {
-                money -= noAdd;
-            }
-        }
-        if(level == 2){
             noAdd = (500 - upgradeDown);
             if(noAdd < 0){
                 noAdd = 0;
@@ -109,8 +101,16 @@ public abstract class Human implements Player {
                 money -= noAdd;
             }
         }
+        if(level == 2){
+            noAdd = (750 - upgradeDown);
+            if(noAdd < 0){
+                noAdd = 0;
+            } else {
+                money -= noAdd;
+            }
+        }
         if(level == 3){
-            noAdd = (1000 - upgradeDown);
+            noAdd = (1125 - upgradeDown);
             if(noAdd < 0){
                 noAdd = 0;
             } else {
@@ -118,7 +118,7 @@ public abstract class Human implements Player {
             }
         }
         if(level == 4){
-            noAdd = (2000 - upgradeDown);
+            noAdd = (2250 - upgradeDown);
             if(noAdd < 0){
                 noAdd = 0;
             } else {
@@ -126,7 +126,7 @@ public abstract class Human implements Player {
             }
         }
         if(level == 5){
-            noAdd = (3000 - upgradeDown);
+            noAdd = (4500 - upgradeDown);
             if(noAdd < 0){
                 noAdd = 0;
             } else {

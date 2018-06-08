@@ -73,7 +73,7 @@ public abstract class Computer implements Player {
     public void fundraise() //Action 1
     {
         money += 200;
-        reputation += (.25 + repIncrease);
+        reputation += (.2 + repIncrease);
         hasEmbezzled = false;
         consecutive = 0;
         setNoCons(espLV);

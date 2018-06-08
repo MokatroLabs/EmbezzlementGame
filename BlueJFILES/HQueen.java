@@ -40,7 +40,7 @@ public class HQueen extends Human {
     public void fundraise()
     {
         money += 300;
-        reputation += .5;
+        reputation += .4;
     }
    
     public void setRdLV(int newLevel){

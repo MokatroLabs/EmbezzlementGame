@@ -668,49 +668,49 @@ public class Main {
             if(current.isHuman())
             {
                 if(current.getRdLV() == 1)
-                    board.setUpgradeUpgradeDes(500);
+                    board.setUpgradeUpgradeDes(750);
                 if(current.getRdLV() == 2)
-                    board.setUpgradeUpgradeDes(1000);
+                    board.setUpgradeUpgradeDes(1125);
                 if(current.getRdLV() == 3)
-                    board.setUpgradeUpgradeDes(2000);
+                    board.setUpgradeUpgradeDes(2250);
                 if(current.getRdLV() == 4)
-                    board.setUpgradeUpgradeDes(3000);              
+                    board.setUpgradeUpgradeDes(4500);              
                     
                 if(current.getMarLV() == 1)
-                    board.setUpgradeFundriaseDes(500);
+                    board.setUpgradeFundriaseDes(750);
                 if(current.getMarLV() == 2)
-                    board.setUpgradeFundriaseDes(1000);
+                    board.setUpgradeFundriaseDes(1125);
                 if(current.getMarLV() == 3)
-                    board.setUpgradeFundriaseDes(2000);
+                    board.setUpgradeFundriaseDes(2250);
                 if(current.getMarLV() == 4)
-                    board.setUpgradeFundriaseDes(3000);     
+                    board.setUpgradeFundriaseDes(4500);     
                     
                 if(current.getEspLV() == 1)
-                    board.setUpgradeEmbezzleDes(500);
+                    board.setUpgradeEmbezzleDes(750);
                 if(current.getEspLV() == 2)
-                    board.setUpgradeEmbezzleDes(1000);
+                    board.setUpgradeEmbezzleDes(1125);
                 if(current.getEspLV() == 3)
-                    board.setUpgradeEmbezzleDes(2000);
+                    board.setUpgradeEmbezzleDes(2250);
                 if(current.getEspLV() == 4)
-                    board.setUpgradeEmbezzleDes(3000);                     
+                    board.setUpgradeEmbezzleDes(4500);                     
                     
                 if(current.getPrLV() == 1)
-                    board.setUpgradeInteractDes(500);
+                    board.setUpgradeInteractDes(750);
                 if(current.getPrLV() == 2)
-                    board.setUpgradeInteractDes(1000);
+                    board.setUpgradeInteractDes(1125);
                 if(current.getPrLV() == 3)
-                    board.setUpgradeInteractDes(2000);
+                    board.setUpgradeInteractDes(2250);
                 if(current.getPrLV() == 4)
-                    board.setUpgradeInteractDes(3000);                    
+                    board.setUpgradeInteractDes(4500);                    
 
                 if(current.getLeadLV() == 1)
-                    board.setUpgradeActiveDes(500);
+                    board.setUpgradeActiveDes(750);
                 if(current.getLeadLV() == 2)
-                    board.setUpgradeActiveDes(1000);
+                    board.setUpgradeActiveDes(1125);
                 if(current.getLeadLV() == 3)
-                    board.setUpgradeActiveDes(2000);
+                    board.setUpgradeActiveDes(2250);
                 if(current.getLeadLV() == 4)
-                    board.setUpgradeActiveDes(3000);                    
+                    board.setUpgradeActiveDes(4500);                    
                     
             }
             current.setPastAction(3,1);
