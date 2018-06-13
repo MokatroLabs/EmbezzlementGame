@@ -1,6 +1,9 @@
 
 Overview: This is an original turn-based game in which you play as one of four characters. Each character has 
 their own unique abilities that make them different from one another. 
+Welcome to The Long Con, an original game created by band members in the Computer Science A Class.
+Please read the following instructions and enjoy the game.
+
 
 Objective
     There are many ways to win and lose in this game. 
@@ -18,6 +21,7 @@ Objective
         No money
         No rep
         If you get audited (a chance that increases based on lower rep) 
+
         
     
 Rules

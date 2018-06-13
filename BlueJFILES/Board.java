@@ -460,7 +460,7 @@ public class Board implements ActionListener {
        btnPlay.setActionCommand("Play");
        btnPlay.addActionListener(this);
        
-       origBackgroundTitle = new ImageIcon("./pictures/TitleBackground.png");
+       origBackgroundTitle = new ImageIcon("./pictures/TitleScreenBack.png");
        origBackgroundImgTitle = origBackgroundTitle.getImage();
        scaledImageTitle = origBackgroundImgTitle.getScaledInstance(9*wndSize.width/10, 9*wndSize.height/10, Image.SCALE_DEFAULT);
        newIconTitle = new ImageIcon(scaledImageTitle);
@@ -736,7 +736,7 @@ public class Board implements ActionListener {
         cons.weighty = 1;
         cons.fill = GridBagConstraints.NONE;
 
-        upgradePanel.add(backButton, cons);
+        //upgradePanel.add(backButton, cons);
         
         upActive = new JButton("Leadership: lv 0");
         upActive.setActionCommand("upActive");
